@@ -16,7 +16,7 @@ const SeamlessTransactions = () => {
 
             <div className="w-full md:w-1/2 relative">
               <div className="relative h-[300px]">
-                <Image src="/images/payment-device.png" alt="Payment Device" fill className="object-contain" />
+                {/* <Image src="/images/payment-device.png" alt="Payment Device" fill className="object-contain" /> */}
 
                 {/* Animated wave effect */}
                 <div className="absolute top-1/4 left-1/4 h-16 w-16 rounded-full border-2 border-blue-400 opacity-70 animate-ping"></div>
@@ -28,7 +28,7 @@ const SeamlessTransactions = () => {
 
           {/* Background decorative elements */}
           <div className="absolute bottom-0 left-0 opacity-20">
-            <Image src="/images/frame-27.png" alt="Decorative element" width={300} height={300} />
+            {/* <Image src="/images/frame-27.png" alt="Decorative element" width={300} height={300} /> */}
           </div>
         </div>
       </div>
