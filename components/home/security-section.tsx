@@ -16,13 +16,13 @@ const SecuritySection = () => {
               <h3 className="text-blue-900 font-semibold mb-3">Our Compliance</h3>
               <div className="flex flex-wrap gap-4">
                 <div className="bg-gray-100 p-2 rounded-md">
-                  {/* <Image src="/placeholder.svg?height=40&width=40" alt="Compliance Logo" width={40} height={40} /> */}
+                  <Image src="/placeholder.svg?height=40&width=40" alt="Compliance Logo" width={40} height={40} />
                 </div>
                 <div className="bg-gray-100 p-2 rounded-md">
-                  {/* <Image src="/placeholder.svg?height=40&width=40" alt="Compliance Logo" width={40} height={40} /> */}
+                  <Image src="/placeholder.svg?height=40&width=40" alt="Compliance Logo" width={40} height={40} />
                 </div>
                 <div className="bg-gray-100 p-2 rounded-md">
-                  {/* <Image src="/placeholder.svg?height=40&width=40" alt="Compliance Logo" width={40} height={40} /> */}
+                  <Image src="/placeholder.svg?height=40&width=40" alt="Compliance Logo" width={40} height={40} />
                 </div>
               </div>
             </div>

@@ -2,7 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
-const CaseStudies = () => {
+const CaseStudiesPreview = () => {
   return (
     <section className="relative w-full overflow-hidden bg-[#EEF3FF] py-16">
       {/* Background geometric shapes */}
@@ -120,4 +120,7 @@ const CaseStudies = () => {
   )
 }
 
-export default CaseStudies
+
+
+
+export default CaseStudiesPreview
