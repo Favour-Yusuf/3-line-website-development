@@ -3,33 +3,40 @@
 import { useState } from "react"
 import Link from "next/link"
 import { Menu, X, ChevronDown, ArrowRight } from "lucide-react"
+import { usePathname } from "next/navigation"
+import Image from "next/image"
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const pathname = usePathname()
+
+  const isActive = (path: string) => {
+    return pathname === path ? "text-blue-600" : "text-gray-700 hover:text-blue-600"
+  }
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-[#D2E1FF] py-4 px-4 md:px-8">
+    <header className="sticky top-0 z-50 w-full bg-[#EEF3FF] py-4 px-4 md:px-8">
       <div className="container mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center">
-          <div className="text-[#0A1A4A] font-bold text-2xl">
-            <span className="text-[#0A1A4A]">3</span>
-            <span className="text-[#0A1A4A]">line</span>
-            <span className="text-blue-500 ml-0.5">.</span>
-          </div>
-        </Link>
+        <Image
+    src="/logo.png"
+    alt="3-line logo"
+    width={80}
+    height={40} 
+  />        </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden md:flex items-center space-x-6">
           <div className="relative group">
-            <button className="flex items-center text-[#0A1A4A] hover:text-blue-600 font-medium">
+            <button className="flex items-center text-gray-700 hover:text-blue-600">
               Products <ChevronDown className="ml-1 h-4 w-4" />
             </button>
             <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
               <div className="py-1">
-                <Link href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                <Link href="/solutions/smes" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                   SMEs
                 </Link>
-                <Link href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                <Link href="/solutions/enterprise" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                   Enterprise
                 </Link>
                 <Link href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
@@ -39,28 +46,28 @@ const Header = () => {
             </div>
           </div>
           <div className="relative group">
-            <button className="flex items-center text-[#0A1A4A] hover:text-blue-600 font-medium">
+            <button className="flex items-center text-gray-700 hover:text-blue-600">
               Company <ChevronDown className="ml-1 h-4 w-4" />
             </button>
             <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
               <div className="py-1">
-                <Link href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                <Link href="/about-us" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                   About Us
                 </Link>
-                <Link href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                <Link href="/our-team" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                   Our Team
                 </Link>
                 <Link href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                   Careers
                 </Link>
-                <Link href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                <Link href="/contact-us" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                   Contact Us
                 </Link>
               </div>
             </div>
           </div>
           <div className="relative group">
-            <button className="flex items-center text-[#0A1A4A] hover:text-blue-600 font-medium">
+            <button className="flex items-center text-gray-700 hover:text-blue-600">
               Resources <ChevronDown className="ml-1 h-4 w-4" />
             </button>
             <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
@@ -80,22 +87,23 @@ const Header = () => {
               </div>
             </div>
           </div>
-          <Link href="#" className="text-[#0A1A4A] hover:text-blue-600 font-medium">
+          <Link href="/contact-us" className={isActive("/contact-us")}>
             Contact Us
           </Link>
         </nav>
 
         <div className="hidden md:flex items-center space-x-4">
-          <Link href="#" className="flex items-center text-[#0A1A4A] hover:text-blue-700 font-medium">
-            <span className="mr-2">Get started</span>
-            <span className="bg-blue-500 rounded-full p-2">
-              <ArrowRight className="h-5 w-5 text-white" />
-            </span>
+          <Link
+            href="/contact-us"
+            className="rounded-full bg-blue-600 px-6 py-2 text-sm font-medium text-white hover:bg-blue-700 transition-colors flex items-center"
+          >
+            Get started
+            <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
         </div>
 
         {/* Mobile menu button */}
-        <button className="md:hidden text-[#0A1A4A]" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+        <button className="md:hidden text-gray-700" onClick={() => setIsMenuOpen(!isMenuOpen)}>
           {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
@@ -105,12 +113,12 @@ const Header = () => {
         <div className="md:hidden absolute top-16 left-0 right-0 bg-white shadow-lg z-50">
           <div className="px-4 py-2 space-y-1">
             <div className="py-2 border-b">
-              <button className="w-full text-left py-2 text-[#0A1A4A] font-medium">Products</button>
+              <button className="w-full text-left py-2 text-gray-700">Products</button>
               <div className="pl-4 py-1 space-y-1">
-                <Link href="#" className="block py-2 text-sm text-gray-700">
+                <Link href="/solutions/smes" className="block py-2 text-sm text-gray-700">
                   SMEs
                 </Link>
-                <Link href="#" className="block py-2 text-sm text-gray-700">
+                <Link href="/solutions/enterprise" className="block py-2 text-sm text-gray-700">
                   Enterprise
                 </Link>
                 <Link href="#" className="block py-2 text-sm text-gray-700">
@@ -119,24 +127,24 @@ const Header = () => {
               </div>
             </div>
             <div className="py-2 border-b">
-              <button className="w-full text-left py-2 text-[#0A1A4A] font-medium">Company</button>
+              <button className="w-full text-left py-2 text-gray-700">Company</button>
               <div className="pl-4 py-1 space-y-1">
-                <Link href="#" className="block py-2 text-sm text-gray-700">
+                <Link href="/about-us" className="block py-2 text-sm text-gray-700">
                   About Us
                 </Link>
-                <Link href="#" className="block py-2 text-sm text-gray-700">
+                <Link href="/our-team" className="block py-2 text-sm text-gray-700">
                   Our Team
                 </Link>
                 <Link href="#" className="block py-2 text-sm text-gray-700">
                   Careers
                 </Link>
-                <Link href="#" className="block py-2 text-sm text-gray-700">
+                <Link href="/contact-us" className="block py-2 text-sm text-gray-700">
                   Contact Us
                 </Link>
               </div>
             </div>
             <div className="py-2 border-b">
-              <button className="w-full text-left py-2 text-[#0A1A4A] font-medium">Resources</button>
+              <button className="w-full text-left py-2 text-gray-700">Resources</button>
               <div className="pl-4 py-1 space-y-1">
                 <Link href="#" className="block py-2 text-sm text-gray-700">
                   Blog
@@ -152,15 +160,15 @@ const Header = () => {
                 </Link>
               </div>
             </div>
-            <Link href="#" className="block py-2 text-[#0A1A4A] font-medium">
+            <Link href="/contact-us" className="block py-2 text-gray-700">
               Contact Us
             </Link>
             <div className="pt-2">
-              <Link href="#" className="flex items-center justify-center py-2 text-[#0A1A4A] font-medium">
-                <span className="mr-2">Get started</span>
-                <span className="bg-blue-500 rounded-full p-2">
-                  <ArrowRight className="h-5 w-5 text-white" />
-                </span>
+              <Link
+                href="/contact-us"
+                className="block w-full text-center rounded-full bg-blue-600 px-6 py-2 text-sm font-medium text-white hover:bg-blue-700 transition-colors"
+              >
+                Get started
               </Link>
             </div>
           </div>

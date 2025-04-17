@@ -1,27 +1,26 @@
-import Header from "@/components/header"
-import Footer from "@/components/footer"
-import HeroSection from "@/components/landing page/hero-section"
-import StatsSection from "@/components/landing page/stats-section"
-import PartnersSection from "@/components/landing page/partners-section"
-import TransactionsMap from "@/components/landing page/transactions-map"
-import SolutionsSection from "@/components/landing page/solutions-section"
-import SeamlessTransactions from "@/components/landing page/seamless-transactions"
-import SecuritySection from "@/components/landing page/security-section"
-import CaseStudies from "@/components/landing page/case-studies"
+import Image from "next/image"
+import Link from "next/link"
+import { ArrowRight } from "lucide-react"
+import HeroSection from "@/components/home/hero-section"
+import StatsSection from "@/components/home/stats-section"
+import PartnersSection from "@/components/home/partners-section"
+import TransactionsMap from "@/components/home/transactions-map"
+import SolutionsSection from "@/components/home/solutions-section"
+import CaseStudiesPreview from "@/components/home/case-studies-preview"
+import SeamlessTransactions from "@/components/home/seamless-transactions"
+import SecuritySection from "@/components/home/security-section"
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-white overflow-hidden">
-      <Header />
-      <HeroSection />
-       <StatsSection />
-      <PartnersSection />
-      <TransactionsMap />
-      <SolutionsSection />
-      <SeamlessTransactions />
-      <SecuritySection />
-      <CaseStudies />
-      <Footer /> 
-    </main>
+    <HeroSection />
+    <StatsSection />
+    <PartnersSection />
+    <TransactionsMap />
+    <SolutionsSection />
+    <SeamlessTransactions />
+    <SecuritySection />
+    <CaseStudiesPreview />
+  </main>
   )
 }
