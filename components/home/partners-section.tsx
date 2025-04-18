@@ -1,4 +1,7 @@
+"use client"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 import Image from "next/image"
+import { useEffect, useRef, useState } from "react"
 
 const PartnersSection = () => {
   const partners = [
@@ -13,26 +16,159 @@ const PartnersSection = () => {
     { name: "Fidelity", logo: "/fidelity.png", width: 120, height: 40 },
   ]
 
-  return (
-    <section className="relative w-full overflow-hidden bg-[#EEF3FF] py-12">
-      {/* Background geometric shapes - reusing the same background */}
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [visiblePartners, setVisiblePartners] = useState(9)
+  const [autoplay, setAutoplay] = useState(true)
+  const [shouldSlide, setShouldSlide] = useState(partners.length > visiblePartners)
+  const autoplayRef = useRef<NodeJS.Timeout | null>(null)
+  const sliderRef = useRef<HTMLDivElement>(null)
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-          {partners.map((partner, index) => (
-            <div key={index} className="transition-all duration-300 hover:opacity-80">
+  // Determine how many partners to show based on screen width
+  useEffect(() => {
+    const handleResize = () => {
+      let newVisibleCount = 9
+
+      if (window.innerWidth < 640) {
+        newVisibleCount = 3
+      } else if (window.innerWidth < 768) {
+        newVisibleCount = 4
+      } else if (window.innerWidth < 1024) {
+        newVisibleCount = 6
+      } else if (window.innerWidth < 1280) {
+        newVisibleCount = 8
+      } else {
+        newVisibleCount = 9
+      }
+
+      setVisiblePartners(newVisibleCount)
+      setShouldSlide(partners.length > newVisibleCount)
+    }
+
+    handleResize()
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
+
+  // Autoplay functionality - only if sliding is needed
+  useEffect(() => {
+    if (autoplay && shouldSlide) {
+      autoplayRef.current = setInterval(() => {
+        nextSlide()
+      }, 5000) // Increased to 5 seconds for a more subtle transition
+    }
+
+    return () => {
+      if (autoplayRef.current) {
+        clearInterval(autoplayRef.current)
+      }
+    }
+  }, [autoplay, currentIndex, visiblePartners, shouldSlide])
+
+  // Pause autoplay on hover
+  const pauseAutoplay = () => setAutoplay(false)
+  const resumeAutoplay = () => setAutoplay(true)
+
+  const nextSlide = () => {
+    if (!shouldSlide) return
+
+    setCurrentIndex((prevIndex) => {
+      const nextIndex = prevIndex + 1
+      return nextIndex >= partners.length ? 0 : nextIndex
+    })
+  }
+
+  const prevSlide = () => {
+    if (!shouldSlide) return
+
+    setCurrentIndex((prevIndex) => {
+      const nextIndex = prevIndex - 1
+      return nextIndex < 0 ? partners.length - 1 : nextIndex
+    })
+  }
+
+  const goToSlide = (index: number) => {
+    if (!shouldSlide) return
+    setCurrentIndex(index)
+  }
+
+  // Create a circular array of partners for infinite scrolling effect
+  const getVisiblePartners = () => {
+    if (!shouldSlide) return partners
+
+    const result = []
+    for (let i = 0; i < visiblePartners; i++) {
+      const index = (currentIndex + i) % partners.length
+      result.push(partners[index])
+    }
+    return result
+  }
+
+  return (
+    <div
+      className="relative w-full py-8 px-4 bg-white rounded-xl shadow-sm"
+      onMouseEnter={pauseAutoplay}
+      onMouseLeave={resumeAutoplay}
+    >
+      <h2 className="text-2xl font-bold text-center mb-8">Our Trusted Partners</h2>
+
+      {/* Navigation Arrows - only shown when sliding is needed */}
+      {shouldSlide && (
+        <>
+          <button
+            onClick={prevSlide}
+            className="absolute left-2 top-1/2 z-10 bg-white/80 rounded-full p-1 shadow-sm hover:bg-gray-100 transition-colors"
+            aria-label="Previous slide"
+          >
+            <ChevronLeft className="h-4 w-4 text-gray-500" />
+          </button>
+
+          <button
+            onClick={nextSlide}
+            className="absolute right-2 top-1/2 z-10 bg-white/80 rounded-full p-1 shadow-sm hover:bg-gray-100 transition-colors"
+            aria-label="Next slide"
+          >
+            <ChevronRight className="h-4 w-4 text-gray-500" />
+          </button>
+        </>
+      )}
+
+      {/* Slider Container */}
+      <div className="overflow-hidden mx-6">
+        <div
+          ref={sliderRef}
+          className="flex items-center justify-center gap-4 md:gap-6 transition-transform duration-500 ease-in-out"
+          style={{ transform: `translateX(0)` }}
+        >
+          {getVisiblePartners().map((partner, index) => (
+            <div key={`${partner.name}-${index}`} className="flex-shrink-0 flex items-center justify-center h-16">
               <Image
                 src={partner.logo || "/placeholder.svg"}
-                alt={`${partner.name} Logo`}
+                alt={partner.name}
                 width={partner.width}
-                height={partner.height}
-                className="h-8 md:h-10 w-auto"
+                height={40}
+                className="h-10 w-auto object-contain"
               />
             </div>
           ))}
         </div>
       </div>
-    </section>
+
+      {/* Indicator Dots - only shown when sliding is needed */}
+      {shouldSlide && (
+        <div className="flex justify-center mt-4 gap-1">
+          {partners.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToSlide(index)}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                index === currentIndex ? "bg-blue-600 w-3" : "bg-gray-300 w-1.5"
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
+      )}
+    </div>
   )
 }
 

@@ -24,15 +24,43 @@ export default function EnterprisePage() {
                 management.
               </p>
             </div>
-            <div className="grid grid-cols-3 gap-2 p-4">
-              <div className="relative h-32 rounded-lg overflow-hidden">
-                <Image src="/images/enterprise-hero.png" alt="Enterprise Solutions" fill className="object-cover" />
+            <div className="relative h-[300px] md:h-[400px]">
+              {/* Background shape */}
+              <div className="absolute top-0 right-0 w-1/2 h-full z-0">
+                <Image
+                  src="/enterprise-hero2.png"
+                  alt="Background shape"
+                  fill
+                  className="object-contain object-right"
+                />
               </div>
-              <div className="relative h-32 rounded-lg overflow-hidden">
-                <Image src="/images/enterprise-hero.png" alt="Enterprise Solutions" fill className="object-cover" />
+
+              {/* Hero images */}
+              <div className="absolute bottom-0 left-[10%] w-[200px] h-[150px] transform rotate-[-15deg] overflow-hidden rounded-lg z-10">
+                <Image
+                  src="/enterprise-hero1.png"
+                  alt="HSBC Building"
+                  fill
+                  className="object-cover"
+                />
               </div>
-              <div className="relative h-32 rounded-lg overflow-hidden">
-                <Image src="/images/enterprise-hero.png" alt="Enterprise Solutions" fill className="object-cover" />
+
+              <div className="absolute bottom-[30%] left-[35%] w-[120px] h-[180px] transform rotate-[15deg] overflow-hidden rounded-lg z-20">
+                <Image
+                  src="/enterprise-hero1.png"
+                  alt="Payment Terminal"
+                  fill
+                  className="object-cover object-center"
+                />
+              </div>
+
+              <div className="absolute top-[10%] right-[20%] w-[120px] h-[180px] transform rotate-[15deg] overflow-hidden rounded-lg z-30">
+                <Image
+                  src="/enterprise-hero1.png"
+                  alt="Woman Smiling"
+                  fill
+                  className="object-cover object-right"
+                />
               </div>
             </div>
           </div>
