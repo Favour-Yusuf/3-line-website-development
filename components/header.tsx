@@ -72,16 +72,16 @@ const Header = () => {
             </button>
             <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
               <div className="py-1">
-                <Link href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                <Link href="/resources/blog" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                   Blog
                 </Link>
-                <Link href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                <Link href="/resources/press" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                   Press
                 </Link>
-                <Link href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                <Link href="/resources/case-study" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                   Case Studies
                 </Link>
-                <Link href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                <Link href="/resources/faq" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                   FAQs
                 </Link>
               </div>
