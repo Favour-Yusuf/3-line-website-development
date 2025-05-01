@@ -25,7 +25,7 @@ const SolutionsSection = () => {
           <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
             <div className="mb-4 bg-[#EEF3FF] p-3 rounded-lg inline-block">
               <div className="w-12 h-12 relative">
-                <Image src="/images/sme-icon.png" alt="SMEs Icon" width={48} height={48} className="text-blue-500" />
+                <Image src="/Frame 6.png" alt="SMEs Icon" width={48} height={48} className="text-blue-500" />
               </div>
             </div>
             <h3 className="text-xl font-semibold mb-2 text-[#0A1A4A]">SMEs</h3>
@@ -46,7 +46,7 @@ const SolutionsSection = () => {
             <div className="mb-4 bg-[#EEF3FF] p-3 rounded-lg inline-block">
               <div className="w-12 h-12 relative">
                 <Image
-                  src="/images/enterprise-icon.png"
+                  src="/Frame 42.png"
                   alt="Enterprise Icon"
                   width={48}
                   height={48}
@@ -72,7 +72,7 @@ const SolutionsSection = () => {
             <div className="mb-4 bg-[#EEF3FF] p-3 rounded-lg inline-block">
               <div className="w-12 h-12 relative">
                 <Image
-                  src="/images/individual-icon.png"
+                  src="/Frame 43.png"
                   alt="Individual Icon"
                   width={48}
                   height={48}
