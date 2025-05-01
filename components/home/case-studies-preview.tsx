@@ -26,12 +26,12 @@ const CaseStudiesPreview = () => {
           {/* Case Study 1 - Unity Bank */}
           <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
             <div className="relative h-48">
-              {/* <Image src="/images/market-image.png" alt="Market in Africa" fill className="object-cover" /> */}
+              <Image src="/unity.png" alt="Market in Africa" fill className="object-cover" />
             </div>
             <div className="p-6">
               <div className="flex items-center mb-3">
                 <div className="h-8 w-20 relative">
-                  <Image src="/images/unity-logo.png" alt="Unity Bank Logo" fill className="object-contain" />
+                  <Image src="/unity.png" alt="Unity Bank Logo" fill className="object-contain" />
                 </div>
               </div>
               <h3 className="text-xl font-semibold mb-2 text-[#0A1A4A]">
@@ -55,7 +55,7 @@ const CaseStudiesPreview = () => {
           {/* Case Study 2 - Standard Chartered */}
           <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
             <div className="relative h-48">
-              {/* <Image src="/images/venice-canal.png" alt="Venice Canal" fill className="object-cover" /> */}
+              <Image src="/standard.png" alt="Venice Canal" fill className="object-cover" />
             </div>
             <div className="p-6">
               <div className="flex items-center mb-3">
@@ -89,7 +89,7 @@ const CaseStudiesPreview = () => {
           {/* Case Study 3 - Interswitch */}
           <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
             <div className="relative h-48">
-              {/* <Image src="/images/venice-canal.png" alt="Venice Canal" fill className="object-cover" /> */}
+              <Image src="/inter.png" alt="Venice Canal" fill className="object-cover" />
             </div>
             <div className="p-6">
               <div className="flex items-center mb-3">

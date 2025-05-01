@@ -97,16 +97,16 @@ const Footer = () => {
             <div>
               <div className="flex flex-wrap gap-4 mb-4">
                 <div className="bg-white p-2 rounded-md">
-                  <Image src="/images/pci-dss.png" alt="PCI DSS" width={40} height={40} />
+                  <Image src="/pci.png" alt="PCI DSS" width={40} height={40} />
                 </div>
                 <div className="bg-white p-2 rounded-md">
-                  <Image src="/images/iso.png" alt="ISO" width={40} height={40} />
+                  <Image src="/iso.png" alt="ISO" width={40} height={40} />
                 </div>
                 <div className="bg-white p-2 rounded-md">
-                  <Image src="/images/ndpr.png" alt="NDPR" width={40} height={40} />
+                  <Image src="/coat.png" alt="NDPR" width={40} height={40} />
                 </div>
                 <div className="bg-white p-2 rounded-md">
-                  <Image src="/images/cbn.png" alt="CBN" width={40} height={40} />
+                  <Image src="/arm.png" alt="CBN" width={40} height={40} />
                 </div>
               </div>
               <p className="text-sm text-gray-600">© 2023 3line. 3line is regulated by the Central Bank of Nigeria.</p>
