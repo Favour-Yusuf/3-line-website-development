@@ -13,7 +13,7 @@ import SecuritySection from "@/components/home/security-section"
 export default function Home() {
   return (
     <main className="min-h-screen bg-white overflow-hidden">
-    <HeroSection />
+    <HeroSection /> 
     <StatsSection />
     <PartnersSection />
     <TransactionsMap />

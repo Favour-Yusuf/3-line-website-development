@@ -26,13 +26,13 @@ const TransactionsMap = () => {
               {/* User avatars in West Africa */}
               <div className="absolute top-[60%] left-[20%] flex -space-x-2">
                 <div className="h-8 w-8 rounded-full bg-yellow-500 border-2 border-white overflow-hidden z-30">
-                  <Image src="/placeholder.svg?height=32&width=32" alt="User" width={32} height={32} />
+                  <Image src="/Ellipse 16 (1).png" alt="User" width={32} height={32} />
                 </div>
                 <div className="h-8 w-8 rounded-full bg-blue-500 border-2 border-white overflow-hidden z-20">
-                  <Image src="/placeholder.svg?height=32&width=32" alt="User" width={32} height={32} />
+                  <Image src="/Ellipse 16.png" alt="User" width={32} height={32} />
                 </div>
                 <div className="h-8 w-8 rounded-full bg-green-500 border-2 border-white overflow-hidden z-10">
-                  <Image src="/placeholder.svg?height=32&width=32" alt="User" width={32} height={32} />
+                  <Image src="/Ellipse 17.png" alt="User" width={32} height={32} />
                 </div>
               </div>
             </div>
