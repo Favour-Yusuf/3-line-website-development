@@ -25,14 +25,12 @@ export default function SmesPage() {
             </div>
             <div className="grid grid-cols-3 gap-2 p-4">
               <div className="relative h-32 rounded-lg overflow-hidden">
-                <Image src="/images/smes-hero.png" alt="SME Solutions" fill className="object-cover" />
+                <Image src="/sme_hero1.png" alt="SME Solutions" fill className="object-cover" />
               </div>
               <div className="relative h-32 rounded-lg overflow-hidden">
-                <Image src="/images/smes-hero.png" alt="SME Solutions" fill className="object-cover" />
+                <Image src="/sme_hero2.png" alt="SME Solutions" fill className="object-cover" />
               </div>
-              <div className="relative h-32 rounded-lg overflow-hidden">
-                <Image src="/images/smes-hero.png" alt="SME Solutions" fill className="object-cover" />
-              </div>
+             
             </div>
           </div>
         </div>

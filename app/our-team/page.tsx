@@ -1,55 +1,179 @@
+"use client"
+
+import type React from "react"
+
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, Linkedin } from "lucide-react"
+import { ArrowRight, Linkedin, Clock, MapPin } from "lucide-react"
+import { useState } from "react"
 
-export default function OurTeamPage() {
+const OurTeamComponent = () => {
+  const [email, setEmail] = useState("")
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault()
+    console.log("Subscribing email:", email)
+    setEmail("")
+  }
+
+  // Executive team data
+  const executiveTeam = [
+    {
+      name: "Femi Omogbenigun",
+      role: "Managing Director/CEO",
+      image: "/team-exce.png",
+      imagePosition: "0% 0%",
+    },
+    {
+      name: "Chibuzor Sibigem",
+      role: "Executive Director, Business",
+      image: "/team-exce.png",
+      imagePosition: "33.33% 0%",
+    },
+    {
+      name: "Donald Owonikin",
+      role: "Head of Finance",
+      image: "/team-exce.png",
+      imagePosition: "66.66% 0%",
+    },
+    {
+      name: "Kolawole Omirin",
+      role: "Chief Technology Officer",
+      image: "/team-exce.png",
+      imagePosition: "100% 0%",
+    },
+  ]
+
+  // Team leads data - first row
+  const teamLeadsRow1 = [
+    {
+      name: "Stephanie Okpaka",
+      role: "Administrative Lead",
+      image: "/team-leads.png",
+      imagePosition: "0% 0%",
+    },
+    {
+      name: "Nneoma Udegbe",
+      role: "Head, Product Management Officer",
+      image: "/team-leads.png",
+      imagePosition: "25% 0%",
+    },
+    {
+      name: "Temitope Ogundare",
+      role: "Legal & Regulatory Compliance Officer",
+      image: "/team-leads.png",
+      imagePosition: "50% 0%",
+    },
+    {
+      name: "Tobiloba Animasaun",
+      role: "Human Resource Lead",
+      image: "/team-leads.png",
+      imagePosition: "75% 0%",
+    },
+    {
+      name: "Harrif Saliu",
+      role: "Lead, Channel Engineering",
+      image: "/team-leads.png",
+      imagePosition: "100% 0%",
+    },
+  ]
+
+  // Team leads data - second row
+  const teamLeadsRow2 = [
+    {
+      name: "Titilope Bankole-Oki",
+      role: "Service Delivery Manager",
+      image: "/team-leads.png",
+      imagePosition: "0% 50%",
+    },
+    {
+      name: "Idris Apatira",
+      role: "Lead, Network, System Admin & Support",
+      image: "/team-leads.png",
+      imagePosition: "25% 50%",
+    },
+    {
+      name: "Bolaji Oyewumi",
+      role: "Lead, Backend Engineer",
+      image: "/team-leads.png",
+      imagePosition: "50% 50%",
+    },
+    {
+      name: "Ayotunde Ogundipe",
+      role: "Lead, QA Engineer",
+      image: "/team-leads.png",
+      imagePosition: "75% 50%",
+    },
+    {
+      name: "David Ayoola",
+      role: "Lead, Frontend Engineer",
+      image: "/team-leads.png",
+      imagePosition: "100% 50%",
+    },
+  ]
+
+  // Additional team lead
+  const additionalLead = {
+    name: "John Dahunsi",
+    role: "Sales & Partnership Manager",
+    image: "/team-leads.png",
+    imagePosition: "0% 100%",
+  }
+
+  // Job openings
+  const jobOpenings = [
+    {
+      title: "Engineering Manager",
+      type: "Full-time",
+      location: "Lagos",
+    },
+    {
+      title: "Customer Care Agent",
+      type: "Full-time",
+      location: "Remote",
+    },
+    {
+      title: "Customer Care Agent",
+      type: "Part-time",
+      location: "Hybrid",
+    },
+  ]
+
   return (
     <main className="min-h-screen bg-[#EEF3FF]">
       {/* Hero Section */}
       <section className="relative overflow-hidden">
         <div className="container mx-auto px-4 py-8 md:py-12">
           <div className="relative z-10 bg-[#0A1A4A] rounded-xl overflow-hidden">
-            <div className="p-8 md:p-12 text-white">
-              <div className="inline-block bg-[#00D2FF] text-[#0A1A4A] px-3 py-1 rounded-md font-medium mb-4">
-                Our Team
+            <div className="p-8 md:p-12 flex flex-col md:flex-row">
+              <div className="w-full md:w-1/2">
+                <div className="inline-block bg-[#00D2FF] text-[#0A1A4A] px-3 py-1 rounded-md font-medium mb-4">
+                  Our Team
+                </div>
+                <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">Who we are</h1>
+                <p className="text-gray-300 mb-8 max-w-lg">
+                  At 3Line, we are more than a company, we are a team of innovators, problem-solvers, and financial
+                  inclusion specialists.
+                </p>
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">Who we are</h1>
-              <p className="text-gray-300 mb-8 max-w-lg">
-                At 3Line, we are more than a company, we are a team of innovators, problem-solvers, and financial
-                inclusion specialists.
-              </p>
-            </div>
-            <div className="grid grid-cols-7 gap-2 p-4">
-              <div className="relative h-24 w-24 rounded-full overflow-hidden">
-                <Image src="/images/team-member-1.png" alt="Team Member" fill className="object-cover" />
-              </div>
-              <div className="relative h-24 w-24 rounded-full overflow-hidden">
-                <Image src="/images/team-member-2.png" alt="Team Member" fill className="object-cover" />
-              </div>
-              <div className="relative h-24 w-24 rounded-full overflow-hidden">
-                <Image src="/images/team-member-3.png" alt="Team Member" fill className="object-cover" />
-              </div>
-              <div className="relative h-24 w-24 rounded-full overflow-hidden">
-                <Image src="/images/team-member-4.png" alt="Team Member" fill className="object-cover" />
-              </div>
-              <div className="relative h-24 w-24 rounded-full overflow-hidden">
-                <Image src="/images/team-member-1.png" alt="Team Member" fill className="object-cover" />
-              </div>
-              <div className="relative h-24 w-24 rounded-full overflow-hidden">
-                <Image src="/images/team-member-2.png" alt="Team Member" fill className="object-cover" />
-              </div>
-              <div className="relative h-24 w-24 rounded-full overflow-hidden">
-                <Image src="/images/team-member-3.png" alt="Team Member" fill className="object-cover" />
+              <div className="w-full md:w-1/2 relative h-60 md:h-80">
+                <div className="absolute inset-0">
+                  <Image src="/team-hero1.png" alt="Our Team" fill className="object-contain" />
+                </div>
+                <div className="absolute top-0 right-0 -z-10">
+                  <Image src="/team-hero2.png" alt="Decorative element" width={300} height={300} />
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Vision & Mission */}
+      {/* Vision, Mission & Values */}
       <section className="py-12 px-4">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Vision */}
             <div className="bg-white p-6 rounded-xl shadow-sm">
               <div className="bg-[#0A1A4A] text-white w-12 h-12 flex items-center justify-center rounded-lg mb-4">
                 <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -76,6 +200,7 @@ export default function OurTeamPage() {
               </p>
             </div>
 
+            {/* Mission */}
             <div className="bg-white p-6 rounded-xl shadow-sm">
               <div className="bg-[#0A1A4A] text-white w-12 h-12 flex items-center justify-center rounded-lg mb-4">
                 <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -102,6 +227,7 @@ export default function OurTeamPage() {
               </p>
             </div>
 
+            {/* Values */}
             <div className="bg-white p-6 rounded-xl shadow-sm">
               <h3 className="text-xl font-semibold mb-4">Our Values</h3>
               <div className="space-y-4">
@@ -129,58 +255,22 @@ export default function OurTeamPage() {
       <section className="py-12 px-4">
         <div className="container mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold mb-8">Meet our executive team</h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div className="bg-[#0A1A4A] rounded-xl overflow-hidden">
-              <div className="relative h-64">
-                <Image src="/images/team-member-1.png" alt="Femi Omogbenigun" fill className="object-cover" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            {executiveTeam.map((member, index) => (
+              <div key={index} className="bg-transparent rounded-xl overflow-hidden">
+                <div className="relative h-64 rounded-xl overflow-hidden">
+                  <div
+                    className="absolute inset-0 bg-cover bg-no-repeat"
+                    style={{
+                      backgroundImage: `url(${member.image})`,
+                      backgroundPosition: member.imagePosition,
+                      backgroundSize: "400%",
+                    }}
+                  ></div>
+                </div>
+              
               </div>
-              <div className="p-4 text-white">
-                <h3 className="text-lg font-semibold">Femi Omogbenigun</h3>
-                <p className="text-sm text-gray-300">CEO & Founder</p>
-                <Link href="https://linkedin.com" className="text-blue-400 hover:text-blue-300 mt-2 inline-block">
-                  <Linkedin className="h-5 w-5" />
-                </Link>
-              </div>
-            </div>
-
-            <div className="bg-[#0A1A4A] rounded-xl overflow-hidden">
-              <div className="relative h-64">
-                <Image src="/images/team-member-2.png" alt="Chibueze Ukaegbu" fill className="object-cover" />
-              </div>
-              <div className="p-4 text-white">
-                <h3 className="text-lg font-semibold">Chibueze Ukaegbu</h3>
-                <p className="text-sm text-gray-300">Chief Technology Officer</p>
-                <Link href="https://linkedin.com" className="text-blue-400 hover:text-blue-300 mt-2 inline-block">
-                  <Linkedin className="h-5 w-5" />
-                </Link>
-              </div>
-            </div>
-
-            <div className="bg-[#0A1A4A] rounded-xl overflow-hidden">
-              <div className="relative h-64">
-                <Image src="/images/team-member-3.png" alt="Donald Ozoalor" fill className="object-cover" />
-              </div>
-              <div className="p-4 text-white">
-                <h3 className="text-lg font-semibold">Donald Ozoalor</h3>
-                <p className="text-sm text-gray-300">Chief of Staff</p>
-                <Link href="https://linkedin.com" className="text-blue-400 hover:text-blue-300 mt-2 inline-block">
-                  <Linkedin className="h-5 w-5" />
-                </Link>
-              </div>
-            </div>
-
-            <div className="bg-[#0A1A4A] rounded-xl overflow-hidden">
-              <div className="relative h-64">
-                <Image src="/images/team-member-4.png" alt="Kolawole Olajide" fill className="object-cover" />
-              </div>
-              <div className="p-4 text-white">
-                <h3 className="text-lg font-semibold">Kolawole Olajide</h3>
-                <p className="text-sm text-gray-300">Chief Product Officer</p>
-                <Link href="https://linkedin.com" className="text-blue-400 hover:text-blue-300 mt-2 inline-block">
-                  <Linkedin className="h-5 w-5" />
-                </Link>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -189,26 +279,60 @@ export default function OurTeamPage() {
       <section className="py-12 px-4">
         <div className="container mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold mb-8">Our leads</h2>
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
-            {Array.from({ length: 10 }).map((_, index) => (
-              <div key={index} className="bg-[#0A1A4A] rounded-xl overflow-hidden">
-                <div className="relative h-48">
-                  <Image
-                    src={`/images/team-member-${(index % 4) + 1}.png`}
-                    alt="Team Member"
-                    fill
-                    className="object-cover"
-                  />
+
+          {/* First row */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 mb-4">
+            {teamLeadsRow1.map((member, index) => (
+              <div key={index} className="bg-transparent rounded-xl overflow-hidden">
+                <div className="relative h-48 rounded-xl overflow-hidden">
+                  <div
+                    className="absolute inset-0 bg-cover bg-no-repeat"
+                    style={{
+                      backgroundImage: `url(${member.image})`,
+                      backgroundPosition: member.imagePosition,
+                      backgroundSize: "500% 300%",
+                    }}
+                  ></div>
                 </div>
-                <div className="p-3 text-white">
-                  <h3 className="text-sm font-semibold">Team Member</h3>
-                  <p className="text-xs text-gray-300">Role Title</p>
-                  <Link href="https://linkedin.com" className="text-blue-400 hover:text-blue-300 mt-1 inline-block">
-                    <Linkedin className="h-4 w-4" />
-                  </Link>
-                </div>
+               
               </div>
             ))}
+          </div>
+
+          {/* Second row */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 mb-4">
+            {teamLeadsRow2.map((member, index) => (
+              <div key={index} className="bg-transparent rounded-xl overflow-hidden">
+                <div className="relative h-48 rounded-xl overflow-hidden">
+                  <div
+                    className="absolute inset-0 bg-cover bg-no-repeat"
+                    style={{
+                      backgroundImage: `url(${member.image})`,
+                      backgroundPosition: member.imagePosition,
+                      backgroundSize: "500% 300%",
+                    }}
+                  ></div>
+                </div>
+            
+              </div>
+            ))}
+          </div>
+
+          {/* Additional lead */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4">
+            <div className="bg-transparent rounded-xl overflow-hidden">
+              <div className="relative h-48 rounded-xl overflow-hidden">
+                <div
+                  className="absolute inset-0 bg-cover bg-no-repeat"
+                  style={{
+                    backgroundImage: `url(${additionalLead.image})`,
+                    backgroundPosition: additionalLead.imagePosition,
+                    backgroundSize: "500% 300%",
+                  }}
+                ></div>
+              </div>
+           
+            </div>
           </div>
         </div>
       </section>
@@ -217,6 +341,11 @@ export default function OurTeamPage() {
       <section className="py-12 px-4">
         <div className="container mx-auto">
           <div className="bg-[#0A1A4A] rounded-xl overflow-hidden p-6 md:p-12 relative">
+            {/* Background decorative element */}
+            <div className="absolute bottom-0 right-0 z-0">
+              <Image src="/team-join.png" alt="Decorative element" width={300} height={300} />
+            </div>
+
             <div className="relative z-10 max-w-lg">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Join Our Team</h2>
               <p className="text-gray-300 mb-6">
@@ -231,138 +360,81 @@ export default function OurTeamPage() {
       {/* Current Openings */}
       <section className="py-12 px-4">
         <div className="container mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold mb-8">There are no current openings</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-8">Current openings</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-white p-6 rounded-xl shadow-sm">
-              <h3 className="text-xl font-semibold mb-2">Engineering Manager</h3>
-              <div className="flex items-center space-x-4 mb-4">
-                <div className="flex items-center text-sm text-gray-600">
-                  <svg className="h-4 w-4 mr-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M12 8V12L15 15M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                  Full-time
+            {jobOpenings.map((job, index) => (
+              <div key={index} className="bg-white p-6 rounded-xl shadow-sm">
+                <h3 className="text-xl font-semibold mb-2">{job.title}</h3>
+                <div className="flex items-center space-x-4 mb-4">
+                  <div className="flex items-center text-sm text-gray-600">
+                    <Clock className="h-4 w-4 mr-1" />
+                    {job.type}
+                  </div>
+                  <div className="flex items-center text-sm text-gray-600">
+                    <MapPin className="h-4 w-4 mr-1" />
+                    {job.location}
+                  </div>
                 </div>
-                <div className="flex items-center text-sm text-gray-600">
-                  <svg className="h-4 w-4 mr-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M20 10C20 14.4183 12 22 12 22C12 22 4 14.4183 4 10C4 5.58172 7.58172 2 12 2C16.4183 2 20 5.58172 20 10Z"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                  Lagos
+                <Link
+                  href="#"
+                  className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-full transition-colors"
+                >
+                  Apply
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Subscribe Section */}
+      <section className="py-12 px-4 bg-[#EEF3FF]">
+        <div className="container mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-t border-gray-200 pt-8">
+            <div className="mb-6 md:mb-0">
+              <div className="flex flex-wrap gap-4">
+                <div className="bg-white p-2 rounded-md">
+                  <Image src="/certifications/pci-dss.png" alt="PCI DSS" width={40} height={40} />
+                </div>
+                <div className="bg-white p-2 rounded-md">
+                  <Image src="/certifications/iso.png" alt="ISO" width={40} height={40} />
+                </div>
+                <div className="bg-white p-2 rounded-md">
+                  <Image src="/certifications/ndpr.png" alt="NDPR" width={40} height={40} />
+                </div>
+                <div className="bg-white p-2 rounded-md">
+                  <Image src="/certifications/cbn.png" alt="CBN" width={40} height={40} />
                 </div>
               </div>
-              <Link
-                href="#"
-                className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-full transition-colors"
-              >
-                Apply
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
+              <p className="text-sm text-gray-600 mt-4">
+                © 2023 3line. 3line is regulated by the Central Bank of Nigeria.
+              </p>
             </div>
 
-            <div className="bg-white p-6 rounded-xl shadow-sm">
-              <h3 className="text-xl font-semibold mb-2">Customer Care Agent</h3>
-              <div className="flex items-center space-x-4 mb-4">
-                <div className="flex items-center text-sm text-gray-600">
-                  <svg className="h-4 w-4 mr-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M12 8V12L15 15M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                  Full-time
-                </div>
-                <div className="flex items-center text-sm text-gray-600">
-                  <svg className="h-4 w-4 mr-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M20 10C20 14.4183 12 22 12 22C12 22 4 14.4183 4 10C4 5.58172 7.58172 2 12 2C16.4183 2 20 5.58172 20 10Z"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                  Remote
-                </div>
+            <div className="w-full md:w-auto">
+              <div className="bg-white p-6 rounded-xl shadow-sm max-w-md">
+                <h3 className="text-lg font-semibold mb-2">Subscribe to get updates that matter.</h3>
+                <p className="text-sm text-gray-600 mb-4">
+                  Stay informed on payments, business growth, and more right in your inbox!
+                </p>
+                <form onSubmit={handleSubscribe} className="flex">
+                  <input
+                    type="email"
+                    placeholder="What's your email?"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="flex-grow px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    required
+                  />
+                  <button
+                    type="submit"
+                    className="bg-blue-600 text-white px-4 py-2 rounded-r-md hover:bg-blue-700 transition-colors"
+                  >
+                    <ArrowRight className="h-5 w-5" />
+                  </button>
+                </form>
               </div>
-              <Link
-                href="#"
-                className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-full transition-colors"
-              >
-                Apply
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </div>
-
-            <div className="bg-white p-6 rounded-xl shadow-sm">
-              <h3 className="text-xl font-semibold mb-2">Customer Care Agent</h3>
-              <div className="flex items-center space-x-4 mb-4">
-                <div className="flex items-center text-sm text-gray-600">
-                  <svg className="h-4 w-4 mr-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M12 8V12L15 15M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                  Part-time
-                </div>
-                <div className="flex items-center text-sm text-gray-600">
-                  <svg className="h-4 w-4 mr-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M20 10C20 14.4183 12 22 12 22C12 22 4 14.4183 4 10C4 5.58172 7.58172 2 12 2C16.4183 2 20 5.58172 20 10Z"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                  Hybrid
-                </div>
-              </div>
-              <Link
-                href="#"
-                className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-full transition-colors"
-              >
-                Apply
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
             </div>
           </div>
         </div>
@@ -370,3 +442,5 @@ export default function OurTeamPage() {
     </main>
   )
 }
+
+export default OurTeamComponent
