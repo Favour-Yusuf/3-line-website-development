@@ -164,9 +164,12 @@ const SeamlessTransactions = () => {
           />
         ))}
       </div>
+      <br />
+      <br />
+      <br />
 
       {/* Reset button */}
-      <button
+      {/* <button
         className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors mx-auto block"
         onClick={(e) => {
           e.stopPropagation()
@@ -175,7 +178,7 @@ const SeamlessTransactions = () => {
         }}
       >
         Reset Slider
-      </button>
+      </button> */}
     </div>
   )
 }
