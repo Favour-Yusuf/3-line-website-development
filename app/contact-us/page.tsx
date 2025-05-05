@@ -385,17 +385,10 @@ export default function ContactUsPage() {
 
                 {/* */}
                 <div className="relative order-1 md:order-2">
-                  <div className="absolute top-0 right-0 w-40 h-60 rounded-tl-[50px] overflow-hidden">
+                  <div className="absolute top-0 right-0 w-[30%] h-[60%] rounded-tl-[50px] overflow-hidden">
                     <Image src="/contact-us-image2.png" alt="Market vendor" fill className="object-cover" />
                   </div>
-                  <div className="absolute bottom-0 right-1/4 w-40 h-60 rounded-tr-[50px] overflow-hidden">
-                    <Image
-                      src="/contact-us-image2.png"
-                      alt="Office worker"
-                      fill
-                      className="object-cover object-bottom"
-                    />
-                  </div>
+                 
                 </div>
               </div>
             </div>
