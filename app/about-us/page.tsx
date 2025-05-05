@@ -1,35 +1,43 @@
+"use client"
+
+import type React from "react"
+
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
+import { useState } from "react"
 
-export default function AboutUsPage() {
+const AboutUsComponent = () => {
+  const [email, setEmail] = useState("")
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault()
+    // Handle subscription logic here
+    console.log("Subscribing email:", email)
+    setEmail("")
+  }
+
   return (
     <main className="min-h-screen bg-[#EEF3FF]">
       {/* Hero Section */}
       <section className="relative overflow-hidden">
         <div className="container mx-auto px-4 py-8 md:py-12">
           <div className="relative z-10 bg-[#0A1A4A] rounded-xl overflow-hidden">
-            <div className="p-8 md:p-12 text-white">
-              <div className="inline-block bg-[#00D2FF] text-[#0A1A4A] px-3 py-1 rounded-md font-medium mb-4">
-                About us
+            <div className="p-8 md:p-12 flex flex-col md:flex-row items-center">
+              <div className="w-full md:w-3/5">
+                <div className="inline-block bg-[#00D2FF] text-[#0A1A4A] px-3 py-1 rounded-md font-medium mb-4">
+                  About us
+                </div>
+                <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
+                  Driving Financial
+                  <br />
+                  Inclusion, One Transaction
+                  <br />
+                  at a Time
+                </h1>
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
-                Driving Financial
-                <br />
-                Inclusion, One Transaction
-                <br />
-                at a Time
-              </h1>
-            </div>
-            <div className="grid grid-cols-3 gap-2 p-4">
-              <div className="relative h-32 rounded-lg overflow-hidden">
-                <Image src="/images/about-hero.png" alt="About 3Line" fill className="object-cover" />
-              </div>
-              <div className="relative h-32 rounded-lg overflow-hidden">
-                <Image src="/images/about-hero.png" alt="About 3Line" fill className="object-cover" />
-              </div>
-              <div className="relative h-32 rounded-lg overflow-hidden">
-                <Image src="/images/about-hero.png" alt="About 3Line" fill className="object-cover" />
+              <div className="w-full md:w-2/5 relative h-40 md:h-60 mt-6 md:mt-0">
+                <Image src="/about-us-hero.png" alt="Financial Inclusion" fill className="object-contain" />
               </div>
             </div>
           </div>
@@ -37,36 +45,41 @@ export default function AboutUsPage() {
       </section>
 
       {/* Main Content */}
-      <section className="py-12 px-4">
+      <section className="py-8 px-4">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Left Column */}
             <div>
-              <h2 className="text-2xl font-bold mb-4">
+              <h2 className="text-xl font-bold mb-4">
                 At 3Line, we believe everyone deserves access to financial services, regardless of location or
                 background
               </h2>
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-600 mb-6">
                 Since 2017, we've been bridging financial gaps with technology, ensuring businesses, banks, and
                 individuals can move money effortlessly and access the financial tools they need to thrive.
               </p>
-              <div className="grid grid-cols-1 gap-4 mt-8">
-                <div className="relative h-48 rounded-lg overflow-hidden">
-                  <Image src="/images/about-hero.png" alt="About 3Line" fill className="object-cover" />
-                </div>
-                <div className="relative h-48 rounded-lg overflow-hidden">
-                  <Image src="/images/about-hero.png" alt="About 3Line" fill className="object-cover" />
-                </div>
+
+              <div className="relative h-64 mb-4 rounded-lg overflow-hidden">
+                <Image src="/about-us-image1.png" alt="Team working together" fill className="object-cover" />
+              </div>
+
+              <div className="relative h-64 rounded-lg overflow-hidden">
+                <Image src="/about-us-image2.png" alt="Team meeting" fill className="object-cover" />
               </div>
             </div>
+
+            {/* Right Column */}
             <div>
-              <h2 className="text-2xl font-bold mb-4">Our story</h2>
-              <p className="text-gray-600 mb-4">
+              <h2 className="text-xl font-bold mb-4">Our story</h2>
+              <p className="text-gray-600 mb-6">
                 We started with a simple mission: to make financial services more accessible for everyone. Today, we're
                 proud to be a trusted partner for banks, fintechs, and businesses across Nigeria and beyond.
               </p>
-              <div className="relative h-80 rounded-lg overflow-hidden mt-4">
-                <Image src="/images/about-hero.png" alt="Our Team" fill className="object-cover" />
+
+              <div className="relative h-80 rounded-lg overflow-hidden">
+                <Image src="/about-us-image3.png" alt="Our Team" fill className="object-cover" />
               </div>
+
               <Link
                 href="/our-team"
                 className="text-blue-600 hover:text-blue-800 flex items-center text-sm font-medium mt-4"
@@ -85,7 +98,7 @@ export default function AboutUsPage() {
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
             <div className="grayscale hover:grayscale-0 transition-all duration-300">
               <Image
-                src="/images/interswitch.png"
+                src="/interswitch.png"
                 alt="Interswitch"
                 width={100}
                 height={40}
@@ -94,16 +107,7 @@ export default function AboutUsPage() {
             </div>
             <div className="grayscale hover:grayscale-0 transition-all duration-300">
               <Image
-                src="/images/flutterwave.png"
-                alt="Flutterwave"
-                width={100}
-                height={40}
-                className="h-8 md:h-10 w-auto"
-              />
-            </div>
-            <div className="grayscale hover:grayscale-0 transition-all duration-300">
-              <Image
-                src="/images/access.png"
+                src="/access.png"
                 alt="Access Bank"
                 width={100}
                 height={40}
@@ -111,22 +115,43 @@ export default function AboutUsPage() {
               />
             </div>
             <div className="grayscale hover:grayscale-0 transition-all duration-300">
-              <Image src="/images/tajbank.png" alt="Taj Bank" width={100} height={40} className="h-8 md:h-10 w-auto" />
-            </div>
-            <div className="grayscale hover:grayscale-0 transition-all duration-300">
-              <Image src="/images/uba.png" alt="UBA" width={100} height={40} className="h-8 md:h-10 w-auto" />
-            </div>
-            <div className="grayscale hover:grayscale-0 transition-all duration-300">
               <Image
-                src="/images/zenith.png"
-                alt="Zenith Bank"
+                src="/tajbank.png"
+                alt="Taj Bank"
                 width={100}
                 height={40}
                 className="h-8 md:h-10 w-auto"
               />
             </div>
             <div className="grayscale hover:grayscale-0 transition-all duration-300">
-              <Image src="/images/opay.png" alt="OPay" width={100} height={40} className="h-8 md:h-10 w-auto" />
+              <Image src="/uba.png" alt="UBA" width={100} height={40} className="h-8 md:h-10 w-auto" />
+            </div>
+            <div className="grayscale hover:grayscale-0 transition-all duration-300">
+              <Image
+                src="/alerzo.png"
+                alt="Alerzo"
+                width={100}
+                height={40}
+                className="h-8 md:h-10 w-auto"
+              />
+            </div>
+            <div className="grayscale hover:grayscale-0 transition-all duration-300">
+              <Image
+                src="/nibss.png"
+                alt="NIBSS"
+                width={100}
+                height={40}
+                className="h-8 md:h-10 w-auto"
+              />
+            </div>
+            <div className="grayscale hover:grayscale-0 transition-all duration-300">
+              <Image
+                src="/fidelity.png"
+                alt="Fidelity"
+                width={100}
+                height={40}
+                className="h-8 md:h-10 w-auto"
+              />
             </div>
           </div>
         </div>
@@ -163,25 +188,37 @@ export default function AboutUsPage() {
       <section className="py-12 px-4">
         <div className="container mx-auto">
           <div className="bg-[#0A1A4A] rounded-xl overflow-hidden p-6 md:p-12 relative">
-            <div className="relative z-10">
+            {/* Dark blue curved shape decorative element */}
+            <div className="absolute bottom-0 right-0 z-0">
+              <Image
+                src="/about-us-hero3.png"
+                alt="Decorative element"
+                width={300}
+                height={300}
+                className="object-contain opacity-70"
+              />
+            </div>
+
+            {/* Content */}
+            <div className="relative z-10 max-w-xl mb-8">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 We Exist to bridge the Financial Access Gap
               </h2>
-              <p className="text-gray-300 max-w-xl mb-8">
+              <p className="text-gray-300 max-w-xl">
                 Millions of businesses and individuals remain underserved by traditional financial systems. By creating
                 simplified access to financial tools and integrated payment solutions, we share this.
               </p>
             </div>
 
-            <div className="grid grid-cols-3 gap-2 mt-8">
-              <div className="relative h-32 rounded-lg overflow-hidden">
-                <Image src="/images/about-hero.png" alt="Financial Access" fill className="object-cover" />
-              </div>
-              <div className="relative h-32 rounded-lg overflow-hidden">
-                <Image src="/images/about-hero.png" alt="Financial Access" fill className="object-cover" />
-              </div>
-              <div className="relative h-32 rounded-lg overflow-hidden">
-                <Image src="/images/about-hero.png" alt="Financial Access" fill className="object-cover" />
+            {/* */}
+            <div className="relative h-60 md:h-80">
+              <div className="absolute top-0 right-0 w-full md:w-3/4 h-full">
+                <Image
+                  src="/about-us-hero2.png"
+                  alt="Financial Access"
+                  fill
+                  className="object-contain object-right"
+                />
               </div>
             </div>
           </div>
@@ -193,21 +230,8 @@ export default function AboutUsPage() {
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div className="bg-white p-6 rounded-xl shadow-sm">
-              <div className="bg-blue-100 p-3 rounded-lg inline-block mb-4">
-                <svg
-                  className="h-6 w-6 text-blue-600"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M3 9H21M7 15H8M12 15H13M7 3V5M17 3V5M6.2 21H17.8C18.9201 21 19.4802 21 19.908 20.782C20.2843 20.5903 20.5903 20.2843 20.782 19.908C21 19.4802 21 18.9201 21 17.8V8.2C21 7.07989 21 6.51984 20.782 6.09202C20.5903 5.71569 20.2843 5.40973 19.908 5.21799C19.4802 5 18.9201 5 17.8 5H6.2C5.0799 5 4.51984 5 4.09202 5.21799C3.71569 5.40973 3.40973 5.71569 3.21799 6.09202C3 6.51984 3 7.07989 3 8.2V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.0799 21 6.2 21Z"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+              <div className="bg-[#00D2FF] p-3 rounded-lg inline-flex items-center justify-center mb-4 w-10 h-10">
+                <span className="text-[#0A1A4A] font-bold">S</span>
               </div>
               <h3 className="text-lg font-semibold mb-2">SMEs</h3>
               <p className="text-gray-600 mb-4">
@@ -222,21 +246,8 @@ export default function AboutUsPage() {
             </div>
 
             <div className="bg-white p-6 rounded-xl shadow-sm">
-              <div className="bg-blue-100 p-3 rounded-lg inline-block mb-4">
-                <svg
-                  className="h-6 w-6 text-blue-600"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M3 21H21M4 18H20M5 18V9M19 18V9M9 9V5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V9M10 14H14M9 9H15"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+              <div className="bg-[#00D2FF] p-3 rounded-lg inline-flex items-center justify-center mb-4 w-10 h-10">
+                <span className="text-[#0A1A4A] font-bold">E</span>
               </div>
               <h3 className="text-lg font-semibold mb-2">Enterprises</h3>
               <p className="text-gray-600 mb-4">Optimize cash flow with enterprise-grade payment solutions.</p>
@@ -249,21 +260,8 @@ export default function AboutUsPage() {
             </div>
 
             <div className="bg-white p-6 rounded-xl shadow-sm">
-              <div className="bg-blue-100 p-3 rounded-lg inline-block mb-4">
-                <svg
-                  className="h-6 w-6 text-blue-600"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M3 21H21M4 18H20M5 18V9M19 18V9M9 9V5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V9M10 14H14M9 9H15"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+              <div className="bg-[#00D2FF] p-3 rounded-lg inline-flex items-center justify-center mb-4 w-10 h-10">
+                <span className="text-[#0A1A4A] font-bold">F</span>
               </div>
               <h3 className="text-lg font-semibold mb-2">Financial Institutions</h3>
               <p className="text-gray-600 mb-4">Extend banking services to the unbanked and underserved communities.</p>
@@ -276,21 +274,8 @@ export default function AboutUsPage() {
             </div>
 
             <div className="bg-white p-6 rounded-xl shadow-sm">
-              <div className="bg-blue-100 p-3 rounded-lg inline-block mb-4">
-                <svg
-                  className="h-6 w-6 text-blue-600"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M3 21H21M4 18H20M5 18V9M19 18V9M9 9V5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V9M10 14H14M9 9H15"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+              <div className="bg-[#00D2FF] p-3 rounded-lg inline-flex items-center justify-center mb-4 w-10 h-10">
+                <span className="text-[#0A1A4A] font-bold">C</span>
               </div>
               <h3 className="text-lg font-semibold mb-2">Communities & Governments</h3>
               <p className="text-gray-600 mb-4">Unlock financial access in areas where they are needed most.</p>
@@ -330,11 +315,24 @@ export default function AboutUsPage() {
       <section className="py-12 px-4">
         <div className="container mx-auto">
           <div className="bg-blue-500 rounded-xl overflow-hidden p-6 md:p-12 relative">
-            <div className="relative z-10 max-w-lg">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Join Us in Shaping Africa's Financial Future
-              </h2>
-              <p className="text-blue-100 mb-6">Learn more about our mission, vision, and the team behind 3Line.</p>
+            {/* Light blue curved shape decorative element */}
+            <div className="absolute top-0 right-0 z-0">
+              <Image
+                src="/about-us.png"
+                alt="Decorative element"
+                width={300}
+                height={300}
+                className="object-contain opacity-70"
+              />
+            </div>
+
+            <div className="relative z-10 flex flex-col md:flex-row items-center justify-between">
+              <div className="max-w-lg mb-6 md:mb-0">
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                  Join Us in Shaping Africa's Financial Future
+                </h2>
+                <p className="text-blue-100 mb-6">Learn more about our mission, vision, and the team behind 3Line.</p>
+              </div>
               <Link
                 href="/our-team"
                 className="inline-flex items-center justify-center bg-white hover:bg-gray-100 text-blue-600 font-medium py-3 px-6 rounded-full transition-colors"
@@ -346,6 +344,11 @@ export default function AboutUsPage() {
           </div>
         </div>
       </section>
+
+      {/* Subscribe Section */}
+   
     </main>
   )
 }
+
+export default AboutUsComponent

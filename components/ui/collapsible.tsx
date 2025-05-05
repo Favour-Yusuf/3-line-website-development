@@ -1,17 +1,10 @@
 "use client"
+import * as CollapsiblePrimitive from "@radix-ui/react-collapsible"
 
-import { useState } from "react"
+const Collapsible = CollapsiblePrimitive.Root
 
-export const Collapsible = ({ children }: any) => {
-  return <div>{children}</div>
-}
+const CollapsibleTrigger = CollapsiblePrimitive.CollapsibleTrigger
 
-export const CollapsibleTrigger = ({ children, onClick }: any) => (
-  <button onClick={onClick} className="w-full text-left py-2 font-semibold text-gray-700">
-    {children}
-  </button>
-)
+const CollapsibleContent = CollapsiblePrimitive.CollapsibleContent
 
-export const CollapsibleContent = ({ children, isOpen }: any) => (
-  <div className={`${isOpen ? "block" : "hidden"} pl-4 py-1`}>{children}</div>
-)
+export { Collapsible, CollapsibleTrigger, CollapsibleContent }
