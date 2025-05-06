@@ -311,19 +311,19 @@ const Header = () => {
                       Resources <ChevronDown className="h-4 w-4 transition-transform ui-open:rotate-180" />
                     </CollapsibleTrigger>
                     <CollapsibleContent className="pl-4 pt-2 pb-4 space-y-3">
-                      <Link href="#" className="block py-2" onClick={() => setIsMenuOpen(false)}>
+                      <Link href="/blog" className="block py-2" onClick={() => setIsMenuOpen(false)}>
                         Blog
                       </Link>
-                      <Link href="#" className="block py-2" onClick={() => setIsMenuOpen(false)}>
+                      <Link href="/press" className="block py-2" onClick={() => setIsMenuOpen(false)}>
                         Press
                       </Link>
-                      <Link href="#" className="block py-2" onClick={() => setIsMenuOpen(false)}>
+                      <Link href="/case-study" className="block py-2" onClick={() => setIsMenuOpen(false)}>
                         Case Studies
                       </Link>
                       <Link href="#" className="block py-2" onClick={() => setIsMenuOpen(false)}>
                         APIs
                       </Link>
-                      <Link href="#" className="block py-2" onClick={() => setIsMenuOpen(false)}>
+                      <Link href="/faq" className="block py-2" onClick={() => setIsMenuOpen(false)}>
                         FAQs
                       </Link>
                     </CollapsibleContent>
