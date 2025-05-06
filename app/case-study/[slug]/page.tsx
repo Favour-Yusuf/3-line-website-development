@@ -11,7 +11,8 @@ export async function generateStaticParams() {
 
 
 
-export default async function CaseStudyPage({ params }: { params: { slug: any } }) {
+export default async function CaseStudyPage({ params }: { params: { slug: string } })
+ {
   const data = await client.fetch(
     `*[_type == "caseStudy" && slug.current == $slug][0]{
       ...,
