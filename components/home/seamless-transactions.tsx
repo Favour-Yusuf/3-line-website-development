@@ -100,7 +100,7 @@ const SeamlessTransactions = () => {
         y: "-100%",
       }
     } else {
-      // Current and upcoming cards
+    
       return {
         zIndex: slides.length - (index - activeIndex),
         opacity: 1,
