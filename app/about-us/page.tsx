@@ -10,12 +10,7 @@ import { useState } from "react"
 const AboutUsComponent = () => {
   const [email, setEmail] = useState("")
 
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle subscription logic here
-    console.log("Subscribing email:", email)
-    setEmail("")
-  }
+
 
   return (
     <main className="min-h-screen bg-[#EEF3FF]">
