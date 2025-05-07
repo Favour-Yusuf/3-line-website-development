@@ -1,25 +1,29 @@
 import { client } from '@/sanity/lib/client'
 import { urlFor } from '@/sanity/lib/image'
 import Image from 'next/image'
- import { notFound } from 'next/navigation'
+import { notFound } from 'next/navigation'
 
+interface Props {
+  params: Promise<{ slug: string }>
+  searchParams: Promise<Record<string, string>> // Add searchParams typing
+}
 
- export async function generateStaticParams() {
+export async function generateStaticParams() {
   const slugs = await client.fetch<{ slug: { current: string } }[]>(
     `*[_type == "caseStudy"]{ slug }`
   )
-
-  return slugs.map((s) => ({
-    slug: s.slug.current,
-  }))
+  return slugs.map((s) => ({ slug: s.slug.current }))
 }
 
+const CaseStudyPage = async (props: Props) => {
+  // Await both params and searchParams
+  const params = await props.params
+  const searchParams = await props.searchParams
 
-export default async function CaseStudyPage({
-  params,
-}: {
-  params: { slug: string }
-}) {
+  // Destructure the slug from params
+  const { slug } = params
+
+  // Fetch data using the slug
   const data = await client.fetch<{
     title: string
     description: string
@@ -42,10 +46,10 @@ export default async function CaseStudyPage({
       ...,
       relatedPost->{title, slug}
     }`,
-    { slug: params.slug }
+    { slug }
   )
 
-  if (!data) return notFound() 
+  if (!data) return notFound()
 
   return (
     <div className="bg-[#e8edfd] text-[#111]">
@@ -118,3 +122,5 @@ export default async function CaseStudyPage({
     </div>
   )
 }
+
+export default CaseStudyPage
