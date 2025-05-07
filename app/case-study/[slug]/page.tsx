@@ -2,7 +2,7 @@ import { client } from '@/sanity/lib/client'
 import { urlFor } from '@/sanity/lib/image'
 import Image from 'next/image'
 
-// Update: Next.js expects a plain object with `params` (and optionally `searchParams`)
+
 type Props = {
   params: {
     slug: string
