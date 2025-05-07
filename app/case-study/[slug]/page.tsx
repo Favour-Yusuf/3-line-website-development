@@ -3,15 +3,18 @@ import { urlFor } from '@/sanity/lib/image'
 import Image from 'next/image'
 
 
-export async function generateStaticParams() {
+
+export async function generateStaticParams(): Promise<Array<{ slug: string }>> {
   const slugs = await client.fetch(`*[_type == "caseStudy"]{ slug }`)
-  return slugs.map((s: any) => ({ slug: s.slug.current }))
+  return slugs.map((s: { slug: { current: string } }) => ({ 
+    slug: s.slug.current 
+  }))
 }
 
 export default async function CaseStudyPage({
   params,
 }: {
-  params: { slug: string };
+  params: { slug: string }
 }) {
   const data = await client.fetch(
     `*[_type == "caseStudy" && slug.current == $slug][0]{
