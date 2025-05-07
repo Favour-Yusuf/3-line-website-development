@@ -1,89 +1,71 @@
-import { client } from '@/sanity/lib/client'
-import { urlFor } from '@/sanity/lib/image'
-import Image from 'next/image'
-import { notFound } from 'next/navigation'
+import { client } from "@/sanity/lib/client";
+import { urlFor } from "@/sanity/lib/image";
+import Image from "next/image";
 
-interface Props {
-  params: Promise<{ slug: string }>
-  searchParams: Promise<Record<string, string>> // Add searchParams typing
-}
+type Props = {
+  params: {
+    slug: string;
+  };
+};
 
 export async function generateStaticParams() {
-  const slugs = await client.fetch<{ slug: { current: string } }[]>(
-    `*[_type == "caseStudy"]{ slug }`
-  )
-  return slugs.map((s) => ({ slug: s.slug.current }))
+  const slugs = await client.fetch(`*[_type == "caseStudy"]{ slug }`);
+  return slugs.map((s: any) => ({ slug: s.slug.current }));
 }
 
-const CaseStudyPage = async (props: Props) => {
-  // Await both params and searchParams
-  const params = await props.params
-  const searchParams = await props.searchParams
-
-  // Destructure the slug from params
-  const { slug } = params
-
-  // Fetch data using the slug
-  const data = await client.fetch<{
-    title: string
-    description: string
-    coverImage: any
-    client: string
-    industry: string
-    location: string
-    category: string
-    who: string
-    objectives: string[]
-    problem: string
-    approach: string
-    solution: string
-    relatedPost?: {
-      title: string
-      slug: { current: string }
-    }
-  }>(
+export default async function CaseStudyPage({ params }: Props) {
+  const caseStudy = await client.fetch(
     `*[_type == "caseStudy" && slug.current == $slug][0]{
       ...,
-      relatedPost->{title, slug}
+      relatedPost->{
+        title,
+        slug
+      }
     }`,
-    { slug }
-  )
+    { slug: params.slug }
+  );
+  
 
-  if (!data) return notFound()
+  if (!caseStudy) {
+    return <div>Not found</div>;
+  }
 
   return (
     <div className="bg-[#e8edfd] text-[#111]">
       <div className="max-w-5xl mx-auto px-4 py-10 space-y-10">
         <div>
-          <h1 className="text-2xl font-bold">{data.title}</h1>
-          <p className="mt-2 text-sm text-gray-600">{data.description}</p>
-          <div className="relative w-full h-64 mt-6">
-            <Image
-              src={urlFor(data.coverImage).url()}
-              alt="Cover"
-              layout="fill"
-              className="object-cover rounded-xl"
-            />
-          </div>
+          <h1 className="text-2xl font-bold">{caseStudy.title}</h1>
+          <p className="mt-2 text-sm text-gray-600">{caseStudy.description}</p>
+          {caseStudy.coverImage && (
+  <div className="relative w-full h-64 mt-6">
+    <Image
+      src={urlFor(caseStudy.coverImage).url()}
+      alt="Cover"
+      layout="fill"
+      className="object-cover rounded-xl"
+    />
+  </div>
+)}
+
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-          <div><strong>Client:</strong> {data.client}</div>
-          <div><strong>Industry:</strong> {data.industry}</div>
-          <div><strong>Location:</strong> {data.location}</div>
-          <div><strong>Category:</strong> {data.category}</div>
+          <div><strong>Client:</strong> {caseStudy.client}</div>
+          <div><strong>Industry:</strong> {caseStudy.industry}</div>
+          <div><strong>Location:</strong> {caseStudy.location}</div>
+          <div><strong>Category:</strong> {caseStudy.category}</div>
         </div>
 
         <section className="space-y-6">
           <div>
             <h2 className="font-semibold">Who is this?</h2>
-            <p className="text-sm">{data.who}</p>
+            <p className="text-sm">{caseStudy.who}</p>
           </div>
 
           <div>
             <h2 className="font-semibold">Objectives</h2>
             <ul className="list-disc ml-5 text-sm">
-              {data.objectives?.map((obj: string, i: number) => (
+              {caseStudy.objectives?.map((obj: string, i: number) => (
                 <li key={i}>{obj}</li>
               ))}
             </ul>
@@ -91,36 +73,32 @@ const CaseStudyPage = async (props: Props) => {
 
           <div>
             <h2 className="font-semibold">Problem</h2>
-            <p className="text-sm">{data.problem}</p>
+            <p className="text-sm">{caseStudy.problem}</p>
           </div>
 
           <div>
             <h2 className="font-semibold">Approach</h2>
-            <p className="text-sm">{data.approach}</p>
+            <p className="text-sm">{caseStudy.approach}</p>
           </div>
 
           <div>
             <h2 className="font-semibold">Solution</h2>
-            <p className="text-sm">{data.solution}</p>
+            <p className="text-sm">{caseStudy.solution}</p>
           </div>
         </section>
 
-        {data.relatedPost && (
-  <div className="pt-10 border-t">
-    <h2 className="font-bold text-lg mb-2">Read the next case study</h2>
-    <a
-      href={`/case-study/${data.relatedPost.slug.current}`}
-      className="text-blue-600 hover:underline text-sm"
-    >
-      {data.relatedPost.title}
-    </a>
-  </div>
-)}
-
-
+        {caseStudy.relatedPost && (
+          <div className="pt-10 border-t">
+            <h2 className="font-bold text-lg mb-2">Read the next case study</h2>
+            <a
+              href={`/case-study/${caseStudy.relatedPost.slug.current}`}
+              className="text-blue-600 hover:underline text-sm"
+            >
+              {caseStudy.relatedPost.title}
+            </a>
+          </div>
+        )}
       </div>
     </div>
-  )
+  );
 }
-
-export default CaseStudyPage
