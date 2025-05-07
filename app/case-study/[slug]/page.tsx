@@ -13,7 +13,11 @@ export async function generateStaticParams() {
   return slugs.map((s: any) => ({ slug: s.slug.current }));
 }
 
-export default async function CaseStudyPage({ params }: Props) {
+export default async function CaseStudyPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const caseStudy = await client.fetch(
     `*[_type == "caseStudy" && slug.current == $slug][0]{
       ...,
