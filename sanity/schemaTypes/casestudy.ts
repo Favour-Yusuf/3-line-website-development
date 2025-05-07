@@ -56,4 +56,3 @@ const caseStudy = {
   }
   
   export default caseStudy;
-  
