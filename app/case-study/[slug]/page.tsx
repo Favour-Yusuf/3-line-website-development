@@ -2,17 +2,22 @@ import { client } from '@/sanity/lib/client'
 import { urlFor } from '@/sanity/lib/image'
 import Image from 'next/image'
 
+
+type Props = {
+  params: {
+    slug: string
+  }
+}
+
+// ✅ This is fine
 export async function generateStaticParams() {
   const slugs = await client.fetch(`*[_type == "caseStudy"]{ slug }`)
   return slugs.map((s: any) => ({ slug: s.slug.current }))
-  
 
 }
 
-
-
-export default async function CaseStudyPage({ params }: { params: { slug: string } })
- {
+// ✅ Use the correct async function signature
+export default async function CaseStudyPage({ params }: Props) {
   const data = await client.fetch(
     `*[_type == "caseStudy" && slug.current == $slug][0]{
       ...,
@@ -20,9 +25,6 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
     }`,
     { slug: params.slug }
   )
-
-  
-
 
   if (!data) return <div>Not found</div>
 
