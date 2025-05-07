@@ -1,7 +1,6 @@
 import { client } from '@/sanity/lib/client'
 import { urlFor } from '@/sanity/lib/image'
 import Image from 'next/image'
-import { PortableText } from '@portabletext/react'
 
 // Update: Next.js expects a plain object with `params` (and optionally `searchParams`)
 type Props = {
@@ -14,6 +13,7 @@ type Props = {
 export async function generateStaticParams() {
   const slugs = await client.fetch(`*[_type == "caseStudy"]{ slug }`)
   return slugs.map((s: any) => ({ slug: s.slug.current }))
+
 }
 
 // ✅ Use the correct async function signature

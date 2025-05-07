@@ -3,6 +3,10 @@
 import { useState, useRef, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
+import { useHasMounted } from "@/hooks/useHasMounted";
+
+
+
 
 // Define the slide data
 const slides = [
@@ -96,7 +100,7 @@ const SeamlessTransactions = () => {
         y: "-100%",
       }
     } else {
-      // Current and upcoming cards
+    
       return {
         zIndex: slides.length - (index - activeIndex),
         opacity: 1,
@@ -105,6 +109,9 @@ const SeamlessTransactions = () => {
       }
     }
   }
+  const hasMounted = useHasMounted();
+
+if (!hasMounted) return null;
 
   return (
     <div className="relative w-full max-w-5xl mx-auto px-4 py-8">
@@ -168,17 +175,7 @@ const SeamlessTransactions = () => {
       <br />
       <br />
 
-      {/* Reset button */}
-      {/* <button
-        className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors mx-auto block"
-        onClick={(e) => {
-          e.stopPropagation()
-          setDirection(-1)
-          setActiveIndex(0)
-        }}
-      >
-        Reset Slider
-      </button> */}
+     
     </div>
   )
 }
