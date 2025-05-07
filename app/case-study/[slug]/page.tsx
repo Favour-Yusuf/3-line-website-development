@@ -2,33 +2,16 @@ import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
 
-type Props = {
-  params: {
-    slug: string;
-  };
-};
-
-export async function generateStaticParams() {
-  const slugs = await client.fetch(`*[_type == "caseStudy"]{ slug }`);
-  return slugs.map((s: any) => ({ slug: s.slug.current }));
-}
-
+// ✅ This is the correct type signature
 export default async function CaseStudyPage({
   params,
 }: {
   params: { slug: string };
 }) {
   const caseStudy = await client.fetch(
-    `*[_type == "caseStudy" && slug.current == $slug][0]{
-      ...,
-      relatedPost->{
-        title,
-        slug
-      }
-    }`,
+    `*[_type == "caseStudy" && slug.current == $slug][0]`,
     { slug: params.slug }
   );
-  
 
   if (!caseStudy) {
     return <div>Not found</div>;
@@ -40,17 +23,14 @@ export default async function CaseStudyPage({
         <div>
           <h1 className="text-2xl font-bold">{caseStudy.title}</h1>
           <p className="mt-2 text-sm text-gray-600">{caseStudy.description}</p>
-          {caseStudy.coverImage && (
-  <div className="relative w-full h-64 mt-6">
-    <Image
-      src={urlFor(caseStudy.coverImage).url()}
-      alt="Cover"
-      layout="fill"
-      className="object-cover rounded-xl"
-    />
-  </div>
-)}
-
+          <div className="relative w-full h-64 mt-6">
+            <Image
+              src={urlFor(caseStudy.coverImage).url()}
+              alt="Cover"
+              fill
+              className="object-cover rounded-xl"
+            />
+          </div>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
@@ -105,4 +85,10 @@ export default async function CaseStudyPage({
       </div>
     </div>
   );
+}
+
+// ✅ Static params must return `{ slug }` object
+export async function generateStaticParams() {
+  const slugs = await client.fetch(`*[_type == "caseStudy"]{ "slug": slug.current }`);
+  return slugs.map((s: { slug: string }) => ({ slug: s.slug }));
 }
