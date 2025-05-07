@@ -2,15 +2,16 @@ import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
 
-// ✅ This is the correct type signature
-export default async function CaseStudyPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
+type Params = {
+  slug: string;
+};
+
+export default async function CaseStudyPage(props: { params: Promise<Params> }) {
+  const { slug } = await props.params;
+
   const caseStudy = await client.fetch(
     `*[_type == "caseStudy" && slug.current == $slug][0]`,
-    { slug: params.slug }
+    { slug }
   );
 
   if (!caseStudy) {
@@ -27,7 +28,7 @@ export default async function CaseStudyPage({
             <Image
               src={urlFor(caseStudy.coverImage).url()}
               alt="Cover"
-              fill
+              layout="fill"
               className="object-cover rounded-xl"
             />
           </div>
@@ -85,10 +86,4 @@ export default async function CaseStudyPage({
       </div>
     </div>
   );
-}
-
-// ✅ Static params must return `{ slug }` object
-export async function generateStaticParams() {
-  const slugs = await client.fetch(`*[_type == "caseStudy"]{ "slug": slug.current }`);
-  return slugs.map((s: { slug: string }) => ({ slug: s.slug }));
 }
