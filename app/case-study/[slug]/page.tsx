@@ -1,22 +1,43 @@
 import { client } from '@/sanity/lib/client'
 import { urlFor } from '@/sanity/lib/image'
 import Image from 'next/image'
+ import { notFound } from 'next/navigation'
 
 
+ export async function generateStaticParams() {
+  const slugs = await client.fetch<{ slug: { current: string } }[]>(
+    `*[_type == "caseStudy"]{ slug }`
+  )
 
-export async function generateStaticParams(): Promise<Array<{ slug: string }>> {
-  const slugs = await client.fetch(`*[_type == "caseStudy"]{ slug }`)
-  return slugs.map((s: { slug: { current: string } }) => ({ 
-    slug: s.slug.current 
+  return slugs.map((s) => ({
+    slug: s.slug.current,
   }))
 }
+
 
 export default async function CaseStudyPage({
   params,
 }: {
   params: { slug: string }
 }) {
-  const data = await client.fetch(
+  const data = await client.fetch<{
+    title: string
+    description: string
+    coverImage: any
+    client: string
+    industry: string
+    location: string
+    category: string
+    who: string
+    objectives: string[]
+    problem: string
+    approach: string
+    solution: string
+    relatedPost?: {
+      title: string
+      slug: { current: string }
+    }
+  }>(
     `*[_type == "caseStudy" && slug.current == $slug][0]{
       ...,
       relatedPost->{title, slug}
@@ -24,7 +45,7 @@ export default async function CaseStudyPage({
     { slug: params.slug }
   )
 
-  if (!data) return <div>Not found</div>
+  if (!data) return notFound() 
 
   return (
     <div className="bg-[#e8edfd] text-[#111]">
