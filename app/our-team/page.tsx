@@ -4,11 +4,14 @@ import type React from "react"
 
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, Linkedin, Clock, MapPin } from "lucide-react"
-import { useState } from "react"
+import { ArrowRight, Linkedin, Clock, MapPin, ChevronLeft, ChevronRight } from "lucide-react"
+import { useState, useEffect, useRef } from "react"
 
 const OurTeamComponent = () => {
   const [email, setEmail] = useState("")
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const touchStartX = useRef(0)
+  const touchEndX = useRef(0)
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault()
@@ -21,31 +24,28 @@ const OurTeamComponent = () => {
     {
       name: "Femi Omogbenigun",
       role: "Managing Director/CEO",
-      image: "/team-exce.png",
-      imagePosition: "0% 0%",
+      image: "/exec1.png",
     },
     {
       name: "Chibuzor Sibigem",
       role: "Executive Director, Business",
-      image: "/team-exce.png",
-      imagePosition: "33.33% 0%",
+      image: "/exec2.png",
     },
     {
       name: "Donald Owonikin",
       role: "Head of Finance",
-      image: "/team-exce.png",
-      imagePosition: "66.66% 0%",
+      image: "/exec3.png",
     },
     {
       name: "Kolawole Omirin",
       role: "Chief Technology Officer",
-      image: "/team-exce.png",
-      imagePosition: "100% 0%",
+      image: "/exec4.png",
     },
   ]
 
-  // Team leads data - first row
-  const teamLeadsRow1 = [
+  // Combine all team leads into a single array for the slider
+  const allTeamLeads = [
+    // First row
     {
       name: "Stephanie Okpaka",
       role: "Administrative Lead",
@@ -76,10 +76,7 @@ const OurTeamComponent = () => {
       image: "/team-leads.png",
       imagePosition: "100% 0%",
     },
-  ]
-
-  // Team leads data - second row
-  const teamLeadsRow2 = [
+    // Second row
     {
       name: "Titilope Bankole-Oki",
       role: "Service Delivery Manager",
@@ -110,14 +107,58 @@ const OurTeamComponent = () => {
       image: "/team-leads.png",
       imagePosition: "100% 50%",
     },
+    // Additional lead
+    {
+      name: "John Dahunsi",
+      role: "Sales & Partnership Manager",
+      image: "/team-leads.png",
+      imagePosition: "0% 100%",
+    },
   ]
 
-  // Additional team lead
-  const additionalLead = {
-    name: "John Dahunsi",
-    role: "Sales & Partnership Manager",
-    image: "/team-leads.png",
-    imagePosition: "0% 100%",
+  // For desktop view, split into rows
+  const teamLeadsRow1 = allTeamLeads.slice(0, 5)
+  const teamLeadsRow2 = allTeamLeads.slice(5, 10)
+  const additionalLead = allTeamLeads[10]
+
+  // Auto-rotate slides
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev === allTeamLeads.length - 1 ? 0 : prev + 1))
+    }, 5000)
+    return () => clearInterval(interval)
+  }, [allTeamLeads.length])
+
+  // Handle slide navigation
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev === allTeamLeads.length - 1 ? 0 : prev + 1))
+  }
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev === 0 ? allTeamLeads.length - 1 : prev - 1))
+  }
+
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index)
+  }
+
+  // Touch handlers for swipe functionality
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX
+  }
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX
+  }
+
+  const handleTouchEnd = () => {
+    if (touchStartX.current - touchEndX.current > 50) {
+      // Swipe left, go to next slide
+      nextSlide()
+    } else if (touchEndX.current - touchStartX.current > 50) {
+      // Swipe right, go to previous slide
+      prevSlide()
+    }
   }
 
   // Job openings
@@ -255,20 +296,46 @@ const OurTeamComponent = () => {
       <section className="py-12 px-4">
         <div className="container mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold mb-8">Meet our executive team</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+
+          {/* Mobile layout (stacked cards) */}
+          <div className="flex flex-col space-y-4 md:hidden">
             {executiveTeam.map((member, index) => (
-              <div key={index} className="bg-transparent rounded-xl overflow-hidden">
-                <div className="relative h-64 rounded-xl overflow-hidden">
-                  <div
-                    className="absolute inset-0 bg-cover bg-no-repeat"
-                    style={{
-                      backgroundImage: `url(${member.image})`,
-                      backgroundPosition: member.imagePosition,
-                      backgroundSize: "400%",
-                    }}
-                  ></div>
+              <div key={index} className="flex bg-white rounded-xl overflow-hidden shadow-sm">
+                <div className="w-2/5 relative">
+                  <Image
+                    src={member.image || "/placeholder.svg"}
+                    alt={member.name}
+                    fill
+                    className="object-cover object-center"
+                  />
                 </div>
-              
+                <div className="w-3/5 p-4 flex flex-col justify-center">
+                  <h3 className="text-lg font-semibold">{member.name}</h3>
+                  <p className="text-sm text-gray-600">{member.role}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Desktop layout (grid) */}
+          <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            {executiveTeam.map((member, index) => (
+              <div key={index} className="bg-white rounded-xl overflow-hidden shadow-sm">
+                <div className="relative h-64 rounded-t-xl overflow-hidden">
+                  <Image
+                    src={member.image || "/placeholder.svg"}
+                    alt={member.name}
+                    fill
+                    className="object-cover object-center"
+                  />
+                </div>
+                <div className="p-4">
+                  <h3 className="text-lg font-semibold">{member.name}</h3>
+                  <p className="text-sm text-gray-600">{member.role}</p>
+                  <Link href="https://linkedin.com" className="text-blue-600 hover:text-blue-800 mt-2 inline-block">
+                    <Linkedin className="h-5 w-5" />
+                  </Link>
+                </div>
               </div>
             ))}
           </div>
@@ -280,11 +347,74 @@ const OurTeamComponent = () => {
         <div className="container mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold mb-8">Our leads</h2>
 
-          {/* First row */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 mb-4">
+          {/* Mobile Slider */}
+          <div
+            className="relative md:hidden"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
+            <div className="overflow-hidden rounded-xl">
+              <div className="relative h-[350px] bg-white shadow-sm">
+                {/* Current slide */}
+                <div className="h-full flex flex-col">
+                  <div className="relative h-48 overflow-hidden">
+                    <div
+                      className="absolute inset-0 bg-cover bg-no-repeat"
+                      style={{
+                        backgroundImage: `url(${allTeamLeads[currentSlide].image})`,
+                        backgroundPosition: allTeamLeads[currentSlide].imagePosition,
+                        backgroundSize: "500% 300%",
+                      }}
+                    ></div>
+                  </div>
+                  <div className="p-4 flex-grow flex flex-col justify-center items-center text-center">
+                    <h3 className="text-lg font-semibold">{allTeamLeads[currentSlide].name}</h3>
+                    <p className="text-sm text-gray-600 mt-1">{allTeamLeads[currentSlide].role}</p>
+                    <Link href="https://linkedin.com" className="text-blue-600 hover:text-blue-800 mt-4 inline-block">
+                      <Linkedin className="h-5 w-5" />
+                    </Link>
+                  </div>
+                </div>
+
+                {/* Navigation buttons */}
+                <button
+                  className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/80 rounded-full p-2 shadow-md z-10"
+                  onClick={prevSlide}
+                  aria-label="Previous slide"
+                >
+                  <ChevronLeft className="h-5 w-5 text-gray-700" />
+                </button>
+                <button
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/80 rounded-full p-2 shadow-md z-10"
+                  onClick={nextSlide}
+                  aria-label="Next slide"
+                >
+                  <ChevronRight className="h-5 w-5 text-gray-700" />
+                </button>
+              </div>
+            </div>
+
+            {/* Slide indicators */}
+            <div className="flex justify-center mt-4 space-x-2">
+              {allTeamLeads.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                  className={`h-2 rounded-full transition-all ${
+                    currentSlide === index ? "w-6 bg-blue-600" : "w-2 bg-gray-300"
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Desktop layout - First row */}
+          <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 mb-4">
             {teamLeadsRow1.map((member, index) => (
-              <div key={index} className="bg-transparent rounded-xl overflow-hidden">
-                <div className="relative h-48 rounded-xl overflow-hidden">
+              <div key={index} className="bg-white rounded-xl overflow-hidden shadow-sm">
+                <div className="relative h-48 rounded-t-xl overflow-hidden">
                   <div
                     className="absolute inset-0 bg-cover bg-no-repeat"
                     style={{
@@ -294,16 +424,22 @@ const OurTeamComponent = () => {
                     }}
                   ></div>
                 </div>
-               
+                <div className="p-3">
+                  <h3 className="text-sm font-semibold">{member.name}</h3>
+                  <p className="text-xs text-gray-600">{member.role}</p>
+                  <Link href="https://linkedin.com" className="text-blue-600 hover:text-blue-800 mt-1 inline-block">
+                    <Linkedin className="h-4 w-4" />
+                  </Link>
+                </div>
               </div>
             ))}
           </div>
 
-          {/* Second row */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 mb-4">
+          {/* Desktop layout - Second row */}
+          <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 mb-4">
             {teamLeadsRow2.map((member, index) => (
-              <div key={index} className="bg-transparent rounded-xl overflow-hidden">
-                <div className="relative h-48 rounded-xl overflow-hidden">
+              <div key={index} className="bg-white rounded-xl overflow-hidden shadow-sm">
+                <div className="relative h-48 rounded-t-xl overflow-hidden">
                   <div
                     className="absolute inset-0 bg-cover bg-no-repeat"
                     style={{
@@ -313,15 +449,21 @@ const OurTeamComponent = () => {
                     }}
                   ></div>
                 </div>
-            
+                <div className="p-3">
+                  <h3 className="text-sm font-semibold">{member.name}</h3>
+                  <p className="text-xs text-gray-600">{member.role}</p>
+                  <Link href="https://linkedin.com" className="text-blue-600 hover:text-blue-800 mt-1 inline-block">
+                    <Linkedin className="h-4 w-4" />
+                  </Link>
+                </div>
               </div>
             ))}
           </div>
 
-          {/* Additional lead */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4">
-            <div className="bg-transparent rounded-xl overflow-hidden">
-              <div className="relative h-48 rounded-xl overflow-hidden">
+          {/* Desktop layout - Additional lead */}
+          <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4">
+            <div className="bg-white rounded-xl overflow-hidden shadow-sm">
+              <div className="relative h-48 rounded-t-xl overflow-hidden">
                 <div
                   className="absolute inset-0 bg-cover bg-no-repeat"
                   style={{
@@ -331,7 +473,13 @@ const OurTeamComponent = () => {
                   }}
                 ></div>
               </div>
-           
+              <div className="p-3">
+                <h3 className="text-sm font-semibold">{additionalLead.name}</h3>
+                <p className="text-xs text-gray-600">{additionalLead.role}</p>
+                <Link href="https://linkedin.com" className="text-blue-600 hover:text-blue-800 mt-1 inline-block">
+                  <Linkedin className="h-4 w-4" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -388,57 +536,6 @@ const OurTeamComponent = () => {
         </div>
       </section>
 
-      {/* Subscribe Section */}
-      <section className="py-12 px-4 bg-[#EEF3FF]">
-        <div className="container mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-t border-gray-200 pt-8">
-            <div className="mb-6 md:mb-0">
-              <div className="flex flex-wrap gap-4">
-                <div className="bg-white p-2 rounded-md">
-                  <Image src="/certifications/pci-dss.png" alt="PCI DSS" width={40} height={40} />
-                </div>
-                <div className="bg-white p-2 rounded-md">
-                  <Image src="/certifications/iso.png" alt="ISO" width={40} height={40} />
-                </div>
-                <div className="bg-white p-2 rounded-md">
-                  <Image src="/certifications/ndpr.png" alt="NDPR" width={40} height={40} />
-                </div>
-                <div className="bg-white p-2 rounded-md">
-                  <Image src="/certifications/cbn.png" alt="CBN" width={40} height={40} />
-                </div>
-              </div>
-              <p className="text-sm text-gray-600 mt-4">
-                © 2023 3line. 3line is regulated by the Central Bank of Nigeria.
-              </p>
-            </div>
-
-            <div className="w-full md:w-auto">
-              <div className="bg-white p-6 rounded-xl shadow-sm max-w-md">
-                <h3 className="text-lg font-semibold mb-2">Subscribe to get updates that matter.</h3>
-                <p className="text-sm text-gray-600 mb-4">
-                  Stay informed on payments, business growth, and more right in your inbox!
-                </p>
-                <form onSubmit={handleSubscribe} className="flex">
-                  <input
-                    type="email"
-                    placeholder="What's your email?"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="flex-grow px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    required
-                  />
-                  <button
-                    type="submit"
-                    className="bg-blue-600 text-white px-4 py-2 rounded-r-md hover:bg-blue-700 transition-colors"
-                  >
-                    <ArrowRight className="h-5 w-5" />
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </main>
   )
 }
