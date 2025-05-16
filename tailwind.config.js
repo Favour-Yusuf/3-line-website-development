@@ -10,6 +10,15 @@ const config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        inter: ['var(--font-inter)', 'sans-serif'],
+        grotesk: ['var(--font-space-grotesk)', 'sans-serif'],
+      },
+      fontSize: {
+        headline: '36pt',      // ~48px
+        subheadline: '28pt',   // ~37.3px
+        body: '16pt',          // ~21.3px
+      },
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
