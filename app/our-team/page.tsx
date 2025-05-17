@@ -181,7 +181,7 @@ const OurTeamComponent = () => {
   ]
 
   return (
-    <main className="min-h-screen bg-[#EEF3FF]">
+    <main className="min-h-screen bg-[#EEF3FF] md:px-[25px]">
       {/* Hero Section */}
       <section className="relative overflow-hidden">
         <div className="container mx-auto px-4 py-8 md:py-12">
