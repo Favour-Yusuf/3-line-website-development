@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react"
 
 const HeroSection = () => {
   return (
-    <section className="relative w-full overflow-hidden">
+    <section className="relative w-full overflow-hidden ">
       <div className="w-full h-[600px] md:h-[650px] lg:h-[700px] bg-[#0A1A4A] relative">
         {/* Background geometric shapes */}
         <div className="absolute inset-0 w-full h-full overflow-hidden">
@@ -19,7 +19,7 @@ const HeroSection = () => {
 
         <div className="container mx-auto h-full relative z-10 px-4 md:px-8 flex flex-col md:flex-row items-center">
           {/* Left content */}
-          <div className="w-full md:w-1/2 pt-16 md:pt-0">
+          <div className="w-full md:w-1/2 pt-16 md:pt-0 md:ml-[35px]">
             <div className="inline-block bg-[#00D2FF] text-[#0A1A4A] px-3 py-1 rounded-md font-medium mb-4 rotate-[-2deg]">
               Your
             </div>
