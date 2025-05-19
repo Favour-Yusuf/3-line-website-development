@@ -51,11 +51,6 @@ a {
   --background-end-rgb: 238, 243, 255;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
-}
-
 .animation-delay-300 {
   animation-delay: 300ms;
 }

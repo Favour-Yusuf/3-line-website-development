@@ -9,6 +9,7 @@ const config = {
     "*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+
     extend: {
       // fontFamily: {
        
@@ -106,7 +107,8 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
+
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate")],
 }
 export default config
