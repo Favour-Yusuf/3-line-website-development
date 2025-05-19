@@ -78,7 +78,7 @@ export default function Home() {
       {/* Case Studies Preview with background */}
       <section className="relative">
         <div className="absolute inset-0 z-0 pointer-events-none">
-          <Image src="/footer-image.png" alt="" fill className="object-cover opacity-40" />
+          <Image src="/body_bg.png" alt="" fill className="object-cover opacity-40" />
         </div>
         <div className="relative z-10">
           <CaseStudiesPreview />
