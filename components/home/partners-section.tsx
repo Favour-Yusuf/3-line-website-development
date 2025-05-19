@@ -109,7 +109,7 @@ const PartnersSection = () => {
       onMouseEnter={pauseAutoplay}
       onMouseLeave={resumeAutoplay}
     >
-      <h2 className="text-2xl font-bold text-center mb-8">Our Trusted Partners</h2>
+      <h2 className=" font-bold text-center mb-8 font-grotesk text-headline">Our Trusted Partners</h2>
 
       {/* Navigation Arrows - only shown when sliding is needed */}
       {shouldSlide && (
