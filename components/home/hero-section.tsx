@@ -4,8 +4,8 @@ import { ArrowRight } from "lucide-react"
 
 const HeroSection = () => {
   return (
-    <section className="relative w-full overflow-hidden ">
-      <div className="w-full h-[600px] md:h-[650px] lg:h-[700px] bg-[#0A1A4A] relative">
+    <section className="relative w-full overflow-hidden flex justify-center items-center bg-[#EEF3FF] md:mt-[80px] ">
+      <div className="w-[96%] h-[500px] md:h-[650px] lg:h-[600px] bg-[#0A1A4A] relative rounded-[10px]">
         {/* Background geometric shapes */}
         <div className="absolute inset-0 w-full h-full overflow-hidden">
           <Image
@@ -17,9 +17,9 @@ const HeroSection = () => {
           />
         </div>
 
-        <div className="container mx-auto h-full relative z-10 px-4 md:px-8 flex flex-col md:flex-row items-center">
+        <div className="w-[100%] mx-auto h-full relative z-10 pl-4 md:flex flex-col md:flex-row items-between  ">
           {/* Left content */}
-          <div className="w-full md:w-1/2 pt-16 md:pt-0 md:ml-[35px]">
+          <div className="w-full md:w-1/2 md:pt-[60px] md:pl-[40px] md:ml-[45px]">
             <div className="inline-block bg-[#00D2FF] text-[#0A1A4A] px-3 py-1 rounded-md font-medium mb-4 rotate-[-2deg]">
               Your
             </div>
@@ -46,7 +46,7 @@ const HeroSection = () => {
           </div>
 
           {/* Right content - Image collage */}
-          <div className="w-full md:w-1/2 h-full relative mt-8 md:mt-0">
+          <div className="w-full md:w-[60%] h-full relative mt-8 md:mt-0">
             <div className="relative h-full w-full">
               <Image
                 src="/hero3.png"

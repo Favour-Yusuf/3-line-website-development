@@ -354,6 +354,7 @@
 // }
 
 // export default Header
+
 "use client"
 
 import { useState, useRef, useEffect } from "react"
@@ -368,8 +369,26 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/component
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
+  const [hasScrolled, setHasScrolled] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
   const pathname = usePathname()
+
+  // Track scrolling
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY
+      if (scrollPosition > 10) {
+        setHasScrolled(true)
+      } else {
+        setHasScrolled(false)
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -408,8 +427,12 @@ const Header = () => {
   }
 
   return (
-    <div className="w-full bg-white flex justify-center items-center relative px-4">
-      <header className="w-full max-w-7xl bg-[#B8CFFF] sticky top-0 z-50 py-3 md:py-4 px-4 md:px-8 flex rounded-[10px]">
+    <div
+      className={`w-full flex justify-center items-center fixed top-0 left-0 right-0 px-4 z-50 transition-all duration-300 ${
+        hasScrolled ? "bg-transparent mt-2" : "bg-[#EEF3FF] mt-0"
+      }`}
+    >
+      <header className="w-[90%] bg-[#B8CFFF] py-3 md:py-4 px-4 md:px-8 flex rounded-[10px]">
         <div className="container mx-auto flex items-center justify-between">
           <Link href="/" className="flex items-center">
             <Image src="/logo.png" alt="3Line logo" width={80} height={40} />
@@ -430,7 +453,7 @@ const Header = () => {
 
               {/* Products Dropdown */}
               {activeDropdown === "products" && (
-                <div className="absolute left-0 mt-2 w-screen max-w-[1000px] bg-[#EEF3FF] rounded-xl shadow-lg overflow-hidden z-50">
+                <div className="absolute left-0 mt-2 w-screen max-w-[800px] bg-[#EEF3FF] rounded-xl shadow-lg overflow-hidden z-50">
                   <div className="flex flex-col md:flex-row">
                     {/* Left Column */}
                     <div className="w-full md:w-1/2 md:border-r border-gray-200">
@@ -726,4 +749,3 @@ const Header = () => {
 }
 
 export default Header
-
