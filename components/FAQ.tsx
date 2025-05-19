@@ -8,7 +8,7 @@ const faqData = [
     items: [
       { question: "What is 3Line, and what do you do?", answer: "We’re a B2B fintech company that provides payment infrastructure, agency banking, and merchant banking solutions to financial institutions. Our goal is to make payments faster, safer, and more accessible for everyone." },
       { question: "Who are your primary clients?", answer: "Our primary clients are banks, fintechs, and financial institutions. Through them, we empower businesses and individuals with seamless payment solutions." },
-      { question: "How does 3Line ensure the security of transactions?", answer: "We take security seriously. Our solutions are PCI DSS compliant, regulated by the Central Bank of Nigeria (CBN), and feature end-to-end encryption and advanced fraud prevention tools." },
+      { question: "How does 3Line ensure the security of transactions?", answer: "We take all security seriously. Our solutions are PCI DSS compliant, regulated by the Central Bank of Nigeria (CBN), and feature end-to-end encryption and advanced fraud prevention tools." },
     ],
   },
   {
