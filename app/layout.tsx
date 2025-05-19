@@ -5,17 +5,11 @@ import "./globals.css"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 
-// Load Inter (only regular 400)
-const inter = Inter({
-  subsets: ['latin'],
-  weight: ['400'],
-  variable: '--font-inter',
-});
+
 
 // Load Space Grotesk (400 for subheadline, 700 or 800 for headline)
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
-  weight: ['400', '700'],
   variable: '--font-space-grotesk',
 });
 
@@ -35,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={spaceGrotesk.className}>
         <Header />
         {children}
         <Footer />
