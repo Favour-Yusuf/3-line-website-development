@@ -114,7 +114,7 @@ const SeamlessTransactions = () => {
 if (!hasMounted) return null;
 
   return (
-    <div className="relative w-full max-w-[85%] mx-auto px-4 py-8">
+    <div className="relative w-full max-w-[85%] mx-auto px-4 py-8 md:mb-[60px]">
       <div
         ref={containerRef}
         className="relative cursor-pointer"
@@ -171,9 +171,7 @@ if (!hasMounted) return null;
           />
         ))}
       </div>
-      <br />
-      <br />
-      <br />
+     
 
      
     </div>

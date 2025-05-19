@@ -4,7 +4,8 @@ import { ArrowRight } from "lucide-react"
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#A6C4FA] overflow-hidden px-[25px]">
+    <div className="bg-[#EEF3FF] w-full flex justify-center items-center">
+ <footer className="relative bg-[#A6C4FA] overflow-hidden px-[25px] w-[97%] rounded-[10px]">
       {/* Background pattern */}
       <div className="absolute inset-0 z-0 opacity-50">
         <Image src="/footer-bg.png" alt="" fill className="object-cover" priority />
@@ -17,7 +18,7 @@ export default function Footer() {
             {/* Logo */}
             <div className="w-1/4 pr-8">
               <Link href="/" className="inline-block">
-                <h1 className="text-[#000066] text-2xl font-bold">3line</h1>
+                            <Image src="/logo.png" alt="3Line logo" width={80} height={40} />
               </Link>
             </div>
 
@@ -302,5 +303,7 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+    </div>
+   
   )
 }
