@@ -13,7 +13,7 @@ const CaseStudiesPreview = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex justify-between items-center mb-8">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0A1A4A]">Case studies</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0A1A4A] font-grotesk text-headline">Case studies</h2>
           <Link href="#" className="flex items-center text-blue-500 hover:text-blue-700 transition-colors font-medium">
             <span className="mr-2">See more</span>
             <span className="bg-blue-500 rounded-full p-1">

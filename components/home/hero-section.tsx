@@ -20,17 +20,17 @@ const HeroSection = () => {
         <div className="container mx-auto h-full relative z-10 px-4 md:px-8 flex flex-col md:flex-row items-center">
           {/* Left content */}
           <div className="w-full md:w-1/2 pt-16 md:pt-0">
-            <div className="inline-block bg-[#00D2FF] text-[#0A1A4A] px-3 py-1 rounded-md font-medium mb-4 rotate-[-2deg]">
+            <div className="inline-block  text-headline bg-[#00D2FF] text-[#0A1A4A] px-3 py-1 rounded-md font-medium mb-4 rotate-[-2deg]">
               Your
             </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-5xl  text-headline md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
               Preferred
               <br />
               Payment
               <br />
               Partner
             </h1>
-            <p className="text-gray-300 mb-8 max-w-lg text-lg">
+            <p className="text-gray-300  text-body mb-8 max-w-lg text-lg">
               We are redefining how financial institutions and businesses move money, by making payments faster, safer,
               and more accessible for everyone.
             </p>
@@ -38,7 +38,7 @@ const HeroSection = () => {
               href="#"
               className="inline-flex items-center justify-center bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-full transition-colors group"
             >
-              <span>Get started</span>
+              <span className=" text-body">Get started</span>
               <span className="ml-2 bg-white rounded-full p-2 group-hover:bg-blue-400 transition-colors">
                 <ArrowRight className="h-5 w-5 text-blue-500 group-hover:text-white transition-colors" />
               </span>
