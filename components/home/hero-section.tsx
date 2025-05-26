@@ -26,11 +26,11 @@ const HeroSection = () => {
 
               Your
             </div>
-            <h1 className="text-5xl text-headline md:text-6xl lg:text-[100px] font-bold text-white mb-6 leading-none">
+            <div className="text-5xl text-headline md:text-6xl lg:text-[100px] font-bold text-white mb-6 leading-none">
   Preferred<br />
   Payment<br />
   Partner
-</h1>
+</div>
 
             <p className="text-gray-300  text-body mb-[15px] max-w-lg text-lg p-0">
               We are redefining how financial institutions and businesses move money, by making payments faster, safer,
