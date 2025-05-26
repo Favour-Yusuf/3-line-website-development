@@ -17,34 +17,41 @@ const HeroSection = () => {
           />
         </div>
 
-        <div className="w-[100%] mx-auto h-full relative z-10 pl-4 md:flex flex-col md:flex-row items-between  ">
+        <div className="relative w-[100%] mx-auto h-full relative z-10 pl-4 md:flex flex-col md:flex-row items-between  ">
           {/* Left content */}
 
-          <div className="w-full md:w-1/2 md:pt-[60px] md:pl-[40px] md:ml-[45px]">
+          <div className="w-full md:w-1/2 md:pt-[60px] md:pl-[40px] md:ml-[45px] ">
 
-            <div className="inline-block bg-[#00D2FF] text-[#0A1A4A] px-3 py-1 rounded-md font-medium mb-4 rotate-[-2deg]">
+            <div className="inline-block bg-[#00D2FF] text-[#0A1A4A] px-3 py-1 rounded-md font-medium text-[30px] rotate-[-15deg] absolute bottom-[90%]">
 
               Your
             </div>
-            <h1 className="text-5xl  text-headline md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-              Preferred
-              <br />
-              Payment
-              <br />
-              Partner
-            </h1>
-            <p className="text-gray-300  text-body mb-8 max-w-lg text-lg">
+            <h1 className="text-5xl text-headline md:text-6xl lg:text-[100px] font-bold text-white mb-6 leading-none">
+  Preferred<br />
+  Payment<br />
+  Partner
+</h1>
+
+            <p className="text-gray-300  text-body mb-[15px] max-w-lg text-lg p-0">
               We are redefining how financial institutions and businesses move money, by making payments faster, safer,
               and more accessible for everyone.
             </p>
             <Link
               href="#"
-              className="inline-flex items-center justify-center bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-full transition-colors group"
+              className="inline-flex items-center justify-center bg-transparent hover:bg-blue-600 text-white font-medium rounded-full transition-colors group"
             >
               <span className=" text-body">Get started</span>
-              <span className="ml-2 bg-white rounded-full p-2 group-hover:bg-blue-400 transition-colors">
-                <ArrowRight className="h-5 w-5 text-blue-500 group-hover:text-white transition-colors" />
-              </span>
+              <Image
+  src="/arrow_hero.png"
+  alt="Arrow Hero"
+  width={50}   // example width
+  height={30}  // example height
+  className="mt-[15px]"
+/>
+            
+              {/* <span className="ml-2 bg-white rounded-full p-2 group-hover:bg-blue-400 transition-colors">
+ 
+              </span> */}
             </Link>
           </div>
 
@@ -52,7 +59,7 @@ const HeroSection = () => {
           <div className="w-full md:w-[60%] h-full relative mt-8 md:mt-0">
             <div className="relative h-full w-full">
               <Image
-                src="/hero3.png"
+                src="/hero_right.png"
                 alt="Payment solutions collage"
                 fill
                 className="object-contain object-right"

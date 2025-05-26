@@ -10,7 +10,7 @@ import SecuritySection from "@/components/home/security-section"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white overflow-hidden">
+    <main className="min-h-screen bg-[#EEF3FF] overflow-hidden">
       {/* Main background pattern */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <Image src="/body_bg.png" alt="" fill className="object-cover opacity-30" priority />
