@@ -43,7 +43,7 @@ const HeroSection = () => {
             </p>
             <Link
               href="#"
-              className="inline-flex items-center justify-center bg-transparent hover:bg-blue-600 text-white font-medium rounded-full transition-colors group"
+              className="inline-flex items-center justify-center bg-transparent text-white font-medium rounded-full transition-colors group"
             >
               <span className=" text-body">Get started</span>
               <Image

@@ -62,7 +62,7 @@ const PartnersSection = () => {
     if (autoplay && shouldSlide) {
       autoplayRef.current = setInterval(() => {
         nextSlide()
-      }, 5000) // Increased to 5 seconds for a more subtle transition
+      }, 1000) // Increased to 5 seconds for a more subtle transition
     }
 
     return () => {
@@ -94,10 +94,10 @@ const PartnersSection = () => {
     })
   }
 
-  const goToSlide = (index: number) => {
-    if (!shouldSlide) return
-    setCurrentIndex(index)
-  }
+  // const goToSlide = (index: number) => {
+  //   if (!shouldSlide) return
+  //   setCurrentIndex(index)
+  // }
 
   // Create a circular array of partners for infinite scrolling effect
   const getVisiblePartners = () => {
@@ -143,7 +143,7 @@ const PartnersSection = () => {
       <div className="overflow-hidden mx-6">
         <div
           ref={sliderRef}
-          className="flex items-center justify-center gap-4 md:gap-12 transition-transform duration-500 ease-in-out "
+          className="flex items-center justify-center gap-4 md:gap-10 transition-transform duration-500 ease-in-out "
           style={{ transform: `translateX(0)` }}
         >
           {getVisiblePartners().map((partner, index) => (
