@@ -17,7 +17,7 @@ const HeroSection = () => {
           />
         </div>
 
-        <div className="relative w-[100%] mx-auto h-full relative z-10 pl-4 md:flex flex-col md:flex-row items-between  ">
+        <div className="relative w-[100%] mx-auto h-full z-10 pl-4 md:flex flex-col md:flex-row items-between  ">
           {/* Left content */}
 
           <div className="w-full md:w-1/2 md:pt-[60px] md:pl-[40px] md:ml-[45px] ">
@@ -26,7 +26,12 @@ const HeroSection = () => {
 
               Your
             </div>
-            <div className="text-5xl text-headline md:text-6xl lg:text-[100px] font-bold text-white mb-6 leading-none">
+            <div   style={{
+      lineHeight: '0.75',
+      letterSpacing: '-0.04em',
+      textShadow:
+        '0px 10px 20px rgba(0,0,0,0.5), 0px 5px 10px rgba(0,0,0,0.3)',
+    }} className="text-5xl text-headline md:text-6xl lg:text-[150px] font-bold text-white mb-6 leading-none">
   Preferred<br />
   Payment<br />
   Partner
