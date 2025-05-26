@@ -85,7 +85,7 @@ const Header = () => {
 
   return (
     <div
-      className={`w-full flex justify-center items-center fixed top-0 left-0 right-0 px-4 z-50 transition-all duration-300 ${
+      className={`w-full flex justify-center items-center fixed top-0 left-0 right-0 px-4 z-50 transition-all duration-300 py-[10px] ${
         hasScrolled ? "bg-transparent mt-2" : "bg-[#EEF3FF] mt-0"
       }`}
     >
@@ -274,10 +274,11 @@ const Header = () => {
 
             <Link href="/contact-us" className="ml-2 lg:ml-4">
               <div className="flex items-center">
-                <span className="text-sm lg:text-base font-medium mr-2">Get started</span>
-                <div className="flex items-center justify-center w-8 h-8 lg:w-10 lg:h-10 rounded-full bg-[#3366FF]">
-                  <ArrowRight className="h-4 w-4 lg:h-5 lg:w-5 text-white" />
-                </div>
+                <span className="text-sm lg:text-base font-medium mr-2 text-[#000066]">Get started</span>
+            
+           
+                <Image src="/arrow_header.png" alt="arrow header" width={40} height={40} />
+             
               </div>
             </Link>
           </div>

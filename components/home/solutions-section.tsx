@@ -5,7 +5,8 @@ import Image from "next/image"
 
 const OurSolutions = () => {
   return (
-    <section className="py-16 px-[40px] relative overflow-hidden bg-[#EEF3FF]">
+   <div className="w-full flex justify-center items-center" >
+     <section className="py-16 w-[90%] relative overflow-hidden bg-[#EEF3FF]">
       <div className="container mx-auto relative z-10">
         <div className="max-w-2xl mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4">Our solutions</h2>
@@ -94,6 +95,7 @@ const OurSolutions = () => {
       <div className="absolute top-0 right-0 w-[40%] h-[40%] bg-blue-100 rounded-full opacity-50 blur-3xl -translate-y-1/2 translate-x-1/4"></div>
       <div className="absolute bottom-0 right-0 w-[30%] h-[30%] bg-blue-100 rounded-full opacity-50 blur-3xl translate-y-1/4 translate-x-1/4"></div>
     </section>
+   </div>
   )
 }
 

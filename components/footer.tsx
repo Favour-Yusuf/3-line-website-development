@@ -26,7 +26,7 @@ export default function Footer() {
             <div className="w-2/4 flex">
               <div className="w-1/3">
                 <h3 className="font-bold text-sm mb-2">Products</h3>
-                <ul className="space-y-1 text-xs">
+                <ul className="space-y-1 text-[14px]">
                   <li>
                     <Link href="#" className="hover:underline">
                       SMEs
@@ -46,7 +46,7 @@ export default function Footer() {
               </div>
               <div className="w-1/3">
                 <h3 className="font-bold text-sm mb-2">Company</h3>
-                <ul className="space-y-1 text-xs">
+                <ul className="space-y-1 text-[14px]">
                   <li>
                     <Link href="#" className="hover:underline">
                       Testimonials
@@ -76,7 +76,7 @@ export default function Footer() {
               </div>
               <div className="w-1/3">
                 <h3 className="font-bold text-sm mb-2">Resources</h3>
-                <ul className="space-y-1 text-xs">
+                <ul className="space-y-1 text-[14px]">
                   <li>
                     <Link href="#" className="hover:underline">
                       Blog
@@ -121,9 +121,9 @@ export default function Footer() {
               <div className="flex justify-end">
                 <button className="flex items-center text-[#000066] text-xs font-bold">
                   Subscribe
-                  <span className="ml-1 bg-[#000066] text-white rounded-full p-1">
-                    <ArrowRight className="h-3 w-3" />
-                  </span>
+                
+                  <Image src="/arrow_footer.png" alt="arrow footer " className="mt-[10px]" width={50} height={50} />
+              
                 </button>
               </div>
             </div>
@@ -183,9 +183,8 @@ export default function Footer() {
             <div className="flex justify-end">
               <button className="flex items-center text-[#000066] text-xs font-bold">
                 Subscribe
-                <span className="ml-1 bg-[#000066] text-white rounded-full p-1">
-                  <ArrowRight className="h-3 w-3" />
-                </span>
+                <Image src="/arrow_footer.png" alt="arrow footer " className="mt-[10px]" width={50} height={50} />
+              
               </button>
             </div>
           </div>
