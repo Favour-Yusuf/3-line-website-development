@@ -14,60 +14,54 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/component
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
+  const [hasScrolled, setHasScrolled] = useState(false);
 
   const productsRef = useRef<HTMLDivElement>(null)
   const companyRef = useRef<HTMLDivElement>(null)
   const resourcesRef = useRef<HTMLDivElement>(null)
   const pathname = usePathname()
 
+
+  useEffect(() => {
+    const onScroll = () => {
+      setHasScrolled(window.scrollY > 10); // Adjust scroll distance as needed
+    };
+  
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  
  // Close dropdown when clicking outside
  useEffect(() => {
   const handleClickOutside = (event: MouseEvent) => {
-    let currentRef: HTMLDivElement | null = null
-    
-    switch(activeDropdown) {
-      case 'products': currentRef = productsRef.current; break
-      case 'company': currentRef = companyRef.current; break
-      case 'resources': currentRef = resourcesRef.current; break
+    let currentRef: HTMLDivElement | null = null;
 
-  const [hasScrolled, setHasScrolled] = useState(false)
-  const dropdownRef = useRef<HTMLDivElement>(null)
-  const pathname = usePathname()
-
-  // Track scrolling
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY
-      if (scrollPosition > 10) {
-        setHasScrolled(true)
-      } else {
-        setHasScrolled(false)
-      }
-    }
-
-    window.addEventListener("scroll", handleScroll)
-    return () => {
-      window.removeEventListener("scroll", handleScroll)
-    }
-  }, [])
-
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setActiveDropdown(null)
-      }
-
+    switch (activeDropdown) {
+      case "products":
+        currentRef = productsRef.current;
+        break;
+      case "company":
+        currentRef = companyRef.current;
+        break;
+      case "resources":
+        currentRef = resourcesRef.current;
+        break;
+      default:
+        currentRef = null;
     }
 
     if (currentRef && !currentRef.contains(event.target as Node)) {
-      setActiveDropdown(null)
+      setActiveDropdown(null);
     }
-  }
+  };
 
-  document.addEventListener("mousedown", handleClickOutside)
-  return () => document.removeEventListener("mousedown", handleClickOutside)
-}, [activeDropdown])
+  document.addEventListener("mousedown", handleClickOutside);
+  return () => {
+    document.removeEventListener("mousedown", handleClickOutside);
+  };
+}, [activeDropdown]);
+
+
 
  
   // Close dropdown when scrolling
