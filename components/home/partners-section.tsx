@@ -11,9 +11,17 @@ const PartnersSection = () => {
     { name: "TAJ Bank", logo: "/taj.png", width: 120, height: 40 },
     { name: "UBA", logo: "/uba.png", width: 120, height: 40 },
     { name: "Zenith", logo: "/zenith.png", width: 80, height: 40 },
-    { name: "Alerzo", logo: "/alerzo.png", width: 100, height: 40 },
+    { name: "Alerzo", logo: "/alerzo_main.png", width: 100, height: 40 },
     { name: "NIBSS", logo: "/nibss.png", width: 120, height: 40 },
     { name: "Fidelity", logo: "/fidelity.png", width: 120, height: 40 },
+    { name: "providus_bank", logo: "/providus_bank.png", width: 120, height: 40 },
+    { name: "parralex_logo", logo: "/parralex_logo.png", width: 120, height: 40 },
+    { name: "sterling_bank", logo: "/sterling_bank.png", width: 120, height: 40 },
+    { name: "optimusbank", logo: "/optimusbank.png", width: 120, height: 40 },
+    { name: "nownow", logo: "/nownow.JPG", width: 120, height: 40 },
+    { name: "palmpay", logo: "/palmpay.png", width: 120, height: 40 },
+    // { name: "palmpay", logo: "/fidelity_bank.JPG", width: 120, height: 40 },
+   
   ]
 
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -26,18 +34,18 @@ const PartnersSection = () => {
   // Determine how many partners to show based on screen width
   useEffect(() => {
     const handleResize = () => {
-      let newVisibleCount = 9
+      let newVisibleCount = 10
 
       if (window.innerWidth < 640) {
         newVisibleCount = 3
       } else if (window.innerWidth < 768) {
         newVisibleCount = 4
       } else if (window.innerWidth < 1024) {
-        newVisibleCount = 6
-      } else if (window.innerWidth < 1280) {
-        newVisibleCount = 8
-      } else {
         newVisibleCount = 9
+      } else if (window.innerWidth < 1280) {
+        newVisibleCount = 10
+      } else {
+        newVisibleCount = 10
       }
 
       setVisiblePartners(newVisibleCount)
@@ -105,7 +113,7 @@ const PartnersSection = () => {
 
   return (
     <div
-      className="relative w-full py-8 px-4 bg-white rounded-xl shadow-sm"
+      className="relative w-full py-8 bg-white  rounded-xl shadow-sm"
       onMouseEnter={pauseAutoplay}
       onMouseLeave={resumeAutoplay}
     >
@@ -135,7 +143,7 @@ const PartnersSection = () => {
       <div className="overflow-hidden mx-6">
         <div
           ref={sliderRef}
-          className="flex items-center justify-center gap-4 md:gap-6 transition-transform duration-500 ease-in-out"
+          className="flex items-center justify-center gap-4 md:gap-12 transition-transform duration-500 ease-in-out "
           style={{ transform: `translateX(0)` }}
         >
           {getVisiblePartners().map((partner, index) => (
@@ -153,7 +161,7 @@ const PartnersSection = () => {
       </div>
 
       {/* Indicator Dots - only shown when sliding is needed */}
-      {shouldSlide && (
+      {/* {shouldSlide && (
         <div className="flex justify-center mt-4 gap-1">
           {partners.map((_, index) => (
             <button
@@ -166,7 +174,7 @@ const PartnersSection = () => {
             />
           ))}
         </div>
-      )}
+      )} */}
     </div>
   )
 }

@@ -1,11 +1,11 @@
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight } from "lucide-react"
+
 
 const HeroSection = () => {
   return (
     <section className="relative w-full overflow-hidden flex justify-center items-center bg-[#EEF3FF] md:mt-[80px] ">
-      <div className="w-[96%] h-[500px] md:h-[650px] lg:h-[600px] bg-[#0A1A4A] relative rounded-[10px]">
+      <div className="w-[96%] h-[500px] md:h-[650px] lg:h-[700px] bg-[#0A1A4A] relative rounded-[10px] pt-[40px]">
         {/* Background geometric shapes */}
         <div className="absolute inset-0 w-full h-full overflow-hidden">
           <Image
