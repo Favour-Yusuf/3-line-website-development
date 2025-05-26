@@ -70,7 +70,8 @@ import Image from "next/image"
 
 const TransactionsMap = () => {
   return (
-    <section className="py-16 px-4 relative overflow-hidden">
+   <div className="w-full flex justify-center items-center py-[30px]">
+     <section className=" relative overflow-hidden w-[95%] ">
       <div className="container mx-auto">
         <div className="bg-[#0A1A4A] rounded-xl overflow-hidden p-6 md:p-12 relative">
           {/* Content */}
@@ -149,6 +150,7 @@ const TransactionsMap = () => {
         </div>
       </div>
     </section>
+   </div>
   )
 }
 
