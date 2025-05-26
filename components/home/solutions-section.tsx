@@ -1,6 +1,7 @@
 "use client"
 
 import { ArrowUpRight } from "lucide-react"
+import Image from "next/image"
 
 const OurSolutions = () => {
   return (
@@ -19,36 +20,13 @@ const OurSolutions = () => {
           <div className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
             <div className="mb-6">
               <div className="w-16 h-16 relative">
-                <div className="absolute inset-0 bg-[#0A1A4A] rounded-lg rotate-3"></div>
-                <div className="absolute inset-0 bg-[#0A1A4A] rounded-lg -rotate-3"></div>
-                <div className="absolute inset-0 bg-[#0A1A4A] rounded-lg flex items-center justify-center">
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M17 18C17 16.3431 14.7614 15 12 15C9.23858 15 7 16.3431 7 18"
-                      stroke="#4CC9F0"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                    />
-                    <path
-                      d="M12 12C14.2091 12 16 10.2091 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8C8 10.2091 9.79086 12 12 12Z"
-                      stroke="#4CC9F0"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                    />
-                    <path
-                      d="M19 8C19 7.44772 18.5523 7 18 7C17.4477 7 17 7.44772 17 8C17 8.55228 17.4477 9 18 9C18.5523 9 19 8.55228 19 8Z"
-                      fill="#4CC9F0"
-                    />
-                    <path
-                      d="M7 8C7 7.44772 6.55228 7 6 7C5.44772 7 5 7.44772 5 8C5 8.55228 5.44772 9 6 9C6.55228 9 7 8.55228 7 8Z"
-                      fill="#4CC9F0"
-                    />
-                    <path
-                      d="M14 14C14 13.4477 13.5523 13 13 13C12.4477 13 12 13.4477 12 14C12 14.5523 12.4477 15 13 15C13.5523 15 14 14.5523 14 14Z"
-                      fill="#4CC9F0"
-                    />
-                  </svg>
-                </div>
+              <Image
+                  src="/sme_icon.png"
+                  alt="Arrow Hero"
+                  width={50}   // example width
+                  height={30}  // example height
+                  className="mt-[15px]"
+                />
               </div>
             </div>
             <h3 className="text-2xl font-bold mb-3">SMEs</h3>
@@ -65,22 +43,14 @@ const OurSolutions = () => {
           {/* Enterprise Card */}
           <div className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
             <div className="mb-6">
-              <div className="w-16 h-16 relative">
-                <div className="absolute inset-0 bg-[#0A1A4A] rounded-lg rotate-3"></div>
-                <div className="absolute inset-0 bg-[#0A1A4A] rounded-lg -rotate-3"></div>
-                <div className="absolute inset-0 bg-[#0A1A4A] rounded-lg flex items-center justify-center">
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 21H21" stroke="#4CC9F0" strokeWidth="2" strokeLinecap="round" />
-                    <path
-                      d="M5 21V5C5 3.89543 5.89543 3 7 3H17C18.1046 3 19 3.89543 19 5V21"
-                      stroke="#4CC9F0"
-                      strokeWidth="2"
-                    />
-                    <path d="M9 8H15" stroke="#4CC9F0" strokeWidth="2" strokeLinecap="round" />
-                    <path d="M9 12H15" stroke="#4CC9F0" strokeWidth="2" strokeLinecap="round" />
-                    <path d="M9 16H13" stroke="#4CC9F0" strokeWidth="2" strokeLinecap="round" />
-                  </svg>
-                </div>
+            <div className="w-16 h-16 relative">
+              <Image
+                  src="/bank_icon.png"
+                  alt="Arrow Hero"
+                  width={50}   // example width
+                  height={30}  // example height
+                  className="mt-[15px]"
+                />
               </div>
             </div>
             <h3 className="text-2xl font-bold mb-3">Enterprise</h3>
@@ -97,20 +67,14 @@ const OurSolutions = () => {
           {/* Individual Card */}
           <div className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
             <div className="mb-6">
-              <div className="w-16 h-16 relative">
-                <div className="absolute inset-0 bg-[#0A1A4A] rounded-lg rotate-3"></div>
-                <div className="absolute inset-0 bg-[#0A1A4A] rounded-lg -rotate-3"></div>
-                <div className="absolute inset-0 bg-[#0A1A4A] rounded-lg flex items-center justify-center">
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="12" cy="8" r="5" stroke="#4CC9F0" strokeWidth="2" />
-                    <path
-                      d="M20 21C20 16.5817 16.4183 13 12 13C7.58172 13 4 16.5817 4 21"
-                      stroke="#4CC9F0"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                </div>
+            <div className="w-16 h-16 relative">
+              <Image
+                  src="/profile_icon.png"
+                  alt="Arrow Hero"
+                  width={50}   // example width
+                  height={30}  // example height
+                  className="mt-[15px]"
+                />
               </div>
             </div>
             <h3 className="text-2xl font-bold mb-3">Individual</h3>
