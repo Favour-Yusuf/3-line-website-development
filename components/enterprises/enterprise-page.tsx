@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input"
 
 export default function EnterprisePage() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col md:pt-[50px]">
 
       <main className="flex-1">
         {/* Hero Section */}
@@ -24,13 +24,17 @@ export default function EnterprisePage() {
             <div className="bg-[#10142C] rounded-xl overflow-hidden mx-3 md:mx-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6  pl-8 md:pl-12">
                 <div className="text-white pt-8">
-                  <div className="inline-block bg-[#00D2FF] text-[#10142C] px-3 py-1 rounded-md font-medium mb-4">
+                  <div  className="inline-block bg-[#00D2FF] text-[#10142C]  px-3 py-1 rounded-md font-medium text-[30px] ">
                   Enterprise
                   </div>
-                  <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
+                  <div  style={{
+    
+    textShadow:
+      '0px 10px 20px rgba(0,0,0,0.5), 0px 5px 10px rgba(0,0,0,0.3)',
+  }} className="text-5xl text-headline md:text-6xl lg:text-[50px] font-bold text-white mb-6 leading-none mt-[10px]">
                   Scalable infrastructure <br />
                   for large organizations
-                  </h1>
+                  </div>
                   <p className="text-gray-300 mb-4 max-w-lg">
                   For banks, large fintechs, and enterprises, scale and reliability are everything. Our enterprise solutions provide
                   </p>
@@ -39,16 +43,16 @@ export default function EnterprisePage() {
                   </p>
                 </div>
                 <div className="relative">
-                  <div className="absolute top-0 right-0 w-[400px] h-[700px]">
+                  <div className="absolute top-0 right-0 w-[400px] h-[750px] ">
                     <Image src="/sme-hero-image2.png" alt="Hero decoration" fill className="object-cover" />
                   </div>
                 </div>
               </div>
               <div className="relative px-8 pb-8 md:px-12 md:pb-12">
                 <div className="grid grid-cols-3 gap-4">
-                  <div className="relative h-40 md:h-[310px] rounded-lg overflow-hidden transform rotate-[-8deg] w-[900px] ml-[150px]">
+                  <div className="relative h-40 md:h-[310px] rounded-lg overflow-hidden transform rotate-[-8deg] w-[900px] ml-[150px] ">
                     <Image
-                      src="/enterprise-hero.png"
+                      src="/enterprise_main_hero.png"
                       alt="SME Solutions"
                       fill
                       className="object-cover"
@@ -68,7 +72,7 @@ export default function EnterprisePage() {
           </div>
           <div className="container mx-auto relative z-10">
             <h2 className="text-2xl md:text-3xl font-bold mb-8 text-[#10142C] mx-3 md:mx-4">
-              SMEs Solutions developed with you in mind...
+            Powering the Future of <br /> Digital Banking
             </h2>
 
             {/* Gravity Lite */}
@@ -132,23 +136,7 @@ export default function EnterprisePage() {
                   <h3 className="font-semibold mb-4 text-[#10142C]">Who it's for</h3>
                   <div className="space-y-6">
                     <div className=" bg-[#FFFFFF80] p-[20px] rounded-[15px]">
-                      <div className="bg-blue-100 p-2 rounded-full mr-3">
-                      <svg
-                        className="h-5 w-5 text-blue-600"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M3 21H21M4 18H20M5 18V9M19 18V9M9 9V5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V9M10 14H14M9 9H15"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                        {/* bg-[#10142C] */}
-                      </div>
+                    <Image src="/bank.png" alt="user" width={40} height={40} />
                       <br />
                       <div>
                         <p className="text-sm text-gray-600">
@@ -157,22 +145,8 @@ export default function EnterprisePage() {
                       </div>
                     </div>
                     <div className="bg-[#FFFFFF80] p-[20px] rounded-[15px]">
-                      <div className="bg-blue-100 p-2 rounded-full mr-3">
-                      <svg
-                        className="h-5 w-5 text-blue-600"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M3 21H21M4 18H20M5 18V9M19 18V9M9 9V5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V9M10 14H14M9 9H15"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                      </div>
+                    <Image src="/buliding.png" alt="user" width={40} height={40} />
+                    <br />
                       <div>
                         <p className="text-sm text-gray-600">
                         Financial institutions looking to manage large-scale agent networks.

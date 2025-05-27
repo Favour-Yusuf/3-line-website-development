@@ -5,14 +5,12 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, ChevronDown, Menu } from "lucide-react"
 
-import { useMobile } from "@/hooks/useMobile"
+
 
 export default function AboutUsPage() {
-
   return (
-    <div className="min-h-screen bg-[#EEF3FF]">
+    <div className="min-h-screen bg-[#EEF3FF] md:pt-[50px] ">
     
-
       <main className="px-[25px]">
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-[#EEF3FF]">
@@ -40,8 +38,8 @@ export default function AboutUsPage() {
                     at a Time
                   </h1>
                 </div>
-                <div className="w-full md:w-2/5 relative h-40 md:h-60 mt-6 md:mt-0">
-                  <Image src="/about-hero.png" alt="Financial Inclusion" fill className="object-contain" />
+                <div className="w-full md:w-2/5 relative h-40 md:h-60 mt-6 md:mt-0 bg-yellow-900">
+                  <Image src="/about_main_hero.png" alt="Financial Inclusion" fill className="object-contain" />
                 </div>
               </div>
             </div>
