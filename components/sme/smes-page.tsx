@@ -1,12 +1,9 @@
 import Image from "next/image"
 import Link from "next/link"
-import { ChevronDown } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 
 export default function SmesPage() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col md:pt-[50px]">
 
       <main className="flex-1">
         {/* Hero Section */}
@@ -24,17 +21,21 @@ export default function SmesPage() {
             <div className="bg-[#10142C] rounded-xl overflow-hidden mx-3 md:mx-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6  pl-8 md:pl-12">
                 <div className="text-white pt-8">
-                  <div className="inline-block bg-[#00D2FF] text-[#10142C] px-3 py-1 rounded-md font-medium mb-4">
+                  <div className="inline-block bg-[#00D2FF] text-[#10142C]  px-3 py-1 rounded-md font-medium text-[30px] ">
                     SMEs
                   </div>
-                  <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
+                  <div  style={{
+    
+      textShadow:
+        '0px 10px 20px rgba(0,0,0,0.5), 0px 5px 10px rgba(0,0,0,0.3)',
+    }} className="text-5xl text-headline md:text-6xl lg:text-[70px] font-bold text-white mb-6 leading-none mt-[10px]">
                     Empowering small &<br />
                     growing businesses
-                  </h1>
-                  <p className="text-gray-300 mb-4 max-w-lg">
+                  </div>
+                  <p className="text-gray-300 mb-4 max-w-lg font-bold">
                     Running a business is no small feat, and managing payments should not add to the stress.
                   </p>
-                  <p className="text-gray-300 mb-8 max-w-lg">
+                  <p className="text-gray-400 mb-8 max-w-lg">
                     Our SME solutions help you simplify payments, streamline operations, and unlock new opportunities
                     for growth.
                   </p>
@@ -49,7 +50,7 @@ export default function SmesPage() {
                 <div className="grid grid-cols-3 gap-4">
                   <div className="relative h-40 md:h-[310px] rounded-lg overflow-hidden transform rotate-[-8deg] w-[900px] ml-[150px]">
                     <Image
-                      src="/sme-hero-image1.png"
+                      src="/sme_main_hero.png"
                       alt="SME Solutions"
                       fill
                       className="object-cover"
@@ -68,8 +69,8 @@ export default function SmesPage() {
             <Image src="/sme-background.png" alt="Background pattern" fill className="object-cover opacity-50" />
           </div>
           <div className="container mx-auto relative z-10">
-            <h2 className="text-2xl md:text-3xl font-bold mb-8 text-[#10142C] mx-3 md:mx-4">
-              SMEs Solutions developed with you in mind...
+            <h2 className="text-2xl md:text-5xl font-bold mb-8 text-[#10142C] mx-3 md:mx-4">
+              SMEs Solutions developed <br /> with you in mind...
             </h2>
 
             {/* Gravity Lite */}
@@ -85,28 +86,16 @@ export default function SmesPage() {
                     Expand financial access in your community with Gravity Lite, our agency banking solution designed
                     for small to medium-sized businesses and entrepreneurs.
                   </p>
-                  <Link
+                 <div className="w-[32%]  absolute flex justify-end items-end">
+                 <Link
                     href="#"
-                    className="inline-flex items-center justify-center bg-[#4894F4] hover:bg-[#4894F4]/90 text-white font-medium py-2 px-4 rounded-full transition-colors mt-[100px]"
+                    className="inline-flex items-center justify-center  text-[#000066] font-medium py-2 px-4 rounded-full transition-colors  mt-[100px]"
                   >
                     Get Started
-                    <svg
-                      className="ml-2 h-4 w-4"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M7 17L17 7M17 7H7M17 7V17"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
+                    <Image src="/sme_arrow.png" alt="user" width={50} height={50} />
+                   
                   </Link>
+                 </div>
                 </div>
                 <div className="p-8 border-r border-gray-100 bg-transparent">
                   <h3 className="font-semibold mb-4 text-[#10142C]">Key features</h3>
@@ -133,11 +122,8 @@ export default function SmesPage() {
                   <h3 className="font-semibold mb-4 text-[#10142C]">Who it's for</h3>
                   <div className="space-y-6">
                     <div className=" bg-[#FFFFFF80] p-[20px] rounded-[15px]">
-                      <div className="bg-blue-100 p-2 rounded-full mr-3">
-                        <div className="h-5 w-5   bg-[#10142C] rounded-full"></div>
-                        {/* bg-[#10142C] */}
-                      </div>
-                      <br />
+                    <Image src="/user.png" alt="user" width={50} height={50} />
+                    
                       <div>
                         <p className="text-sm text-gray-600">
                           Entrepreneurs looking to start an agent banking business.
@@ -145,9 +131,7 @@ export default function SmesPage() {
                       </div>
                     </div>
                     <div className="bg-[#FFFFFF80] p-[20px] rounded-[15px]">
-                      <div className="bg-blue-100 p-2 rounded-full mr-3">
-                        <div className="h-5 w-5 bg-[#10142C] rounded-full"></div>
-                      </div>
+                    <Image src="/shop.png" alt="user" width={50} height={50} />
                       <div>
                         <p className="text-sm text-gray-600">
                           SMEs that want to extend banking services to underserved areas.
@@ -172,28 +156,16 @@ export default function SmesPage() {
                     Medusa Merchant is built to simplify payments, streamline business operations, and provide real-time
                     insights that help businesses grow.
                   </p>
-                  <Link
+                  <div className="w-[32%]  absolute flex justify-end items-end">
+                 <Link
                     href="#"
-                    className="inline-flex items-center justify-center bg-[#4894F4] hover:bg-[#4894F4]/90 text-white font-medium py-2 px-4 rounded-full transition-colors  mt-[100px]"
+                    className="inline-flex items-center justify-center  text-[#000066] font-medium py-2 px-4 rounded-full transition-colors  mt-[100px]"
                   >
-                    Explore
-                    <svg
-                      className="ml-2 h-4 w-4"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M7 17L17 7M17 7H7M17 7V17"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
+                   Explore
+                    <Image src="/sme_arrow.png" alt="user" width={60} height={60} />
+                   
                   </Link>
+                 </div>
                 </div>
                 <div className="p-8 border-r border-gray-100 bg-transparent">
                   <h3 className="font-semibold mb-4 text-[#10142C]">Key features</h3>
@@ -224,9 +196,7 @@ export default function SmesPage() {
                   <h3 className="font-semibold mb-4 text-[#10142C]">Who it's for</h3>
                   <div className="space-y-6">
                     <div className="bg-[#FFFFFF80] p-[20px] rounded-[15px]">
-                      <div className="bg-blue-100 p-2 rounded-full mr-3">
-                        <div className="h-5 w-5 bg-[#10142C] rounded-full"></div>
-                      </div>
+                    <Image src="/shop.png" alt="user" width={60} height={60} />
                       <div>
                         <p className="text-sm text-gray-600">
                           SMEs looking to streamline payment processes and improve efficiency.
@@ -234,9 +204,7 @@ export default function SmesPage() {
                       </div>
                     </div>
                     <div className="bg-[#FFFFFF80] p-[20px] rounded-[15px]">
-                      <div className="bg-blue-100 p-2 rounded-full mr-3">
-                        <div className="h-5 w-5 bg-[#10142C] rounded-full"></div>
-                      </div>
+                    <Image src="/user.png" alt="user" width={60} height={60} />
                       <div>
                         <p className="text-sm text-gray-600">
                           Business owners who want real-time insights to optimize sales and operations.
@@ -261,28 +229,16 @@ export default function SmesPage() {
                     A powerful payment gateway that allows businesses to issue virtual accounts, process bulk payments,
                     and offer value-added services like airtime and bill payments.
                   </p>
-                  <Link
+                  <div className="w-[32%]  absolute flex justify-end items-end">
+                 <Link
                     href="#"
-                    className="inline-flex items-center justify-center bg-[#4894F4] hover:bg-[#4894F4]/90 text-white font-medium py-2 px-4 rounded-full transition-colors  mt-[100px]"
+                    className="inline-flex items-center justify-center  text-[#000066] font-medium py-2 px-4 rounded-full transition-colors  mt-[100px]"
                   >
                     Get Started
-                    <svg
-                      className="ml-2 h-4 w-4"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M7 17L17 7M17 7H7M17 7V17"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
+                    <Image src="/sme_arrow.png" alt="user" width={60} height={60} />
+                   
                   </Link>
+                 </div>
                 </div>
                 <div className="p-8 border-r border-gray-100 bg-transparent">
                   <h3 className="font-semibold mb-4 text-[#10142C]">Key features</h3>
