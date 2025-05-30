@@ -49,6 +49,10 @@ a {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 238, 243, 255;
   --background-end-rgb: 238, 243, 255;
+    --header-height-mobile: 70px;
+    --header-height-desktop: 100px;
+ 
+  
 }
 
 .animation-delay-300 {

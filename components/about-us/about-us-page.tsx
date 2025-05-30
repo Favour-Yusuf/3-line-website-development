@@ -4,14 +4,16 @@ import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, ChevronDown, Menu } from "lucide-react"
+import PartnersSection from "../home/partners-section"
+import StatsSection from "../home/stats-section"
 
 
 
 export default function AboutUsPage() {
   return (
-    <div className="min-h-screen bg-[#EEF3FF] md:pt-[50px] ">
+    <div className="min-h-screen bg-[#EEF3FF] md:pt-[80px]">
     
-      <main className="px-[25px]">
+      <main className="pl-[25px]">
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-[#EEF3FF]">
           <div className="absolute inset-0 z-0">
@@ -23,9 +25,9 @@ export default function AboutUsPage() {
               priority
             />
           </div>
-          <div className="container mx-auto px-4 py-6 md:py-8 relative z-10">
-            <div className="bg-[#10142C] rounded-xl overflow-hidden mx-3 md:mx-4">
-              <div className="p-6 md:p-10 flex flex-col md:flex-row items-start md:items-center">
+          <div className="container mx-auto px-4 py-6 md:py-8 relative z-10 ">
+            <div className=" bg-[#10142C] rounded-xl overflow-hidden mx-3 md:mx-4">
+              <div className=" md:pl-10 flex flex-col md:flex-row items-start md:items-center md:justify-between">
                 <div className="w-full md:w-3/5">
                   <div className="inline-block bg-[#00D2FF] text-[#10142C] px-3 py-1 rounded-md font-medium mb-4">
                     About us
@@ -38,7 +40,7 @@ export default function AboutUsPage() {
                     at a Time
                   </h1>
                 </div>
-                <div className="w-full md:w-2/5 relative h-40 md:h-60 mt-6 md:mt-0 bg-yellow-900">
+                <div className="w-full md:w-[25%] relative h-80 md:mt-0 mr:[5px]">
                   <Image src="/about_main_hero.png" alt="Financial Inclusion" fill className="object-contain" />
                 </div>
               </div>
@@ -98,109 +100,13 @@ export default function AboutUsPage() {
           </div>
         </section>
 
+<br />
+<br />
         {/* Partners Section */}
-           <section className="py-8 px-4 mt-[20px] bg-white">
-             <div className="container mx-auto">
-               <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-                 <div className=" transition-all duration-300">
-                   <Image
-                     src="/interswitch.png"
-                     alt="Interswitch"
-                     width={100}
-                     height={40}
-                     className="h-8 md:h-10 w-auto"
-                   />
-                 </div>
-                 <div className=" transition-all duration-300">
-                   <Image
-                     src="/access_bank.png"
-                     alt="Access Bank"
-                     width={100}
-                     height={40}
-                     className="h-8 md:h-10 w-auto"
-                   />
-                 </div>
-                 <div className=" transition-all duration-300">
-                   <Image
-                     src="/taj.png"
-                     alt="Taj Bank"
-                     width={100}
-                     height={40}
-                     className="h-8 md:h-10 w-auto"
-                   />
-                 </div>
-                 <div className=" transition-all duration-300">
-                   <Image src="/uba.png" alt="UBA" width={100} height={40} className="h-8 md:h-10 w-auto" />
-                 </div>
-                 <div className=" transition-all duration-300">
-                   <Image
-                     src="/alerzo.png"
-                     alt="Alerzo"
-                     width={100}
-                     height={40}
-                     className="h-8 md:h-10 w-auto"
-                   />
-                 </div>
-                 <div className=" transition-all duration-300">
-                   <Image
-                     src="/nibss.png"
-                     alt="NIBSS"
-                     width={100}
-                     height={40}
-                     className="h-8 md:h-10 w-auto"
-                   />
-                 </div>
-                 <div className=" transition-all duration-300">
-                   <Image
-                     src="/fidelity.png"
-                     alt="Fidelity"
-                     width={100}
-                     height={40}
-                     className="h-8 md:h-10 w-auto"
-                   />
-                 </div>
-               </div>
-             </div>
-           </section>
-
+           
+<PartnersSection />
         {/* Stats Section */}
-        <section className="py-8 px-4 bg-[#EEF3FF]">
-          <div className="container mx-auto">
-            <div className="bg-white rounded-xl shadow-sm p-6 md:p-8 mx-3 md:mx-4">
-              <div className="grid grid-cols-1 md:grid-cols-5 gap-6 md:gap-4">
-                {/* $7 Billion */}
-                <div className="text-center md:text-left px-2 md:px-4 pb-6 md:pb-0 border-b md:border-b-0 md:border-r border-gray-200">
-                  <h3 className="text-2xl md:text-3xl font-bold text-[#10142C]">$7 Billion</h3>
-                  <p className="text-sm text-gray-600">processed Daily</p>
-                </div>
-
-                {/* 180,000+ SMEs */}
-                <div className="text-center md:text-left px-2 md:px-4 pb-6 md:pb-0 border-b md:border-b-0 md:border-r border-gray-200">
-                  <h3 className="text-2xl md:text-3xl font-bold text-[#10142C]">180,000+ SMEs</h3>
-                  <p className="text-sm text-gray-600">empowered through our partners</p>
-                </div>
-
-                {/* 20,000+ */}
-                <div className="text-center md:text-left px-2 md:px-4 pb-6 md:pb-0 border-b md:border-b-0 md:border-r border-gray-200">
-                  <h3 className="text-2xl md:text-3xl font-bold text-[#10142C]">20,000+</h3>
-                  <p className="text-sm text-gray-600">active terminals empowered through our partners</p>
-                </div>
-
-                {/* 300+ */}
-                <div className="text-center md:text-left px-2 md:px-4 pb-6 md:pb-0 border-b md:border-b-0 md:border-r border-gray-200">
-                  <h3 className="text-2xl md:text-3xl font-bold text-[#10142C]">300+</h3>
-                  <p className="text-sm text-gray-600">financial institutions empowered through our partners</p>
-                </div>
-
-                {/* 99.9% uptime */}
-                <div className="text-center md:text-left px-2 md:px-4">
-                  <h3 className="text-2xl md:text-3xl font-bold text-[#10142C]">99.9% uptime,</h3>
-                  <p className="text-sm text-[#4894F4]">so your business never stops!</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+      <StatsSection />
 
         {/* Financial Access Gap */}
       

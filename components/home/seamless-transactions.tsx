@@ -114,7 +114,7 @@ const SeamlessTransactions = () => {
 if (!hasMounted) return null;
 
   return (
-    <div className="relative w-full max-w-[95%] mx-auto px-4 py-8 lg:mb-[200px]">
+    <div className="relative w-full max-w-[95%] mx-auto px-4 md:py-8 lg:mb-[400px]">
       <div
         ref={containerRef}
         className="relative cursor-pointer"
@@ -155,7 +155,7 @@ if (!hasMounted) return null;
       </div>
 
       {/* Navigation dots */}
-      <div className="flex justify-center mt-8 gap-2">
+      {/* <div className="flex justify-center mt-8 gap-2">
         {slides.map((_, index) => (
           <button
             key={index}
@@ -170,7 +170,7 @@ if (!hasMounted) return null;
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
-      </div>
+      </div> */}
      
 
      

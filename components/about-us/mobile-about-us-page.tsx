@@ -6,49 +6,44 @@ import Link from "next/link"
 import { ArrowRight, Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import StatsSection from "../home/stats-section"
+import PartnersSection from "../home/partners-section"
 
 export default function MobileAboutUsPage() {
   const [email, setEmail] = useState("")
 
   return (
-    <div className="min-h-screen bg-[#EEF3FF]">
+    <div className="min-h-screen bg-[#EEF3FF] mt-[70px]">
      
 
       <main>
         {/* Hero Section */}
-        <section className="relative overflow-hidden bg-[#EEF3FF]">
-          <div className="absolute inset-0 z-0">
-            <Image
-              src="/about-us-background.png"
-              alt="Background pattern"
-              fill
-              className="object-cover opacity-50"
-              priority
-            />
-          </div>
-          <div className="px-4 py-6 relative z-10">
-            <div className="bg-[#10142C] rounded-xl overflow-hidden mx-3">
-              <div className="p-6">
-                <div className="inline-block bg-[#00D2FF] text-[#10142C] px-3 py-1 rounded-md font-medium mb-4">
-                  About us
-                </div>
-                <h1 className="text-2xl font-bold text-white mb-4 leading-tight">
-                  Driving Financial
-                  <br />
-                  Inclusion, One
-                  <br />
-                  Transaction at a Time
-                </h1>
-                <div className="relative h-40 mt-4">
-                  <Image src="/about-hero.png" alt="Financial Inclusion" fill className="object-contain" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <section className="relative bg-[#000066] rounded-xl mx-4 mt-6 overflow-hidden">
+  <div className="p-6 pb-0 flex flex-col h-full">
+    <div className="inline-block bg-[#00D2FF] text-[#10142C] px-3 py-1 rounded-md font-medium mb-3">
+      About us
+    </div>
+    <h1 className="text-2xl font-bold text-white leading-snug mb-2">
+      Driving Financial<br />
+      Inclusion, One<br />
+      Transaction at a Time
+    </h1>
+  </div>
+  <div className="relative w-full h-[260px]">
+    <Image 
+      src="/aboutus_mobile.png" 
+      alt="Financial inclusion visual" 
+      fill 
+      className="object-cover"
+      priority 
+    />
+  </div>
+</section>
+
+
 
         {/* Main Content */}
-        <section className="py-6 px-4 bg-[#EEF3FF]">
+        <section className="py-6 bg-[#EEF3FF]">
           <div className="mx-3">
             <h2 className="text-lg font-bold mb-3 text-[#10142C]">
               At 3Line, we believe everyone deserves access to financial services, regardless of location or background
@@ -87,115 +82,10 @@ export default function MobileAboutUsPage() {
         </section>
 
         {/* Partners Section */}
-        <section className="py-6 px-4 bg-[#EEF3FF]">
-          <div className="mx-3">
-            <div className="flex flex-wrap justify-center items-center gap-4">
-              <div className="transition-all duration-300">
-                <Image
-                  src="/placeholder.svg?height=30&width=80"
-                  alt="Interswitch"
-                  width={80}
-                  height={30}
-                  className="h-6 w-auto"
-                />
-              </div>
-              <div className="transition-all duration-300">
-                <Image
-                  src="/placeholder.svg?height=30&width=80"
-                  alt="Access Bank"
-                  width={80}
-                  height={30}
-                  className="h-6 w-auto"
-                />
-              </div>
-              <div className="transition-all duration-300">
-                <Image
-                  src="/placeholder.svg?height=30&width=80"
-                  alt="Taj Bank"
-                  width={80}
-                  height={30}
-                  className="h-6 w-auto"
-                />
-              </div>
-              <div className="transition-all duration-300">
-                <Image
-                  src="/placeholder.svg?height=30&width=80"
-                  alt="UBA"
-                  width={80}
-                  height={30}
-                  className="h-6 w-auto"
-                />
-              </div>
-              <div className="transition-all duration-300">
-                <Image
-                  src="/placeholder.svg?height=30&width=80"
-                  alt="Alerzo"
-                  width={80}
-                  height={30}
-                  className="h-6 w-auto"
-                />
-              </div>
-              <div className="transition-all duration-300">
-                <Image
-                  src="/placeholder.svg?height=30&width=80"
-                  alt="NIBSS"
-                  width={80}
-                  height={30}
-                  className="h-6 w-auto"
-                />
-              </div>
-              <div className="transition-all duration-300">
-                <Image
-                  src="/placeholder.svg?height=30&width=80"
-                  alt="Fidelity"
-                  width={80}
-                  height={30}
-                  className="h-6 w-auto"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
+        <PartnersSection />
 
         {/* Stats Section */}
-        <section className="py-6 px-4 bg-[#EEF3FF]">
-          <div className="mx-3">
-            <div className="bg-white rounded-xl shadow-sm p-5">
-              <div className="space-y-5">
-                {/* $7 Billion */}
-                <div className="pb-4 border-b border-gray-200">
-                  <h3 className="text-xl font-bold text-[#10142C]">$7 Billion</h3>
-                  <p className="text-xs text-gray-600">processed Daily</p>
-                </div>
-
-                {/* 180,000+ SMEs */}
-                <div className="pb-4 border-b border-gray-200">
-                  <h3 className="text-xl font-bold text-[#10142C]">180,000+ SMEs</h3>
-                  <p className="text-xs text-gray-600">empowered through our partners</p>
-                </div>
-
-                {/* 20,000+ */}
-                <div className="pb-4 border-b border-gray-200">
-                  <h3 className="text-xl font-bold text-[#10142C]">20,000+</h3>
-                  <p className="text-xs text-gray-600">active terminals empowered through our partners</p>
-                </div>
-
-                {/* 300+ */}
-                <div className="pb-4 border-b border-gray-200">
-                  <h3 className="text-xl font-bold text-[#10142C]">300+</h3>
-                  <p className="text-xs text-gray-600">financial institutions empowered through our partners</p>
-                </div>
-
-                {/* 99.9% uptime */}
-                <div>
-                  <h3 className="text-xl font-bold text-[#10142C]">99.9% uptime,</h3>
-                  <p className="text-xs text-[#4894F4]">so your business never stops!</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
+  <StatsSection />
         {/* Financial Access Gap */}
         <section className="py-6 px-4 bg-[#EEF3FF]">
           <div className="mx-3">
