@@ -181,9 +181,9 @@ const OurTeamComponent = () => {
   ]
 
   return (
-    <main className="min-h-screen bg-[#EEF3FF] md:px-[25px]">
+    <main className="min-h-screen bg-[#EEF3FF] md:px-[25px] pt-[40px]">
       {/* Hero Section */}
-      <section className="relative overflow-hidden">
+      {/* <section className="relative overflow-hidden">
         <div className="container mx-auto px-4 py-8 md:py-12">
           <div className="relative z-10 bg-[#0A1A4A] rounded-xl overflow-hidden">
             <div className="p-8 md:p-12 flex flex-col md:flex-row">
@@ -208,7 +208,49 @@ const OurTeamComponent = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+
+<section className="relative bg-[#0A1A4A] rounded-xl mx-4 mt-6 overflow-hidden">
+  <div className="p-6 pb-0 relative z-10">
+    {/* Tag */}
+    <div className="inline-block bg-[#00D2FF] text-[#0A1A4A] px-3 py-1 rounded-md font-medium mb-3">
+      Our Team
+    </div>
+
+    {/* Heading */}
+    <h2 className="text-2xl font-bold text-white leading-snug mb-3">
+      Who we are
+    </h2>
+
+    {/* Description */}
+    <p className="text-gray-300 text-sm mb-4">
+      At 3Line, we are more than a company, we are a team of innovators, problem-solvers, and financial inclusion advocates.
+    </p>
+  </div>
+
+  {/* Grouped Team Image */}
+  <div className="relative w-full h-[260px]">
+    <Image 
+      src="/team-hero1.png" 
+      alt="Our team members" 
+      fill 
+      className="object-contain"
+      priority 
+    />
+  </div>
+
+  {/* Decorative Element */}
+  <div className="absolute top-0 right-0 h-full w-1/2 z-0">
+    <Image 
+      src="/team-hero2.png" 
+      alt="Decorative shape" 
+      fill 
+      className="object-contain"
+    />
+  </div>
+</section>
+
+
 
       {/* Vision, Mission & Values */}
       <section className="py-12 px-4">

@@ -4,7 +4,7 @@ import Image from "next/image"
 export default function SecuritySection() {
   return (
   <div className="w-full flex justify-center items-center">
-      <section className="relative bg-[#3B82F6] overflow-hidden px-[25px] my-[20px] w-[95%] rounded-[15px]">
+      <section className="relative bg-[#3B82F6] overflow-hidden px-[25px] md:my-[20px] w-[95%] rounded-[15px]">
       {/* Background pattern */}
       <div className="absolute inset-0 z-0 opacity-50">
         <Image src="/security_bg_image.png" alt="Background pattern" fill className="object-cover" />

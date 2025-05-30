@@ -4,7 +4,7 @@ import Link from "next/link"
 
 export default function MobileSmesPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-[#EEF3FF]">
+    <div className="min-h-screen w-full flex flex-col bg-[#EEF3FF] mt-[35px]">
    
 
       <main className="flex-1">
@@ -19,10 +19,10 @@ export default function MobileSmesPage() {
               priority
             />
           </div>
-          <div className="px-6 py-6 relative z-10">
-            <div className="bg-[#10142C] rounded-xl overflow-hidden mx-3">
+          <div className=" py-6 relative z-10">
+            <div className="bg-[#000066] rounded-xl overflow-hidden mx-3">
               <div className="p-6">
-                <div className="inline-block bg-[#00D2FF] text-[#10142C] px-3 py-1 rounded-md font-medium mb-4">
+                <div className="inline-block bg-[#00D2FF] text-[30px] text-[#10142C] px-3 py-1 rounded-md font-medium mb-4">
                   SMEs
                 </div>
                 <h1 className="text-2xl font-bold mb-4 leading-tight text-white">
@@ -47,7 +47,7 @@ export default function MobileSmesPage() {
         </section>
 
         {/* Solutions Section */}
-        <section className="py-8 px-6 bg-[#EEF3FF] relative">
+        <section className="py-8  bg-[#EEF3FF] relative">
           <div className="absolute inset-0 z-0">
             <Image src="/sme-background.png" alt="Background pattern" fill className="object-cover opacity-50" />
           </div>

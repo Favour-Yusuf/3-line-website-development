@@ -85,10 +85,10 @@ const Header = () => {
 
   return (
     <div
-      className={`w-full flex justify-center items-center fixed top-0 left-0 right-0 px-4 z-50 transition-all duration-300 py-[10px] ${
-        hasScrolled ? "bg-transparent mt-2" : "bg-[#EEF3FF] mt-0"
-      }`}
-    >
+    className={`w-full flex justify-center items-center fixed top-0 left-0 right-0 px-4 z-50 transition-all duration-300 md:py-[10px] h-[var(--header-height-mobile)] md:h-[var(--header-height-desktop)] ${
+      hasScrolled ? "bg-transparent mt-2" : "bg-[#EEF3FF] mt-0"
+    }`}
+  >
       <header className="w-[90%] bg-[#B8CFFF] py-3 md:py-4 px-4 md:px-8 flex rounded-[10px]">
         <div className="container mx-auto flex items-center justify-between">
           <Link href="/" className="flex items-center">
