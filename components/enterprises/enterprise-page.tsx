@@ -195,7 +195,7 @@ export default function EnterprisePage() {
                     </svg>
                   </Link>
                 </div>
-                <div className="p-8 border-r border-gray-100 bg-transparent">
+                <div className="p-8 border-r border-gray-100 bg-transparent  md:col-span-2">
                   <h3 className="font-semibold mb-4 text-[#10142C]">Key features</h3>
                   <div className="space-y-4">
                     <div className="bg-[#FFFFFF80] p-[15px] rounded-[15px] mb-[5px]">
