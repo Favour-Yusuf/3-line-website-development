@@ -6,6 +6,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { useState } from "react"
+import ContactUsForm from "@/components/contact_us_page/contact-us-form"
 
 export default function ContactUsPage() {
   const [email, setEmail] = useState("")
@@ -17,7 +18,7 @@ export default function ContactUsPage() {
     launchDate: "",
   })
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
@@ -41,228 +42,73 @@ export default function ContactUsPage() {
   return (
     <main className="min-h-screen bg-[#EEF3FF]">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-[#111B41] text-white md:pt-[85px]">
-        <div className="container mx-auto ml-[70px] py-8 md:py-12 relative">
-          <div className="max-w-3xl py-16 md:py-20 relative z-10">
-            <div className="text-sm  mb-2">Get Started</div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">Start Building and Growing with 3Line</h1>
-            <p className="text-gray-300 mb-8 max-w-lg">
-            Tell us about your project, and we’ll help you find the right solution.
-            </p>
-          </div>
+      <section className="relative overflow-hidden text-white  md:pt-[85px] md:bg-[#111B41] bg-[#000066] rounded-[15px] md:mt-0 mt-[70px]">
+  <div className="container mx-auto ml-[20px] md:ml-[70px] py-8 md:py-12 relative">
+    <div className="max-w-full md:max-w-3xl py-12 md:py-20 relative z-10 pr-4">
+      <div className="text-sm md:mb-2 text-white mb-[20px] ">Get Started</div>
+      <h1 className="text-4xl leading-tight md:text-5xl font-bold mb-[20px] md:leading-tight">
+        Start Building <br /> and Growing <br />with 3Line
+      </h1>
+      <p className="text-gray-300 md:text-gray-300 mb-8 md:max-w-lg text-sm md:text-base">
+        Tell us about your project, and we’ll help <br /> you find the right solution.
+      </p>
+    </div>
 
-          <div className="absolute top-0 right-0 h-full w-1/2">
-            <Image src="/contact-us-image3.png" alt="" fill className="object-contain object-right " />
-          </div>
-        </div>
-      </section>
+    {/* Desktop image */}
+    <div className="hidden md:block absolute top-0 right-0 h-full w-1/2">
+      <Image src="/contact-us-image3.png" alt="" fill className="object-contain object-right" />
+    </div>
 
-        {/* Start Building Form */}
-        <section id="contact-form" className="py-12 px-4 bg-[#EEF3FF]">
-        <div className="container mx-auto">
-          <div className="bg-[#111B41] rounded-xl overflow-hidden relative">
-          
+    {/* Mobile image */}
+    <div className="block md:hidden absolute right-0 top-0 h-full w-[340px]">
+      <Image src="/contactus_mobile_image.png" alt="Mobile Decoration" fill className="object-contain" />
+    </div>
+  </div>
+</section>
+{/* form */}
+<ContactUsForm />
 
-            {/* Background decorative element */}
-            <div className="absolute top-0 right-0 h-full w-1/2">
-              <Image
-                src="/contact-us-image4.png"
-                alt=""
-                fill
-                className="object-contain object-right opacity-30"
-              />
-            </div>
 
-            {/* Form section with light background */}
-            <div className=" bg-[#EEF3FF] pl-8 md:pl-12 relative">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 ">
-                {/* Form */}
-                <div className="bg-white p-6 rounded-xl shadow-sm order-2 md:order-1">
-                  <form className="space-y-4" onSubmit={handleSubmit}>
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                        What's your name?
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        placeholder="Let's keep this personal"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        required
-                      />
-                    </div>
+{/* Desktop View: visible on md and up */}
+<section className="relative overflow-hidden bg-[#111B41] text-white h-[50vh] hidden md:block">
+  <div className="container mx-auto ml-[70px] py-8 md:py-12 relative">
+    <div className="max-w-3xl py-16 md:py-20 relative z-10">
+      <div className="text-sm mb-2">Contact Us</div>
+      <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">Let's Talk</h1>
+      <p className="text-gray-300 mb-8 max-w-lg">
+        Whether you have a question, need support, or want to explore our solutions, we’re here to help.
+      </p>
+    </div>
 
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                        What's the best email to reach you at?
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder="So we can send helpful details"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        required
-                      />
-                    </div>
+    <div className="absolute top-0 right-0 h-full w-1/2">
+      <Image src="/contact-us-image3.png" alt="" fill className="object-contain object-right" />
+    </div>
+  </div>
+</section>
 
-                    <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                        Got a phone number?
-                      </label>
-                      <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        placeholder="Make it easier to connect"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      />
-                    </div>
+{/* Mobile View: visible on small screens only */}
+<section className="relative bg-[#111B41] text-white rounded-2xl overflow-hidden p-6 max-w-sm mx-auto block md:hidden">
+  {/* Background Image */}
+  <div className="absolute top-0 right-0 h-full w-full z-0">
+    <Image
+      src="/lets_talk.png" // Ensure this path is correct
+      alt="Decorative background"
+      fill
+      className="object-cover object-right"
+    />
+  </div>
 
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
-                        Which of our solutions interests you?
-                      </label>
-                      <p className="text-xs text-gray-500 mb-2">Choose one so we can assist you better.</p>
-                      <div className="grid grid-cols-2 gap-2">
-                        <div
-                          className="border border-gray-300 rounded-md p-3 flex items-center cursor-pointer"
-                          onClick={() => handleSolutionChange("Gravity Lite")}
-                        >
-                          <div
-                            className={`h-4 w-4 rounded-full border ${formData.solution === "Gravity Lite" ? "border-blue-500" : "border-gray-300"} mr-2 flex items-center justify-center`}
-                          >
-                            {formData.solution === "Gravity Lite" && (
-                              <div className="h-2 w-2 rounded-full bg-blue-500"></div>
-                            )}
-                          </div>
-                          <span className="text-sm">Gravity Lite</span>
-                        </div>
+  {/* Content */}
+  <div className="relative z-10">
+    <div className="text-sm text-gray-400 mb-2">Careers</div>
+    <h2 className="text-2xl font-bold mb-3">Let’s Talk</h2>
+    <p className="text-sm text-gray-300 leading-relaxed">
+      We’re an ambitious team shaping the future of payments in Africa. See our job openings below and join us in
+      making financial access simpler for everyone.
+    </p>
+  </div>
+</section>
 
-                        <div
-                          className="border border-gray-300 rounded-md p-3 flex items-center cursor-pointer"
-                          onClick={() => handleSolutionChange("Gravity ENT")}
-                        >
-                          <div
-                            className={`h-4 w-4 rounded-full border ${formData.solution === "Gravity ENT" ? "border-blue-500" : "border-gray-300"} mr-2 flex items-center justify-center`}
-                          >
-                            {formData.solution === "Gravity ENT" && (
-                              <div className="h-2 w-2 rounded-full bg-blue-500"></div>
-                            )}
-                          </div>
-                          <span className="text-sm">Gravity ENT</span>
-                        </div>
-
-                        <div
-                          className="border border-gray-300 rounded-md p-3 flex items-center cursor-pointer"
-                          onClick={() => handleSolutionChange("Medusa Merchant")}
-                        >
-                          <div
-                            className={`h-4 w-4 rounded-full border ${formData.solution === "Medusa Merchant" ? "border-blue-500" : "border-gray-300"} mr-2 flex items-center justify-center`}
-                          >
-                            {formData.solution === "Medusa Merchant" && (
-                              <div className="h-2 w-2 rounded-full bg-blue-500"></div>
-                            )}
-                          </div>
-                          <span className="text-sm">Medusa Merchant</span>
-                        </div>
-
-                        <div
-                          className="border border-gray-300 rounded-md p-3 flex items-center cursor-pointer"
-                          onClick={() => handleSolutionChange("Payment APIs")}
-                        >
-                          <div
-                            className={`h-4 w-4 rounded-full border ${formData.solution === "Payment APIs" ? "border-blue-500" : "border-gray-300"} mr-2 flex items-center justify-center`}
-                          >
-                            {formData.solution === "Payment APIs" && (
-                              <div className="h-2 w-2 rounded-full bg-blue-500"></div>
-                            )}
-                          </div>
-                          <span className="text-sm">Payment APIs</span>
-                        </div>
-
-                        <div
-                          className="border border-gray-300 rounded-md p-3 flex items-center cursor-pointer"
-                          onClick={() => handleSolutionChange("BespokeOffers")}
-                        >
-                          <div
-                            className={`h-4 w-4 rounded-full border ${formData.solution === "BespokeOffers" ? "border-blue-500" : "border-gray-300"} mr-2 flex items-center justify-center`}
-                          >
-                            {formData.solution === "BespokeOffers" && (
-                              <div className="h-2 w-2 rounded-full bg-blue-500"></div>
-                            )}
-                          </div>
-                          <span className="text-sm">BespokeOffers</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div>
-                      <label htmlFor="launchDate" className="block text-sm font-medium text-gray-700 mb-1">
-                        When do you plan to launch?
-                      </label>
-                      <input
-                        type="text"
-                        id="launchDate"
-                        name="launchDate"
-                        value={formData.launchDate}
-                        onChange={handleChange}
-                        placeholder="A rough idea is great!"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      />
-                    </div>
-
-                    <div>
-                      <h3 className="font-medium mb-2">Let's Make Payments Work for You</h3>
-                      <p className="text-xs text-gray-500 mb-4">
-                        By clicking below, you agree to 3Line's Terms & Conditions and Privacy Policy.
-                      </p>
-                      <button
-                        type="submit"
-                        className="w-full bg-[#4096FB] text-white py-3 px-4 rounded-full hover:bg-blue-700 transition-colors flex items-center justify-center"
-                      >
-                        Send message
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </button>
-                    </div>
-                  </form>
-                </div>
-
-                {/* */}
-                <div className="relative order-1 md:order-2">
-                  <div className="absolute top-0 right-0 w-[70%] h-[90%] rounded-tl-[50px] overflow-hidden ">
-                    <Image src="/contact_us_form.png" alt="Market vendor" fill className="object-cover" />
-                  </div>
-                 
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="relative overflow-hidden bg-[#111B41] text-white h-[50vh]">
-        <div className="container mx-auto ml-[70px] py-8 md:py-12 relative">
-          <div className="max-w-3xl py-16 md:py-20 relative z-10">
-            <div className="text-sm  mb-2">Contact Us</div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">Let's Talk</h1>
-            <p className="text-gray-300 mb-8 max-w-lg">
-            Whether you have a question, need support, or want to explore our solutions, we’re here to help.
-            </p>
-          </div>
-
-          <div className="absolute top-0 right-0 h-full w-1/2">
-            <Image src="/contact-us-image3.png" alt="" fill className="object-contain object-right " />
-          </div>
-        </div>
-      </section>
     
 
     

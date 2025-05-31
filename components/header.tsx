@@ -134,7 +134,7 @@ const Header = () => {
                             </div>
                           </Link>
 
-                          <Link href="/solutions/individual" className="block">
+                          {/* <Link href="" className="block"> */}
                             <div className="bg-white rounded-lg p-5 hover:shadow-md transition-shadow">
                               <h4 className="text-lg font-semibold mb-1">Individual</h4>
                               <p className="text-gray-600">
@@ -142,7 +142,7 @@ const Header = () => {
                                 transactions.
                               </p>
                             </div>
-                          </Link>
+                          {/* </Link> */}
                         </div>
                       </div>
                     </div>
