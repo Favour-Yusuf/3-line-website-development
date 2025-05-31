@@ -240,7 +240,7 @@ export default function SmesPage() {
                   </Link>
                  </div>
                 </div>
-                <div className="p-8 border-r border-gray-100 bg-transparent">
+                <div className="p-8 border-r border-gray-100   md:col-span-2 ">
                   <h3 className="font-semibold mb-4 text-[#10142C]">Key features</h3>
                   <div className="space-y-4">
                     <div className="bg-[#FFFFFF80] p-[15px] rounded-[15px] mb-[5px]">
@@ -261,31 +261,7 @@ export default function SmesPage() {
                     </div>
                   </div>
                 </div>
-                <div className="p-8 bg-transparent">
-                  <h3 className="font-semibold mb-4 text-[#10142C]">Who it's for</h3>
-                  <div className="space-y-6">
-                    <div className="bg-[#FFFFFF80] p-[20px] rounded-[15px]">
-                      <div className="bg-blue-100 p-2 rounded-full mr-3">
-                        <div className="h-5 w-5 bg-[#10142C] rounded-full"></div>
-                      </div>
-                      <div>
-                        <p className="text-sm text-gray-600">
-                          Growing businesses that need comprehensive payment solutions.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="bg-[#FFFFFF80] p-[20px] rounded-[15px]">
-                      <div className="bg-blue-100 p-2 rounded-full mr-3">
-                        <div className="h-5 w-5 bg-[#10142C] rounded-full"></div>
-                      </div>
-                      <div>
-                        <p className="text-sm text-gray-600">
-                          Businesses looking to offer value-added services to customers.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+           
               </div>
             </div>
           </div>

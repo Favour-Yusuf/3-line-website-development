@@ -52,29 +52,47 @@ const StatsSection = () => {
             </div>
           </div>
 
-          {/* Desktop Layout (Unchanged) */}
-          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-5 gap-8 divide-y-0 md:divide-x divide-gray-200">
-            <div className="text-center md:text-left px-4">
-              <h3 className="text-2xl md:text-3xl font-bold text-[#000066] font-grotesk text-headline">$7 Billion</h3>
-              <p className="text-sm text-gray-600">processes Daily</p>
-            </div>
-            <div className="text-center md:text-left px-4">
-              <h3 className="text-2xl md:text-3xl font-bold text-[#000066] font-grotesk text-headline">180,000+ SMEs</h3>
-              <p className="text-sm text-gray-600">SMEs empowered through our partners</p>
-            </div>
-            <div className="text-center md:text-left px-4 font-grotesk text-headline">
-              <h3 className="text-2xl md:text-3xl font-bold text-[#000066]">20,000+</h3>
-              <p className="text-sm text-gray-600">active terminals empowered through our partners</p>
-            </div>
-            <div className="text-center md:text-left px-4 font-grotesk text-headline">
-              <h3 className="text-2xl md:text-3xl font-bold text-[#000066]">300+</h3>
-              <p className="text-sm text-gray-600">financial institution empowered through our partners</p>
-            </div>
-            <div className="text-center md:text-left px-4 font-grotesk text-headline">
-              <h3 className="text-2xl md:text-3xl font-bold text-[#000066]">99.9% uptime,</h3>
-              <p className="text-sm text-blue-500">so your business never stops!</p>
-            </div>
-          </div>
+         {/* Desktop Layout (Unchanged) */}
+<div className="hidden md:flex justify-between gap-8 bg-white px-4">
+  {[
+    {
+      title: "$7 Billion",
+      description: "processes Daily",
+    },
+    {
+      title: "180,000+ SMEs",
+      description: "SMEs empowered through our partners",
+    },
+    {
+      title: "20,000+",
+      description: "active terminals empowered through our partners",
+    },
+    {
+      title: "300+",
+      description: "financial institution empowered through our partners",
+    },
+    {
+      title: "99.9% uptime,",
+      description: "so your business never stops!",
+      blueText: true,
+    },
+  ].map((item, index, arr) => (
+    <div key={index} className="relative flex-1 px-4 text-center md:text-left">
+      <h3 className="text-2xl md:text-3xl font-bold text-[#000066] font-grotesk text-headline">
+        {item.title}
+      </h3>
+      <p className={`text-sm ${item.blueText ? "text-blue-500" : "text-gray-600"}`}>
+        {item.description}
+      </p>
+
+      {/* Vertical Blue Line - Don't render after last item */}
+      {index < arr.length - 1 && (
+        <div className="hidden lg:block w-px bg-blue-500 absolute top-0 bottom-0 right-0" />
+      )}
+    </div>
+  ))}
+</div>
+
         </div>
       </div>
     </section>
