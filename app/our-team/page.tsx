@@ -181,74 +181,35 @@ const OurTeamComponent = () => {
   ]
 
   return (
-    <main className="min-h-screen bg-[#EEF3FF] md:px-[25px] pt-[40px]">
+    <main className="min-h-screen bg-[#EEF3FF] md:px-[25px] pt-[60px]">
       {/* Hero Section */}
-      {/* <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden ">
         <div className="container mx-auto px-4 py-8 md:py-12">
-          <div className="relative z-10 bg-[#0A1A4A] rounded-xl overflow-hidden">
-            <div className="p-8 md:p-12 flex flex-col md:flex-row">
-              <div className="w-full md:w-1/2">
-                <div className="inline-block bg-[#00D2FF] text-[#0A1A4A] px-3 py-1 rounded-md font-medium mb-4">
+          <div className="relative z-10 bg-[#0A1A4A] rounded-xl overflow-hidden h-[85vh]">
+            <div className="pl-8 md:pl-12  flex flex-col md:flex-row">
+              <div className="w-full md:w-1/2 pt-12">
+                <h1 className="inline-block bg-[#00D2FF] text-[#0A1A4A] text-[25px] px-4 py-2 font-bold rounded-md  mb-4">
                   Our Team
-                </div>
+                </h1>
                 <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">Who we are</h1>
                 <p className="text-gray-300 mb-8 max-w-lg">
                   At 3Line, we are more than a company, we are a team of innovators, problem-solvers, and financial
                   inclusion specialists.
                 </p>
               </div>
-              <div className="w-full md:w-1/2 relative h-60 md:h-80">
-                <div className="absolute inset-0">
+              <div className="w-full md:w-[70%] relative h-60 md:h-screen">
+                <div className="absolute inset-0  w-full right-0">
                   <Image src="/team-hero1.png" alt="Our Team" fill className="object-contain" />
                 </div>
-                <div className="absolute top-0 right-0 -z-10">
-                  <Image src="/team-hero2.png" alt="Decorative element" width={300} height={300} />
+                <div className="absolute top-0 right-0 -z-10  h-screen">
+                  <Image src="/team-hero2.png" alt="Decorative element" className="w-[100%] h-[100%]" width={300} height={300} />
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
 
-<section className="relative bg-[#0A1A4A] rounded-xl mx-4 mt-6 overflow-hidden">
-  <div className="p-6 pb-0 relative z-10">
-    {/* Tag */}
-    <div className="inline-block bg-[#00D2FF] text-[#0A1A4A] px-3 py-1 rounded-md font-medium mb-3">
-      Our Team
-    </div>
-
-    {/* Heading */}
-    <h2 className="text-2xl font-bold text-white leading-snug mb-3">
-      Who we are
-    </h2>
-
-    {/* Description */}
-    <p className="text-gray-300 text-sm mb-4">
-      At 3Line, we are more than a company, we are a team of innovators, problem-solvers, and financial inclusion advocates.
-    </p>
-  </div>
-
-  {/* Grouped Team Image */}
-  <div className="relative w-full h-[260px]">
-    <Image 
-      src="/team-hero1.png" 
-      alt="Our team members" 
-      fill 
-      className="object-contain"
-      priority 
-    />
-  </div>
-
-  {/* Decorative Element */}
-  <div className="absolute top-0 right-0 h-full w-1/2 z-0">
-    <Image 
-      src="/team-hero2.png" 
-      alt="Decorative shape" 
-      fill 
-      className="object-contain"
-    />
-  </div>
-</section>
 
 
 
@@ -258,24 +219,7 @@ const OurTeamComponent = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Vision */}
             <div className="bg-white p-6 rounded-xl shadow-sm">
-              <div className="bg-[#0A1A4A] text-white w-12 h-12 flex items-center justify-center rounded-lg mb-4">
-                <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12Z"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M12 9V15M9 12H15"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
+             <Image src="/vision.png" alt="vision" width={40} height={40}/>
               <h3 className="text-xl font-semibold mb-2">Our Vision</h3>
               <p className="text-gray-600">
                 To become Africa's leading financial services provider, powering the continent's payments while ensuring
@@ -285,24 +229,7 @@ const OurTeamComponent = () => {
 
             {/* Mission */}
             <div className="bg-white p-6 rounded-xl shadow-sm">
-              <div className="bg-[#0A1A4A] text-white w-12 h-12 flex items-center justify-center rounded-lg mb-4">
-                <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12Z"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M12 9V15M9 12H15"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
+            <Image src="/mission.png" alt="mission" width={40} height={40}/>
               <h3 className="text-xl font-semibold mb-2">Our Mission</h3>
               <p className="text-gray-600">
                 To build innovative and reliable payment solutions that make everyday transactions simple, secure, and
@@ -374,7 +301,7 @@ const OurTeamComponent = () => {
                 <div className="p-4">
                   <h3 className="text-lg font-semibold">{member.name}</h3>
                   <p className="text-sm text-gray-600">{member.role}</p>
-                  <Link href="https://linkedin.com" className="text-blue-600 hover:text-blue-800 mt-2 inline-block">
+                  <Link href="https://linkedin.com" className="text-blue-600 hover:text-blue-800 mt-2 inline-block absolute bottom-0">
                     <Linkedin className="h-5 w-5" />
                   </Link>
                 </div>
@@ -466,13 +393,13 @@ const OurTeamComponent = () => {
                     }}
                   ></div>
                 </div>
-                <div className="p-3">
+                {/* <div className="p-3">
                   <h3 className="text-sm font-semibold">{member.name}</h3>
                   <p className="text-xs text-gray-600">{member.role}</p>
                   <Link href="https://linkedin.com" className="text-blue-600 hover:text-blue-800 mt-1 inline-block">
                     <Linkedin className="h-4 w-4" />
                   </Link>
-                </div>
+                </div> */}
               </div>
             ))}
           </div>
@@ -491,13 +418,13 @@ const OurTeamComponent = () => {
                     }}
                   ></div>
                 </div>
-                <div className="p-3">
+                {/* <div className="p-3">
                   <h3 className="text-sm font-semibold">{member.name}</h3>
                   <p className="text-xs text-gray-600">{member.role}</p>
                   <Link href="https://linkedin.com" className="text-blue-600 hover:text-blue-800 mt-1 inline-block">
                     <Linkedin className="h-4 w-4" />
                   </Link>
-                </div>
+                </div> */}
               </div>
             ))}
           </div>
