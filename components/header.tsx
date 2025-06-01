@@ -253,7 +253,7 @@ const Header = () => {
                       <Link href="/press" onClick={handleLinkClick} className="block p-4 hover:bg-[#F5F8FF] rounded-lg">
                         Press
                       </Link>
-                      <Link href="/case-studies" onClick={handleLinkClick} className="block p-4 hover:bg-[#F5F8FF] rounded-lg">
+                      <Link href="/case-study" onClick={handleLinkClick} className="block p-4 hover:bg-[#F5F8FF] rounded-lg">
                         Case Studies
                       </Link>
                       <Link href="/api" onClick={handleLinkClick} className="block p-4 hover:bg-[#F5F8FF] rounded-lg">
@@ -362,7 +362,7 @@ const Header = () => {
                       <Link href="/press" className="block py-2" onClick={() => setIsMenuOpen(false)}>
                         Press
                       </Link>
-                      <Link href="/case-studies" className="block py-2" onClick={() => setIsMenuOpen(false)}>
+                      <Link href="/case-study" className="block py-2" onClick={() => setIsMenuOpen(false)}>
                         Case Studies
                       </Link>
                       <Link href="/api" className="block py-2" onClick={() => setIsMenuOpen(false)}>

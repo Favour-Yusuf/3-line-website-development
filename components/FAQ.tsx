@@ -72,9 +72,9 @@ export default function FAQ() {
       <div className="flex flex-wrap gap-3 mb-8 overflow-x-auto">
         <button
           onClick={() => setActiveTab("All")}
-          className={`px-4 py-2 text-sm font-semibold rounded-full ${
+          className={`px-4 py-2 text-sm bg-white font-semibold rounded-md ${
             activeTab === "All"
-              ? "bg-blue-100 text-blue-600"
+              ? " bg-blue-300"
               : "hover:bg-blue-100"
           }`}
         >
@@ -84,10 +84,10 @@ export default function FAQ() {
           <button
             key={section.section}
             onClick={() => setActiveTab(section.section)}
-            className={`px-4 py-2 text-sm font-semibold rounded-full ${
+            className={`px-4 py-2 text-sm bg-white font-semibold rounded-md ${
               activeTab === section.section
-                ? "bg-blue-100 text-blue-600"
-                : "hover:bg-blue-100"
+                 ? " bg-blue-300"
+              : "hover:bg-blue-100"
             }`}
           >
             {section.section}
