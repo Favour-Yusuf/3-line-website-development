@@ -52,7 +52,7 @@ const OurSolutions = () => {
                 <p className="text-sm text-gray-600">{item.text}</p>
               </div>
             </div>
-            <button className="absolute bg-red-900 bottom-4 right-0 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white">
+            <button className="absolute  bottom-4 right-0 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white">
               <ArrowUpRight className="w-4 h-4" />
             </button>
           </div>
