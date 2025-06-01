@@ -5,7 +5,7 @@ import Image from "next/image"
 
 const OurSolutions = () => {
   return (
-    <div className="w-full relative flex justify-center items-center py-16 bg-white overflow-hidden">
+    <div className="w-full relative flex justify-center items-center py-16 bg-white overflow-hidden bg-[#E8F0FF]">
       {/* Background logo (mobile only) */}
       <Image
         src="/solution_side_image.png"
@@ -17,7 +17,11 @@ const OurSolutions = () => {
 
       {/* Mobile View */}
       <section className="sm:hidden w-[90%] max-w-md bg-white/70 backdrop-blur-xl rounded-xl z-10 p-4 shadow-lg">
-        <h2 className="text-xl font-bold text-black mb-6">Our solutions</h2>
+      <div className=" w-full mb-[20px]">
+      <h2 className="text-xl font-bold text-black mb-6 text-left">Our solutions</h2>
+        <p>Ready to Transform Your Payments? Join the hundreds of financial institutions and businesses already growing with 3Line.</p>
+      </div>
+
 
         {/* Card */}
         {[
@@ -48,7 +52,7 @@ const OurSolutions = () => {
                 <p className="text-sm text-gray-600">{item.text}</p>
               </div>
             </div>
-            <button className="absolute bottom-4 right-4 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white">
+            <button className="absolute bg-red-900 bottom-4 right-0 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white">
               <ArrowUpRight className="w-4 h-4" />
             </button>
           </div>
@@ -57,7 +61,10 @@ const OurSolutions = () => {
 
       {/* Desktop View */}
       <section className="hidden sm:grid w-[95%] mx-auto z-10">
-        <h2 className="text-4xl font-bold text-center text-black mb-12">Our solutions</h2>
+      <div className="w-full mb-[25px]">
+      <h2 className="text-4xl font-bold text-black mb-6 text-left">Our solutions</h2>
+        <p>Ready to Transform Your Payments? Join the hundreds of <br />financial institutions and businesses already growing with 3Line.</p>
+      </div>
 
         <div className="grid grid-cols-3 gap-8">
           {[
@@ -79,12 +86,12 @@ const OurSolutions = () => {
           ].map((item, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl shadow-xl p-6 flex flex-col gap-4"
+              className="relative bg-white rounded-2xl shadow-xl py-20 px-6 flex flex-col gap-4"
             >
               <Image src={item.icon} alt={`${item.title} Icon`} width={50} height={50} />
               <h3 className="text-xl font-bold">{item.title}</h3>
               <p className="text-gray-600">{item.text}</p>
-              <button className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white mt-auto ml-auto">
+              <button className="absolute mb-[30px] bottom-0 right-0 w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white mt-auto ml-auto">
                 <ArrowUpRight className="w-5 h-5" />
               </button>
             </div>
