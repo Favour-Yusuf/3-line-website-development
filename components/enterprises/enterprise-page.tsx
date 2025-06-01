@@ -78,40 +78,29 @@ export default function EnterprisePage() {
             {/* Gravity Lite */}
             <div className=" rounded-xl overflow-hidden shadow-sm mb-8 mx-3 md:mx-4">
               <div className="grid grid-cols-1 md:grid-cols-3">
-                <div className="p-8 border-r border-gray-100 bg-white">
+              <div className="p-8 border-r border-blue-500 bg-white">
                   <div className="bg-[#10142C] text-white w-12 h-12 flex items-center justify-center rounded-lg mb-4">
                     <span className="text-xl font-bold">1</span>
                   </div>
-                  <h3 className="text-2xl font-bold mb-2 text-[#10142C]">Gravity Enterprise</h3>
-                  <p className="text-gray-600 mb-4">Build & scale a nationwide agent network</p>
+                  <h3 className="text-2xl font-bold mb-2 text-[#10142C]">Gravity
+                  Enterprise</h3>
+                  <p className="text-gray-600 mb-4">Build & scale a nationwide
+                  agent network</p>
                   <p className="text-gray-600 mb-6">
-                  A fully scalable agency banking solution for financial institutions and large-scale fintechs looking
-                  to expand their reach.
+                  A fully scalable agency banking solution for financial institutions and large-scale fintechs looking to expand their reach.
                   </p>
-                  <Link
+                  <div className="w-[32%]  absolute flex justify-end items-end">
+                 <Link
                     href="#"
-                    className="inline-flex items-center justify-center bg-[#4894F4] hover:bg-[#4894F4]/90 text-white font-medium py-2 px-4 rounded-full transition-colors mt-[100px]"
+                    className="inline-flex items-center justify-center  text-[#000066] font-medium py-2 px-4 rounded-full transition-colors  mt-[100px]"
                   >
-                    Get Started
-                    <svg
-                      className="ml-2 h-4 w-4"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M7 17L17 7M17 7H7M17 7V17"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
+                   Learn More
+                    <Image src="/sme_arrow.png" alt="user" width={60} height={60} />
+                   
                   </Link>
+                 </div>
                 </div>
-                <div className="p-8 border-r border-gray-100 bg-transparent">
+                <div className="p-8 border-r border-blue-500 bg-transparent">
                   <h3 className="font-semibold mb-4 text-[#10142C]">Key features</h3>
                   <div className="space-y-4">
                     <div className="bg-[#FFFFFF80] p-[15px] rounded-[15px] mb-[5px]">
@@ -162,38 +151,27 @@ export default function EnterprisePage() {
             {/* Magtipon Lite */}
             <div className=" rounded-xl overflow-hidden shadow-sm mx-3 md:mx-4">
               <div className="grid grid-cols-1 md:grid-cols-3">
-                <div className="p-8 border-r border-gray-100 bg-white">
+              <div className="p-8 border-r border-blue-500 bg-white">
                   <div className="bg-[#10142C] text-white w-12 h-12 flex items-center justify-center rounded-lg mb-4">
                     <span className="text-xl font-bold">2</span>
                   </div>
-                  <h3 className="text-2xl font-bold mb-2 text-[#10142C]">Magtipon Enterprise</h3>
-                  <p className="text-gray-600 mb-4">The infrastructure for digital banking</p>
+                  <h3 className="text-2xl font-bold mb-2 text-[#10142C]">Magtipon
+                  Enterprise</h3>
+                  <p className="text-gray-600 mb-4">The infrastructure for
+                  digital banking</p>
                   <p className="text-gray-600 mb-6">
-                  A full-scale platform designed to help banks and fintechs build and manage digital banking services
-                  efficiently.
+                  A full-suite platform designed to help banks and fintechs build and manage digital banking services efficiently.
                   </p>
-                  <Link
+                  <div className="w-[32%]  absolute flex justify-end items-end">
+                 <Link
                     href="#"
-                    className="inline-flex items-center justify-center bg-[#4894F4] hover:bg-[#4894F4]/90 text-white font-medium py-2 px-4 rounded-full transition-colors  mt-[100px]"
+                    className="inline-flex items-center justify-center  text-[#000066] font-medium py-2 px-4 rounded-full transition-colors  mt-[100px]"
                   >
-                    Get Started
-                    <svg
-                      className="ml-2 h-4 w-4"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M7 17L17 7M17 7H7M17 7V17"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
+                   Explore
+                    <Image src="/sme_arrow.png" alt="user" width={60} height={60} />
+                   
                   </Link>
+                 </div>
                 </div>
                 <div className="p-8 border-r border-gray-100 bg-transparent  md:col-span-2">
                   <h3 className="font-semibold mb-4 text-[#10142C]">Key features</h3>
