@@ -24,7 +24,7 @@ export default function EnterprisePage() {
             <div className="bg-[#10142C] rounded-xl overflow-hidden mx-3 md:mx-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6  pl-8 md:pl-12">
                 <div className="text-white pt-8">
-                  <div  className="inline-block bg-[#00D2FF] text-[#10142C]  px-3 py-1 rounded-md font-medium text-[30px] ">
+                  <div  className="inline-block bg-[#00D2FF] text-[#10142C]  px-3 py-1 rounded-md font-bold mb-[30px]  text-[30px] ">
                   Enterprise
                   </div>
                   <div  style={{
