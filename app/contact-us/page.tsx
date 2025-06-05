@@ -45,17 +45,17 @@ export default function ContactUsPage() {
     <main className="min-h-screen bg-[#EEF3FF]">
       {/* Hero Section */}
       
-      <section className="relative overflow-hidden text-white  md:pt-[85px] md:bg-[#111B41] bg-[#000066] rounded-[15px] md:mt-0 mt-[70px]">
-        <div className="container mx-auto ml-[20px] md:ml-[70px] py-8 md:py-12 relative">
+      <section className="relative overflow-hidden text-white  md:pt-[105px] rounded-[15px] md:mt-0 mt-[70px] md:flex w-full  justify-center items-center">
+        <div className="w-[93%] mx-auto ml-[20px] md:px-[70px] md:ml-[70px] py-8 md:py-12 relative  md:bg-[#111B41] bg-[#000066] rounded-[25px]">
           <div className="max-w-full md:max-w-3xl py-12 md:py-20 relative z-10 pr-4">
-            <div className="text-sm md:mb-2 text-white mb-[20px] ">
+            <div className="md:text-[25px] md:mb-2 text-gray-400 mb-[20px] text-sm">
               Get Started
             </div>
             <h1 className=" w-[240px] md:w-[80%] text-3xl leading-tight md:text-6xl font-bold mb-[20px] md:leading-tight">
               Start Building and Growing with 3Line
             </h1>
             <p className="text-gray-300 md:text-gray-300 mb-8 md:max-w-lg text-sm md:text-base">
-              Tell us about your project, and we’ll help <br /> you find the
+              Tell us about your project, and we’ll help  you find the
               right solution.
             </p>
           </div>
@@ -85,10 +85,11 @@ export default function ContactUsPage() {
       <ContactUsForm />
 
       {/* Desktop View: visible on md and up */}
-      <section className="relative overflow-hidden bg-[#111B41] text-white h-[50vh] hidden md:block">
-        <div className="container mx-auto ml-[70px] py-8 md:py-12 relative">
+      <section className=" overflow-hidden  text-white hidden md:flex w-full  justify-center items-center">
+     
+       <div className="w-[93%] py-8 md:py-12 md:px-[100px] relative bg-[#10142C] rounded-[25px]">
           <div className="max-w-3xl py-16 md:py-20 relative z-10">
-            <div className="text-sm mb-2">Contact Us</div>
+            <div className="md:text-[20px] md:mb-[30px] text-gray-400 mb-[20px] text-sm">Contact Us</div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
               Let's Talk
             </h1>
@@ -107,6 +108,7 @@ export default function ContactUsPage() {
             />
           </div>
         </div>
+     
       </section>
 
       {/* Mobile View: visible on small screens only */}
@@ -133,21 +135,24 @@ export default function ContactUsPage() {
         </div>
       </section>
 
+
       {/* Contact Information Card */}
 <section className="py-12 px-4 bg-[#EEF3FF]">
+  
   <div className="container px-[40px] md:max-w-8xl">
+  <h1 className="font-bold text-[40px] mt-[50px]">Contact Infomation</h1>
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
 
       {/* Contact Information (Left 2/3) */}
       <div className="lg:col-span-2 space-y-4">
         {/* Email */}
         <div className="bg-white px-6 py-5 rounded-2xl shadow-sm flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <div className="bg-blue-100 p-3 rounded-full">
+          <div className=" ">
+            <div className=" mb-2">
               <Image alt="email" src="/email.png" width={24} height={24} />
             </div>
             <div>
-              <h3 className="font-semibold text-sm">Email</h3>
+              <h3 className="font-semibold text-sm  mb-2">Email</h3>
               <p className="text-gray-600 text-sm">inquiries@3lineeng.com</p>
             </div>
           </div>
@@ -158,12 +163,12 @@ export default function ContactUsPage() {
 
         {/* Phone */}
         <div className="bg-white px-6 py-5 rounded-2xl shadow-sm flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <div className="bg-blue-100 p-3 rounded-full">
+          <div className="">
+            <div className=" mb-2">
               <Image alt="phone" src="/phone.png" width={24} height={24} />
             </div>
             <div>
-              <h3 className="font-semibold text-sm">Phone</h3>
+              <h3 className="font-semibold text-sm mb-2">Phone</h3>
               <p className="text-gray-600 text-sm">+234 800 300 4000</p>
             </div>
           </div>
@@ -174,12 +179,12 @@ export default function ContactUsPage() {
 
         {/* Address */}
         <div className="bg-white px-6 py-5 rounded-2xl shadow-sm flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <div className="bg-blue-100 p-3 rounded-full">
+          <div className="">
+            <div className=" mb-2">
               <Image alt="location" src="/address.png" width={24} height={24} />
             </div>
             <div>
-              <h3 className="font-semibold text-sm">Address</h3>
+              <h3 className="font-semibold text-sm  mb-2">Address</h3>
               <p className="text-gray-600 text-sm leading-snug">
                 7A Idejo St, Victoria Island, Lagos 101241, Lagos
               </p>

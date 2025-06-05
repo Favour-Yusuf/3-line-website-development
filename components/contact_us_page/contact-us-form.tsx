@@ -117,7 +117,7 @@ export default function ContactUsForm() {
       </section>
 
       {/* DESKTOP VIEW FORM – visible only on medium and large screens */}
-      <section id="contact-form-desktop" className="hidden md:block py-12 px-4 bg-[#EEF3FF]">
+      <section id="contact-form-desktop" className=" hidden md:block py-12 px-4 bg-[#EEF3FF] ">
         <div className="container mx-auto">
           <div className="bg-[#111B41] rounded-xl overflow-hidden relative">
             <div className="absolute top-0 right-0 h-full w-1/2">
@@ -129,12 +129,13 @@ export default function ContactUsForm() {
               />
             </div>
 
-            <div className="bg-[#EEF3FF] pl-8 md:pl-12 relative">
+            <div className=" bg-[#EEF3FF] pl-8 md:pl-12 relative">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="bg-white p-6 rounded-xl shadow-sm order-2 md:order-1">
-                  <form className="space-y-4" onSubmit={handleSubmit}>
-                    {/* Name */}
-                    <div>
+                <div className="bg-white pt-6 rounded-xl shadow-sm order-2 md:order-1">
+                  <form className="space-y-4 " onSubmit={handleSubmit}>
+                    <div className=" px-8">
+   {/* Name */}
+   <div className="mt-[20px]">
                       <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">What's your name?</label>
                       <input
                         type="text"
@@ -149,7 +150,7 @@ export default function ContactUsForm() {
                     </div>
 
                     {/* Email */}
-                    <div>
+                    <div className="mt-[20px]">
                       <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">What's the best email to reach you at?</label>
                       <input
                         type="email"
@@ -164,7 +165,7 @@ export default function ContactUsForm() {
                     </div>
 
                     {/* Phone */}
-                    <div>
+                    <div className="mt-[20px]">
                       <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Got a phone number?</label>
                       <input
                         type="tel"
@@ -178,7 +179,7 @@ export default function ContactUsForm() {
                     </div>
 
                     {/* Solution Options */}
-                    <div>
+                    <div className="mt-[20px]">
                       <label className="block text-sm font-medium text-gray-700 mb-1">Which of our solutions interests you?</label>
                       <p className="text-xs text-gray-500 mb-2">Choose one so we can assist you better.</p>
                       <div className="grid grid-cols-2 gap-2">
@@ -198,7 +199,7 @@ export default function ContactUsForm() {
                     </div>
 
                     {/* Launch Date */}
-                    <div>
+                    <div className="mt-[20px]">
                       <label htmlFor="launchDate" className="block text-sm font-medium text-gray-700 mb-1">When do you plan to launch?</label>
                       <input
                         type="text"
@@ -210,19 +211,21 @@ export default function ContactUsForm() {
                         className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                       />
                     </div>
+                    </div>
+                 
 
                     {/* CTA */}
                     <div>
-                      <h3 className="font-medium mb-2">Let's Make Payments Work for You</h3>
-                      <p className="text-xs text-gray-500 mb-4">
+                      <h3 className="font-medium mb-4 mt-8 px-8">Let's Make Payments Work for You</h3>
+                      <p className="text-xs text-gray-500 mb-8 px-8">
                         By clicking below, you agree to 3Line's Terms & Conditions and Privacy Policy.
                       </p>
                       <button
                         type="submit"
-                        className="w-full bg-[#4096FB] text-white py-3 px-4 rounded-full hover:bg-blue-700 transition-colors flex items-center justify-center"
+                        className="w-full  rounded-b-[15px] bg-[#A6C4FA] text-[#000066] h-[100px] font-medium text-[20px] hover:bg-blue-700 hover:text-white transition-colors flex items-center justify-end"
                       >
                         Send message
-                        <ArrowRight className="ml-2 h-4 w-4" />
+                        <Image className="mt-[20px]" src="/arrow_footer.png" alt="arrow" width={80} height={80}/>
                       </button>
                     </div>
                   </form>
