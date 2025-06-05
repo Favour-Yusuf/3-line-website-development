@@ -73,10 +73,12 @@ const TransactionsMap = () => {
    <div className="w-full flex justify-center items-center py-[30px]">
      <section className=" relative overflow-hidden w-[95%] ">
       <div className="container mx-auto">
-        <div className="bg-[#0A1A4A] rounded-xl overflow-hidden p-6 md:p-12 relative">
+        <div className="bg-[#0c152e] rounded-xl overflow-hidden p-6 md:p-12 relative">
           {/* Content */}
           <div className="relative z-10 max-w-xl mb-8">
-            <h2 className=" font-grotesk text-headline md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+            <h2 style={{
+              lineHeight: "0.96"
+            }} className=" font-grotesk text-headline md:text-4xl lg:text-[55px] font-bold text-white mb-6">
               Transactions from Africa to the last mile
             </h2>
             <p className="text-gray-300 text-lg font-grotesk text-headline">

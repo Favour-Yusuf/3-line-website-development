@@ -57,12 +57,12 @@ const HeroSection = () => {
               href="#"
               className="inline-flex items-center justify-center bg-transparent text-white font-medium rounded-full transition-colors group"
             >
-              <span className="text-body">Get started</span>
+              <span className="text-[29px]">Get started</span>
               <Image
                 src="/arrow_hero.png"
                 alt="Arrow Hero"
-                width={50}
-                height={30}
+                width={80}
+                height={80}
                 className="mt-[15px]"
               />
             </Link>
