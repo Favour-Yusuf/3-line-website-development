@@ -188,7 +188,7 @@ const OurTeamComponent = () => {
           <div className="relative z-10 bg-[#0A1A4A] rounded-xl overflow-hidden h-[85vh]">
             <div className="pl-8 md:pl-12  flex flex-col md:flex-row">
               <div className="w-full md:w-1/2 pt-12">
-                <h1 className="inline-block bg-[#00D2FF] text-[#0A1A4A] text-[25px] px-4 py-2 font-bold rounded-md  mb-4">
+                <h1 className="inline-block text-[50px] bg-[#6be0f0] text-[#10142C] px-3 py- rounded-md font-bold mb-4">
                   Our Team
                 </h1>
                 <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">Who we are</h1>
@@ -218,9 +218,9 @@ const OurTeamComponent = () => {
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Vision */}
-            <div className="bg-white p-6 rounded-xl shadow-sm">
-             <Image src="/vision.png" alt="vision" width={40} height={40}/>
-              <h3 className="text-xl font-semibold mb-2">Our Vision</h3>
+            <div className="bg-white p-6 rounded-xl shadow-sm ">
+             <Image src="/vision.png" alt="vision" width={70} height={70} className="mb-[50px]"/>
+              <h3 className="text-4xl font-bold mb-4">Our Vision</h3>
               <p className="text-gray-600">
                 To become Africa's leading financial services provider, powering the continent's payments while ensuring
                 financial inclusion for businesses, banks, and communities.
@@ -229,8 +229,8 @@ const OurTeamComponent = () => {
 
             {/* Mission */}
             <div className="bg-white p-6 rounded-xl shadow-sm">
-            <Image src="/mission.png" alt="mission" width={40} height={40}/>
-              <h3 className="text-xl font-semibold mb-2">Our Mission</h3>
+            <Image src="/mission.png" alt="mission" width={70} height={70} className="mb-[50px]"/>
+              <h3 className="text-4xl font-bold mb-4">Our Mission</h3>
               <p className="text-gray-600">
                 To build innovative and reliable payment solutions that make everyday transactions simple, secure, and
                 more accessible for businesses, communities, and individuals worldwide.
@@ -239,7 +239,7 @@ const OurTeamComponent = () => {
 
             {/* Values */}
             <div className="bg-transparent p-6 rounded-xl shadow-sm ">
-              <h3 className="text-xl font-semibold mb-4">Our Values</h3>
+              <h3 className="text-4xl font-bold mb-4">Our Values</h3>
               <div className="space-y-4">
                 <div className="bg-[#FFFFFF80] p-[15px] rounded-[10px]">
                   <h4 className="font-medium">Innovation</h4>
@@ -289,7 +289,7 @@ const OurTeamComponent = () => {
           {/* Desktop layout (grid) */}
           <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             {executiveTeam.map((member, index) => (
-              <div key={index} className="bg-white rounded-xl overflow-hidden shadow-sm">
+              <div key={index} className="bg-white rounded-xl overflow-hidden shadow-sm relative">
                 <div className="relative h-64 rounded-t-xl overflow-hidden">
                   <Image
                     src={member.image || "/placeholder.svg"}
@@ -301,7 +301,7 @@ const OurTeamComponent = () => {
                 <div className="p-4">
                   <h3 className="text-lg font-semibold">{member.name}</h3>
                   <p className="text-sm text-gray-600">{member.role}</p>
-                  <Link href="https://linkedin.com" className="text-blue-600 hover:text-blue-800 mt-2 inline-block absolute bottom-0">
+                  <Link href="https://linkedin.com" className="text-blue-600 hover:text-blue-800 mt-2 inline-block absolute top-[60%] bg-white p-1 rounded-[5px]">
                     <Linkedin className="h-5 w-5" />
                   </Link>
                 </div>
@@ -383,7 +383,7 @@ const OurTeamComponent = () => {
           <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 mb-4">
             {teamLeadsRow1.map((member, index) => (
               <div key={index} className="bg-white rounded-xl overflow-hidden shadow-sm">
-                <div className="relative h-48 rounded-t-xl overflow-hidden">
+                <div className="relative h-[320px] rounded-t-xl overflow-hidden">
                   <div
                     className="absolute inset-0 bg-cover bg-no-repeat"
                     style={{
@@ -408,7 +408,7 @@ const OurTeamComponent = () => {
           <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 mb-4">
             {teamLeadsRow2.map((member, index) => (
               <div key={index} className="bg-white rounded-xl overflow-hidden shadow-sm">
-                <div className="relative h-48 rounded-t-xl overflow-hidden">
+                <div className="relative h-[320px] rounded-t-xl overflow-hidden">
                   <div
                     className="absolute inset-0 bg-cover bg-no-repeat"
                     style={{
@@ -432,7 +432,7 @@ const OurTeamComponent = () => {
           {/* Desktop layout - Additional lead */}
           <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4">
             <div className="bg-white rounded-xl overflow-hidden shadow-sm">
-              <div className="relative h-48 rounded-t-xl overflow-hidden">
+              <div className="relative h-[320px] rounded-t-xl overflow-hidden">
                 <div
                   className="absolute inset-0 bg-cover bg-no-repeat"
                   style={{
@@ -449,10 +449,10 @@ const OurTeamComponent = () => {
       </section>
 
       {/* Join Our Team */}
-      <section className="py-12 px-4">
+      {/* <section className="py-12 px-4">
         <div className="container mx-auto">
           <div className="bg-[#0A1A4A] rounded-xl overflow-hidden p-6 md:p-12 relative">
-            {/* Background decorative element */}
+         
             <div className="absolute bottom-0 right-0 z-0">
               <Image src="/team-join.png" alt="Decorative element" width={300} height={300} />
             </div>
@@ -466,12 +466,37 @@ const OurTeamComponent = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+         <section className=" overflow-hidden  text-white hidden md:flex w-full  justify-center items-center">
+           
+             <div className="w-[99%] py-8 md:py-12 md:px-[100px] relative bg-[#10142C] rounded-[25px]">
+                <div className="max-w-3xl py-16 md:py-20 relative z-10">
+                  <div className="md:text-[20px] md:mb-[30px] text-gray-400 mb-[20px] text-sm">Careers</div>
+                  <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+                  Join Our Team
+                  </h1>
+                  <p className="text-gray-300 mb-8 max-w-lg">
+                  We're an ambitious team shaping the future of payments in Africa. Join our expanding offices and join us
+                in making financial access simpler for everyone.
+                  </p>
+                </div>
+      
+                <div className="absolute top-0 right-0 h-full w-1/2">
+                  <Image
+                    src="/team-join.png"
+                    alt=""
+                    fill
+                    className="object-contain object-right"
+                  />
+                </div>
+              </div>
+           
+            </section>
 
       {/* Current Openings */}
-      <section className="py-12 px-4">
+      <section className="py-12 px-4 mt-[20px]">
         <div className="container mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold mb-8">Current openings</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-8">There are no current openings</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {jobOpenings.map((job, index) => (
               <div key={index} className="bg-white p-6 rounded-xl shadow-sm">
@@ -486,13 +511,18 @@ const OurTeamComponent = () => {
                     {job.location}
                   </div>
                 </div>
-                <Link
-                  href="#"
-                  className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-full transition-colors"
-                >
-                  Apply
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
+                <div className="flex justify-end">
+  <Link
+    href="#"
+    className="inline-flex items-center font-medium text-[#000066] hover:underline"
+  >
+    Apply
+    <span className="ml-2 inline-flex items-center justify-center w-6 h-6 bg-[#4894F4] text-white rounded-full">
+      <ArrowRight className="w-4 h-4" />
+    </span>
+  </Link>
+</div>
+
               </div>
             ))}
           </div>
