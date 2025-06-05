@@ -63,7 +63,7 @@ export default function AboutUsPage() {
               <div className="mr-[20px] bg-red-600">
                 <h2 className="text-[32px] font-bold mb-4 text-[#10142C]">
                   At 3Line, <br /> we believe everyone deserves access to financial services, regardless of location or
-
+</h2>
               <div className="mr-[20px] border-r border-blue-500 h-[300px]">
                
                 <p className="text-gray-600 mb-6">
@@ -104,6 +104,7 @@ export default function AboutUsPage() {
              
               </div>
             </div>
+          </div>
           </div>
         </section>
 
