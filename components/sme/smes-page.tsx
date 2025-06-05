@@ -21,7 +21,7 @@ export default function SmesPage() {
             <div className="bg-[#10142C] rounded-xl overflow-hidden mx-3 md:mx-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6  pl-8 md:pl-12">
                 <div className="text-white pt-8">
-                  <div className="inline-block bg-[#00D2FF] text-[#10142C]  px-3 py-1 rounded-md font-medium text-[30px] ">
+                  <div className="inline-block bg-[#00D2FF] text-[#10142C] font-bold mb-[30px]  px-3 py-1 rounded-md text-[30px] ">
                     SMEs
                   </div>
                   <div  style={{
@@ -241,7 +241,7 @@ export default function SmesPage() {
                   </Link>
                  </div>
                 </div>
-                <div className="p-8 border-r border-blue-500 bg-transparent">
+                <div className="p-8 border-r  bg-transparent  md:col-span-2">
                   <h3 className="font-semibold mb-4 text-[#10142C]">Key features</h3>
                   <div className="space-y-4">
                     <div  className="bg-[#FFFFFF80] p-[15px] rounded-[15px] mb-[5px]">
@@ -266,27 +266,7 @@ export default function SmesPage() {
                     </div>
                   </div>
                 </div>
-                <div className="p-8 bg-transparent">
-                  <h3 className="font-semibold mb-4 text-[#10142C]">Who it's for</h3>
-                  <div className="space-y-6">
-                    <div className="bg-[#FFFFFF80] p-[20px] rounded-[15px]">
-                    <Image src="/shop.png" alt="user" width={60} height={60} />
-                      <div>
-                        <p className="text-sm text-gray-600">
-                          SMEs looking to streamline payment processes and improve efficiency.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="bg-[#FFFFFF80] p-[20px] rounded-[15px]">
-                    <Image src="/user.png" alt="user" width={60} height={60} />
-                      <div>
-                        <p className="text-sm text-gray-600">
-                          Business owners who want real-time insights to optimize sales and operations.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+               
               </div>
             </div>
           </div>

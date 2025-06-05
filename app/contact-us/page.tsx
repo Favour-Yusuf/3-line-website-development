@@ -44,6 +44,7 @@ export default function ContactUsPage() {
   return (
     <main className="min-h-screen bg-[#EEF3FF]">
       {/* Hero Section */}
+      
       <section className="relative overflow-hidden text-white  md:pt-[85px] md:bg-[#111B41] bg-[#000066] rounded-[15px] md:mt-0 mt-[70px]">
         <div className="container mx-auto ml-[20px] md:ml-[70px] py-8 md:py-12 relative">
           <div className="max-w-full md:max-w-3xl py-12 md:py-20 relative z-10 pr-4">

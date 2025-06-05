@@ -238,20 +238,20 @@ const OurTeamComponent = () => {
             </div>
 
             {/* Values */}
-            <div className="bg-white p-6 rounded-xl shadow-sm">
+            <div className="bg-transparent p-6 rounded-xl shadow-sm ">
               <h3 className="text-xl font-semibold mb-4">Our Values</h3>
               <div className="space-y-4">
-                <div>
+                <div className="bg-[#FFFFFF80] p-[15px] rounded-[10px]">
                   <h4 className="font-medium">Innovation</h4>
                   <p className="text-sm text-gray-600">
                     We constantly push boundaries to deliver cutting-edge solutions.
                   </p>
                 </div>
-                <div>
+                <div className="bg-[#FFFFFF80] p-[15px] rounded-[10px]">
                   <h4 className="font-medium">Integrity</h4>
                   <p className="text-sm text-gray-600">We operate with transparency and honesty.</p>
                 </div>
-                <div>
+                <div className="bg-[#FFFFFF80] p-[15px] rounded-[10px]">
                   <h4 className="font-medium">Inclusion</h4>
                   <p className="text-sm text-gray-600">We believe in financial access for all.</p>
                 </div>
@@ -442,13 +442,7 @@ const OurTeamComponent = () => {
                   }}
                 ></div>
               </div>
-              <div className="p-3">
-                <h3 className="text-sm font-semibold">{additionalLead.name}</h3>
-                <p className="text-xs text-gray-600">{additionalLead.role}</p>
-                <Link href="https://linkedin.com" className="text-blue-600 hover:text-blue-800 mt-1 inline-block">
-                  <Linkedin className="h-4 w-4" />
-                </Link>
-              </div>
+             
             </div>
           </div>
         </div>
