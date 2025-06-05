@@ -100,10 +100,10 @@ const Header = () => {
           <div className="relative" ref={productsRef}>
               <button
                 onClick={() => setActiveDropdown(prev => prev === "products" ? null : "products")}
-                className="flex items-center text-sm lg:text-base font-medium px-2 lg:px-4"
+                className="flex items-center text-sm lg:text-[20px] font-medium px-2 lg:px-4"
               >
                 Products
-                <ChevronDown className={`ml-1 h-4 w-4 transition-transform ${activeDropdown === "products" ? "rotate-180" : ""}`} />
+                <ChevronDown className={`ml-1 h-5 w-5 transition-transform ${activeDropdown === "products" ? "rotate-180" : ""}`} />
                 </button>
 
               {/* Products Dropdown */}
@@ -201,10 +201,10 @@ const Header = () => {
             <div className="relative" ref={companyRef}>
               <button
                 onClick={() => setActiveDropdown(prev => prev === "company" ? null : "company")}
-                className="flex items-center text-sm lg:text-base font-medium px-2 lg:px-4"
+                className="flex items-center text-sm lg:text-[20px] font-medium px-2 lg:px-4"
               >
                 Company
-                <ChevronDown className={`ml-1 h-4 w-4 transition-transform ${activeDropdown === "company" ? "rotate-180" : ""}`} />
+                <ChevronDown className={`ml-1 h-5 w-5 transition-transform ${activeDropdown === "company" ? "rotate-180" : ""}`} />
               </button>
 
               {activeDropdown === "company" && (
@@ -236,10 +236,10 @@ const Header = () => {
             <div className="relative" ref={resourcesRef}>
               <button
                 onClick={() => setActiveDropdown(prev => prev === "resources" ? null : "resources")}
-                className="flex items-center text-sm lg:text-base font-medium px-2 lg:px-4"
+                className="flex items-center text-sm lg:text-[20px] font-medium px-2 lg:px-4"
               >
                 Resources
-                <ChevronDown className={`ml-1 h-4 w-4 transition-transform ${activeDropdown === "resources" ? "rotate-180" : ""}`} />
+                <ChevronDown className={`ml-1 h-5 w-5 transition-transform ${activeDropdown === "resources" ? "rotate-180" : ""}`} />
               </button>
 
               {activeDropdown === "resources" && (
@@ -268,16 +268,16 @@ const Header = () => {
               )}
             </div>
 
-            <Link href="/contact-us" className={`text-sm lg:text-base font-medium ${isActive("/contact-us")}`}>
+            <Link href="/contact-us" className={`text-sm lg:text-[20px] font-medium ${isActive("/contact-us")}`}>
               Contact Us
             </Link>
 
             <Link href="/contact-us" className="ml-2 lg:ml-4">
               <div className="flex items-center">
-                <span className="text-sm lg:text-base font-medium mr-2 text-[#000066]">Get started</span>
+                <span className="text-sm lg:text-[24px] font-medium mr-2 text-[#000066]">Get started</span>
             
            
-                <Image src="/arrow_header.png" alt="arrow header" width={40} height={40} />
+                <Image src="/arrow_header.png" alt="arrow header" width={60} height={60} />
              
               </div>
             </Link>

@@ -62,8 +62,8 @@ const OurSolutions = () => {
       {/* Desktop View */}
       <section className="hidden sm:grid w-[95%] mx-auto z-10">
       <div className="w-full mb-[25px]">
-      <h2 className="text-4xl font-bold text-black mb-6 text-left">Our solutions</h2>
-        <p>Ready to Transform Your Payments? Join the hundreds of <br />financial institutions and businesses already growing with 3Line.</p>
+      <h2 className="text-[50px] font-bold text-black mb-6 text-left">Our solutions</h2>
+        <p className="text-[23px] text-gray-700">Ready to Transform Your Payments? Join the hundreds of <br />financial institutions and businesses already growing with 3Line.</p>
       </div>
 
         <div className="grid grid-cols-3 gap-8">
@@ -86,13 +86,13 @@ const OurSolutions = () => {
           ].map((item, index) => (
             <div
               key={index}
-              className="relative bg-white rounded-2xl shadow-xl py-20 px-6 flex flex-col gap-4"
+              className="relative hover:px-20 cursor-pointer transition-all duration-700 hover:scale-x-100 bg-white rounded-2xl shadow-xl py-20 px-6 flex flex-col gap-4"
             >
               <Image src={item.icon} alt={`${item.title} Icon`} width={50} height={50} />
-              <h3 className="text-xl font-bold">{item.title}</h3>
-              <p className="text-gray-600">{item.text}</p>
+              <h3 className="text-[30px] font-bold">{item.title}</h3>
+              <p className="text-gray-600 text-[20px]">{item.text}</p>
               <button className="absolute mb-[30px] bottom-0 right-0 w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white mt-auto ml-auto">
-                <ArrowUpRight className="w-5 h-5" />
+                <ArrowUpRight className="w-7 h-7" />
               </button>
             </div>
           ))}

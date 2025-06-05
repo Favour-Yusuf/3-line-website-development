@@ -29,7 +29,7 @@ export default function AboutUsPage() {
             <div className=" bg-[#10142C] rounded-xl overflow-hidden mx-3 md:mx-4">
               <div className=" md:pl-10 flex flex-col md:flex-row items-start md:items-center md:justify-between">
                 <div className="w-full md:w-3/5">
-                  <div className="inline-block bg-[#00D2FF] text-[#10142C] px-3 py-1 rounded-md font-medium mb-4">
+                  <div className="inline-block text-[50px] bg-[#6be0f0] text-[#10142C] px-3 py- rounded-md font-bold mb-4">
                     About us
                   </div>
                   <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
@@ -55,9 +55,9 @@ export default function AboutUsPage() {
           <div className="container mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mx-3 md:mx-4">
               {/* Left Column */}
-              <div className="mr-[20px]">
-                <h2 className="text-xl font-bold mb-4 text-[#10142C]">
-                  At 3Line, we believe everyone deserves access to financial services, regardless of location or
+              <div className="mr-[20px] bg-red-600">
+                <h2 className="text-[32px] font-bold mb-4 text-[#10142C]">
+                  At 3Line, <br /> we believe everyone deserves access to financial services, regardless of location or
                   background
                 </h2>
                 <p className="text-gray-600 mb-6">
@@ -73,9 +73,6 @@ export default function AboutUsPage() {
                   <Image src="/about2.png" alt="Team meeting" fill className="object-cover" />
                 </div>
               </div>
-            
-             
-
               {/* Right Column */}
               <div className="mt-[250px] ml-[20px]">
                 <h2 className="text-xl font-bold mb-4 text-[#10142C] ">Our story</h2>
