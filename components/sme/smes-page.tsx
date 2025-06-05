@@ -21,7 +21,7 @@ export default function SmesPage() {
             <div className="bg-[#10142C] rounded-xl overflow-hidden mx-3 md:mx-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6  pl-8 md:pl-12">
                 <div className="text-white pt-8">
-                  <div className="inline-block bg-[#00D2FF] text-[#10142C] font-bold mb-[30px]  px-3 py-1 rounded-md text-[30px] ">
+                  <div className="inline-block text-[50px] bg-[#6be0f0] text-[#10142C] px-3 py- rounded-md font-bold mb-4 ">
                     SMEs
                   </div>
                   <div  style={{
@@ -76,7 +76,8 @@ export default function SmesPage() {
             {/* Gravity Lite */}
             <div className=" rounded-xl overflow-hidden shadow-sm mb-8 mx-3 md:mx-4">
               <div className="grid grid-cols-1 md:grid-cols-3">
-                <div className="p-8 border-r border-blue-500 bg-white">
+                <div className="p-8  bg-white relative">
+                <div className="hidden md:block absolute top-0 right-[-12px] h-full w-[0.5px] bg-blue-500"></div>
                   <div className="bg-[#10142C] text-white w-12 h-12 flex items-center justify-center rounded-lg mb-4">
                     <span className="text-xl font-bold">1</span>
                   </div>
@@ -85,7 +86,7 @@ export default function SmesPage() {
                   <p className="text-gray-600 mb-6">
                   Expand financial access in your community with Gravity Lite, our agency banking solution designed for small to medium-sized businesses and entrepreneurs.
                   </p>
-                  <div className="w-[32%]  absolute flex justify-end items-end">
+                  <div className="w-[100%]  absolute flex justify-end items-end">
                  <Link
                     href="#"
                     className="inline-flex items-center justify-center  text-[#000066] font-medium py-2 px-4 rounded-full transition-colors  mt-[100px]"
@@ -147,7 +148,8 @@ export default function SmesPage() {
             {/* Medusa Merchant */}
             <div className=" rounded-xl overflow-hidden shadow-sm mb-8 mx-3 md:mx-4">
               <div className="grid grid-cols-1 md:grid-cols-3">
-                <div className="p-8 border-r border-blue-500 bg-white">
+                <div className="p-8 bg-white relative">
+                <div className="hidden md:block absolute top-0 right-[-12px] h-full w-[0.5px] bg-blue-500"></div>
                   <div className="bg-[#10142C] text-white w-12 h-12 flex items-center justify-center rounded-lg mb-4">
                     <span className="text-xl font-bold">2</span>
                   </div>
@@ -157,7 +159,7 @@ export default function SmesPage() {
                     Medusa Merchant is built to simplify payments, streamline business operations, and provide real-time
                     insights that help businesses grow.
                   </p>
-                  <div className="w-[32%]  absolute flex justify-end items-end">
+                  <div className="w-[100%]  absolute flex justify-end items-end">
                  <Link
                     href="#"
                     className="inline-flex items-center justify-center  text-[#000066] font-medium py-2 px-4 rounded-full transition-colors  mt-[100px]"
@@ -220,7 +222,8 @@ export default function SmesPage() {
             {/* Magtipon Lite */}
             <div className=" rounded-xl overflow-hidden shadow-sm mb-8 mx-3 md:mx-4">
               <div className="grid grid-cols-1 md:grid-cols-3">
-                <div className="p-8 border-r border-blue-500 bg-white">
+                <div className="p-8 relative bg-white">
+                <div className="hidden md:block absolute top-0 right-[-12px] h-full w-[0.5px] bg-blue-500"></div>
                   <div className="bg-[#10142C] text-white w-12 h-12 flex items-center justify-center rounded-lg mb-4">
                     <span className="text-xl font-bold">3</span>
                   </div>
@@ -230,7 +233,7 @@ export default function SmesPage() {
                   <p className="text-gray-600 mb-6">
                   A powerful payment gateway that allows businesses to issue virtual accounts, process bulk payments, and offer value-added services like airtime and bill payments.
                   </p>
-                  <div className="w-[32%]  absolute flex justify-end items-end">
+                  <div className="w-[100%]  absolute flex justify-end items-end">
                  <Link
                     href="#"
                     className="inline-flex items-center justify-center  text-[#000066] font-medium py-2 px-4 rounded-full transition-colors  mt-[100px]"
