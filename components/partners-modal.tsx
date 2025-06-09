@@ -26,7 +26,13 @@ const PartnersModal = ({ isOpen, onClose }: PartnersModalProps) => {
     { name: "Sterling Bank", logo: "/sterling_bank.png", width: 120 },
     { name: "Optimus Bank", logo: "/optimusbank.png", width: 120 },
     { name: "NowNow", logo: "/nownow.JPG", width: 120 },
-    { name: "PalmPay", logo: "/palmpay.png", width: 120 },
+    { name: "wema_bank", logo: "/wema_bank.png", width: 120 },
+    { name: "upUnified", logo: "/upUnified.png", width: 120 },
+    { name: "union_bank_2", logo: "/union_bank_2.png", width: 120 },
+    { name: "opay", logo: "/opay.png", width: 120 },
+    { name: "kiss", logo: "/kiss.png", width: 120 },
+    { name: "Hydrogen", logo: "/Hydrogen.png", width: 120 },
+   
   ]
 
   return (
