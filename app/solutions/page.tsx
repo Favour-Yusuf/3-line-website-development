@@ -1,8 +1,9 @@
-import Header from "@/components/main_header"
+
 import Footer from "@/components/footer"
 import SolutionsHero from "@/components/solutions/solutions-hero"
 import SolutionsSection from "@/components/solutions/solutions-section"
 import SecuritySection from "@/components/home/security-section"
+import Header from "@/components/header"
 
 export default function SolutionsPage() {
   return (

@@ -7,6 +7,7 @@ import SolutionsSection from "@/components/home/solutions-section"
 import CaseStudiesPreview from "@/components/home/case-studies-preview"
 import SeamlessTransactions from "@/components/home/seamless-transactions"
 import SecuritySection from "@/components/home/security-section"
+import ScrollTransitionComponents from "@/components/home/scroll_component"
 
 export default function Home() {
   return (
@@ -40,7 +41,7 @@ export default function Home() {
       </section>
 
       {/* Transactions Map */}
-      <TransactionsMap />
+      <ScrollTransitionComponents />
 
       {/* Solutions Section with background */}
       <section className="relative">
