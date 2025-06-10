@@ -29,11 +29,7 @@ export default function AboutUsPage() {
             <div className=" bg-[#10142C] rounded-xl overflow-hidden mx-3 md:mx-4 ">
               <div className=" md:pl-10 flex flex-col md:flex-row items-start md:items-center md:justify-between">
                 <div className="w-full md:w-3/5">
-
-                  <div className="inline-block text-[50px] bg-[#6be0f0] text-[#10142C] px-3 py- rounded-md font-bold mb-4">
-
-                  
-
+                  <div className="inline-block bg-[#00D2FF] text-[#10142C] font-bold mb-[30px] px-3 py-1 rounded-md text-[30px] ">
                     About us
                   </div>
                   <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
@@ -59,13 +55,11 @@ export default function AboutUsPage() {
           <div className="container mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mx-3 md:mx-4 md:mb-[200px]">
               {/* Left Column */}
-
-              <div className="mr-[20px] bg-red-600">
-                <h2 className="text-[32px] font-bold mb-4 text-[#10142C]">
-                  At 3Line, <br /> we believe everyone deserves access to financial services, regardless of location or
-</h2>
               <div className="mr-[20px] border-r border-blue-500 h-[300px]">
-               
+                <h2 className="text-2xl font-bold mb-4 text-[#10142C]">
+                  At 3Line, <br /> we believe everyone deserves access to <br /> financial services, regardless of location or
+                  background
+                </h2>
                 <p className="text-gray-600 mb-6">
                   Since 2017, we've been bridging financial gaps with technology, ensuring businesses, banks, and
                   individuals can move money effortlessly and access the financial tools they need to thrive.
@@ -79,6 +73,8 @@ export default function AboutUsPage() {
                   <Image src="/about2.png" alt="Team meeting" fill className="object-cover" />
                 </div>
               </div>
+            
+             {/* <div className="w-[1px] h-[30px] border-r border-blue-500"></div> */}
 
               {/* Right Column */}
               <div className="mt-[200px] ml-[20px]">
@@ -104,7 +100,6 @@ export default function AboutUsPage() {
              
               </div>
             </div>
-          </div>
           </div>
         </section>
 
