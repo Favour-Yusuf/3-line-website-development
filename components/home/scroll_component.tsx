@@ -1,12 +1,11 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import Image from "next/image"
 import TransactionsMap from "./transactions-map"
 import WhoWeServeComponent from "./who_we_serve"
 
 const ScrollTransitionComponents = () => {
-  const [currentComponent, setCurrentComponent] = useState(0)
+  const [scrollProgress, setScrollProgress] = useState(0)
   const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -15,13 +14,12 @@ const ScrollTransitionComponents = () => {
 
       const rect = containerRef.current.getBoundingClientRect()
       const containerHeight = rect.height
-      const scrollProgress = Math.max(0, Math.min(1, -rect.top / (containerHeight - window.innerHeight)))
+      const windowHeight = window.innerHeight
 
-      // Switch component when scroll progress reaches 50%
-      if (scrollProgress > 0.5) {
-        setCurrentComponent(1)
-      } else {
-        setCurrentComponent(0)
+      // Calculate scroll progress when container is in view
+      if (rect.top <= 0 && rect.bottom >= windowHeight) {
+        const progress = Math.max(0, Math.min(1, -rect.top / (containerHeight - windowHeight)))
+        setScrollProgress(progress)
       }
     }
 
@@ -32,23 +30,27 @@ const ScrollTransitionComponents = () => {
   }, [])
 
   return (
-    <div ref={containerRef} className="relative h-[200vh]">
-      {/* First Component - Transactions Map */}
-      <div
-        className={`fixed top-0 left-0 w-full h-screen transition-all duration-1000 ease-in-out ${
-          currentComponent === 0 ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full"
-        }`}
-      >
-        <TransactionsMap />
-      </div>
+    <div ref={containerRef} className="relative h-[140vh] overflow-hidden">
+      <div className="sticky top-0 h-screen w-full">
+        {/* First Component - Transactions Map */}
+        <div
+          className="absolute top-0 left-0 w-full h-full transition-transform duration-300 ease-out"
+          style={{
+            transform: `translateX(${scrollProgress > 0.5 ? "-100%" : "0%"})`,
+          }}
+        >
+          <TransactionsMap />
+        </div>
 
-      {/* Second Component - Who We Serve */}
-      <div
-        className={`fixed top-0 left-0 w-full h-screen transition-all duration-1000 ease-in-out ${
-          currentComponent === 1 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-full"
-        }`}
-      >
-        <WhoWeServeComponent />
+        {/* Second Component - Who We Serve */}
+        <div
+          className="absolute top-0 left-0 w-full h-full transition-transform duration-300 ease-out"
+          style={{
+            transform: `translateX(${scrollProgress > 0.5 ? "0%" : "100%"})`,
+          }}
+        >
+          <WhoWeServeComponent />
+        </div>
       </div>
     </div>
   )
