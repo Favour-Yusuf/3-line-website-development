@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react"
 export default function Footer() {
   return (
     <div className="bg-[#EEF3FF] w-full flex justify-center items-center">
- <footer className="relative bg-[#A6C4FA] overflow-hidden px-[25px] w-[97%] rounded-[10px]">
+ <footer className="relative bg-[#A6C4FA] overflow-hidden px-[25px] w-[95%] rounded-[10px]">
       {/* Background pattern */}
       <div className="absolute inset-0 z-0 opacity-50">
         <Image src="/footer-bg.png" alt="" fill className="object-cover" priority />
@@ -16,7 +16,7 @@ export default function Footer() {
         <div className="container mx-auto px-4 py-4 hidden md:block">
           <div className="flex flex-wrap">
             {/* Logo */}
-            <div className="w-1/4 pr-8">
+            <div className="w-[12%] pr-8">
               <Link href="/" className="inline-block">
                             <Image src="/logo.png" alt="3Line logo" width={80} height={40} />
               </Link>
@@ -25,8 +25,8 @@ export default function Footer() {
             {/* Navigation Menus */}
             <div className="w-2/4 flex">
               <div className="w-1/3">
-                <h3 className="font-bold text-sm mb-2">Products</h3>
-                <ul className="space-y-1 text-[14px]">
+                <h3 className="font-bold text-[28px] mb-2">Products</h3>
+                <ul className="space-y-1 font-semibold text-[18px]">
                   <li>
                     <Link href="#" className="hover:underline">
                       SMEs
@@ -45,8 +45,8 @@ export default function Footer() {
                 </ul>
               </div>
               <div className="w-1/3">
-                <h3 className="font-bold text-sm mb-2">Company</h3>
-                <ul className="space-y-1 text-[14px]">
+                <h3 className="font-bold text-[28px] mb-2">Company</h3>
+                <ul className="space-y-1 font-semibold text-[18px]">
                   <li>
                     <Link href="#" className="hover:underline">
                       Testimonials
@@ -75,8 +75,8 @@ export default function Footer() {
                 </ul>
               </div>
               <div className="w-1/3">
-                <h3 className="font-bold text-sm mb-2">Resources</h3>
-                <ul className="space-y-1 text-[14px]">
+                <h3 className="font-bold text-[28px] mb-2">Resources</h3>
+                <ul className="space-y-1 font-semibold text-[18px]">
                   <li>
                     <Link href="#" className="hover:underline">
                       Blog
@@ -102,27 +102,27 @@ export default function Footer() {
             </div>
 
             {/* Subscription Form */}
-            <div className="w-1/4 bg-white rounded-lg p-8 shadow-md">
-              <h3 className="text-base font-bold mb-3 text-[23px] ">Subscribe to get updates that matter.</h3>
-              <p className="text-xs text-gray-700 mb-2">
+            <div className="w-[38%]  bg-white rounded-lg p-8 shadow-md">
+              <h3 className="font-bold leading-none mb-3 text-[30px] ">Subscribe to get updates that matter.</h3>
+              <p className="text-[18px] text-gray-700 mb-2">
                 Stay informed on payments, business growth, and 3Line news right in your inbox!
               </p>
               <div className="mb-2">
-                <label htmlFor="email" className="block text-xs font-medium mb-1">
+                <label htmlFor="email" className="block text-[18px] font-medium mb-1">
                   Email
                 </label>
                 <input
                   type="email"
                   id="email"
                   placeholder="What's your email?"
-                  className="w-full px-2 py-1 text-xs border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#000066]"
+                  className="w-full px-2 py-4 text-[17px] border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#000066]"
                 />
               </div>
               <div className="flex justify-end">
-                <button className="flex items-center text-[#000066] text-xs font-bold">
+                <button className="flex items-center text-[#000066] text-[18px] font-bold">
                   Subscribe
                 
-                  <Image src="/arrow_footer.png" alt="arrow footer " className="mt-[10px]" width={50} height={50} />
+                  <Image src="/arrow_footer.png" alt="arrow footer " className="mt-[10px]" width={70} height={70} />
               
                 </button>
               </div>
@@ -143,13 +143,13 @@ export default function Footer() {
           <div className="border-t border-[#0000661A] my-2"></div>
 
           {/* Copyright and Regulation */}
-          <div className="flex justify-between items-center py-2">
+          <div className="flex items-center py-2">
             <div>
-              <p className="text-xs">© 2025 3line</p>
+              <p className="text-[18px] font-medium">© 2025 3line</p>
             </div>
-            <div className="flex items-center">
+            <div className="flex ml-16  items-center">
               <Image src="/coat.png" alt="Coat of Arms" width={20} height={15} className="mr-1" />
-              <p className="text-xs">3line is regulated by the Central Bank of Nigeria</p>
+              <p className="text-[18px] font-medium">3line is regulated by the Central Bank of Nigeria</p>
             </div>
           </div>
         </div>
