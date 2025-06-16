@@ -178,7 +178,7 @@ const Header = () => {
           hasScrolled ? "bg-transparent mt-2" : "bg-[#EEF3FF] mt-0"
         }`}
       >
-        <header className="bg-red-900 w-[95%] bg-[#B8CFFF] py-3 md:py-4 px-4 md:px-8 flex rounded-[10px]">
+        <header className=" w-[95%] bg-[#B8CFFF] py-3 md:py-4 px-4 md:px-8 flex rounded-[10px]">
           <div className="container mx-auto flex items-center justify-between">
             <Link href="/" className="flex items-center">
               <Image src="/logo.png" alt="3Line logo" width={80} height={40} />
