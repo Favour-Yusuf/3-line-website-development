@@ -3,8 +3,8 @@ import Link from "next/link";
 
 const HeroSection = () => {
   return (
-    <section className="relative w-full overflow-hidden flex justify-center items-center bg-[#EEF3FF] md:mt-[35px]">
-      <div className="w-[96%] h-[500px] md:h-[650px] lg:h-[700px] bg-[#000066] md:bg-[#0A1A4A] relative rounded-[10px] pt-[40px]">
+    <section className="relative w-full overflow-hidden flex justify-center items-center bg-[#EEF3FF] mt-[20px] md:mt-[35px]">
+      <div className="w-[96%] h-[600px] md:h-[650px] lg:h-[700px] bg-[#000066] md:bg-[#0A1A4A] relative rounded-[20px] md:rounded-[10px] pt-[40px] ">
         {/* Mobile background */}
         <div className="absolute inset-0 w-full h-full overflow-hidden md:hidden">
           <Image
@@ -29,7 +29,7 @@ const HeroSection = () => {
 
         <div className="relative w-full mx-auto h-full z-10 pl-4 md:flex flex-col md:flex-row items-between">
           {/* Left content */}
-          <div className="w-full md:w-1/2 md:pt-[60px] md:pl-[40px] md:ml-[45px]">
+          <div className="w-full md:w-1/2 md:pt-[60px] md:pl-[40px] md:ml-[45px] md:px-0 px-[20px]">
             <div className="inline-block bg-[#00D2FF] text-[#0A1A4A] md:px-3 md:py-1 rounded-md font-medium text-[30px] rotate-[-15deg] md:absolute bottom-[90%]">
               Your
             </div>
@@ -40,7 +40,7 @@ const HeroSection = () => {
                 textShadow:
                   "0px 10px 20px rgba(0,0,0,0.5), 0px 5px 10px rgba(0,0,0,0.3)",
               }}
-              className="text-5xl text-headline md:text-6xl lg:text-[150px] font-bold text-white mb-6 leading-none md:pt-[0px]"
+              className="text-7xl text-headline lg:text-[150px] font-bold text-white mb-4 leading-none md:pt-[0px]"
             >
               Preferred
               <br />
