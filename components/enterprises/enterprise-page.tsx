@@ -24,14 +24,14 @@ export default function EnterprisePage() {
             <div className="bg-[#10142C] rounded-xl overflow-hidden mx-3 md:mx-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6  pl-8 md:pl-12">
                 <div className="text-white pt-8">
-                  <div  className="inline-block text-[55px] bg-[#6be0f0] text-[#10142C] px-3 py- rounded-md font-bold mb-4">
+                  <div  className="inline-block tracking-tight text-[55px] bg-[#6be0f0] text-[#10142C] px-3 py- rounded-md font-bold mb-4">
                   Enterprise
                   </div>
                   <div  style={{
     
     textShadow:
       '0px 10px 20px rgba(0,0,0,0.5), 0px 5px 10px rgba(0,0,0,0.3)',
-  }} className="text-5xl text-headline md:text-6xl lg:text-[60px] lg:w-[700px] font-bold text-white mb-6 leading-none mt-[10px]">
+  }} className="text-5xl text-headline md:text-6xl lg:text-[65px] lg:w-[800px] font-bold text-white mb-6 leading-none mt-[10px]">
                   Scalable infrastructure <br />
                   for large organizations
                   </div>
@@ -69,7 +69,7 @@ export default function EnterprisePage() {
     <Image src="/sme-background.png" alt="Background pattern" fill className="object-cover opacity-50" />
   </div>
   <div className="container mx-auto relative z-10">
-    <h2 className="text-2xl md:text-3xl font-bold mb-8 text-[#10142C] mx-3 md:mx-4">
+    <h2 className="text-2xl md:text-[55px] leading-none font-bold mb-8 text-[#10142C] mx-3 md:mx-4">
       Powering the Future of <br /> Digital Banking
     </h2>
 
@@ -99,35 +99,35 @@ export default function EnterprisePage() {
 
         <div className="p-8 bg-transparent relative">
           <div className="hidden md:block absolute top-0 right-[-12px] h-full w-[0.5px] bg-blue-500"></div>
-          <h3 className="font-semibold mb-4 text-[#10142C]">Key features</h3>
+          <h3 className="font-semibold mb-4 text-[#10142C] text-[40px] tracking-tighter">Key features</h3>
           <div className="space-y-4">
             <div className="bg-[#FFFFFF80] p-[15px] rounded-[15px] mb-[5px]">
-              <h4 className="font-medium text-[#10142C]">Enterprise-Grade Network Management</h4>
-              <p className="text-sm text-gray-600">Efficiently onboard and manage thousands of agents.</p>
+              <h4 className="font-bold text-[#10142C] text-[20px] leading-tight">Enterprise-Grade Network Management</h4>
+              <p className="text-[18px] text-gray-600">Efficiently onboard and manage thousands of agents.</p>
             </div>
             <div className="bg-[#FFFFFF80] p-[15px] rounded-[15px] mb-[5px]">
-              <h4 className="font-medium text-[#10142C]">Real-Time Transaction Processing</h4>
-              <p className="text-sm text-gray-600">Ensure smooth, uninterrupted services.</p>
+              <h4 className="font-bold text-[#10142C] text-[20px] leading-tight ">Real-Time Transaction Processing</h4>
+              <p className="text-[18px] text-gray-600">Ensure smooth, uninterrupted services.</p>
             </div>
             <div className="bg-[#FFFFFF80] p-[15px] rounded-[15px] mb-[5px]">
-              <h4 className="font-medium text-[#10142C]">Customizable Integrations</h4>
-              <p className="text-sm text-gray-600">Seamlessly connect with your banking infrastructure.</p>
+              <h4 className="font-bold text-[#10142C] text-[20px] leading-tight">Customizable Integrations</h4>
+              <p className="text-[18px] text-gray-600">Seamlessly connect with your banking infrastructure.</p>
             </div>
             <div className="bg-[#FFFFFF80] p-[15px] rounded-[15px] mb-[5px]">
-              <h4 className="font-medium text-[#10142C]">Fraud Prevention & Security</h4>
-              <p className="text-sm text-gray-600">Advanced monitoring to prevent fraudulent activities.</p>
+              <h4 className="font-bold text-[#10142C] text-[20px] leading-tight">Fraud Prevention & Security</h4>
+              <p className="text-[18px] text-gray-600">Advanced monitoring to prevent fraudulent activities.</p>
             </div>
           </div>
         </div>
 
         <div className="p-8 bg-transparent">
-          <h3 className="font-semibold mb-4 text-[#10142C]">Who it's for</h3>
+          <h3 className="font-semibold mb-4 text-[#10142C] text-[40px] tracking-tighter">Who it's for</h3>
           <div className="space-y-6">
             <div className="bg-[#FFFFFF80] p-[20px] rounded-[15px]">
               <Image src="/bank.png" alt="user" width={40} height={40} />
               <br />
               <div>
-                <p className="text-sm text-gray-600">
+                <p className="text-[18px] text-gray-600">
                   Financial institutions and organisations aiming to extend financial services nationwide.
                 </p>
               </div>
@@ -136,7 +136,7 @@ export default function EnterprisePage() {
               <Image src="/buliding.png" alt="user" width={40} height={40} />
               <br />
               <div>
-                <p className="text-sm text-gray-600">
+                <p className="text-[18px] text-gray-600">
                   Financial institutions looking to manage large-scale agent networks.
                 </p>
               </div>
@@ -171,23 +171,23 @@ export default function EnterprisePage() {
         </div>
 
         <div className="p-8 border-r border-gray-100 bg-transparent md:col-span-2">
-          <h3 className="font-semibold mb-4 text-[#10142C]">Key features</h3>
+          <h3 className="font-semibold mb-4 text-[#10142C] text-[40px] tracking-tighter">Key features</h3>
           <div className="space-y-4">
             <div className="bg-[#FFFFFF80] p-[15px] rounded-[15px] mb-[5px]">
-              <h4 className="font-medium text-[#10142C]">End-to-End Digital Banking Solutions</h4>
-              <p className="text-sm text-gray-600">From customer onboarding to transactions.</p>
+              <h4 className="font-bold text-[#10142C] text-[20px]">End-to-End Digital Banking Solutions</h4>
+              <p className="text-[18px] text-gray-600">From customer onboarding to transactions.</p>
             </div>
             <div className="bg-[#FFFFFF80] p-[15px] rounded-[15px] mb-[5px]">
-              <h4 className="font-medium text-[#10142C]">Swift, Secure Payments</h4>
-              <p className="text-sm text-gray-600">Process transactions seamlessly across all channels</p>
+              <h4 className="font-bold text-[#10142C] text-[20px]">Swift, Secure Payments</h4>
+              <p className="text-[18px] text-gray-600 ">Process transactions seamlessly across all channels</p>
             </div>
             <div className="bg-[#FFFFFF80] p-[15px] rounded-[15px] mb-[5px]">
-              <h4 className="font-medium text-[#10142C]">High Uptime & Reliability</h4>
-              <p className="text-sm text-gray-600">Ensure smooth banking operations without disruptions.</p>
+              <h4 className="font-bold text-[#10142C] text-[20px]">High Uptime & Reliability</h4>
+              <p className="text-[18px] text-gray-600 ">Ensure smooth banking operations without disruptions.</p>
             </div>
             <div className="bg-[#FFFFFF80] p-[15px] rounded-[15px] mb-[5px]">
-              <h4 className="font-medium text-[#10142C]">Scalable to Millions of Users</h4>
-              <p className="text-sm text-gray-600">Built for institutions handling high transaction volumes.</p>
+              <h4 className="font-bold text-[#10142C] text-[20px]">Scalable to Millions of Users</h4>
+              <p className="text-[18px] text-gray-600 ">Built for institutions handling high transaction volumes.</p>
             </div>
           </div>
         </div>
