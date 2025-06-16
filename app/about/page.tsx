@@ -1,4 +1,4 @@
-import Header from "@/components/main_header"
+import Header from "@/components/header"
 import Footer from "@/components/footer"
 import AboutHero from "@/components/about/about-hero"
 import AboutStats from "@/components/about/about-stats"
