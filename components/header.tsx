@@ -174,11 +174,11 @@ const Header = () => {
   return (
     <>
       <div
-        className={`mt-[10px] md:mt-0 w-full flex justify-center items-center fixed top-0 left-0 right-0 px-4 z-50 transition-all duration-300 md:py-[10px] h-[var(--header-height-mobile)] md:h-[var(--header-height-desktop)] ${
+        className={`mt-[10px] md:mt-0 w-full flex justify-center items-center fixed top-0 left-0 right-0  md:px-4 z-50 transition-all duration-300 md:py-[10px] h-[var(--header-height-mobile)] md:h-[var(--header-height-desktop)] ${
           hasScrolled ? "bg-transparent mt-2" : "bg-[#EEF3FF] mt-0"
         }`}
       >
-        <header className="w-[90%] bg-[#B8CFFF] py-3 md:py-4 px-4 md:px-8 flex rounded-[10px]">
+        <header className="bg-red-900 w-[95%] bg-[#B8CFFF] py-3 md:py-4 px-4 md:px-8 flex rounded-[10px]">
           <div className="container mx-auto flex items-center justify-between">
             <Link href="/" className="flex items-center">
               <Image src="/logo.png" alt="3Line logo" width={80} height={40} />
@@ -420,7 +420,7 @@ const Header = () => {
                       <Image src="/logo.png" alt="3Line logo" width={80} height={40} />
                     </Link>
                     <button onClick={() => setIsMenuOpen(false)} className="p-2">
-                      <X className="h-6 w-6 text-[#0A1A4A]" />
+                      <X className="h-10 w-10 text-[#0A1A4A]" />
                     </button>
                   </div>
 
@@ -430,7 +430,7 @@ const Header = () => {
                     <div>
                       <Link
                         href="/"
-                        className="text-[#4A5568] text-lg font-medium block"
+                        className="text-gray-800 text-lg font-bold block"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         Home
@@ -439,7 +439,7 @@ const Header = () => {
 
                     {/* Products */}
                     <div>
-                      <h3 className="text-[#4A5568] text-lg font-medium mb-4">Products</h3>
+                      <h3 className="text-gray-800 text-lg font-bold mb-4">Products</h3>
                       <div className="space-y-3">
                         <Link href="/solutions/smes" onClick={() => setIsMenuOpen(false)}>
                           <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 mb-4">
@@ -473,32 +473,32 @@ const Header = () => {
 
                     {/* Company */}
                     <div>
-                      <h3 className="text-[#4A5568] text-lg font-medium mb-4">Company</h3>
+                      <h3 className="text-gray-800 text-lg font-bold mb-4">Company</h3>
                       <div className="space-y-4 pl-4">
                         <Link
                           href="/about-us"
-                          className="text-[#0A1A4A] text-base block"
+                          className="text-black text-base block"
                           onClick={() => setIsMenuOpen(false)}
                         >
                           About Us
                         </Link>
                         <Link
                           href="/our-team"
-                          className="text-[#0A1A4A] text-base block"
+                          className="text-black text-base block"
                           onClick={() => setIsMenuOpen(false)}
                         >
                           Our Team
                         </Link>
                         <Link
                           href="/careers"
-                          className="text-[#0A1A4A] text-base block"
+                          className="text-black text-base block"
                           onClick={() => setIsMenuOpen(false)}
                         >
                           Careers
                         </Link>
                         <Link
                           href="/contact-us"
-                          className="text-[#0A1A4A] text-base block"
+                          className="text-black text-base block"
                           onClick={() => setIsMenuOpen(false)}
                         >
                           Contact Us
@@ -508,7 +508,7 @@ const Header = () => {
                         <div>
                           <button
                             onClick={togglePartnersExpanded}
-                            className="flex items-center justify-between w-full text-[#0A1A4A] text-base font-medium"
+                            className="flex items-center justify-between w-full text-black text-base font-medium"
                           >
                             Our Partners
                             {isPartnersExpanded ? (
@@ -545,39 +545,39 @@ const Header = () => {
 
                     {/* Resources */}
                     <div>
-                      <h3 className="text-[#4A5568] text-lg font-medium mb-4">Resources</h3>
+                      <h3 className="text-gray-800 text-lg font-medium mb-4">Resources</h3>
                       <div className="space-y-4 pl-4">
                         <Link
                           href="/blog"
-                          className="text-[#0A1A4A] text-base block"
+                          className="text-black text-base block"
                           onClick={() => setIsMenuOpen(false)}
                         >
                           Blog
                         </Link>
                         <Link
                           href="/press"
-                          className="text-[#0A1A4A] text-base block"
+                          className="text-black text-base block"
                           onClick={() => setIsMenuOpen(false)}
                         >
                           Press
                         </Link>
                         <Link
                           href="/case-study"
-                          className="text-[#0A1A4A] text-base block"
+                          className="text-black text-base block"
                           onClick={() => setIsMenuOpen(false)}
                         >
                           Case Studies
                         </Link>
                         <Link
                           href="/api"
-                          className="text-[#0A1A4A] text-base block"
+                          className="text-black text-base block"
                           onClick={() => setIsMenuOpen(false)}
                         >
                           APIs
                         </Link>
                         <Link
                           href="/faq"
-                          className="text-[#0A1A4A] text-base block"
+                          className="text-black text-base block"
                           onClick={() => setIsMenuOpen(false)}
                         >
                           FAQs
