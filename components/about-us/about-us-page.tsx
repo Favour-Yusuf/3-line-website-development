@@ -29,7 +29,7 @@ export default function AboutUsPage() {
             <div className=" bg-[#10142C] rounded-xl overflow-hidden mx-3 md:mx-4 ">
               <div className=" md:pl-10 flex flex-col md:flex-row items-start md:items-center md:justify-between">
                 <div className="w-full md:w-3/5">
-                  <div className="inline-block bg-[#00D2FF] text-[#10142C] font-bold mb-[30px] px-3 py-1 rounded-md text-[30px] ">
+                  <div className="inline-block bg-[#6be0f0] text-[#10142C] font-bold mb-[30px] px-3 py-1 rounded-md text-[50px] ">
                     About us
                   </div>
                   <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
@@ -56,11 +56,11 @@ export default function AboutUsPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mx-3 md:mx-4 md:mb-[200px]">
               {/* Left Column */}
               <div className="mr-[20px] border-r border-blue-500 h-[300px]">
-                <h2 className="text-2xl font-bold mb-4 text-[#10142C]">
+                <h2 className="text-[28px] leading-tight font-bold mb-4 text-[#10142C]">
                   At 3Line, <br /> we believe everyone deserves access to <br /> financial services, regardless of location or
                   background
                 </h2>
-                <p className="text-gray-600 mb-6">
+                <p className="text-gray-800 text-[22px]  mb-11">
                   Since 2017, we've been bridging financial gaps with technology, ensuring businesses, banks, and
                   individuals can move money effortlessly and access the financial tools they need to thrive.
                 </p>
@@ -78,9 +78,9 @@ export default function AboutUsPage() {
 
               {/* Right Column */}
               <div className="mt-[200px] ml-[20px]">
-                <h2 className="text-3xl font-bold mb-4 text-[#10142C] ">Our story</h2>
-                <p className="text-black mb-6">
-                 <span className="font-bold">We started with a simple mission:</span> to make financial services more accessible for everyone. Today,
+                <h2 className="text-[40px] font-bold mb-4 text-[#10142C] ">Our story</h2>
+                <p className="text-black text-[22px] mb-6">
+                 <span className="font-bold ">We started with a simple mission:</span> to make financial services more accessible for everyone. Today,
                   we're proud to be a trusted partner for banks, fintechs, and businesses across Nigeria and beyond.
                 </p>
 
@@ -91,7 +91,7 @@ export default function AboutUsPage() {
 <div className="w-full  flex justify-end items-end mt-[40px]">
 <Link
                   href="/our-team"
-                  className="text-[#000066] hover:text-[#4894F4]/80 flex items-center text-[13px] font-medium mt-4"
+                  className="text-[#000066] hover:text-[#4894F4]/80 flex items-center text-[20px] font-medium mt-4"
                 >
                   See more
 <Image src="/arrow_right.png" alt="arrow right" width={40} height={40}/>
@@ -119,10 +119,10 @@ export default function AboutUsPage() {
                     <div className="bg-[#10142C] rounded-xl overflow-hidden mx-3 md:mx-4">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6  pl-8 md:pl-12">
                         <div className="text-white pt-8">
-                        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
+                        <h2 className="text-2xl md:text-3xl lg:text-[55px] bg-red-500 lg:w-[700px] leading-3 font-bold text-white mb-4">
                   We Exist to bridge the Financial Access Gap
                 </h2>
-                <p className="text-gray-300 max-w-xl">
+                <p className="text-gray-300 lg:text-[22px] max-w-xl">
                   Millions of businesses and individuals remain underserved by traditional financial systems. By
                   creating simplified access to financial tools and integrated payment solutions, we share this.
                 </p>

@@ -24,21 +24,19 @@ export default function EnterprisePage() {
             <div className="bg-[#10142C] rounded-xl overflow-hidden mx-3 md:mx-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6  pl-8 md:pl-12">
                 <div className="text-white pt-8">
-                  <div  className="inline-block text-[50px] bg-[#6be0f0] text-[#10142C] px-3 py- rounded-md font-bold mb-4">
+                  <div  className="inline-block text-[55px] bg-[#6be0f0] text-[#10142C] px-3 py- rounded-md font-bold mb-4">
                   Enterprise
                   </div>
                   <div  style={{
     
     textShadow:
       '0px 10px 20px rgba(0,0,0,0.5), 0px 5px 10px rgba(0,0,0,0.3)',
-  }} className="text-5xl text-headline md:text-6xl lg:text-[50px] font-bold text-white mb-6 leading-none mt-[10px]">
+  }} className="text-5xl text-headline md:text-6xl lg:text-[60px] lg:w-[700px] font-bold text-white mb-6 leading-none mt-[10px]">
                   Scalable infrastructure <br />
                   for large organizations
                   </div>
-                  <p className="text-gray-300 mb-4 max-w-lg">
-                  For banks, large fintechs, and enterprises, scale and reliability are everything. Our enterprise solutions provide
-                  </p>
-                  <p className="text-gray-300 mb-8 max-w-lg">
+                  <p className="text-gray-300 lg:text-[22px] mb-4 max-w-lg">
+                  For banks, large fintechs, and enterprises, scale and reliability are everything. Our enterprise solutions provide 
                   robust infrastructure for financial transactions, digital banking, and agent network management.
                   </p>
                 </div>
