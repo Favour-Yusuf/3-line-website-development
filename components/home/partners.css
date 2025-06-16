@@ -1,10 +1,12 @@
 .partners-scroll {
-    overflow-x: scroll;
-    -ms-overflow-style: none;  /* IE & Edge */
-    scrollbar-width: none;     /* Firefox */
-  }
-  
-  .partners-scroll::-webkit-scrollbar {
-    display: none;             /* Chrome, Safari, Opera */
-  }
-  
+  overflow: hidden;
+}
+
+.partners-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.partners-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
