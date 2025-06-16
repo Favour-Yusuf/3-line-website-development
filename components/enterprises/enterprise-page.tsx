@@ -76,20 +76,20 @@ export default function EnterprisePage() {
     {/* Gravity Lite */}
     <div className="rounded-xl overflow-hidden shadow-sm mb-8 mx-3 md:mx-4">
       <div className="grid grid-cols-1 md:grid-cols-3">
-        <div className="p-8 bg-white relative">
+        <div className="p-12 h-[600px] bg-white relative">
           <div className="hidden md:block absolute top-0 right-[-12px] h-full w-[0.5px] bg-blue-500"></div>
-          <div className="bg-[#10142C] text-white w-12 h-12 flex items-center justify-center rounded-lg mb-4">
-            <span className="text-xl font-bold">1</span>
-          </div>
-          <h3 className="text-2xl font-bold mb-2 text-[#10142C]">Gravity Enterprise</h3>
-          <p className="text-gray-600 mb-4">Build & scale a nationwide agent network</p>
+          <div className="bg-[#10142C] text-white w-20 h-20 flex items-center justify-center rounded-lg mb-10">
+                    <span className="text-4xl font-bold">1</span>
+                  </div>
+          <h3 className="text-5xl font-bold mb-2 text-[#10142C]">Gravity Enterprise</h3>
+          <p className="text-black font-bold mb-4 text-xl">Build & scale a nationwide agent network</p>
           <p className="text-gray-600 mb-6">
             A fully scalable agency banking solution for financial institutions and large-scale fintechs looking to expand their reach.
           </p>
           <div className="w-[100%] absolute flex justify-end items-end ">
             <Link
               href="#"
-              className="inline-flex items-center justify-center text-[#000066] font-medium py-2 px-4 rounded-full transition-colors mt-[100px]"
+              className="inline-flex items-center justify-center text-[#000066] font-medium py-2 px-4 rounded-full transition-colors mt-[20px]"
             >
               Learn More
               <Image src="/sme_arrow.png" alt="user" width={60} height={60} />
@@ -149,21 +149,20 @@ export default function EnterprisePage() {
     {/* Magtipon Lite */}
     <div className="rounded-xl overflow-hidden shadow-sm mx-3 md:mx-4">
       <div className="grid grid-cols-1 md:grid-cols-3">
-        <div className="p-8 bg-white relative">
+        <div className="p-12 h-[600px] bg-white relative">
           <div className="hidden md:block absolute top-0 right-[-12px] h-full w-[0.5px] bg-blue-500"></div>
-          <div className="bg-[#10142C] text-white w-12 h-12 flex items-center justify-center rounded-lg mb-4 relative">
-            <span className="text-xl font-bold">2</span>
-            <div className="hidden md:block absolute right-[-16px] top-0 h-full w-[0.5px] bg-blue-500"></div>
-          </div>
-          <h3 className="text-2xl font-bold mb-2 text-[#10142C]">Magtipon Enterprise</h3>
-          <p className="text-gray-600 mb-4">The infrastructure for digital banking</p>
+          <div className="bg-[#10142C] text-white w-20 h-20 flex items-center justify-center rounded-lg mb-10">
+                    <span className="text-4xl font-bold">2</span>
+                  </div>
+          <h3 className="text-5xl font-bold mb-2 text-[#10142C]">Magtipon Enterprise</h3>
+          <p className="text-black font-bold mb-4">The infrastructure for digital banking</p>
           <p className="text-gray-600 mb-6">
             A full-suite platform designed to help banks and fintechs build and manage digital banking services efficiently.
           </p>
           <div className="w-[100%] absolute flex justify-end items-end">
             <Link
               href="#"
-              className="inline-flex items-center justify-center text-[#000066] font-medium py-2 px-4 rounded-full transition-colors mt-[100px]"
+              className="inline-flex items-center justify-center text-[#000066] font-medium py-2 px-4 rounded-full transition-colors mt-[20px]"
             >
               Explore
               <Image src="/sme_arrow.png" alt="user" width={60} height={60} />
