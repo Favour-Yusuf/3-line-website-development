@@ -76,20 +76,20 @@ export default function SmesPage() {
             {/* Gravity Lite */}
             <div className=" rounded-xl overflow-hidden shadow-sm mb-8 mx-3 md:mx-4">
               <div className="grid grid-cols-1 md:grid-cols-3">
-                <div className="p-8  bg-white relative">
+                <div className="p-12 h-[600px] bg-white relative">
                 <div className="hidden md:block absolute top-0 right-[-12px] h-full w-[0.5px] bg-blue-500"></div>
-                  <div className="bg-[#10142C] text-white w-12 h-12 flex items-center justify-center rounded-lg mb-4">
-                    <span className="text-xl font-bold">1</span>
+                  <div className="bg-[#10142C] text-white w-20 h-20 flex items-center justify-center rounded-lg mb-10">
+                    <span className="text-4xl font-bold">1</span>
                   </div>
-                  <h3 className="text-2xl font-bold mb-2 text-[#10142C]">Gravity Lite</h3>
-                  <p className="text-black mb-4 font-bold">Launch your agent banking business in 24 hours</p>
+                  <h3 className="text-5xl font-bold mb-2 text-[#10142C]">Gravity Lite</h3>
+                  <p className="text-2xl text-black mb-4 font-bold">Launch your agent banking business in 24 hours</p>
                   <p className="text-gray-600 mb-6">
                   Expand financial access in your community with Gravity Lite, our agency banking solution designed for small to medium-sized businesses and entrepreneurs.
                   </p>
                   <div className="w-[100%]  absolute flex justify-end items-end">
                  <Link
                     href="#"
-                    className="inline-flex items-center justify-center  text-[#000066] font-medium py-2 px-4 rounded-full transition-colors  mt-[100px]"
+                    className="inline-flex items-center justify-center  text-[#000066] font-bold py-2 px-4 rounded-full transition-colors  mt-[20px]"
                   >
                    Get Started
                     <Image src="/sme_arrow.png" alt="user" width={60} height={60} />
@@ -101,46 +101,43 @@ export default function SmesPage() {
                   <h3 className="font-semibold mb-4 text-[#10142C]">Key features</h3>
                   <div className="space-y-4">
                     <div  className="bg-[#FFFFFF80] p-[15px] rounded-[15px] mb-[5px]">
-                      <h4 className="font-medium text-[#10142C]">Omnichannel Payments</h4>
-                      <p className="text-sm text-gray-600">Accept payments via cards, transfers, USSD, QR</p>
+                      <h4 className="font-bold text-[#10142C]">Fast & Easy Agent Onboarding</h4>
+                      <p className="text-sm text-gray-600">Set up and start transacting within 24 hours.</p>
                     </div>
                     <div  className="bg-[#FFFFFF80] p-[15px] rounded-[15px] mb-[5px]">
-                      <h4 className="font-medium text-[#10142C]">POS & Terminal Integration</h4>
-                      <p className="text-sm text-gray-600">Enable fast and secure in-person transactions.</p>
+                      <h4 className="font-bold text-[#10142C]">Multi-Channel Transaction</h4>
+                      <p className="text-sm text-gray-600">Accept cash, digital wallets,  and card payments.</p>
                     </div>
                     <div  className="bg-[#FFFFFF80] p-[15px] rounded-[15px] mb-[5px]">
-                      <h4 className="font-medium text-[#10142C]">Inventory Management</h4>
-                      <p className="text-sm text-gray-600">Track and manage stock effortlessly.</p>
+                      <h4 className="font-bold text-[#10142C]">Real-Time Monitoring</h4>
+                      <p className="text-sm text-gray-600">Track agent performance and transactions on the go.</p>
                     </div>
                     <div  className="bg-[#FFFFFF80] p-[15px] rounded-[15px] mb-[5px]">
-                      <h4 className="font-medium text-[#10142C]">Customer Management Tools</h4>
-                      <p className="text-sm text-gray-600">Build loyalty programs and track customer behavior.</p>
-                    </div>
-                    <div  className="bg-[#FFFFFF80] p-[15px] rounded-[15px] mb-[5px]">
-                      <h4 className="font-medium text-[#10142C]">Business Insights</h4>
-                      <p className="text-sm text-gray-600">Data-driven analytics for better decision-making.</p>
-                    </div>
+                      <h4 className="font-bold text-[#10142C]">Scalable Network</h4>
+                      <p className="text-sm text-gray-600">Build and manage a thriving agent network effortlessly.</p>
+                 </div>
                   </div>
                 </div>
                 <div className="p-8 bg-transparent">
                   <h3 className="font-semibold mb-4 text-[#10142C]">Who it's for</h3>
                   <div className="space-y-6">
+                  <div className="bg-[#FFFFFF80] p-[20px] rounded-[15px]">
+                    <Image src="/user.png" alt="user" width={60} height={60} />
+                      <div>
+                        <p className="text-sm text-gray-600">
+                        Entrepreneurs looking to start an agent banking business.
+                        </p>
+                      </div>
+                    </div>
                     <div className="bg-[#FFFFFF80] p-[20px] rounded-[15px]">
                     <Image src="/shop.png" alt="user" width={60} height={60} />
                       <div>
                         <p className="text-sm text-gray-600">
-                          SMEs looking to streamline payment processes and improve efficiency.
+                        SMEs that want to extend banking services to underserved areas.
                         </p>
                       </div>
                     </div>
-                    <div className="bg-[#FFFFFF80] p-[20px] rounded-[15px]">
-                    <Image src="/user.png" alt="user" width={60} height={60} />
-                      <div>
-                        <p className="text-sm text-gray-600">
-                          Business owners who want real-time insights to optimize sales and operations.
-                        </p>
-                      </div>
-                    </div>
+                   
                   </div>
                 </div>
               </div>
@@ -148,13 +145,13 @@ export default function SmesPage() {
             {/* Medusa Merchant */}
             <div className=" rounded-xl overflow-hidden shadow-sm mb-8 mx-3 md:mx-4">
               <div className="grid grid-cols-1 md:grid-cols-3">
-                <div className="p-8 bg-white relative">
+                <div className="p-12 h-[600px] bg-white relative">
                 <div className="hidden md:block absolute top-0 right-[-12px] h-full w-[0.5px] bg-blue-500"></div>
-                  <div className="bg-[#10142C] text-white w-12 h-12 flex items-center justify-center rounded-lg mb-4">
-                    <span className="text-xl font-bold">2</span>
+                <div className="bg-[#10142C] text-white w-20 h-20 flex items-center justify-center rounded-lg mb-10">
+                    <span className="text-4xl font-bold">2</span>
                   </div>
-                  <h3 className="text-2xl font-bold mb-2 text-[#10142C]">Medusa Merchant</h3>
-                  <p className="text-gray-600 mb-4">Your end-to-end business payment solution</p>
+                  <h3 className="text-5xl font-bold mb-2 text-[#10142C]">Medusa Merchant</h3>
+                  <p className="text-2xl text-black mb-4 font-bold">Your end-to-end business payment solution</p>
                   <p className="text-gray-600 mb-6">
                     Medusa Merchant is built to simplify payments, streamline business operations, and provide real-time
                     insights that help businesses grow.
@@ -162,7 +159,7 @@ export default function SmesPage() {
                   <div className="w-[100%]  absolute flex justify-end items-end">
                  <Link
                     href="#"
-                    className="inline-flex items-center justify-center  text-[#000066] font-medium py-2 px-4 rounded-full transition-colors  mt-[100px]"
+                    className="inline-flex items-center justify-center  text-[#000066] font-bold py-2 px-4 rounded-full transition-colors  mt-[20px]"
                   >
                    Explore
                     <Image src="/sme_arrow.png" alt="user" width={60} height={60} />
@@ -174,23 +171,23 @@ export default function SmesPage() {
                   <h3 className="font-semibold mb-4 text-[#10142C]">Key features</h3>
                   <div className="space-y-4">
                     <div  className="bg-[#FFFFFF80] p-[15px] rounded-[15px] mb-[5px]">
-                      <h4 className="font-medium text-[#10142C]">Omnichannel Payments</h4>
+                      <h4 className="font-bold text-[#10142C]">Omnichannel Payments</h4>
                       <p className="text-sm text-gray-600">Accept payments via cards, transfers, USSD, QR</p>
                     </div>
                     <div  className="bg-[#FFFFFF80] p-[15px] rounded-[15px] mb-[5px]">
-                      <h4 className="font-medium text-[#10142C]">POS & Terminal Integration</h4>
+                      <h4 className="font-bold text-[#10142C]">POS & Terminal Integration</h4>
                       <p className="text-sm text-gray-600">Enable fast and secure in-person transactions.</p>
                     </div>
                     <div  className="bg-[#FFFFFF80] p-[15px] rounded-[15px] mb-[5px]">
-                      <h4 className="font-medium text-[#10142C]">Inventory Management</h4>
+                      <h4 className="font-bold text-[#10142C]">Inventory Management</h4>
                       <p className="text-sm text-gray-600">Track and manage stock effortlessly.</p>
                     </div>
                     <div  className="bg-[#FFFFFF80] p-[15px] rounded-[15px] mb-[5px]">
-                      <h4 className="font-medium text-[#10142C]">Customer Management Tools</h4>
+                      <h4 className="font-bold text-[#10142C]">Customer Management Tools</h4>
                       <p className="text-sm text-gray-600">Build loyalty programs and track customer behavior.</p>
                     </div>
                     <div  className="bg-[#FFFFFF80] p-[15px] rounded-[15px] mb-[5px]">
-                      <h4 className="font-medium text-[#10142C]">Business Insights</h4>
+                      <h4 className="font-bold text-[#10142C]">Business Insights</h4>
                       <p className="text-sm text-gray-600">Data-driven analytics for better decision-making.</p>
                     </div>
                   </div>
@@ -222,13 +219,13 @@ export default function SmesPage() {
             {/* Magtipon Lite */}
             <div className=" rounded-xl overflow-hidden shadow-sm mb-8 mx-3 md:mx-4">
               <div className="grid grid-cols-1 md:grid-cols-3">
-                <div className="p-8 relative bg-white">
+                <div className="p-12 h-[600px] bg-white relative">
                 <div className="hidden md:block absolute top-0 right-[-12px] h-full w-[0.5px] bg-blue-500"></div>
-                  <div className="bg-[#10142C] text-white w-12 h-12 flex items-center justify-center rounded-lg mb-4">
-                    <span className="text-xl font-bold">3</span>
+                <div className="bg-[#10142C] text-white w-20 h-20 flex items-center justify-center rounded-lg mb-8">
+                    <span className="text-4xl font-bold">3</span>
                   </div>
-                  <h3 className="text-2xl font-bold mb-2 text-[#10142C]">Magtipon Lite</h3>
-                  <p className="text-black mb-4 font-bold">Simplified payments for
+                  <h3 className="text-5xl font-bold mb-2 text-[#10142C]">Magtipon Lite</h3>
+                  <p className="text-2xl text-black mb-4 font-bold">Simplified payments for
                   growing businesses</p>
                   <p className="text-gray-600 mb-6">
                   A powerful payment gateway that allows businesses to issue virtual accounts, process bulk payments, and offer value-added services like airtime and bill payments.
@@ -236,7 +233,7 @@ export default function SmesPage() {
                   <div className="w-[100%]  absolute flex justify-end items-end">
                  <Link
                     href="#"
-                    className="inline-flex items-center justify-center  text-[#000066] font-medium py-2 px-4 rounded-full transition-colors  mt-[100px]"
+                    className="inline-flex items-center justify-center  text-[#000066] font-bold py-2 px-4 rounded-full transition-colors  mt-[20px]"
                   >
                    Get Started
                     <Image src="/sme_arrow.png" alt="user" width={60} height={60} />
@@ -248,23 +245,23 @@ export default function SmesPage() {
                   <h3 className="font-semibold mb-4 text-[#10142C]">Key features</h3>
                   <div className="space-y-4">
                     <div  className="bg-[#FFFFFF80] p-[15px] rounded-[15px] mb-[5px]">
-                      <h4 className="font-medium text-[#10142C]">Omnichannel Payments</h4>
-                      <p className="text-sm text-gray-600">Accept payments via cards, transfers, USSD, QR</p>
+                      <h4 className="font-bold text-[#10142C]">Virtual Account Issuance</h4>
+                      <p className="text-sm text-gray-600">Enable seamless fund transfers.</p>
                     </div>
                     <div  className="bg-[#FFFFFF80] p-[15px] rounded-[15px] mb-[5px]">
-                      <h4 className="font-medium text-[#10142C]">POS & Terminal Integration</h4>
-                      <p className="text-sm text-gray-600">Enable fast and secure in-person transactions.</p>
+                      <h4 className="font-bold text-[#10142C]">Bulk & Individual Payments</h4>
+                      <p className="text-sm text-gray-600">EPay vendors and employees with ease.</p>
                     </div>
                     <div  className="bg-[#FFFFFF80] p-[15px] rounded-[15px] mb-[5px]">
-                      <h4 className="font-medium text-[#10142C]">Inventory Management</h4>
-                      <p className="text-sm text-gray-600">Track and manage stock effortlessly.</p>
+                      <h4 className="font-bold text-[#10142C]">Value-Added Services</h4>
+                      <p className="text-sm text-gray-600">Facilitate airtime, bill payments, and more.</p>
                     </div>
                     <div  className="bg-[#FFFFFF80] p-[15px] rounded-[15px] mb-[5px]">
-                      <h4 className="font-medium text-[#10142C]">Customer Management Tools</h4>
-                      <p className="text-sm text-gray-600">Build loyalty programs and track customer behavior.</p>
+                      <h4 className="font-bold text-[#10142C]">Instant Settlements</h4>
+                      <p className="text-sm text-gray-600">Receive payments without delays.</p>
                     </div>
                     <div  className="bg-[#FFFFFF80] p-[15px] rounded-[15px] mb-[5px]">
-                      <h4 className="font-medium text-[#10142C]">Business Insights</h4>
+                      <h4 className="font-bold text-[#10142C]">Business Insights</h4>
                       <p className="text-sm text-gray-600">Data-driven analytics for better decision-making.</p>
                     </div>
                   </div>
