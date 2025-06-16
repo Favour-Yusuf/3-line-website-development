@@ -402,7 +402,7 @@ const Header = () => {
             <Sheet  open={isMenuOpen} onOpenChange={setIsMenuOpen}>
               <SheetTrigger asChild>
                 <Button variant="outline" size="icon" className="md:hidden border-none bg-transparent">
-                  <Menu className="h-6 w-6 text-[#0A1A4A]" />
+                <Image alt="menu" src="/menu.png" width={30} height={30} />
                   <span className="sr-only">Toggle navigation menu</span>
                 </Button>
               </SheetTrigger>
