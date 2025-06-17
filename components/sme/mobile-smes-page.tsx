@@ -152,17 +152,19 @@ const SMESolutions = () => {
               {expandedSolution === index && (
                 <div className="mt-6 pt-6 border-t border-gray-200">
                   {/* Key Features */}
-                  <div className="mb-8">
+                  <div className="mb-8 ">
                     <h4 className="text-lg font-bold mb-4 text-[#10142C]">Key features</h4>
-                    <div className="space-y-4">
+                    <div className="space-y-4 ">
                       {solution.keyFeatures.map((feature, featureIndex) => (
-                        <div key={featureIndex}>
-                          <h5 className="font-semibold text-[#10142C] mb-1">{feature.title}</h5>
+                        <div className="bg-blue-200 py-[20px] pl-[10px] pb-[20px] rounded-[20px]" key={featureIndex}>
+                          <h5 className="font-semibold text-[#10142C] mb-1 ">{feature.title}</h5>
                           <p className="text-gray-600 text-sm">{feature.description}</p>
                         </div>
                       ))}
                     </div>
                   </div>
+                  <div className="w-full h-[1px] bg-blue-500"></div>
+                  <br />
 
                   {/* Who it's for */}
                   {solution.whoItsFor.length > 0 && (
@@ -170,7 +172,7 @@ const SMESolutions = () => {
                       <h4 className="text-lg font-bold mb-4 text-[#10142C]">Who it's for</h4>
                       <div className="space-y-3">
                         {solution.whoItsFor.map((target, targetIndex) => (
-                          <div key={targetIndex} className="flex items-start gap-3">
+                          <div key={targetIndex} className="flex  items-center gap-3 bg-blue-200 py-[20px] pl-[10px] pb-[20px] rounded-[20px]">
                             <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                               <span className="text-sm">{target.icon}</span>
                             </div>
@@ -182,13 +184,16 @@ const SMESolutions = () => {
                   )}
 
                   {/* CTA Button */}
-                  <Link
+                 <div className="w-full flex items-end justify-end">
+                 <Link
                     href="#"
-                    className="inline-flex items-center justify-center bg-blue-600 text-white px-6 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors"
+                    className="inline-flex items-center justify-center  text-[#000066] font-bold py-2 px-4 rounded-full transition-colors "
                   >
-                    {solution.ctaText}
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                   Get Started
+                    <Image src="/sme_arrow.png" alt="user" width={60} height={60} />
+                   
                   </Link>
+                 </div>
                 </div>
               )}
             </div>
