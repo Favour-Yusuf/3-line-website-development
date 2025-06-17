@@ -8,78 +8,100 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import StatsSection from "../home/stats-section"
 import PartnersSection from "../home/partners-section"
+import SolutionsSlider from "./who-we-server"
 
 export default function MobileAboutUsPage() {
   const [email, setEmail] = useState("")
 
   return (
-    <div className="min-h-screen bg-[#EEF3FF] mt-[70px]">
+    <div className="min-h-screen bg-[#EEF3FF] mt-[90px]">
      
 
       <main>
+      <div className="min-h-screen w-full flex flex-col bg-[#EEF3FF]">
+      <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative bg-[#000066] rounded-xl mx-4 mt-6 overflow-hidden">
-  <div className="p-6 pb-0 flex flex-col h-full">
-    <div className="inline-block bg-[#00D2FF] text-[#10142C] px-3 py-1 rounded-md font-medium mb-3">
-      About us
-    </div>
-    <h1 className="text-2xl font-bold text-white leading-snug mb-2">
-      Driving Financial<br />
-      Inclusion, One<br />
-      Transaction at a Time
-    </h1>
-  </div>
-  <div className="relative w-full h-[260px]">
-    <Image 
-      src="/aboutus_mobile.png" 
-      alt="Financial inclusion visual" 
-      fill 
-      className="object-cover"
-      priority 
-    />
-  </div>
-</section>
+        <section className="relative bg-[#000066] rounded-xl mx-4 mt-6 overflow-hidden min-h-[500px]">
+          <div className="p-6 pb-0 flex flex-col h-full">
+            <div className="inline-block bg-[#00D2FF] text-4xl text-[#10142C] px-4 py-2 rounded-md font-bold mb-4  w-fit">
+              About us
+            </div>
+            <h1 className="text-4xl font-bold text-white leading-tight mb-8">
+              Driving Financial
+              <br />
+              Inclusion, One
+              <br />
+              Transaction
+              <br />
+              at a Time
+            </h1>
+          </div>
 
+          {/* Geometric Image Section */}
+          <div className="absolute bottom-0 left-0 right-0 h-[300px] overflow-hidden ">
+            <div className="relative w-full h-full">
+              {/* Diamond shape 1 - Top Left */}
+             
+                  <Image src="/aboutus_mobile.png" alt="Mobile payment" fill className="object-contain" />
+               
 
+            </div>
+          </div>
+        </section>
 
         {/* Main Content */}
-        <section className="py-6 bg-[#EEF3FF]">
-          <div className="mx-3">
-            <h2 className="text-lg font-bold mb-3 text-[#10142C]">
-              At 3Line, we believe everyone deserves access to financial services, regardless of location or background
+        <section className="py-8 bg-[#EEF3FF]">
+          <div className="mx-4">
+            <h2 className="text-xl font-bold mb-4 text-[#10142C] leading-tight">
+              At 3Line,
+              <br />
+              we believe everyone deserves
+              <br />
+              access to financial services,
+              <br />
+              regardless of location or
+              <br />
+              background
             </h2>
-            <p className="text-gray-600 mb-5 text-sm">
-              Since 2017, we've been bridging financial gaps with technology, ensuring businesses, banks, and
+            <p className="text-gray-600 mb-8 text-base leading-relaxed">
+              Since 2007, we've been bridging financial gaps with technology, ensuring businesses, banks, and
               individuals can move money effortlessly and access the financial tools they need to thrive.
             </p>
 
-            <div className="relative h-48 mb-4 rounded-lg overflow-hidden">
-              <Image src="/about1.png" alt="Team working together" fill className="object-cover" />
+            {/* Our Story Section */}
+            <div className="mb-8">
+              <div className="border-l-2 border-blue-500 pl-4 mb-6">
+                <h3 className="text-2xl font-bold mb-4 text-[#10142C]">Our story</h3>
+                <p className="text-gray-600 text-base leading-relaxed">
+                  <span className="font-semibold">We started with a simple mission:</span> to make financial services
+                  accessible to everyone, everywhere. Today, we're proud to be a trusted partner for banks, fintechs,
+                  and businesses across Nigeria and beyond.
+                </p>
+              </div>
             </div>
 
-            <div className="relative h-48 mb-6 rounded-lg overflow-hidden">
-              <Image src="/about2.png" alt="Team meeting" fill className="object-cover" />
-            </div>
+            {/* Team Images */}
+            <div className="space-y-4 mb-6">
+              <div className="relative h-64 rounded-xl overflow-hidden">
+                <Image src="/about1.png" alt="Professional team meeting" fill className="object-cover" />
+              </div>
 
-            <h2 className="text-lg font-bold mb-3 text-[#10142C]">Our story</h2>
-            <p className="text-gray-600 mb-5 text-sm">
-              We started with a simple mission: to make financial services more accessible for everyone. Today, we're
-              proud to be a trusted partner for banks, fintechs, and businesses across Nigeria and beyond.
-            </p>
-
-            <div className="relative h-56 rounded-lg overflow-hidden mb-3">
-              <Image src="/about3.png" alt="Our Team" fill className="object-cover" />
+              <div className="relative h-80 rounded-xl overflow-hidden">
+                <Image src="/about3.png" alt="3Line team group photo" fill className="object-cover" />
+              </div>
             </div>
 
             <Link
               href="/our-team"
-              className="text-[#4894F4] hover:text-[#4894F4]/80 flex items-center text-sm font-medium mb-6"
+              className="text-[#4894F4] hover:text-[#4894F4]/80 flex items-center text-base font-medium"
             >
               See more
-              <ArrowRight className="ml-1 h-4 w-4" />
+              <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </div>
         </section>
+      </main>
+    </div>
 
         {/* Partners Section */}
         <PartnersSection />
@@ -87,12 +109,12 @@ export default function MobileAboutUsPage() {
         {/* Stats Section */}
   <StatsSection />
         {/* Financial Access Gap */}
-        <section className="py-6 px-4 bg-[#EEF3FF]">
+        <section className="py-6 px-2 bg-[#EEF3FF]">
           <div className="mx-3">
-            <div className="bg-[#10142C] rounded-xl overflow-hidden p-5 relative">
+            <div className="bg-[#10142C] rounded-xl overflow-hidden  relative">
               {/* Content */}
-              <div className="relative z-10">
-                <h2 className="text-xl font-bold text-white mb-3">We Exist to bridge the Financial Access Gap</h2>
+              <div className="relative z-10 px-3 py-3">
+                <h2 className="text-3xl font-bold text-white mb-5">We Exist to bridge the Financial Access Gap</h2>
                 <p className="text-gray-300 text-sm mb-4">
                   Millions of businesses and individuals remain underserved by traditional financial systems. By
                   creating simplified access to financial tools and integrated payment solutions, we share this.
@@ -100,13 +122,13 @@ export default function MobileAboutUsPage() {
               </div>
 
               {/* */}
-              <div className="relative h-40">
+              <div className="relative h-40  w-full">
                 <div className="absolute bottom-0 right-0 w-full h-full">
                   <Image
-                    src="/about-us-hero2.png"
+                    src="/sme_main.png"
                     alt="Financial Access"
                     fill
-                    className="object-contain object-right"
+                    className="object-cover object-right"
                   />
                 </div>
               </div>
@@ -115,95 +137,7 @@ export default function MobileAboutUsPage() {
         </section>
 
         {/* Who We Serve */}
-        <section className="py-6 px-4 bg-[#EEF3FF]">
-          <div className="mx-3">
-            <div className="space-y-4">
-              <div className="bg-white p-5 rounded-xl shadow-sm">
-                <div className="bg-[#10142C] p-2 rounded-lg inline-flex items-center justify-center mb-3 w-10 h-10">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z"
-                      stroke="#00D2FF"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M20.5899 22C20.5899 18.13 16.7399 15 11.9999 15C7.25991 15 3.40991 18.13 3.40991 22"
-                      stroke="#00D2FF"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
-                <div className="mb-2">
-                  <span className="text-[#00D2FF] text-xs font-medium">For</span>
-                  <h3 className="text-lg font-bold text-[#10142C]">SMEs</h3>
-                </div>
-                <p className="text-gray-600 mb-4 text-xs">
-                  Get paid faster, access digital banking, and manage transactions in real-time.
-                </p>
-                <Link
-                  href="/solutions/smes"
-                  className="inline-flex items-center justify-center bg-[#4894F4] hover:bg-[#4894F4]/90 text-white font-medium w-10 h-10 rounded-full transition-colors"
-                >
-                  <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M4.16699 10H15.8337M15.8337 10L10.0003 4.16667M15.8337 10L10.0003 15.8333"
-                      stroke="white"
-                      strokeWidth="1.67"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </Link>
-              </div>
-
-              <div className="bg-white p-5 rounded-xl shadow-sm">
-                <div className="bg-[#10142C] p-2 rounded-lg inline-flex items-center justify-center mb-3 w-10 h-10">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M20 7H4C2.89543 7 2 7.89543 2 9V19C2 20.1046 2.89543 21 4 21H20C21.1046 21 22 20.1046 22 19V9C22 7.89543 21.1046 7 20 7Z"
-                      stroke="#00D2FF"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M16 21V5C16 4.46957 15.7893 3.96086 15.4142 3.58579C15.0391 3.21071 14.5304 3 14 3H10C9.46957 3 8.96086 3.21071 8.58579 3.58579C8.21071 3.96086 8 4.46957 8 5V21"
-                      stroke="#00D2FF"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
-                <div className="mb-2">
-                  <span className="text-[#00D2FF] text-xs font-medium">For</span>
-                  <h3 className="text-lg font-bold text-[#10142C]">Enterprises</h3>
-                </div>
-                <p className="text-gray-600 mb-4 text-xs">
-                  Optimize cash flow with secure, efficient, and scalable payment solutions.
-                </p>
-                <Link
-                  href="/solutions/enterprise"
-                  className="inline-flex items-center justify-center bg-[#4894F4] hover:bg-[#4894F4]/90 text-white font-medium w-10 h-10 rounded-full transition-colors"
-                >
-                  <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M4.16699 10H15.8337M15.8337 10L10.0003 4.16667M15.8337 10L10.0003 15.8333"
-                      stroke="white"
-                      strokeWidth="1.67"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
+ <SolutionsSlider />
 
         {/* Why Choose Us */}
         <section className="py-6 px-4 bg-[#EEF3FF]">
