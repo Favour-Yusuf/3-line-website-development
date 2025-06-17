@@ -119,7 +119,7 @@ export default function AboutUsPage() {
                     <div className="bg-[#10142C] rounded-xl overflow-hidden mx-3 md:mx-4">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6  pl-8 md:pl-12">
                         <div className="text-white pt-8">
-                        <h2 className="text-2xl md:text-3xl lg:text-[55px] bg-red-500 lg:w-[700px] leading-3 font-bold text-white mb-4">
+                        <h2 className="text-2xl md:text-3xl lg:text-[55px]  lg:w-[700px]  lg:leading-none font-bold text-white mb-4">
                   We Exist to bridge the Financial Access Gap
                 </h2>
                 <p className="text-gray-300 lg:text-[22px] max-w-xl">
@@ -157,13 +157,13 @@ export default function AboutUsPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mx-3 md:mx-4">
               <div className="bg-white p-6 rounded-xl shadow-sm relative h-[350px]">
                 <div className=" p-3 rounded-lg inline-flex items-center justify-center mb-4">
-                 <Image src="/for_sme.png" alt="sme" width={50} height={50} />
+                 <Image src="/for_sme.png" alt="sme" width={70} height={70} />
                 </div>
                 <div className="mb-2">
-                <span className="text-black text-[15px] inline-block bg-[#00D2FF] md:px-3 md:py-1 rounded-md font-bold rotate-[-15deg]">For</span>
-                  <h3 className="text-xl font-bold text-[#10142C]">SMEs</h3>
+                <span className="text-black text-[20px] inline-block bg-[#00D2FF] md:px-3 md:py-1 rounded-md font-bold rotate-[-15deg]">For</span>
+                  <h3 className="text-[28px] font-bold text-[#10142C]">SMEs</h3>
                 </div>
-                <p className="text-gray-600 mb-6 text-sm">
+                <p className="text-gray-600 mb-6 text-[15px]">
                   Get paid faster, access digital banking, and manage transactions in real-time.
                 </p>
                 <div className="w-[95%] flex justify-end items-end absolute top-[80%]">
@@ -178,13 +178,13 @@ export default function AboutUsPage() {
 
               <div className="bg-white p-6 rounded-xl shadow-sm relative h-[350px]">
                 <div className=" p-3 rounded-lg inline-flex items-center justify-center mb-4">
-                <Image src="/for_enterprise.png" alt="sme" width={50} height={50} />
+                <Image src="/for_enterprise.png" alt="sme" width={70} height={70} />
                 </div>
                 <div className="mb-2">
-                <span className="text-black text-[15px] inline-block bg-[#00D2FF] md:px-3 md:py-1 rounded-md font-bold rotate-[-15deg]">For</span>
-                  <h3 className="text-xl font-bold text-[#10142C]">Enterprises</h3>
+                <span className="text-black text-[20px] inline-block bg-[#00D2FF] md:px-3 md:py-1 rounded-md font-bold rotate-[-15deg]">For</span>
+                  <h3 className="text-[28px] font-bold text-[#10142C]">Enterprises</h3>
                 </div>
-                <p className="text-gray-600 mb-6 text-sm">
+                <p className="text-gray-600 mb-6 text-[15px]">
                   Optimize cash flow with secure, efficient, and scalable payment solutions.
                 </p>
                 <div className="w-[95%] flex justify-end items-end absolute top-[80%]">
@@ -199,13 +199,13 @@ export default function AboutUsPage() {
 
               <div className="bg-white p-6 rounded-xl shadow-sm relative h-[350px]">
                 <div className=" p-3 rounded-lg inline-flex items-center justify-center mb-4 ">
-                <Image src="/for_institution.png" alt="sme" width={50} height={50} />
+                <Image src="/for_institution.png" alt="sme" width={70} height={70} />
                 </div>
                 <div className="mb-2">
-                <span className="text-black text-[15px] inline-block bg-[#00D2FF] md:px-3 md:py-1 rounded-md font-bold rotate-[-15deg]">For</span>
-                  <h3 className="text-xl font-bold text-[#10142C]">Financial Institutions</h3>
+                <span className="text-black text-[20px] inline-block bg-[#00D2FF] md:px-3 md:py-1 rounded-md font-bold rotate-[-15deg]">For</span>
+                  <h3 className="text-[28px] font-bold text-[#10142C]">Financial Institutions</h3>
                 </div>
-                <p className="text-gray-600 mb-6 text-sm">
+                <p className="text-gray-600 mb-6 text-[15px]">
                   Expand banking services to the unbanked and underserved communities.
                 </p>
                 <div className="w-[95%] flex justify-end items-end absolute top-[80%]">
@@ -220,13 +220,13 @@ export default function AboutUsPage() {
 
               <div className="bg-white p-6 rounded-xl shadow-sm relative h-[350px]">
                 <div className=" p-3 rounded-lg inline-flex items-center justify-center mb-4 ">
-                <Image src="/for_community.png" alt="sme" width={50} height={50} />
+                <Image src="/for_community.png" alt="sme" width={70} height={70} />
                 </div>
                 <div className="mb-2">
-                  <span className="text-black text-[15px] inline-block bg-[#00D2FF] md:px-3 md:py-1 rounded-md font-bold rotate-[-15deg]">For</span>
-                  <h3 className="text-xl font-bold text-[#10142C]">Communities & Governments</h3>
+                  <span className="text-black text-[20px] inline-block bg-[#00D2FF] md:px-3 md:py-1 rounded-md font-bold rotate-[-15deg]">For</span>
+                  <h3 className="text-[28px] font-bold text-[#10142C]">Communities & Governments</h3>
                 </div>
-                <p className="text-gray-600 mb-6 text-sm">Create financial access points where they are needed most.</p>
+                <p className="text-gray-600 mb-6 text-[15px]">Create financial access points where they are needed most.</p>
               <div className="w-[95%] flex justify-end items-end absolute top-[80%]">
               <Link
                   href="#"
