@@ -119,6 +119,47 @@ const SMESolutions = () => {
   ]
 
   return (
+    <div className="min-h-screen w-full flex flex-col bg-[#EEF3FF] mt-[55px]">
+   
+
+    <main className="flex-1">
+         {/* Hero Section */}
+         <section className="relative bg-[#EEF3FF] overflow-hidden">
+          <div className="absolute inset-0 z-0 ">
+            <Image
+              src="/sme-background.png"
+              alt="Background pattern"
+              fill
+              className="object-cover opacity-50"
+              priority
+            />
+          </div>
+          <div className=" py-6 relative z-10">
+            <div className="bg-[#000066] rounded-xl overflow-hidden mx-3">
+              <div className="">
+                <div className="ml-4 mt-4 inline-block bg-[#00D2FF] text-[30px] text-[#10142C] px-3 py-1 rounded-md font-medium mb-4 ">
+                  SMEs
+                </div>
+                <h1 className="ml-4 text-4xl font-bold mb-4 leading-tight text-white">
+                  Empowering small &
+                  growing businesses
+                </h1>
+                <p className="ml-4 text-white mb-4 text-[15px] font-semibold">
+                  Running a business is no small feat, and managing payments should not add to the stress.
+                </p>
+                <p className="ml-4 text-white opacity-60 font-light mb-6 text-sm">
+                  Our SME solutions help you simplify payments, streamline operations, and unlock new opportunities for
+                  growth.
+                </p>
+                <div className="grid grid-cols-3 gap-2 mt-4">
+                  <div className=" relative h-[200px] w-[350px] rounded-lg overflow-hidden">
+                    <Image src="/sme-hero-image1.png" alt="SME Solutions" fill className="object-cover" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
     <section className="py-8 bg-[#EEF3FF] relative">
       <div className="absolute inset-0 z-0">
         <Image src="/sme-background.png" alt="Background pattern" fill className="object-cover opacity-50" />
@@ -201,6 +242,10 @@ const SMESolutions = () => {
         ))}
       </div>
     </section>
+    </main>
+    </div>
+
+       
   )
 }
 

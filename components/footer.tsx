@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react"
 export default function Footer() {
   return (
     <div className="bg-[#EEF3FF] w-full flex justify-center items-center">
- <footer className="relative bg-[#A6C4FA] overflow-hidden px-[25px] w-[95%] rounded-[10px]">
+ <footer className="relative bg-[#A6C4FA] overflow-hidden md:px-[25px] w-[95%] rounded-[10px]">
       {/* Background pattern */}
       <div className="absolute inset-0 z-0 opacity-50">
         <Image src="/footer-bg.png" alt="" fill className="object-cover" priority />
@@ -155,18 +155,18 @@ export default function Footer() {
         </div>
 
         {/* Mobile Layout */}
-        <div className="md:hidden px-4 py-3">
+        <div className=" md:hidden px-2 py-3">
           {/* Logo */}
-          <div className="mb-3">
+          <div className="mb-5 mt-4">
             <Link href="/" className="inline-block">
-              <h1 className="text-[#000066] text-xl font-bold">3line</h1>
+             <Image src="/logo.png" alt="logo" width={60} height={60} />
             </Link>
           </div>
 
           {/* Subscription Form */}
-          <div className="bg-white rounded-lg p-3 shadow-md mb-4">
-            <h3 className="text-sm font-bold mb-1">Subscribe to get updates that matter.</h3>
-            <p className="text-xs text-gray-700 mb-2">
+          <div className="bg-white rounded-lg py-8 p-5 shadow-md mb-4">
+            <h3 className="text-xl font-bold mb-4">Subscribe to get updates that matter.</h3>
+            <p className="text-sm text-gray-700 mb-2">
               Stay informed on payments, business growth, and 3Line news right in your inbox!
             </p>
             <div className="mb-2">
@@ -181,19 +181,19 @@ export default function Footer() {
               />
             </div>
             <div className="flex justify-end">
-              <button className="flex items-center text-[#000066] text-xs font-bold">
+              <button className="flex items-center text-[#000066] text-xl font-bold">
                 Subscribe
-                <Image src="/arrow_footer.png" alt="arrow footer " className="mt-[10px]" width={50} height={50} />
+                <Image src="/arrow_footer.png" alt="arrow footer " className="mt-[10px]" width={60} height={60} />
               
               </button>
             </div>
           </div>
 
           {/* Navigation Menus */}
-          <div className="grid grid-cols-3 gap-2 mb-4">
+          <div className="grid grid-cols-3 gap-2 mb-8 mt-8">
             <div>
-              <h3 className="font-bold text-xs mb-1">Products</h3>
-              <ul className="space-y-1 text-xs">
+              <h3 className="font-bold text-xl mb-1">Products</h3>
+              <ul className="space-y-1 text-xs font-semibold">
                 <li>
                   <Link href="#" className="hover:underline">
                     SMEs
@@ -212,8 +212,8 @@ export default function Footer() {
               </ul>
             </div>
             <div>
-              <h3 className="font-bold text-xs mb-1">Company</h3>
-              <ul className="space-y-1 text-xs">
+              <h3 className="font-bold text-xl  mb-1">Company</h3>
+              <ul className="space-y-1 text-xs font-semibold">
                 <li>
                   <Link href="#" className="hover:underline">
                     Testimonials
@@ -242,8 +242,8 @@ export default function Footer() {
               </ul>
             </div>
             <div>
-              <h3 className="font-bold text-xs mb-1">Resources</h3>
-              <ul className="space-y-1 text-xs">
+              <h3 className="font-bold text-xl mb-1">Resources</h3>
+              <ul className="space-y-1 text-xs font-semibold">
                 <li>
                   <Link href="#" className="hover:underline">
                     Blog
