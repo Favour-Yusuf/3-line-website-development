@@ -442,7 +442,7 @@ const Header = () => {
                       <h3 className="text-gray-800 text-lg font-bold mb-4">Products</h3>
                       <div className="space-y-3">
                         <Link href="/solutions/smes" onClick={() => setIsMenuOpen(false)}>
-                          <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 mb-4">
+                          <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-4 mb-4">
                             <h4 className="text-[#0A1A4A] text-base font-semibold mb-2">SMEs</h4>
                             <p className="text-[#4A5568] text-sm leading-relaxed">
                               Get paid faster, access digital banking, and manage transactions in realtime.
@@ -451,7 +451,7 @@ const Header = () => {
                         </Link>
 
                         <Link href="/solutions/enterprise" onClick={() => setIsMenuOpen(false)}>
-                          <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 mb-4">
+                          <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-4 mb-4">
                             <h4 className="text-[#0A1A4A] text-base font-semibold mb-2">Enterprise</h4>
                             <p className="text-[#4A5568] text-sm leading-relaxed">
                               Optimize cash flow with secure, efficient, and scalable payment solutions.
@@ -460,7 +460,7 @@ const Header = () => {
                         </Link>
 
                         <Link href="/solutions/individual" onClick={() => setIsMenuOpen(false)}>
-                          <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 mb-4">
+                          <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-4 mb-4">
                             <h4 className="text-[#0A1A4A] text-base font-semibold mb-2">Individual</h4>
                             <p className="text-[#4A5568] text-sm leading-relaxed">
                               Experience fast, easy, and convenient payment options for your personal and everyday
