@@ -127,7 +127,7 @@ const SMESolutions = () => {
         <h2 className="text-xl font-bold mb-6 text-[#10142C] mx-3">SMEs Solutions developed with you in mind...</h2>
 
         {solutions.map((solution, index) => (
-          <div key={solution.id} className="bg-white rounded-xl overflow-hidden shadow-sm mb-6 mx-3">
+          <div key={solution.id} className="bg-transparent rounded-xl overflow-hidden shadow-sm mb-6 mx-3">
             <div className="p-6">
               <div className="bg-[#10142C] text-white w-10 h-10 flex items-center justify-center rounded-lg mb-4">
                 <span className="text-lg font-bold">{solution.id}</span>
@@ -156,7 +156,7 @@ const SMESolutions = () => {
                     <h4 className="text-lg font-bold mb-4 text-[#10142C]">Key features</h4>
                     <div className="space-y-4 ">
                       {solution.keyFeatures.map((feature, featureIndex) => (
-                        <div className="bg-blue-200 py-[20px] pl-[10px] pb-[20px] rounded-[20px]" key={featureIndex}>
+                        <div className="bg-white bg-opacity-40 py-[20px] pl-[10px] pb-[20px] rounded-[20px]" key={featureIndex}>
                           <h5 className="font-semibold text-[#10142C] mb-1 ">{feature.title}</h5>
                           <p className="text-gray-600 text-sm">{feature.description}</p>
                         </div>
@@ -172,7 +172,7 @@ const SMESolutions = () => {
                       <h4 className="text-lg font-bold mb-4 text-[#10142C]">Who it's for</h4>
                       <div className="space-y-3">
                         {solution.whoItsFor.map((target, targetIndex) => (
-                          <div key={targetIndex} className="flex  items-center gap-3 bg-blue-200 py-[20px] pl-[10px] pb-[20px] rounded-[20px]">
+                          <div key={targetIndex} className="flex  items-center gap-3 bg-white bg-opacity-40 py-[20px] pl-[10px] pb-[20px] rounded-[20px]">
                             <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                               <span className="text-sm">{target.icon}</span>
                             </div>
