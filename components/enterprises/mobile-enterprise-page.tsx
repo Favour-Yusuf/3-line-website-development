@@ -99,7 +99,7 @@ export default function MobileEnterprisePage() {
                 <div className=" py-6 relative z-10">
                   <div className="bg-[#000066] rounded-xl overflow-hidden mx-3">
                     <div className="">
-                      <div className="ml-4 mt-4 inline-block bg-[#00D2FF] text-[30px] text-[#10142C] px-3 py-1 rounded-md font-medium mb-4 ">
+                      <div className="ml-4 mt-4 inline-block bg-[#00D2FF] text-[35px] text-[#10142C] px-3 py-1 rounded-md font-bold mb-4 ">
                           Enterprise
                       </div>
                       <h1 className="ml-4 text-5xl font-bold mb-4 leading-tight text-white">
@@ -112,7 +112,7 @@ for large organizations
                       </p>
                       <div className="grid grid-cols-3 gap-2 mt-4">
                         <div className=" relative h-[200px] w-[350px] rounded-lg overflow-hidden">
-                          <Image src="/sme-hero-image1.png" alt="SME Solutions" fill className="object-cover" />
+                          <Image src="/sme_main.png" alt="SME Solutions" fill className="object-cover" />
                         </div>
                       </div>
                     </div>
@@ -126,12 +126,12 @@ for large organizations
         <Image src="/sme-background.png" alt="Background pattern" fill className="object-cover opacity-50" />
       </div>
       <div className="relative z-10">
-        <h2 className="text-xl font-bold mb-6 text-[#10142C] mx-5">Powering the Future of Digital Banking</h2>
+        <h2 className="text-4xl font-bold mb-6 text-[#10142C] mx-5">Powering the Future of Digital Banking</h2>
 
         {solutions.map((solution, index) => (
           <div
             key={solution.id}
-            className={`bg-transparent rounded-xl overflow-hidden shadow-sm mx-3 ${index === 0 ? "mt-6" : "mt-6"}`}
+            className={` rounded-xl overflow-hidden shadow-sm mx-3 ${index === 0 ? "mt-6 " : "mt-6 bg-transparent"} `} 
           >
             <div className="p-6">
               <div className="bg-[#10142C] text-white w-10 h-10 flex items-center justify-center rounded-lg mb-4">
