@@ -13,12 +13,18 @@ const PartnersSection = () => {
     { name: "Alerzo", logo: "/alerzo_main.png", width: 100 },
     { name: "NIBSS", logo: "/nibss.png", width: 120 },
     { name: "Fidelity", logo: "/fidelity.png", width: 120 },
-    { name: "Providus Bank", logo: "/providus_bank.png", width: 120 },
+    { name: "Stanbic", logo: "/stanbic.png", width: 120 },
+    { name: "Sterling", logo: "/sterling_bank.png", width: 120 },
+    { name: "Optimus", logo: "/optimusbank.png", width: 120 },
     { name: "Parralex", logo: "/parralex_logo.png", width: 120 },
-    { name: "Sterling Bank", logo: "/sterling_bank.png", width: 120 },
-    { name: "Optimus Bank", logo: "/optimusbank.png", width: 120 },
-    { name: "NowNow", logo: "/nownow.JPG", width: 120 },
+    { name: "Providus", logo: "/providus_bank.png", width: 120 },
+    { name: "Wema", logo: "/wema.png", width: 120 },
     { name: "PalmPay", logo: "/palmpay.png", width: 120 },
+    { name: "NowNow", logo: "/nownow.JPG", width: 120 },
+    { name: "Hydrogen", logo: "/hydrogen.png", width: 120 },
+    { name: "UP", logo: "/up.png", width: 120 },
+    { name: "Standard Chartered", logo: "/standard_chartered.png", width: 120 },
+    { name: "Opay", logo: "/opay.png", width: 120 },
   ]
 
   const scrollRef = useRef<HTMLDivElement>(null)
@@ -45,17 +51,14 @@ const PartnersSection = () => {
 
   return (
     <div className="w-full py-8">
-      {/* Mobile Layout - Grid */}
+      {/* ✅ Mobile Layout - 4 column grid */}
       <div className="block md:hidden bg-[#F5F5F5] px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-3 gap-0 bg-white border border-gray-200">
+          <div className="grid grid-cols-4 gap-x-3 gap-y-4 bg-white py-4 px-2 rounded-lg">
             {partners.map((partner, index) => (
               <div
                 key={index}
-                className="flex items-center justify-center p-4 bg-white border-r border-b border-gray-200 min-h-[80px]"
-                style={{
-                  borderRight: (index + 1) % 3 === 0 ? "none" : "1px solid #e5e7eb",
-                }}
+                className="flex items-center justify-center p-2"
               >
                 <Image
                   src={partner.logo || "/placeholder.svg"}
@@ -70,7 +73,7 @@ const PartnersSection = () => {
         </div>
       </div>
 
-      {/* Desktop Layout - Slider */}
+      {/* ✅ Desktop Layout - Slider (unchanged) */}
       <div className="hidden md:block overflow-hidden bg-white shadow-sm rounded-xl mx-4 py-8">
         <div ref={scrollRef} className="flex whitespace-nowrap overflow-hidden">
           {scrollingPartners.map((partner, index) => (

@@ -146,9 +146,9 @@ const SeamlessTransactions = () => {
   if (!hasMounted) return null
 
   return (
-    <div className="relative w-full max-w-[95%] mx-auto px-4 md:py-8 lg:mb-[400px]">
+    <div className="relative w-full max-w-[95%] mx-auto px-4 md:py-8 md:mb-[400px]">
       {/* Extended height container for scroll-based interaction */}
-      <div className="h-[50vh]">
+      <div className="md:h-[50vh] h-[40vh]">
         <div className="sticky top-[20vh]">
           <div
             ref={containerRef}

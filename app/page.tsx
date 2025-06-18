@@ -1,15 +1,17 @@
+"use client"
 import Image from "next/image"
 import HeroSection from "@/components/home/hero-section"
 import StatsSection from "@/components/home/stats-section"
 import PartnersSection from "@/components/home/partners-section"
-import TransactionsMap from "@/components/home/transactions-map"
 import SolutionsSection from "@/components/home/solutions-section"
 import CaseStudiesPreview from "@/components/home/case-studies-preview"
 import SeamlessTransactions from "@/components/home/seamless-transactions"
 import SecuritySection from "@/components/home/security-section"
 import ScrollTransitionComponents from "@/components/home/scroll_component"
-
+import { useMobile } from "@/hooks/useMobile"
+import TransactionsPage from "@/components/home/TransactionsPage_mobile"
 export default function Home() {
+  const isMobile = useMobile()
   return (
     <main className="min-h-screen bg-[#EEF3FF] overflow-hidden pt-[var(--header-height-mobile)]">
       {/* Main background pattern */}
@@ -41,7 +43,11 @@ export default function Home() {
       </section>
 
       {/* Transactions Map */}
-      <ScrollTransitionComponents />
+      {
+        isMobile ? <TransactionsPage /> : <ScrollTransitionComponents />
+      }
+      {/* <TransactionsPage /> */}
+      {/* <ScrollTransitionComponents /> */}
 
       {/* Solutions Section with background */}
       <section className="relative">
@@ -62,6 +68,9 @@ export default function Home() {
         <br />
         <br />
         <div className="relative z-10">
+            {/* {
+               isMobile ? <SeamlessTransactionsMobile /> : <SeamlessTransactions />
+            } */}
           <SeamlessTransactions />
         </div>
 

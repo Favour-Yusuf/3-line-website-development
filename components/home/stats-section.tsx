@@ -46,7 +46,7 @@ const StatsSection = () => {
             <div className="h-px bg-blue-500 w-full" />
 
             {/* Row 3 */}
-            <div className="text-center font-grotesk text-headline">
+            <div className="text-left font-grotesk text-headline">
               <h3 className="text-2xl font-bold text-[#000066]">99.9% uptime,</h3>
               <p className="text-sm font-semibold text-blue-500">so your business never stops!</p>
             </div>
