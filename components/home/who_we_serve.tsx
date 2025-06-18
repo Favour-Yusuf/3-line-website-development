@@ -11,7 +11,7 @@ const WhoWeServeComponent = () => {
 
 
     return (
-      <section className="  min-h-screen overflow-hidden w-full flex justify-center items-center mt-[50px]">
+      <section className="  h-[120vh] overflow-hidden w-full flex justify-center items-center mt-[50px]">
        <div className="relative w-[95%] bg-[#0c152e] rounded-[20px]">
          {/* Background geometric shapes - positioned on the right */}
          <div className="absolute top-0 right-0 w-[40%] h-full">
