@@ -28,10 +28,10 @@ export default function ContactUsForm() {
   return (
     <>
       {/* MOBILE VIEW FORM – visible only on small screens */}
-      <section id="contact-form-mobile" className="block md:hidden bg-white py-6 px-4 rounded-2xl max-w-md mx-auto shadow-md">
-        <form onSubmit={handleSubmit} className="space-y-4">
+      <section id="contact-form-mobile" className="block md:hidden bg-[#E8F0FF] py-6 px-4 rounded-2xl max-w-md mx-auto shadow-md">
+        <form onSubmit={handleSubmit} className="space-y-4 bg-white p-4 rounded-[15px]">
           <div>
-            <label htmlFor="name" className="text-sm font-medium text-black">What’s your name?</label>
+            <label htmlFor="name" className="text-sm font-bold text-black">What’s your name?</label>
             <input
               type="text"
               id="name"
@@ -44,7 +44,7 @@ export default function ContactUsForm() {
           </div>
 
           <div>
-            <label htmlFor="email" className="text-sm font-medium text-black">What’s the best email to reach you at?</label>
+            <label htmlFor="email" className="text-sm font-bold text-black">What’s the best email to reach you at?</label>
             <input
               type="email"
               id="email"
@@ -57,7 +57,7 @@ export default function ContactUsForm() {
           </div>
 
           <div>
-            <label htmlFor="phone" className="text-sm font-medium text-black">Got a phone number?</label>
+            <label htmlFor="phone" className="text-sm font-bold text-black">Got a phone number?</label>
             <input
               type="tel"
               id="phone"
@@ -70,7 +70,7 @@ export default function ContactUsForm() {
           </div>
 
           <div>
-            <label htmlFor="solution" className="text-sm font-medium text-black">Which of our solutions interests you?</label>
+            <label htmlFor="solution" className="text-sm font-bold text-black">Which of our solutions interests you?</label>
             <p className="text-xs text-gray-500 mt-1 mb-2">Choose one so we can assist you better.</p>
             <select
               id="solution"
@@ -88,7 +88,7 @@ export default function ContactUsForm() {
           </div>
 
           <div>
-            <label htmlFor="launchDate" className="text-sm font-medium text-black">When do you plan to launch?</label>
+            <label htmlFor="launchDate" className="text-sm font-bold text-black">When do you plan to launch?</label>
             <input
               type="text"
               id="launchDate"
@@ -100,23 +100,23 @@ export default function ContactUsForm() {
             />
           </div>
 
-          <div className="pt-2">
-            <h3 className="font-medium text-black text-base">Let’s Make Payments Work for You</h3>
-            <p className="text-xs text-gray-500 mt-1 mb-4">
-              By clicking below, you agree to 3Line’s Terms & Conditions and Privacy Policy.
-            </p>
-            <button
-              type="submit"
-              className="w-full bg-[#4096FB] text-white font-medium py-3 rounded-full flex justify-center items-center gap-2 shadow-md hover:bg-blue-600 transition"
-            >
-              Send message
-              <ArrowRight className="h-4 w-4" />
-            </button>
-          </div>
+          <div>
+                      <h3 className="font-bold mb-4 mt-8 px-2 text-[16px]">Let's Make Payments Work for You</h3>
+                      <p className="text-xs text-gray-500 mb-8 px-2 text-[14px]">
+                        By clicking below, you agree to 3Line's Terms & Conditions and Privacy Policy.
+                      </p>
+                      <button
+                        type="submit"
+                        className="w-full  rounded-b-[15px] bg-[#A6C4FA] text-[#000066] h-[70px] font-bold text-[20px] hover:bg-blue-700 hover:text-white transition-colors flex items-center justify-end"
+                      >
+                        Send message
+                        <Image className="mt-[20px]" src="/arrow_footer.png" alt="arrow" width={80} height={80}/>
+                      </button>
+                    </div>
         </form>
       </section>
 
-      {/* DESKTOP VIEW FORM – visible only on medium and large screens */}
+      {/* DESKTOP VIEW FORM – visible only on bold and large screens */}
       <section id="contact-form-desktop" className=" hidden md:block py-12 px-4 bg-[#EEF3FF] ">
         <div className="container mx-auto">
           <div className="bg-[#111B41] rounded-xl overflow-hidden relative">
@@ -136,7 +136,7 @@ export default function ContactUsForm() {
                     <div className=" px-8">
    {/* Name */}
    <div className="mt-[20px]">
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">What's your name?</label>
+                      <label htmlFor="name" className="block text-sm font-bold text-gray-700 mb-1">What's your name?</label>
                       <input
                         type="text"
                         id="name"
@@ -151,7 +151,7 @@ export default function ContactUsForm() {
 
                     {/* Email */}
                     <div className="mt-[20px]">
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">What's the best email to reach you at?</label>
+                      <label htmlFor="email" className="block text-sm font-bold text-gray-700 mb-1">What's the best email to reach you at?</label>
                       <input
                         type="email"
                         id="email"
@@ -166,7 +166,7 @@ export default function ContactUsForm() {
 
                     {/* Phone */}
                     <div className="mt-[20px]">
-                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Got a phone number?</label>
+                      <label htmlFor="phone" className="block text-sm font-bold text-gray-700 mb-1">Got a phone number?</label>
                       <input
                         type="tel"
                         id="phone"
@@ -180,7 +180,7 @@ export default function ContactUsForm() {
 
                     {/* Solution Options */}
                     <div className="mt-[20px]">
-                      <label className="block text-sm font-medium text-gray-700 mb-1">Which of our solutions interests you?</label>
+                      <label className="block text-sm font-bold text-gray-700 mb-1">Which of our solutions interests you?</label>
                       <p className="text-xs text-gray-500 mb-2">Choose one so we can assist you better.</p>
                       <div className="grid grid-cols-2 gap-2">
                         {["Gravity Lite", "Gravity ENT", "Medusa Merchant", "Payment APIs", "BespokeOffers"].map(option => (
@@ -200,7 +200,7 @@ export default function ContactUsForm() {
 
                     {/* Launch Date */}
                     <div className="mt-[20px]">
-                      <label htmlFor="launchDate" className="block text-sm font-medium text-gray-700 mb-1">When do you plan to launch?</label>
+                      <label htmlFor="launchDate" className="block text-sm font-bold text-gray-700 mb-1">When do you plan to launch?</label>
                       <input
                         type="text"
                         id="launchDate"
@@ -216,13 +216,13 @@ export default function ContactUsForm() {
 
                     {/* CTA */}
                     <div>
-                      <h3 className="font-medium mb-4 mt-8 px-8">Let's Make Payments Work for You</h3>
+                      <h3 className="font-bold mb-4 mt-8 px-8">Let's Make Payments Work for You</h3>
                       <p className="text-xs text-gray-500 mb-8 px-8">
                         By clicking below, you agree to 3Line's Terms & Conditions and Privacy Policy.
                       </p>
                       <button
                         type="submit"
-                        className="w-full  rounded-b-[15px] bg-[#A6C4FA] text-[#000066] h-[100px] font-medium text-[20px] hover:bg-blue-700 hover:text-white transition-colors flex items-center justify-end"
+                        className="w-full  rounded-b-[15px] bg-[#A6C4FA] text-[#000066] h-[100px] font-bold text-[20px] hover:bg-blue-700 hover:text-white transition-colors flex items-center justify-end"
                       >
                         Send message
                         <Image className="mt-[20px]" src="/arrow_footer.png" alt="arrow" width={80} height={80}/>

@@ -56,19 +56,19 @@ const Header = () => {
         number: "1",
         title: "Magtipon Lite:",
         description: "Simplified Payments for Growing Businesses",
-        href: "/solutions/magtipon-lite",
+       
       },
       {
         number: "2",
         title: "Medusa Merchant:",
         description: "Your End-to-End Business Payment Solution",
-        href: "/solutions/medusa-merchant",
+       
       },
       {
         number: "3",
         title: "Gravity Lite:",
         description: "Launch Your Agent Banking Business in 24 Hours",
-        href: "/solutions/gravity-lite",
+       
       },
     ],
     enterprise: [
@@ -76,13 +76,13 @@ const Header = () => {
         number: "1",
         title: "Gravity Enterprise:",
         description: "Build & Scale a Nationwide Agent Network",
-        href: "/solutions/gravity-enterprise",
+       
       },
       {
         number: "2",
         title: "Magtipon Enterprise:",
         description: "The infrastructure for digital banking",
-        href: "/solutions/magtipon-enterprise",
+       
       },
     ],
     individual: [
@@ -90,19 +90,19 @@ const Header = () => {
         number: "1",
         title: "Magtipon Lite:",
         description: "Simplified Payments for Growing Businesses",
-        href: "/solutions/magtipon-lite",
+       
       },
       {
         number: "2",
         title: "Medusa Merchant:",
         description: "Your End-to-End Business Payment Solution",
-        href: "/solutions/medusa-merchant",
+       
       },
       {
         number: "3",
         title: "Gravity Lite:",
         description: "Launch Your Agent Banking Business in 24 Hours",
-        href: "/solutions/gravity-lite",
+       
       },
     ],
   }
@@ -178,15 +178,15 @@ const Header = () => {
           hasScrolled ? "bg-transparent mt-2" : "bg-[#EEF3FF] mt-0"
         }`}
       >
-        <header className=" w-[95%] bg-[#B8CFFF] py-3 md:py-4 px-4 md:px-8 flex rounded-[10px]">
+        <header className=" w-[95%] bg-[#B8CFFF] py-3 md:py-4 px-4 md:px-8 flex rounded-[10px] relative">
           <div className="container mx-auto flex items-center justify-between">
             <Link href="/" className="flex items-center">
               <Image src="/logo.png" alt="3Line logo" width={80} height={40} />
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
-              <div className="relative" ref={productsRef}>
+            <div className="hidden md:flex items-center space-x-4 lg:space-x-8 ">
+              <div className=" " ref={productsRef}>
                 <button
                   onClick={() => setActiveDropdown((prev) => (prev === "products" ? null : "products"))}
                   className="flex items-center text-sm lg:text-[20px] font-medium px-2 lg:px-4"
@@ -199,7 +199,7 @@ const Header = () => {
 
                 {/* Products Dropdown */}
                 {activeDropdown === "products" && (
-                  <div className="absolute left-0 mt-2 w-screen max-w-[800px] bg-[#EEF3FF] rounded-xl shadow-lg overflow-hidden z-50">
+                  <div className="absolute right-[0%] h-[70vh] mt-2 w-screen max-w-[100%] bg-[#EEF3FF] rounded-xl shadow-lg overflow-hidden z-50">
                     <div className="flex flex-col md:flex-row">
                       {/* Left Column */}
                       <div className="w-full md:w-1/2 md:border-r border-gray-200">
@@ -234,7 +234,7 @@ const Header = () => {
                                 </p>
                               </div>
                             </Link>
-
+                           
                             <div
                               className={`rounded-lg p-5 hover:shadow-md transition-all cursor-pointer ${
                                 hoveredSection === "individual" ? "bg-blue-50 border-2 border-blue-200" : "bg-white"
@@ -250,15 +250,16 @@ const Header = () => {
                           </div>
                         </div>
                       </div>
+                      <div className=" w-[1.5px] bg-blue-300 mt-[30px] mb-[30px]"></div>
 
                       {/* Right Column - Dynamic Content */}
                       <div className="w-full md:w-1/2">
                         <div className="p-6">
-                          <div className="space-y-8">
+                          <div className="space-y-2">
                             {sectionContent[hoveredSection as keyof typeof sectionContent].map((item, index) => (
                               <div key={index}>
-                                <Link href={item.href} className="block">
-                                  <div className="flex items-start gap-4 hover:bg-white p-3 rounded-lg transition-colors">
+                                <Link href="" className="block">
+                                  <div className=" flex items-start gap-4 hover:bg-white p-8 rounded-lg transition-colors">
                                     <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-[#0A1A4A] text-white flex-shrink-0">
                                       <span>{item.number}</span>
                                     </div>
@@ -269,7 +270,7 @@ const Header = () => {
                                   </div>
                                 </Link>
                                 {index < sectionContent[hoveredSection as keyof typeof sectionContent].length - 1 && (
-                                  <div className="border-t border-gray-200 pt-8"></div>
+                                  <div className="border-t border-blue-300 pt-8"></div>
                                 )}
                               </div>
                             ))}
@@ -312,7 +313,7 @@ const Header = () => {
                           Our Team
                         </Link>
                         <Link
-                          href="/careers"
+                          href=""
                           onClick={handleLinkClick}
                           className="block p-4 hover:bg-[#F5F8FF] rounded-lg"
                         >
@@ -459,7 +460,7 @@ const Header = () => {
                           </div>
                         </Link>
 
-                        <Link href="/solutions/individual" onClick={() => setIsMenuOpen(false)}>
+                        <Link href="" onClick={() => setIsMenuOpen(false)}>
                           <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-4 mb-4">
                             <h4 className="text-[#0A1A4A] text-base font-semibold mb-2">Individual</h4>
                             <p className="text-[#4A5568] text-sm leading-relaxed">

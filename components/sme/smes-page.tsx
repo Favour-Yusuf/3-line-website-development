@@ -76,7 +76,7 @@ export default function SmesPage() {
             {/* Gravity Lite */}
             <div className=" rounded-xl overflow-hidden shadow-sm mb-8 mx-3 md:mx-4">
               <div className="grid grid-cols-1 md:grid-cols-3">
-                <div className="p-12 h-[600px] bg-white relative">
+                <div className="p-12 h-[500px] bg-white relative">
                 <div className="hidden md:block absolute top-0 right-[-12px] h-full w-[0.5px] bg-blue-500"></div>
                   <div className="bg-[#10142C] text-white w-20 h-20 flex items-center justify-center rounded-lg mb-10">
                     <span className="text-4xl font-bold">1</span>
@@ -86,10 +86,10 @@ export default function SmesPage() {
                   <p className="text-gray-600 mb-6">
                   Expand financial access in your community with Gravity Lite, our agency banking solution designed for small to medium-sized businesses and entrepreneurs.
                   </p>
-                  <div className="w-[100%]  absolute flex justify-end items-end">
+                  <div className="w-[95%]  absolute flex justify-end items-end">
                  <Link
                     href="#"
-                    className="inline-flex items-center justify-center  text-[#000066] font-bold py-2 px-4 rounded-full transition-colors  mt-[20px]"
+                    className="inline-flex items-center justify-center  text-[#000066] font-bold py-2 px-4 rounded-full transition-colors "
                   >
                    Get Started
                     <Image src="/sme_arrow.png" alt="user" width={60} height={60} />
@@ -97,42 +97,48 @@ export default function SmesPage() {
                   </Link>
                  </div>
                 </div>
-                <div className="p-8 border-r border-blue-500 bg-transparent">
-                  <h3 className="font-bold mb-4 text-[40px] tracking-tighter text-[#10142C]">Key features</h3>
+
+                <div className=" h-[500px] p-8 border-r border-blue-500 bg-transparent">
+                  <h3 className="font-semibold mb-6 text-[#10142C] text-xl">Key features</h3>
                   <div className="space-y-4">
                     <div  className="bg-[#FFFFFF80] p-[15px] rounded-[15px] mb-[5px]">
-                      <h4 className="font-bold text-[20px] text-[#10142C]">Fast & Easy Agent Onboarding</h4>
-                      <p className="text-[18px] text-gray-600">Set up and start transacting within 24 hours.</p>
+                      <h4 className="font-bold text-[#10142C] text-[20px]">Fast & Easy Agent Onboarding</h4>
+                      <p className="text-sm text-gray-600">Set up and start transacting within 24 hours.</p>
                     </div>
                     <div  className="bg-[#FFFFFF80] p-[15px] rounded-[15px] mb-[5px]">
-                      <h4 className="font-bold text-[20px] text-[#10142C]">Multi-Channel Transaction</h4>
-                      <p className="text-[18px] text-gray-600">Accept cash, digital wallets,  and card payments.</p>
+                      <h4 className="font-bold text-[#10142C] text-[20px]">Multi-Channel Transaction</h4>
+                      <p className="text-[16px] text-gray-600">Accept cash, digital wallets,  and card payments.</p>
                     </div>
                     <div  className="bg-[#FFFFFF80] p-[15px] rounded-[15px] mb-[5px]">
-                      <h4 className="font-bold text-[20px] text-[#10142C]">Real-Time Monitoring</h4>
-                      <p className="text-[18px] text-gray-600">Track agent performance and transactions on the go.</p>
+                      <h4 className="font-bold text-[#10142C] text-[20px]">Real-Time Monitoring</h4>
+                      <p className="text-[16px] text-gray-600">Track agent performance and transactions on the go.</p>
                     </div>
                     <div  className="bg-[#FFFFFF80] p-[15px] rounded-[15px] mb-[5px]">
-                      <h4 className="font-bold text-[20px] text-[#10142C]">Scalable Network</h4>
-                      <p className="text-[18px] text-gray-600">Build and manage a thriving agent network effortlessly.</p>
+                      <h4 className="font-bold text-[#10142C] text-[20px]">Scalable Network</h4>
+                      <p className="text-[16px] text-gray-600">Build and manage a thriving agent network effortlessly.</p>
+
                  </div>
                   </div>
                 </div>
                 <div className="p-8 bg-transparent">
-                  <h3 className="font-semibold text-[40px] tracking-tighter mb-4 text-[#10142C]">Who it's for</h3>
+
+                  <h3 className="font-semibold mb-4 text-[#10142C] text-[20px]">Who it's for</h3>
+
                   <div className="space-y-6">
                   <div className="bg-[#FFFFFF80] p-[20px] rounded-[15px]">
                     <Image src="/user.png" alt="user" width={60} height={60} />
                       <div>
-                        <p className="text-[18px] text-gray-600">
+
+                        <p className="text-[16px] text-gray-600">
+
                         Entrepreneurs looking to start an agent banking business.
                         </p>
                       </div>
                     </div>
-                    <div className="bg-[#FFFFFF80] p-[20px] rounded-[15px]">
+                    <div className="bg-[#FFFFFF80] p-[20px] rounded-[15px] text-[20px]">
                     <Image src="/shop.png" alt="user" width={60} height={60} />
                       <div>
-                        <p className="text-[18px] text-gray-600">
+
                         SMEs that want to extend banking services to underserved areas.
                         </p>
                       </div>
@@ -156,7 +162,7 @@ export default function SmesPage() {
                     Medusa Merchant is built to simplify payments, streamline business operations, and provide real-time
                     insights that help businesses grow.
                   </p>
-                  <div className="w-[100%]  absolute flex justify-end items-end">
+                  <div className="w-[95%]  absolute flex justify-end items-end">
                  <Link
                     href="#"
                     className="inline-flex items-center justify-center  text-[#000066] font-bold py-2 px-4 rounded-full transition-colors  mt-[20px]"
@@ -193,20 +199,26 @@ export default function SmesPage() {
                   </div>
                 </div>
                 <div className="p-8 bg-transparent">
-                  <h3 className="font-semibold mb-4 text-[#10142C] text-[40px] tracking-tighter">Who it's for</h3>
+
+                  <h3 className="font-semibold mb-4 text-[#10142C] text-[20px]">Who it's for</h3>
+
                   <div className="space-y-6">
                     <div className="bg-[#FFFFFF80] p-[20px] rounded-[15px]">
                     <Image src="/shop.png" alt="user" width={60} height={60} />
                       <div>
-                        <p className="text-[18px] text-gray-600">
+
+                        <p className="text-[16px] text-gray-600">
+
                           SMEs looking to streamline payment processes and improve efficiency.
                         </p>
                       </div>
                     </div>
-                    <div className="bg-[#FFFFFF80] p-[20px] rounded-[15px]">
+                    <div className="bg-[#FFFFFF80] p-[20px] rounded-[15px] text-[20px]">
                     <Image src="/user.png" alt="user" width={60} height={60} />
                       <div>
-                        <p className="text-[18px] text-gray-600">
+
+                        <p className="text-[16px] text-gray-600">
+
                           Business owners who want real-time insights to optimize sales and operations.
                         </p>
                       </div>
@@ -230,7 +242,7 @@ export default function SmesPage() {
                   <p className="text-gray-600 mb-6">
                   A powerful payment gateway that allows businesses to issue virtual accounts, process bulk payments, and offer value-added services like airtime and bill payments.
                   </p>
-                  <div className="w-[100%]  absolute flex justify-end items-end">
+                  <div className="w-[95%]  absolute flex justify-end items-end">
                  <Link
                     href="#"
                     className="inline-flex items-center justify-center  text-[#000066] font-bold py-2 px-4 rounded-full transition-colors  mt-[20px]"

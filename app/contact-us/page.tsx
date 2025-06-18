@@ -45,16 +45,16 @@ export default function ContactUsPage() {
     <main className="min-h-screen bg-[#EEF3FF]">
       {/* Hero Section */}
       
-      <section className="relative overflow-hidden text-white  md:pt-[105px] rounded-[15px] md:mt-0 mt-[70px] md:flex w-full  justify-center items-center">
-        <div className="w-[93%] mx-auto ml-[20px] md:px-[70px] md:ml-[70px] py-8 md:py-12 relative  md:bg-[#111B41] bg-[#000066] rounded-[25px]">
+      <section className="relative overflow-hidden text-white md:pt-[105px] rounded-[15px] md:mt-0 mt-[70px] md:flex w-full  justify-center items-center">
+        <div className="h-[455px] px-[20px]  mt-[30px] w-[93%] mx-auto ml-[20px] md:px-[70px] md:ml-[50px] py-2 md:py-6 relative  md:bg-[#111B41] bg-[#000066] rounded-[15px] ">
           <div className="max-w-full md:max-w-3xl py-12 md:py-20 relative z-10 pr-4">
-            <div className="md:text-[25px] md:mb-2 text-gray-400 mb-[20px] text-sm">
+            <div className="md:text-[25px] md:mb-2 text-gray-400 mb-[20px] text-[18px]">
               Get Started
             </div>
-            <h1 className=" w-[240px] md:w-[80%] text-3xl leading-tight md:text-6xl font-bold mb-[20px] md:leading-tight">
+            <h1 className=" w-[240px] md:w-[80%] text-4xl leading-tight md:text-6xl font-bold mb-[20px] md:leading-tight">
               Start Building and Growing with 3Line
             </h1>
-            <p className="text-gray-300 md:text-gray-300 mb-8 md:max-w-lg text-sm md:text-base">
+            <p className="text-gray-300 md:text-gray-300 mb-8 md:max-w-lg text-[16px] md:text-base">
               Tell us about your project, and we’ll help  you find the
               right solution.
             </p>
@@ -88,9 +88,9 @@ export default function ContactUsPage() {
       <section className=" overflow-hidden  text-white hidden md:flex w-full  justify-center items-center">
      
        <div className="w-[93%] py-8 md:py-12 md:px-[100px] relative bg-[#10142C] rounded-[25px]">
-          <div className="max-w-3xl py-16 md:py-20 relative z-10">
-            <div className="md:text-[20px] md:mb-[30px] text-gray-400 mb-[20px] text-sm">Contact Us</div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+          <div className="max-w-3xl py-16 md:py-12 relative z-10">
+            <div className="md:text-[25px] md:mb-[30px] text-gray-400 mb-[20px] text-sm">Contact Us</div>
+            <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
               Let's Talk
             </h1>
             <p className="text-gray-300 mb-8 max-w-lg">
@@ -112,7 +112,7 @@ export default function ContactUsPage() {
       </section>
 
       {/* Mobile View: visible on small screens only */}
-      <section className="relative bg-[#111B41] text-white rounded-2xl overflow-hidden p-6 max-w-sm mx-auto block md:hidden">
+      <section className="relative w-[93%] mt-[50px] h-[350px] bg-[#10142C] text-white rounded-2xl overflow-hidden p-6 max-w-sm mx-auto block md:hidden">
         {/* Background Image */}
         <div className="absolute top-0 right-0 h-full w-full z-0">
           <Image
@@ -124,10 +124,10 @@ export default function ContactUsPage() {
         </div>
 
         {/* Content */}
-        <div className="relative z-10">
-          <div className="text-sm text-gray-400 mb-2">Careers</div>
-          <h2 className="text-2xl font-bold mb-3">Let’s Talk</h2>
-          <p className="text-sm text-gray-300 leading-relaxed">
+        <div className="relative z-10 ">
+          <div className="text-[16px] text-gray-400 mb-4 mt-[20px]">Careers</div>
+          <h2 className="text-4xl font-bold mb-5">Let’s Talk</h2>
+          <p className="text-[16px] text-gray-300 leading-relaxed">
             We’re an ambitious team shaping the future of payments in Africa.
             See our job openings below and join us in making financial access
             simpler for everyone.
@@ -139,12 +139,12 @@ export default function ContactUsPage() {
       {/* Contact Information Card */}
 <section className="py-12 px-4 bg-[#EEF3FF]">
   
-  <div className="container px-[40px] md:max-w-8xl">
+  <div className="container  md:max-w-8xl">
   <h1 className="font-bold text-[40px] mt-[50px]">Contact Infomation</h1>
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
 
       {/* Contact Information (Left 2/3) */}
-      <div className="lg:col-span-2 space-y-4">
+      <div className="lg:col-span-1 space-y-4">
         {/* Email */}
         <div className="bg-white px-6 py-5 rounded-2xl shadow-sm flex items-center justify-between">
           <div className=" ">
@@ -152,8 +152,8 @@ export default function ContactUsPage() {
               <Image alt="email" src="/email.png" width={24} height={24} />
             </div>
             <div>
-              <h3 className="font-semibold text-sm  mb-2">Email</h3>
-              <p className="text-gray-600 text-sm">inquiries@3lineeng.com</p>
+              <h3 className="font-semibold text-[18px]  mb-2">Email</h3>
+              <p className="text-gray-600 text-[18px]">inquiries@3lineeng.com</p>
             </div>
           </div>
           <Link href="mailto:inquiries@3lineeng.com">
@@ -168,8 +168,8 @@ export default function ContactUsPage() {
               <Image alt="phone" src="/phone.png" width={24} height={24} />
             </div>
             <div>
-              <h3 className="font-semibold text-sm mb-2">Phone</h3>
-              <p className="text-gray-600 text-sm">+234 800 300 4000</p>
+              <h3 className="font-semibold text-[18px] mb-2">Phone</h3>
+              <p className="text-gray-600 text-[18px]">+234 800 300 4000</p>
             </div>
           </div>
           <Link href="tel:+2348003004000">
@@ -184,8 +184,8 @@ export default function ContactUsPage() {
               <Image alt="location" src="/address.png" width={24} height={24} />
             </div>
             <div>
-              <h3 className="font-semibold text-sm  mb-2">Address</h3>
-              <p className="text-gray-600 text-sm leading-snug">
+              <h3 className="font-semibold text-[18px]  mb-2">Address</h3>
+              <p className="text-gray-600 text-[18px] leading-snug">
                 7A Idejo St, Victoria Island, Lagos 101241, Lagos
               </p>
             </div>
@@ -194,25 +194,25 @@ export default function ContactUsPage() {
       </div>
 
       {/* CTA Card (Right 1/3) */}
-      <div className="bg-[#4096FB] rounded-2xl relative overflow-hidden text-white flex flex-col justify-between p-8">
-        <div>
-          <h2 className="text-2xl font-bold mb-2">Get in touch!</h2>
-          <p className="text-sm">We’re just a message away.</p>
+      <div className=" bg-[#4096FB] rounded-2xl relative overflow-hidden text-white flex flex-col justify-between p-8">
+        <div className="p-6">
+          <h2 className="text-5xl font-bold mb-2">Get in touch!</h2>
+          <p className="text-2xl">We’re just a message away.</p>
         </div>
 
       <div  className=" w-full flex justify-end items-end">
       <Link
           href="#contact-form"
-          className="inline-flex items-center  text-white font-medium"
+          className="text-[20px] inline-flex items-center  text-white font-medium z-10"
         >
           Send us a message
-          <Image src="/arrow_up.png" alt="arrow up" width={50} height={50} />
+          <Image src="/arrow_up.png" alt="arrow up" width={60} height={60} />
         </Link>
       </div>
 
-        <div className="absolute inset-0 opacity-30">
+        <div className="absolute inset-0 opacity-80">
           <Image
-            src="/contact-us-image1.png"
+            src="/get_in_touch.png"
             alt="decor"
             fill
             className="object-contain object-right"
