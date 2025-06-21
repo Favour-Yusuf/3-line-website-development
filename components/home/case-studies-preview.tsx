@@ -73,8 +73,19 @@ const CaseStudiesPreview = () => {
     }
   }, [currentSlide, isSliderMode])
 
+  useEffect(() => {
+    if (!isSliderMode) return
+  
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % caseStudies.length)
+    }, 2000) // every 2 seconds
+  
+    return () => clearInterval(interval)
+  }, [isSliderMode, caseStudies.length])
+  
+
   return (
-    <section className="relative w-full overflow-hidden bg-[#EEF3FF] py-16 px-[30px]">
+    <section className="relative w-full overflow-hidden bg-[#EEF3FF] py-16 md:px-[30px]">
       {/* Background geometric shapes */}
       <div className="absolute inset-0 w-full h-full overflow-hidden">
         <div className="absolute top-0 right-0 w-[50%] h-[50%] bg-[#D2E1FF] rounded-full opacity-30 translate-x-1/4 -translate-y-1/4"></div>
@@ -87,9 +98,9 @@ const CaseStudiesPreview = () => {
             Case studies
           </h2>
           <Link href="#" className="flex items-center text-blue-500 hover:text-blue-700 transition-colors font-medium">
-            <span className="mr-2">See more</span>
-            <span className="bg-blue-500 rounded-full p-1">
-              <ArrowRight className="h-4 w-4 text-white" />
+            <span className=" text-[#000066]">See more</span>
+            <span className="bg-transparent rounded-full p-1">
+              <ArrowRight className="h-4 w-4 text-[#000066]" />
             </span>
           </Link>
         </div>
@@ -104,22 +115,7 @@ const CaseStudiesPreview = () => {
         {/* Tablet and Mobile Slider Layout */}
         <div className="lg:hidden relative">
           {/* Slider Navigation Buttons */}
-          <div className="flex justify-between items-center mb-4">
-            <button
-              onClick={prevSlide}
-              className="p-2 rounded-full bg-white shadow-md hover:shadow-lg transition-shadow disabled:opacity-50"
-              disabled={currentSlide === 0}
-            >
-              <ChevronLeft className="h-5 w-5 text-gray-600" />
-            </button>
-            <button
-              onClick={nextSlide}
-              className="p-2 rounded-full bg-white shadow-md hover:shadow-lg transition-shadow disabled:opacity-50"
-              disabled={currentSlide === caseStudies.length - 1}
-            >
-              <ChevronRight className="h-5 w-5 text-gray-600" />
-            </button>
-          </div>
+         
 
           {/* Slider Container */}
           <div className="relative overflow-hidden">
@@ -136,18 +132,7 @@ const CaseStudiesPreview = () => {
             </div>
           </div>
 
-          {/* Slider Dots */}
-          <div className="flex justify-center mt-6 space-x-2">
-            {caseStudies.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => goToSlide(index)}
-                className={`w-3 h-3 rounded-full transition-colors ${
-                  index === currentSlide ? "bg-blue-500" : "bg-gray-300"
-                }`}
-              />
-            ))}
-          </div>
+         
         </div>
 
         {/* Touch/Swipe Support for Mobile */}

@@ -10,6 +10,8 @@ import SecuritySection from "@/components/home/security-section"
 import ScrollTransitionComponents from "@/components/home/scroll_component"
 import { useMobile } from "@/hooks/useMobile"
 import TransactionsPage from "@/components/home/TransactionsPage_mobile"
+import WhoWeServePageMobile from "@/components/home/WhoWeServePageMobile"
+import ScrollMobile from "@/components/home/scroll-mobile"
 export default function Home() {
   const isMobile = useMobile()
   return (
@@ -44,7 +46,7 @@ export default function Home() {
 
       {/* Transactions Map */}
       {
-        isMobile ? <TransactionsPage /> : <ScrollTransitionComponents />
+        isMobile ? <ScrollMobile /> : <ScrollTransitionComponents />
       }
       {/* <TransactionsPage /> */}
       {/* <ScrollTransitionComponents /> */}
