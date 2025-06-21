@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import Link from "next/link"
-import { Linkedin } from "lucide-react"
-import { useState } from "react"
-import TeamLeadsSliderSection from "./teams-mobiles-slider"
+import Image from "next/image";
+import Link from "next/link";
+import { Linkedin } from "lucide-react";
+import { useState } from "react";
+import TeamLeadsSliderSection from "./teams-mobiles-slider";
 
 export default function TeamLeadsSection() {
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null)
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   // Team leads data with individual images
   const teamLeadsRow1 = [
@@ -77,18 +77,17 @@ export default function TeamLeadsSection() {
       image: "/john.png",
       linkedin: "https://linkedin.com/in/harrif-saliu",
     },
-  ]
+  ];
 
   return (
     <section className="md:py-12 md:px-4">
       <div className="container mx-auto">
-
         {/* Mobile layout (stacked cards) */}
         <div className="flex flex-col md:hidden">
-      <TeamLeadsSliderSection />
+          <TeamLeadsSliderSection />
         </div>
 
-        {/* Desktop layout - First row */}
+     
         <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 mb-4">
           {teamLeadsRow1.map((member, index) => (
             <div
@@ -107,43 +106,42 @@ export default function TeamLeadsSection() {
                   }`}
                 />
 
-{/* Overlay with name/role at the top and LinkedIn at the bottom */}
-<div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent">
+             
+                <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent">
+                  {/* Top-left: Name and role */}
+                  <div className="absolute top-4 left-4 right-4">
+                    <h3 className="text-white font-semibold text-lg mb-1">
+                      {member.name}
+                    </h3>
+                    <p className="text-white/90 text-sm">{member.role}</p>
+                  </div>
 
-  {/* Top-left: Name and role */}
-  <div className="absolute top-4 left-4 right-4">
-    <h3 className="text-white font-semibold text-lg mb-1">{member.name}</h3>
-    <p className="text-white/90 text-sm">{member.role}</p>
-  </div>
-
-  {/* Bottom-left: LinkedIn Icon */}
-  <div className="absolute bottom-4 left-4 right-4">
-    <Link
-      href={member.linkedin}
-      className={`inline-flex items-center gap-2 transition-all duration-300 ${
-        hoveredCard === index
-          ? "text-white opacity-100 transform scale-110"
-          : "text-blue-400 opacity-80"
-      }`}
-    >
-      <div className="bg-blue-600 p-2 rounded-md">
-        <Linkedin className="h-4 w-4 text-white" />
-      </div>
-      {hoveredCard === index && (
-        <span className="text-sm font-medium bg-blue-600 px-2 py-1 rounded">
-          See LinkedIn profile
-        </span>
-      )}
-    </Link>
-  </div>
-
-</div>
-
+                  {/* Bottom-left: LinkedIn Icon */}
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <Link
+                      href={member.linkedin}
+                      className={`inline-flex items-center gap-2 transition-all duration-300 ${
+                        hoveredCard === index
+                          ? "text-white opacity-100 transform scale-110"
+                          : "text-blue-400 opacity-80"
+                      }`}
+                    >
+                      <div className="bg-blue-600 p-2 rounded-md">
+                        <Linkedin className="h-4 w-4 text-white" />
+                      </div>
+                      {hoveredCard === index && (
+                        <span className="text-sm font-medium bg-blue-600 px-2 py-1 rounded">
+                          See LinkedIn profile
+                        </span>
+                      )}
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }

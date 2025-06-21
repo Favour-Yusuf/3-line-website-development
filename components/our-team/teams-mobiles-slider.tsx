@@ -1,17 +1,17 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import Image from "next/image"
-import Link from "next/link"
-import { Linkedin, ChevronLeft, ChevronRight } from "lucide-react"
-import { useState, useEffect, useRef } from "react"
+import Image from "next/image";
+import Link from "next/link";
+import { Linkedin, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
 
 export default function TeamLeadsSliderSection() {
-  const [currentSlide, setCurrentSlide] = useState(0)
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null)
-  const touchStartX = useRef(0)
-  const touchEndX = useRef(0)
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
 
   // Team leads data with individual images
   const teamLeadsRow1 = [
@@ -81,47 +81,53 @@ export default function TeamLeadsSliderSection() {
       image: "/john.png",
       linkedin: "https://linkedin.com/in/john-dahunsi",
     },
-  ]
+  ];
 
   // Auto-rotate slides
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev === teamLeadsRow1.length - 1 ? 0 : prev + 1))
-    }, 5000)
-    return () => clearInterval(interval)
-  }, [teamLeadsRow1.length])
+      setCurrentSlide((prev) =>
+        prev === teamLeadsRow1.length - 1 ? 0 : prev + 1
+      );
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [teamLeadsRow1.length]);
 
   // Handle slide navigation
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev === teamLeadsRow1.length - 1 ? 0 : prev + 1))
-  }
+    setCurrentSlide((prev) =>
+      prev === teamLeadsRow1.length - 1 ? 0 : prev + 1
+    );
+  };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev === 0 ? teamLeadsRow1.length - 1 : prev - 1))
-  }
+    setCurrentSlide((prev) =>
+      prev === 0 ? teamLeadsRow1.length - 1 : prev - 1
+    );
+  };
 
   const goToSlide = (index: number) => {
-    setCurrentSlide(index)
-  }
+    setCurrentSlide(index);
+  };
 
   // Touch handlers for swipe functionality
   const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX
-  }
+    touchStartX.current = e.touches[0].clientX;
+  };
 
   const handleTouchMove = (e: React.TouchEvent) => {
-    touchEndX.current = e.touches[0].clientX
-  }
+    touchEndX.current = e.touches[0].clientX;
+  };
 
   const handleTouchEnd = () => {
     if (touchStartX.current - touchEndX.current > 50) {
       // Swipe left, go to next slide
-      nextSlide()
+      nextSlide();
     } else if (touchEndX.current - touchStartX.current > 50) {
       // Swipe right, go to previous slide
-      prevSlide()
+      prevSlide();
     }
-  }
+  };
 
   return (
     <section className="">
@@ -145,7 +151,9 @@ export default function TeamLeadsSliderSection() {
               >
                 <div className="relative h-[350px] overflow-hidden">
                   <Image
-                    src={teamLeadsRow1[currentSlide].image || "/placeholder.svg"}
+                    src={
+                      teamLeadsRow1[currentSlide].image || "/placeholder.svg"
+                    }
                     alt={teamLeadsRow1[currentSlide].name}
                     fill
                     className={`object-cover object-center transition-transform duration-300 ${
@@ -154,8 +162,12 @@ export default function TeamLeadsSliderSection() {
                   />
                 </div>
                 <div className="flex-grow flex flex-col justify-start items-start text-left ml-[20px] mt-[20px]">
-                  <h3 className="text-lg font-semibold text-left  mb-2">{teamLeadsRow1[currentSlide].name}</h3>
-                  <p className="text-sm text-left  mb-4">{teamLeadsRow1[currentSlide].role}</p>
+                  <h3 className="text-lg font-semibold text-left  mb-2">
+                    {teamLeadsRow1[currentSlide].name}
+                  </h3>
+                  <p className="text-sm text-left  mb-4">
+                    {teamLeadsRow1[currentSlide].role}
+                  </p>
                   <Link
                     href={teamLeadsRow1[currentSlide].linkedin}
                     className={`inline-flex items-center gap-2 transition-all duration-300 ${
@@ -164,22 +176,18 @@ export default function TeamLeadsSliderSection() {
                         : "text-blue-400 opacity-80"
                     }`}
                   >
-                 
                     {hoveredCard === currentSlide && (
-                      <span className="text-sm font-medium bg-blue-600 px-2 py-1 rounded">See LinkedIn profile</span>
+                      <span className="text-sm font-medium bg-blue-600 px-2 py-1 rounded">
+                        See LinkedIn profile
+                      </span>
                     )}
                   </Link>
                 </div>
               </div>
-
-            
             </div>
           </div>
-
         </div>
-
-       
       </div>
     </section>
-  )
+  );
 }

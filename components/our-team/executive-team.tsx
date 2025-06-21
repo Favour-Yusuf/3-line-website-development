@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import Link from "next/link"
-import { Linkedin } from "lucide-react"
-import { useState } from "react"
+import Image from "next/image";
+import Link from "next/link";
+import { Linkedin } from "lucide-react";
+import { useState } from "react";
 
 export default function ExecutiveTeamSection() {
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null)
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   // Executive team data with individual images
   const executiveTeam = [
@@ -34,12 +34,14 @@ export default function ExecutiveTeamSection() {
       image: "/KolaWole.png",
       linkedin: "https://linkedin.com/in/kolawole-omirin",
     },
-  ]
+  ];
 
   return (
     <section className="py-12 px-4">
       <div className="container mx-auto">
-        <h2 className="text-2xl md:text-3xl font-bold mb-8">Meet our executive team</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-8">
+          Meet our executive team
+        </h2>
 
         {/* Mobile layout (stacked cards) */}
         <div className="flex flex-col space-y-4 md:hidden ">
@@ -60,12 +62,17 @@ export default function ExecutiveTeamSection() {
               </div>
               <div
                 className={`w-3/5 p-4 flex flex-col justify-center transition-all duration-300 ${
-                  hoveredCard === index ? "bg-[#000066] text-white" : "bg-white text-black"
+                  hoveredCard === index
+                    ? "bg-[#000066] text-white"
+                    : "bg-white text-black"
                 }`}
               >
                 <h3 className="text-lg font-semibold">{member.name}</h3>
-                <p className={`text-sm ${hoveredCard === index ? "text-gray-200" : "text-gray-600"}`}>{member.role}</p>
-           
+                <p
+                  className={`text-sm ${hoveredCard === index ? "text-gray-200" : "text-gray-600"}`}
+                >
+                  {member.role}
+                </p>
               </div>
             </div>
           ))}
@@ -90,23 +97,33 @@ export default function ExecutiveTeamSection() {
               </div>
               <div
                 className={`p-4 transition-all duration-300 ${
-                  hoveredCard === index ? "bg-[#000066] text-white" : "bg-white text-black"
+                  hoveredCard === index
+                    ? "bg-[#000066] text-white"
+                    : "bg-white text-black"
                 }`}
               >
                 <h3 className="text-lg font-semibold">{member.name}</h3>
-                <p className={`text-sm mb-3 ${hoveredCard === index ? "text-gray-200" : "text-gray-600"}`}>
+                <p
+                  className={`text-sm mb-3 ${hoveredCard === index ? "text-gray-200" : "text-gray-600"}`}
+                >
                   {member.role}
                 </p>
                 <Link
                   href={member.linkedin}
                   className={`absolute bg-white font-bold rounded-sm  top-[55%] inline-flex items-center gap-2 transition-all duration-300 ${
-                    hoveredCard === index ? "text-white transform scale-110  " : "text-blue-600 hover:text-blue-800  bg-blue-600 "
+                    hoveredCard === index
+                      ? "text-white transform scale-110  "
+                      : "text-blue-600 hover:text-blue-800  bg-blue-600 "
                   }`}
                 >
                   <Linkedin
                     className={`transition-all duration-300 ${hoveredCard === index ? "h-10 w-10 bg-blue-700  p-1 rounded-sm" : "h-10 w-10  p-1 rounded-sm"}`}
                   />
-                  {hoveredCard === index && <span className="text-sm hover:text-[#000066] text-[#000066] pr-2 font-bold">See LinkedIn profile</span>}
+                  {hoveredCard === index && (
+                    <span className="text-sm hover:text-[#000066] text-[#000066] pr-2 font-bold">
+                      See LinkedIn profile
+                    </span>
+                  )}
                 </Link>
               </div>
             </div>
@@ -114,5 +131,5 @@ export default function ExecutiveTeamSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
