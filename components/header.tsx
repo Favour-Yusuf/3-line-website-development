@@ -199,7 +199,7 @@ const Header = () => {
 
                 {/* Products Dropdown */}
                 {activeDropdown === "products" && (
-                  <div className="absolute right-[0%] h-[70vh] mt-2 w-screen max-w-[100%] bg-[#EEF3FF] rounded-xl shadow-lg overflow-hidden z-50">
+                  <div className="absolute right-[0%] h-[80vh] mt-2 w-screen max-w-[100%] bg-[#EEF3FF] rounded-xl shadow-lg overflow-hidden z-50">
                     <div className="flex flex-col md:flex-row">
                       {/* Left Column */}
                       <div className="w-full md:w-1/2 md:border-r border-gray-200">
