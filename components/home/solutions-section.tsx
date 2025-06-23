@@ -26,18 +26,17 @@ const OurSolutions = () => {
   ]
 
   return (
-    <div className="w-full relative flex justify-center items-center py-16 bg-white overflow-hidden bg-[#E8F0FF]">
-      {/* Background logo (mobile only) */}
+    <div className="w-full relative flex justify-center items-center py-16  overflow-hidden bg-[#E8F0FF]">
+      {/* Background Image for all screens */}
       <Image
-        src="/solution_side_image.png"
+        src="/solutions_bg.png"
         alt="Background logo"
-        width={600}
-        height={600}
-        className="absolute z-0 opacity-50 left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 sm:hidden"
+        fill
+        className="absolute z-10 opacity-50 md:opacity-10 object-cover left-[80%] top-0 w-[100%] h-full "
       />
 
       {/* Mobile View */}
-      <section className="sm:hidden w-[90%] max-w-md bg-white/70 backdrop-blur-xl rounded-xl z-10 p-4 shadow-lg">
+      <section className="sm:hidden w-[90%] max-w-md  rounded-xl z-10 p-4 shadow-lg">
         <div className="w-full mb-[20px]">
           <h2 className="text-xl font-bold text-black mb-6 text-left">Our solutions</h2>
           <p>
@@ -46,11 +45,10 @@ const OurSolutions = () => {
           </p>
         </div>
 
-        {/* Mobile Cards */}
         {solutions.map((item, index) => (
           <div
             key={index}
-            className="bg-white rounded-xl p-4 mb-4 shadow flex flex-col gap-3 relative"
+            className=" rounded-xl p-4 mb-4 shadow flex flex-col gap-3 relative"
             onMouseEnter={() => setHoveredCard(index)}
             onMouseLeave={() => setHoveredCard(null)}
           >
@@ -96,9 +94,7 @@ const OurSolutions = () => {
               <h3 className="text-[30px] font-bold">{item.title}</h3>
               <p className="text-gray-600 text-[20px]">{item.text}</p>
 
-              {/* Learn more text and arrow container - positioned at bottom right */}
               <div className="absolute bottom-6 right-6 flex items-center gap-4">
-                {/* Learn more text - only visible on hover */}
                 <div
                   className={`transition-all duration-500 ${
                     hoveredCard === index ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4 pointer-events-none"
@@ -107,7 +103,6 @@ const OurSolutions = () => {
                   <span className="text-[#0A1A4A] font-semibold text-[18px] whitespace-nowrap">Learn more</span>
                 </div>
 
-                {/* Arrow button */}
                 <button
                   className={`w-14 h-14 rounded-full flex items-center justify-center text-white transition-all duration-300 ${
                     hoveredCard === index ? "bg-[#0A1A4A]" : "bg-blue-500"
