@@ -60,7 +60,7 @@ const OurSolutions = () => {
               </div>
             </div>
             <button
-              className={`absolute bottom-4 right-4 w-10 h-10 rounded-full flex items-center justify-center text-white transition-colors duration-300 ${
+              className={`absolute bottom-0 right-0 w-10 h-10 rounded-full flex items-center justify-center text-white transition-colors duration-300 ${
                 hoveredCard === index ? "bg-[#0A1A4A]" : "bg-blue-500"
               }`}
             >
