@@ -20,8 +20,8 @@ export default function WhoWeServePageMobile() {
             We help financial institutions, businesses, and organizations deliver seamless payment and banking services.
           </p>
         </div>
-<div className="w-full  pt-[200px] flex justify-end items-end">
-<p className="text-white/70 text-sm leading-relaxed   text-left w-[70%] ">
+<div className="w-full  pt-[110px] flex justify-end items-end">
+<p className="text-white/90 text-sm leading-relaxed   text-left w-[60%] ">
           Whether it’s enabling seamless payments, reaching more people, or simplifying transactions <span className="font-bold text-white"> Our solutions help
           you serve your customers and communities efficiently.</span>
         </p>

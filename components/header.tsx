@@ -199,7 +199,7 @@ const Header = () => {
 
                 {/* Products Dropdown */}
                 {activeDropdown === "products" && (
-                  <div className="absolute right-[0%] h-[70vh] mt-2 w-screen max-w-[100%] bg-[#EEF3FF] rounded-xl shadow-lg overflow-hidden z-50">
+                  <div className="absolute right-[0%] h-[100vh] mt-2 w-screen max-w-[100%] bg-[#EEF3FF] rounded-xl shadow-lg overflow-hidden z-50">
                     <div className="flex flex-col md:flex-row">
                       {/* Left Column */}
                       <div className="w-full md:w-1/2 md:border-r border-gray-200">
@@ -258,7 +258,7 @@ const Header = () => {
                           <div className="space-y-2">
                             {sectionContent[hoveredSection as keyof typeof sectionContent].map((item, index) => (
                               <div key={index}>
-                                <Link href="" className="block">
+                                <Link href="/" className="block">
                                   <div className=" flex items-start gap-4 hover:bg-white p-8 rounded-lg transition-colors">
                                     <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-[#0A1A4A] text-white flex-shrink-0">
                                       <span>{item.number}</span>

@@ -12,6 +12,8 @@ import { useMobile } from "@/hooks/useMobile"
 import TransactionsPage from "@/components/home/TransactionsPage_mobile"
 import WhoWeServePageMobile from "@/components/home/WhoWeServePageMobile"
 import ScrollMobile from "@/components/home/scroll-mobile"
+import CaseBeforeSolution from "@/components/home/CaseBeforeSolution"
+import CaseAfterSolution from "@/components/home/CaseAfterSolution"
 export default function Home() {
   const isMobile = useMobile()
   return (
@@ -48,10 +50,10 @@ export default function Home() {
       {
         isMobile ? <ScrollMobile /> : <ScrollTransitionComponents />
       }
-      {/* <TransactionsPage /> */}
-      {/* <ScrollTransitionComponents /> */}
+     
+      
+     
 
-      {/* Solutions Section with background */}
       <section className="relative">
         <div className="absolute inset-0 z-0 pointer-events-none">
           <Image src="/body_bg.png" alt="" fill className="object-cover opacity-40" />
@@ -79,8 +81,7 @@ export default function Home() {
 
       </section>
 
-      {/* Security Section */}
-      <SecuritySection />
+    
 
       {/* Case Studies Preview with background */}
       <section className="relative">
@@ -88,7 +89,11 @@ export default function Home() {
           <Image src="/body_bg.png" alt="" fill className="object-cover opacity-40" />
         </div>
         <div className="relative z-10">
-          <CaseStudiesPreview />
+        {
+        isMobile ? <CaseBeforeSolution /> : < CaseAfterSolution/>
+      }
+<br />
+<br />
         </div>
       </section>
     </main>
