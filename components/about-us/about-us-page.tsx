@@ -11,7 +11,7 @@ import StatsSection from "../home/stats-section"
 
 export default function AboutUsPage() {
   return (
-    <div className="min-h-screen bg-[#EEF3FF] md:pt-[80px]">
+    <div className="min-h-screen bg-[#EEF3FF] md:pt-[80px] pb-[30px]">
     
       <main className="pl-[25px]">
         {/* Hero Section */}
@@ -273,21 +273,21 @@ export default function AboutUsPage() {
     <div className="relative bg-[#4096FB] rounded-2xl overflow-hidden flex flex-col md:flex-row items-center justify-between w-full min-h-[320px]">
       {/* Left Content */}
       <div className="relative z-10 w-full md:w-2/3 h-full flex flex-col justify-center px-4">
-        <h2 className="text-white text-lg md:text-2xl font-bold leading-tight mb-2">
+        <h2 className="md:ml-[30px] md:mb-6 text-white text-lg md:text-4xl font-bold leading-tight mb-2">
           Join Us in Shaping Africa's Financial Future
         </h2>
-        <p className="text-white/90 text-sm md:text-base mb-4">
+        <p className="md:ml-[30px] text-white/70 text-sm md:text-base mb-4">
           Learn more about our mission, vision, and the team behind 3Line.
         </p>
-      <div className="w-[65%] absolute top-[80%] left-[100%] flex items-center justify-center">
+      <div className="w-[65%] absolute top-[70%] left-[90%] flex items-center justify-center">
       <Link
           href="/our-team"
-          className="inline-flex items-center bg-transparent  text-white font-medium py-2 px-3 rounded-full text-sm w-fit"
+          className="inline-flex items-center bg-transparent  text-white font-medium py-2 px-3 rounded-full text-2xl w-fit"
         >
          <p className="">
          Get started
          </p>
-         <Image className="mt-[10px]" src="/arrow_footer.png" alt="arrow" width={60} height={60}/>
+         <Image className="mt-[10px]" src="/arrow_footer.png" alt="arrow" width={80} height={80}/>
         </Link>
       </div>
       </div>

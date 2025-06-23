@@ -54,18 +54,25 @@ const HeroSection = () => {
               everyone.
             </p>
             <Link
-              href="#"
-              className="inline-flex items-center justify-center bg-transparent text-white font-medium rounded-full transition-colors group"
-            >
-              <span className="text-[29px]">Get started</span>
-              <Image
-                src="/arrow_hero.png"
-                alt="Arrow Hero"
-                width={80}
-                height={80}
-                className="mt-[15px]"
-              />
-            </Link>
+  href="#"
+  className="inline-flex items-center gap-3 justify-center bg-transparent text-white font-medium rounded-full transition-colors group"
+>
+  {/* Text with zoom on hover */}
+  <span className="text-[29px] hover:text-blue-600 transition-transform duration-300 group-hover:scale-105">
+    Get started
+  </span>
+
+  {/* Icon with background and zoom on hover */}
+  <div className=" rounded-full  flex items-center justify-center transition-all duration-300 mt-[20px]">
+    <Image
+      src="/arrow_hero.png"
+      alt="Arrow Hero"
+      width={80}
+      height={80}
+      className="transition-transform duration-300 group-hover:scale-110"
+    />
+  </div>
+</Link>
           </div>
 
           {/* Right image (desktop only) */}
