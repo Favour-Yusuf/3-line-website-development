@@ -200,7 +200,7 @@ const OurTeamComponent = () => {
       {/* Hero Section */}
       <section className="relative overflow-hidden ">
         <div className="container mx-auto px-4 py-8 md:py-12">
-          <div className="relative z-10 bg-[#0A1A4A] rounded-xl overflow-hidden h-[85vh]">
+          <div className="relative z-10 bg-[#00002e] rounded-xl overflow-hidden h-[85vh]">
             <div className="pl-8 md:pl-12  flex flex-col md:flex-row">
               <div className="w-full md:w-1/2 pt-12">
                 <h1 className="inline-block text-[50px] bg-[#6be0f0] text-[#10142C] px-3 py- rounded-md font-bold mb-4">
