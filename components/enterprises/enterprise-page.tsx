@@ -78,7 +78,7 @@ export default function EnterprisePage() {
     {/* Gravity Lite */}
     <div className="rounded-xl overflow-hidden shadow-sm mb-8 mx-3 md:mx-4">
       <div className="grid grid-cols-1 md:grid-cols-3">
-        <div className="p-8 h-[570px] bg-white relative">
+        <div className="p-8 h-[620px] bg-white relative">
           <div className="hidden md:block absolute top-0 right-[-12px] h-full w-[0.5px] bg-blue-500"></div>
           <div className="bg-[#10142C] text-white w-20 h-20 flex items-center justify-center rounded-lg mb-10">
                     <span className="text-4xl font-bold">1</span>
@@ -99,7 +99,7 @@ export default function EnterprisePage() {
           </div>
         </div>
 
-        <div className="h-[570px] p-8 bg-transparent relative">
+        <div className="h-[620px] p-8 bg-transparent relative">
           <div className="hidden md:block absolute top-0 right-[-12px] h-full w-[0.5px] bg-blue-500"></div>
           <h3 className="font-semibold mb-4 text-[#10142C] text-xl">Key features</h3>
           <div className="space-y-4">

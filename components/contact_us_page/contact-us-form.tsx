@@ -215,19 +215,28 @@ export default function ContactUsForm() {
                  
 
                     {/* CTA */}
-                    <div>
-                      <h3 className="font-bold mb-4 mt-8 px-8">Let's Make Payments Work for You</h3>
-                      <p className="text-xs text-gray-500 mb-8 px-8">
-                        By clicking below, you agree to 3Line's Terms & Conditions and Privacy Policy.
-                      </p>
-                      <button
-                        type="submit"
-                        className="w-full  rounded-b-[15px] bg-[#A6C4FA] text-[#000066] h-[100px] font-bold text-[20px] hover:bg-blue-700 hover:text-white transition-colors flex items-center justify-end"
-                      >
-                        Send message
-                        <Image className="mt-[20px]" src="/arrow_footer.png" alt="arrow" width={80} height={80}/>
-                      </button>
-                    </div>
+<div>
+  <h3 className="font-bold mb-4 mt-8 px-8">Let's Make Payments Work for You</h3>
+  <p className="text-xs text-gray-500 mb-8 px-8">
+    By clicking below, you agree to 3Line's Terms & Conditions and Privacy Policy.
+  </p>
+  <button
+    type="submit"
+    className="w-full rounded-b-[15px] bg-[#A6C4FA] text-[#000066] h-[100px] font-bold text-[20px] flex items-center justify-end gap-2 transition-all duration-300  group"
+  >
+    <span className="transition-transform duration-300 group-hover:scale-110">
+      Send message
+    </span>
+    <Image
+      className="mt-[20px] transition-transform duration-300 group-hover:scale-110"
+      src="/arrow_footer.png"
+      alt="arrow"
+      width={80}
+      height={80}
+    />
+  </button>
+</div>
+
                   </form>
                 </div>
 
