@@ -92,7 +92,9 @@ export default function ExecutiveTeamSection() {
                   src={member.image || "/placeholder.svg"}
                   alt={member.name}
                   fill
-                  className="object-cover object-center"
+                  className={`object-cover object-center transition-transform duration-500 ${
+                    hoveredCard === index ? "scale-105" : "scale-100"
+                  }`}
                 />
               </div>
               <div
@@ -110,20 +112,32 @@ export default function ExecutiveTeamSection() {
                 </p>
                 <Link
                   href={member.linkedin}
-                  className={`absolute bg-white font-bold rounded-sm  top-[55%] inline-flex items-center gap-2 transition-all duration-300 ${
-                    hoveredCard === index
-                      ? "text-white transform scale-110  "
-                      : "text-blue-600 hover:text-blue-800  bg-blue-600 "
+                  className={`absolute top-[55%] inline-flex items-center transition-all duration-300 ${
+                    hoveredCard === index ? "transform scale-110" : ""
                   }`}
                 >
-                  <Linkedin
-                    className={`transition-all duration-300 ${hoveredCard === index ? "h-10 w-10 bg-blue-700  p-1 rounded-sm" : "h-10 w-10  p-1 rounded-sm"}`}
-                  />
-                  {hoveredCard === index && (
-                    <span className="text-sm hover:text-[#000066] text-[#000066] pr-2 font-bold">
-                      See LinkedIn profile
-                    </span>
-                  )}
+                  <div
+                    className={`flex items-center transition-transform duration-300 ${
+                      hoveredCard === index ? "scale-110" : "scale-100"
+                    }`}
+                  >
+                    <Image
+                      src={
+                        hoveredCard === index
+                          ? "/LinkedIn_dark.png"
+                          : "/LinkedIn_light.png"
+                      }
+                      alt="LinkedIn"
+                      width={70}
+                      height={70}
+                      className="h-10 w-10 p-1 rounded-sm transition-transform duration-300"
+                    />
+                    {hoveredCard === index && (
+                      <span className="text-sm bg-white text-[#000066] font-bold px-2 h-10 flex items-center">
+                        See LinkedIn profile
+                      </span>
+                    )}
+                  </div>
                 </Link>
               </div>
             </div>

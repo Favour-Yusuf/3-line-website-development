@@ -136,7 +136,7 @@ export default function ContactUsPage() {
 
 
       {/* Contact Information Card */}
-<section className="py-12 px-4 bg-[#EEF3FF]">
+<section className="py-12 px-10 bg-[#EEF3FF]">
   
   <div className="container  md:max-w-8xl">
   <h1 className="font-bold text-[40px] mt-[50px]">Contact Infomation</h1>
