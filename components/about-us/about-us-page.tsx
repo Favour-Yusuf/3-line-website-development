@@ -272,7 +272,7 @@ export default function AboutUsPage() {
              {/* Join Us */}
     <div className="relative bg-[#4096FB] rounded-2xl overflow-hidden flex flex-col md:flex-row items-center justify-between w-full min-h-[320px]">
       {/* Left Content */}
-      <div className="relative z-10 w-full md:w-2/3 h-full flex flex-col justify-start px-4 pt-[30px]">
+      <div className="relative z-10 w-full md:w-2/3 h-full flex flex-col justify-start px-4 pt-[40px]">
         <h2 className="md:ml-[30px] md:mb-6 text-white text-lg md:text-4xl font-bold leading-tight mb-2">
           Join Us in Shaping Africa's Financial Future
         </h2>

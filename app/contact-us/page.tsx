@@ -145,7 +145,7 @@ export default function ContactUsPage() {
       {/* Contact Information (Left 2/3) */}
       <div className="lg:col-span-1 space-y-4">
         {/* Email */}
-        <div className="bg-white px-6 py-5 rounded-2xl shadow-sm flex items-center justify-between">
+        <div className="bg-white/70 px-6 py-5 rounded-2xl shadow-sm flex items-center justify-between">
           <div className=" ">
             <div className=" mb-2">
               <Image alt="email" src="/email.png" width={24} height={24} />
@@ -156,12 +156,12 @@ export default function ContactUsPage() {
             </div>
           </div>
           <Link href="mailto:inquiries@3lineeng.com">
-            <Image alt="arrow" src="/arrow_right.png" width={24} height={24} />
+            <Image className="mt-[50px]" alt="arrow" src="/arrow_right.png" width={40} height={40} />
           </Link>
         </div>
 
         {/* Phone */}
-        <div className="bg-white px-6 py-5 rounded-2xl shadow-sm flex items-center justify-between">
+        <div className="bg-white/70 px-6 py-5 rounded-2xl shadow-sm flex items-center justify-between">
           <div className="">
             <div className=" mb-2">
               <Image alt="phone" src="/phone.png" width={24} height={24} />
@@ -172,12 +172,12 @@ export default function ContactUsPage() {
             </div>
           </div>
           <Link href="tel:+2348003004000">
-            <Image alt="arrow" src="/arrow_right.png" width={24} height={24} />
+            <Image className="mt-[50px]" alt="arrow" src="/arrow_right.png" width={40} height={40} />
           </Link>
         </div>
 
         {/* Address */}
-        <div className="bg-white px-6 py-5 rounded-2xl shadow-sm flex items-center justify-between">
+        <div className="bg-white/70 px-6 py-5 rounded-2xl shadow-sm flex items-center justify-between">
           <div className="">
             <div className=" mb-2">
               <Image alt="location" src="/address.png" width={24} height={24} />
