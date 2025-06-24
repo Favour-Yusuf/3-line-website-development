@@ -118,23 +118,35 @@ export default function TeamLeadsSection() {
 
                   {/* Bottom-left: LinkedIn Icon */}
                   <div className="absolute bottom-4 left-4 right-4">
-                    <Link
-                      href={member.linkedin}
-                      className={`inline-flex items-center gap-2 transition-all duration-300 ${
-                        hoveredCard === index
-                          ? "text-white opacity-100 transform scale-110"
-                          : "text-blue-400 opacity-80"
-                      }`}
-                    >
-                      <div className="bg-blue-600 p-2 rounded-md">
-                        <Linkedin className="h-4 w-4 text-white" />
-                      </div>
-                      {hoveredCard === index && (
-                        <span className="text-sm font-medium bg-blue-600 px-2 py-1 rounded">
-                          See LinkedIn profile
-                        </span>
-                      )}
-                    </Link>
+                     <Link
+                                      href={member.linkedin}
+                                      className={`inline-flex items-center gap-2 transition-all duration-300 ${
+                                        hoveredCard === index
+                                          ? "text-white opacity-100 transform scale-110"
+                                          : "text-blue-400 opacity-80"
+                                      }`}
+                                    >
+                                      <Image
+                                        src={
+                                          hoveredCard === index
+                                            ? "/LinkedIn_dark.png"
+                                            : "/LinkedIn_light.png"
+                                        }
+                                        alt="LinkedIn"
+                                        width={70}
+                                        height={70}
+                                        className={`transition-all duration-300 h-10 w-10 p-1 rounded-sm ${
+                                          hoveredCard === index ? "" : ""
+                                        }`}
+                                      />
+                    
+                                      {hoveredCard === index && (
+                                        <span className="text-xs p-1  bg-white hover:text-[#000066] text-[#000066] font-bold">
+                                          See LinkedIn profile
+                                        </span>
+                                      )}
+                                    </Link>
+                
                   </div>
                 </div>
               </div>

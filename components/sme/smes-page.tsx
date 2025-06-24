@@ -76,7 +76,7 @@ export default function SmesPage() {
             {/* Gravity Lite */}
             <div className=" rounded-xl overflow-hidden shadow-sm mb-8 mx-3 md:mx-4">
               <div className="grid grid-cols-1 md:grid-cols-3">
-                <div className="p-12 h-[500px] bg-white relative">
+                <div className="p-12 h-[570px] bg-white relative">
                 <div className="hidden md:block absolute top-0 right-[-12px] h-full w-[0.5px] bg-blue-500"></div>
                   <div className="bg-[#10142C] text-white w-20 h-20 flex items-center justify-center rounded-lg mb-10">
                     <span className="text-4xl font-bold">1</span>
@@ -97,7 +97,7 @@ export default function SmesPage() {
                   </Link>
                  </div>
                 </div>
-                <div className=" h-[500px] p-8 border-r border-blue-500 bg-transparent">
+                <div className=" h-[570px] p-8 border-r border-blue-500 bg-transparent">
                   <h3 className="font-semibold mb-6 text-[#10142C] text-xl">Key features</h3>
                   <div className="space-y-4">
                     <div  className="bg-[#FFFFFF80] p-[15px] rounded-[15px] mb-[5px]">
