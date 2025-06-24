@@ -110,10 +110,10 @@ export default function TeamLeadsSection() {
                 <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent">
                   {/* Top-left: Name and role */}
                   <div className="absolute top-4 left-4 right-4">
-                    <h3 className="text-white font-semibold text-lg mb-1">
+                    <h3 className="text-white font-semibold text-2xl mb-1">
                       {member.name}
                     </h3>
-                    <p className="text-white/90 text-sm">{member.role}</p>
+                    <p className="text-white/80 text-sm">{member.role}</p>
                   </div>
 
                   {/* Bottom-left: LinkedIn Icon */}
