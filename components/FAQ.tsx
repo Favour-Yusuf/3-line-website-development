@@ -67,7 +67,7 @@ export default function FAQ() {
       : faqData.filter((section) => section.section === activeTab);
 
   return (
-    <section className="w-full px-4 py-8 max-w-7xl mx-auto">
+    <section className="w-full md:ml-8 px-4 py-8 max-w-7xl mx-auto">
       {/* Tabs Section */}
       <div className="flex flex-wrap gap-3 mb-8 overflow-x-auto">
         <button
@@ -108,7 +108,7 @@ export default function FAQ() {
               return (
                 <div
                   key={item.question}
-                  className="border border-gray-200 rounded-lg overflow-hidden bg-gray-50"
+                  className="border bg-gray-50 border-gray-200 md:w-[550px] rounded-lg overflow-hidden"
                 >
                   <button
                     onClick={() => toggle(index)}

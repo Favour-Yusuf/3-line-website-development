@@ -46,7 +46,7 @@ export default function ContactUsPage() {
       {/* Hero Section */}
       
       <section className="relative overflow-hidden text-white md:pt-[105px] rounded-[15px] md:mt-0 mt-[70px] md:flex w-full  justify-center items-center">
-        <div className="h-[455px] px-[20px]  mt-[30px] w-[93%] mx-auto ml-[20px] md:px-[70px] md:ml-[50px] py-2 md:py-6 relative  md:bg-[#111B41] bg-[#000066] rounded-[15px] ">
+        <div className="h-[455px] px-[20px]  mt-[30px] w-[93%] mx-auto ml-[20px] md:h-[400px] lg:mt-0 md:px-[70px] md:ml-[50px] py-2 md:py-6 relative  md:bg-[#111B41] bg-[#000066] rounded-[15px] ">
           <div className="max-w-full md:max-w-3xl py-12 md:py-20 relative z-10 pr-4">
             <div className="md:text-[25px] md:mb-2 text-gray-400 mb-[20px] text-[18px]">
               Get Started
@@ -108,7 +108,6 @@ export default function ContactUsPage() {
             />
           </div>
         </div>
-     
       </section>
 
       {/* Mobile View: visible on small screens only */}

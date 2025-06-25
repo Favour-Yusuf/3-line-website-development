@@ -23,6 +23,7 @@
     "next-sanity": "^9.11.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-scrollama": "^2.4.1",
     "sanity": "^3.88.0",
     "styled-components": "^6.1.17",
     "tailwind-merge": "^3.3.0",
