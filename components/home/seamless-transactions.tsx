@@ -1,69 +1,76 @@
-"use client"
+// pages/StackedCardsPage.tsx
+import StackedCard from "./StackedCard";
 
-import { useState } from "react"
-import { Scrollama, Step } from "react-scrollama"
-import { motion } from "framer-motion"
-import { CardPayment1 } from "./cards/cardpayment1"
-import { CardPayment2 } from "./cards/cardpayment2"
-
-const slides = [
+const cardData = [
   {
-    id: "card-1",
-    component: <CardPayment1 />,
-    bgColor: "#0A1A4A",
+    title: "Seamless Transactions, Every Time!",
+    description:
+      "At 3Line, we understand that customers want flexibility when it comes to payments...",
+    bgColor: "#00006B",
+    bgImage: "/groupImg.png",
+    foregroundImage: "/pos.png",
   },
   {
-    id: "card-2",
-    component: <CardPayment2 />,
-    bgColor: "#0A1A4A",
+    title: "Card Payments",
+    description:
+      "Whether it’s debit, credit, or prepaid cards, we make it easy for your customers to pay securely and efficiently.",
+    bgColor: "#00002E",
+    bgImage: "/GroupImg2.png",
+    foregroundImage: "/Cards.png",
   },
-  // Add more cards here
-]
+  {
+    title: "QR Codes",
+    description:
+      "For customers without smartphones or internet access, USSD provides a simple and secure way to make payments.",
+    bgColor: "#00006B",
+    bgImage: "/groupImg.png",
+    foregroundImage: "/Nothing Phone 1.png",
+  },
+  {
+    title: "Payment Links",
+    description:
+      "For customers without smartphones or internet access, USSD provides a simple and secure way to make payments.",
+    bgColor: "#0569FF",
+    bgImage: "/GroupImg2.png",
+    foregroundImage: "/credit.png",
+  },
+  {
+    title: "USSD",
+    description:
+      "Provides a simple and secure way to make payments.",
+    bgColor: "#00002E",
+    bgImage: "/groupImg.png",
+    foregroundImage: "/button-phone.png",
+  },
+  {
+    title: "Bank Transfers",
+    description:
+      "Fast, reliable transfers that ensure your customers can pay directly from their bank accounts.",
+    bgColor: "#023E8A",
+    bgImage: "/groupImg.png",
+    foregroundImage: "/receipt.png",
+  },
+  
+];
 
-const SeamlessTransactions = () => {
-  const [activeIndex, setActiveIndex] = useState(0)
-
-  const onStepEnter = ({ data }: { data: number }) => {
-    setActiveIndex((prev) => Math.max(prev, data))
-  }
-
-  return (
-    <div className="w-full relative">
-      {/* Scroll triggers */}
-      <Scrollama onStepEnter={onStepEnter} offset={0.5}>
-        {slides.map((_, index) => (
-          <Step data={index} key={index}>
-            <div className="h-[90vh] flex items-center justify-center">
-              {/* Empty div just to trigger */}
-              <div className="w-full h-full" />
-            </div>
-          </Step>
-        ))}
-      </Scrollama>
-
-      {/* Sticky stack animation area */}
-      <div className="sticky top-0 h-screen flex items-center justify-center z-10 pointer-events-none">
-        <div className="relative w-full max-w-4xl px-6">
-          {slides.map((slide, index) => (
-            <motion.div
-              key={slide.id}
-              initial={{ opacity: 0, y: 60 }}
-              animate={
-                index <= activeIndex
-                  ? { opacity: 1, y: -index * 20, scale: 1 - index * 0.02 }
-                  : { opacity: 0, y: 60 }
-              }
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              className="absolute top-0 left-0 w-full rounded-2xl shadow-xl overflow-hidden"
-              style={{ backgroundColor: slide.bgColor, zIndex: 100 - index }}
-            >
-              {slide.component}
-            </motion.div>
-          ))}
-        </div>
+export default function SeamlessTransactions() {
+  const cardHeight = 250;
+const overlap = 8;
+return(
+<main className=" ml-8 relative h-[400px] md:h-[600px] w-[97%] flex items-center justify-center">
+  <div className="relative w-[95%] h-full">
+    {cardData.map((card, index) => (
+      <div
+        key={index}
+        className="absolute left-0 w-full transition-all duration-300"
+        style={{
+          top: `${index * overlap}px`,
+          zIndex: cardData.length - index,
+        }}
+      >
+        <StackedCard {...card} />
       </div>
-    </div>
-  )
+    ))}
+  </div>
+</main>)
 }
-
-export default SeamlessTransactions
