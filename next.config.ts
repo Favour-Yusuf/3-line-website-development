@@ -1,15 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   images: {
     domains: ['cdn.sanity.io'],
   },
   typescript: {
-    ignoreBuildErrors: false,
+    ignoreBuildErrors: false, // keep this for type safety
   },
   eslint: {
-    ignoreDuringBuilds: true,
+    ignoreDuringBuilds: false, // change to false to catch issues early
   },
 };
 
