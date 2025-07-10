@@ -14,6 +14,7 @@ import WhoWeServePageMobile from "@/components/home/WhoWeServePageMobile"
 import ScrollMobile from "@/components/home/scroll-mobile"
 import CaseBeforeSolution from "@/components/home/CaseBeforeSolution"
 import CaseAfterSolution from "@/components/home/CaseAfterSolution"
+import TransformCard from "@/components/home/transform-card"
 import SeamlessTransactionsMobile from "@/components/home/SeamlessTransactionsMobile"
 export default function Home() {
   const isMobile = useMobile()
@@ -63,7 +64,7 @@ export default function Home() {
           <SolutionsSection />
         </div>
       </section>
-
+<TransformCard />
       {/* Seamless Transactions with background */}
       <section className="relative">
         <div className="absolute inset-0 z-0 pointer-events-none">

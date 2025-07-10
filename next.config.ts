@@ -11,9 +11,12 @@ const nextConfig: NextConfig = {
     domains: ['cdn.sanity.io'],
   },
   typescript: {
-    ignoreBuildErrors: false,
+    ignoreBuildErrors: false, 
   },
   
+  eslint: {
+    ignoreDuringBuilds: false,
+  },
 };
 
 export default nextConfig;

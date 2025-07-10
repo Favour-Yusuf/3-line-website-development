@@ -4,9 +4,9 @@ import Image from "next/image"
 
 export default function TransactionsPage() {
   return (
-    <div className="relative min-h-screen bg-[#000066] overflow-hidden px-6 pt-20 pb-10 text-white">
+    <div className=" relative min-h-screen bg-[#000066] overflow-hidden px-6 pt-20 pb-10 text-white">
       {/* Top Map Background */}
-      <div className="absolute top-[6%] left-[-30%] w-[150%] h-[50%] -translate-y-10">
+      <div className=" absolute top-[6%] left-[-30%] w-[200%] h-[50%] -translate-y-10">
         <Image
           src="/map_upper.png" // uploaded file: map_mobile2.png
           alt="Top map section"
@@ -16,7 +16,7 @@ export default function TransactionsPage() {
       </div>
 
       {/* Decorative Arrow */}
-      <div className="absolute inset-0 left-[12%] z-10 w-full">
+      <div className="absolute inset-0 left-[26%] z-10 w-full">
         <Image
           src="/connecting_arrow.png" // uploaded file: map_mobile_arrow.png
           alt="Connecting arrow"
@@ -39,12 +39,12 @@ export default function TransactionsPage() {
       </div>
 
       {/* Bottom Map with Avatars */}
-      <div className="absolute bottom-0 left-0 w-full h-[180px]">
+      <div className="absolute bottom-0 left-0 w-[80%] h-[190px]">
         <Image
           src="/map_lower.png" // uploaded file: map_mobile_frame.png
           alt="Bottom map with avatars"
           fill
-          className="object-contain object-bottom-left"
+          className="object-cover object-bottom-left"
         />
       </div>
     </div>
