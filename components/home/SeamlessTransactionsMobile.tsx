@@ -1,17 +1,15 @@
-// components/home/seamless-transactions.tsx
-'use client';
-import { useEffect, useRef, useState } from 'react';
-import StackedCardMobile from './StackedCardsMobile';
+// pages/StackedCardsPage.tsx
+import StackedCardMobile from "./StackedCardsMobile";
 
 const cardData = [
-  {
-    title: "Seamless Transactions, Every Time!",
-    description:
-      "At 3Line, we understand that customers want flexibility when it comes to payments...",
-    bgColor: "#00006B",
-    bgImage: "/groupImg.png",
-    foregroundImage: "/pos.png",
-  },
+  // {
+  //   title: "Seamless Transactions, Every Time!",
+  //   description:
+  //     "At 3Line, we understand that customers want flexibility when it comes to payments...",
+  //   bgColor: "#00006B",
+  //   bgImage: "/groupImg.png",
+  //   foregroundImage: "/pos.png",
+  // },
   {
     title: "Card Payments",
     description:
@@ -52,112 +50,27 @@ const cardData = [
     bgImage: "/groupImg.png",
     foregroundImage: "/receipt.png",
   },
+  
 ];
 
-export default function SeamlessTransactionsMobile() {
+export default function SeamlessTransactions() {
   const cardHeight = 250;
-  const overlap = 8;
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [scrollProgress, setScrollProgress] = useState(0);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [isInView, setIsInView] = useState(false);
-  const animationStarted = useRef(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !animationStarted.current) {
-          setIsInView(true);
-          animationStarted.current = true;
-        }
-      },
-      {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-      }
-    );
-
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
-    }
-
-    return () => {
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current);
-      }
-    };
-  }, []);
-
-  useEffect(() => {
-    if (!isInView) return;
-
-    const handleScroll = () => {
-      if (!containerRef.current) return;
-      
-      const container = containerRef.current;
-      const scrollPosition = window.scrollY;
-      const containerTop = container.offsetTop - window.innerHeight * 0.3;
-      const containerHeight = container.offsetHeight;
-      
-      // Calculate scroll progress through the container
-      const progress = Math.max(0, Math.min(1, 
-        (scrollPosition - containerTop) / containerHeight
-      ));
-      
-      setScrollProgress(progress);
-      
-      // Calculate active card index based on scroll progress
-      const newIndex = Math.floor(progress * cardData.length);
-      if (newIndex >= 0 && newIndex < cardData.length && newIndex !== activeIndex) {
-        setActiveIndex(newIndex);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [activeIndex, isInView]);
-
-  return (
-    <main className="ml-8 relative h-[400px] md:h-[600px] w-[97%] flex items-center justify-center">
-      <div 
-        ref={containerRef}
-        className="relative w-[95%] h-full"
+const overlap = 8;
+return(
+<main className=" ml-8 relative h-[400px] md:h-[600px] w-[97%] flex items-center justify-center">
+  <div className="relative w-[95%] h-full">
+    {cardData.map((card, index) => (
+      <div
+        key={index}
+        className="absolute left-0 w-full transition-all duration-300"
+        style={{
+          top: `${index * overlap}px`,
+          zIndex: cardData.length - index,
+        }}
       >
-        {cardData.map((card, index) => {
-          // Calculate reveal progress for each card
-          let revealProgress = 0;
-          
-          if (index === activeIndex) {
-            // Current active card - reveal progress from 0 to 1
-            revealProgress = scrollProgress * cardData.length - index;
-          } else if (index < activeIndex) {
-            // Already revealed cards
-            revealProgress = 1;
-          }
-          
-          return (
-            <div
-              key={index}
-              className="absolute left-0 w-full transition-all duration-300"
-              style={{
-                top: `${index * overlap}px`,
-                zIndex: cardData.length - index,
-                // Hide cards that are already flipped
-                opacity: index < activeIndex ? 0 : 1,
-                // Move revealed cards to the back
-                transform: index < activeIndex ? `translateY(${cardData.length * 10}px)` : "none"
-              }}
-            >
-              <StackedCardMobile 
-                {...card} 
-                // isActive={activeIndex === index}
-                // revealProgress={revealProgress}
-              />
-            </div>
-          );
-        })}
+        <StackedCardMobile {...card} />
       </div>
-    </main>
-  )
+    ))}
+  </div>
+</main>)
 }
