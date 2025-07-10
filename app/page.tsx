@@ -65,6 +65,7 @@ export default function Home() {
         </div>
       </section>
 <TransformCard />
+<br />
       {/* Seamless Transactions with background */}
       <section className="relative">
         <div className="absolute inset-0 z-0 pointer-events-none">
