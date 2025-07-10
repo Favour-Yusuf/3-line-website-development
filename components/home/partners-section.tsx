@@ -27,13 +27,7 @@ const PartnersSection = () => {
     { name: "PalmPay", logo: "/palmpay.png", width: 120 },
    
   ]
-    { name: "NowNow", logo: "/nownow.JPG", width: 120 },
-    { name: "Hydrogen", logo: "/hydrogen.png", width: 120 },
-    { name: "UP", logo: "/up.png", width: 120 },
-    { name: "Standard Chartered", logo: "/standard_chartered.png", width: 120 },
-    { name: "Opay", logo: "/opay.png", width: 120 },
-  ];
-
+   
   const scrollRef = useRef<HTMLDivElement>(null);
   const scrollingPartners = [...partners, ...partners];
 
