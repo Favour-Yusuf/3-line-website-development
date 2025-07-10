@@ -14,6 +14,7 @@ import WhoWeServePageMobile from "@/components/home/WhoWeServePageMobile"
 import ScrollMobile from "@/components/home/scroll-mobile"
 import CaseBeforeSolution from "@/components/home/CaseBeforeSolution"
 import CaseAfterSolution from "@/components/home/CaseAfterSolution"
+import SeamlessTransactionsMobile from "@/components/home/SeamlessTransactionsMobile"
 export default function Home() {
   const isMobile = useMobile()
   return (
@@ -72,10 +73,11 @@ export default function Home() {
         <br />
         <br />
         <div className="relative z-10">
-            {/* {
+            {
                isMobile ? <SeamlessTransactionsMobile /> : <SeamlessTransactions />
-            } */}
-          <SeamlessTransactions />
+            }
+          {/* <SeamlessTransactions /> */}
+           {/* <SeamlessTransactionsMobile /> */}
         </div>
 
 
