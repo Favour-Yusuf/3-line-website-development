@@ -14,13 +14,13 @@ export default function ExecutiveTeamSection() {
       name: "Femi Omogbenigun",
       role: "Managing Director/CEO",
       image: "/Femi.png",
-      linkedin: "https://linkedin.com/in/femi-omogbenigun",
+      linkedin: "https://www.linkedin.com/in/femiomogbenigun?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     },
     {
       name: "Chibuzor Sibigem",
       role: "Executive Director, Business",
       image: "/Chibuzor.png",
-      linkedin: "https://linkedin.com/in/chibuzor-sibigem",
+      linkedin: "https://www.linkedin.com/in/chibuzor-sibigem-52195197?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     },
     {
       name: "Donald Owonikin",
@@ -32,7 +32,7 @@ export default function ExecutiveTeamSection() {
       name: "Kolawole Omirin",
       role: "Chief Technology Officer",
       image: "/KolaWole.png",
-      linkedin: "https://linkedin.com/in/kolawole-omirin",
+      linkedin: "https://www.linkedin.com/in/omirinkolawole?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     },
   ];
 
