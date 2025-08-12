@@ -7,8 +7,9 @@ import { urlFor } from '@/sanity/lib/image';
 import { notFound } from 'next/navigation';
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
+
 
 export async function generateStaticParams() {
   const slugs: { slug: { current: string } }[] = await client.fetch(
@@ -18,7 +19,7 @@ export async function generateStaticParams() {
 }
 
 export default async function CaseStudyPage({ params }: Props) {
-  const { slug } = params;
+  const { slug } = await params;
 
   const caseStudy = await client.fetch(
     `*[_type == "caseStudy" && slug.current == $slug][0]{

@@ -65,8 +65,9 @@ async function getPost(slug: string) {
 }
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
+
 
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params; // ✅ Await before using
