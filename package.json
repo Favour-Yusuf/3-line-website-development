@@ -26,7 +26,7 @@
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
     "react-scrollama": "^2.4.1",
-    "sanity": "3.99.0",
+     "sanity": "3.99.0",
     "styled-components": "^6.1.17",
     "tailwind-merge": "^3.3.0",
     "tailwindcss-animate": "^1.0.7"
