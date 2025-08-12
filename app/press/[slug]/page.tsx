@@ -31,11 +31,13 @@ async function getArticle(slug: string) {
 }
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
+
 export default async function PressArticlePage({ params }: Props) {
-  const article = await getArticle(params.slug);
+  const { slug } = await params;
+  const article = await getArticle(slug);
 
   if (!article) {
     return <div className="p-8 text-center">Article not found</div>;
