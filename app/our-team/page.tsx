@@ -1,199 +1,48 @@
+// components/OurTeamComponent.tsx
 "use client";
 
-import type React from "react";
-
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ArrowRight,
-  Linkedin,
-  Clock,
-  MapPin,
-  ChevronLeft,
-  ChevronRight,
-} from "lucide-react";
-import { useState, useEffect, useRef } from "react";
+import { ArrowRight, Clock, MapPin } from "lucide-react";
 import ExecutiveTeamSection from "@/components/our-team/executive-team";
 import TeamLeadsSection from "@/components/our-team/team-leads";
+import { createClient } from '@sanity/client';
+import imageUrlBuilder from '@sanity/image-url';
+
+// Initialize Sanity client
+const client = createClient({
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+  apiVersion: '2023-05-03',
+  useCdn: true,
+});
+
+// Initialize image URL builder
+const builder = imageUrlBuilder(client);
+function urlFor(source: any) {
+  return builder.image(source);
+}
 
 const OurTeamComponent = () => {
-  const [email, setEmail] = useState("");
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const touchStartX = useRef(0);
-  const touchEndX = useRef(0);
+  const [jobOpenings, setJobOpenings] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Subscribing email:", email);
-    setEmail("");
-  };
-
-  // Executive team data
-  const executiveTeam = [
-    {
-      name: "Femi Omogbenigun",
-      role: "Managing Director/CEO",
-      image: "/exec1.png",
-    },
-    {
-      name: "Chibuzor Sibigem",
-      role: "Executive Director, Business",
-      image: "/exec2.png",
-    },
-    {
-      name: "Donald Owonikin",
-      role: "Head of Finance",
-      image: "/exec3.png",
-    },
-    {
-      name: "Kolawole Omirin",
-      role: "Chief Technology Officer",
-      image: "/exec4.png",
-    },
-  ];
-
-  // Combine all team leads into a single array for the slider
-  const allTeamLeads = [
-    // First row
-    {
-      name: "Stephanie Okpaka",
-      role: "Administrative Lead",
-      image: "/team-leads.png",
-      imagePosition: "0% 0%",
-    },
-    {
-      name: "Nneoma Udegbe",
-      role: "Head, Product Management Officer",
-      image: "/team-leads.png",
-      imagePosition: "25% 0%",
-    },
-    {
-      name: "Temitope Ogundare",
-      role: "Legal & Regulatory Compliance Officer",
-      image: "/team-leads.png",
-      imagePosition: "50% 0%",
-    },
-    {
-      name: "Tobiloba Animasaun",
-      role: "Human Resource Lead",
-      image: "/team-leads.png",
-      imagePosition: "75% 0%",
-    },
-    {
-      name: "Harrif Saliu",
-      role: "Lead, Channel Engineering",
-      image: "/team-leads.png",
-      imagePosition: "100% 0%",
-    },
-    // Second row
-    {
-      name: "Titilope Bankole-Oki",
-      role: "Service Delivery Manager",
-      image: "/team-leads.png",
-      imagePosition: "0% 50%",
-    },
-    {
-      name: "Idris Apatira",
-      role: "Lead, Network, System Admin & Support",
-      image: "/team-leads.png",
-      imagePosition: "25% 50%",
-    },
-    {
-      name: "Bolaji Oyewumi",
-      role: "Lead, Backend Engineer",
-      image: "/team-leads.png",
-      imagePosition: "50% 50%",
-    },
-    {
-      name: "Ayotunde Ogundipe",
-      role: "Lead, QA Engineer",
-      image: "/team-leads.png",
-      imagePosition: "75% 50%",
-    },
-    {
-      name: "David Ayoola",
-      role: "Lead, Frontend Engineer",
-      image: "/team-leads.png",
-      imagePosition: "100% 50%",
-    },
-    // Additional lead
-    {
-      name: "John Dahunsi",
-      role: "Sales & Partnership Manager",
-      image: "/team-leads.png",
-      imagePosition: "0% 100%",
-    },
-  ];
-
-  // For desktop view, split into rows
-  const teamLeadsRow1 = allTeamLeads.slice(0, 5);
-  const teamLeadsRow2 = allTeamLeads.slice(5, 10);
-  const additionalLead = allTeamLeads[10];
-
-  // Auto-rotate slides
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) =>
-        prev === allTeamLeads.length - 1 ? 0 : prev + 1
-      );
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [allTeamLeads.length]);
+    const fetchData = async () => {
+      try {
+        // Fetch active job openings
+        const jobs = await client.fetch(`*[_type == "jobOpening" && isActive == true] | order(_createdAt desc)`);
+        setJobOpenings(jobs);
+      } catch (error) {
+        console.error("Error fetching job openings:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  // Handle slide navigation
-  const nextSlide = () => {
-    setCurrentSlide((prev) =>
-      prev === allTeamLeads.length - 1 ? 0 : prev + 1
-    );
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) =>
-      prev === 0 ? allTeamLeads.length - 1 : prev - 1
-    );
-  };
-
-  const goToSlide = (index: number) => {
-    setCurrentSlide(index);
-  };
-
-  // Touch handlers for swipe functionality
-  const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX;
-  };
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    touchEndX.current = e.touches[0].clientX;
-  };
-
-  const handleTouchEnd = () => {
-    if (touchStartX.current - touchEndX.current > 50) {
-      // Swipe left, go to next slide
-      nextSlide();
-    } else if (touchEndX.current - touchStartX.current > 50) {
-      // Swipe right, go to previous slide
-      prevSlide();
-    }
-  };
-
-  // Job openings
-  const jobOpenings = [
-    {
-      title: "Engineering Manager",
-      type: "Full-time",
-      location: "Lagos",
-    },
-    {
-      title: "Customer Care Agent",
-      type: "Full-time",
-      location: "Remote",
-    },
-    {
-      title: "Customer Care Agent",
-      type: "Part-time",
-      location: "Hybrid",
-    },
-  ];
+    fetchData();
+  }, []);
 
   return (
     <main className="min-h-screen bg-[#EEF3FF] md:px-[25px] pt-[60px]">
@@ -238,6 +87,7 @@ const OurTeamComponent = () => {
           </div>
         </div>
       </section>
+ 
 
       {/* Vision, Mission & Values */}
       <section className="py-12 px-4">
@@ -259,7 +109,7 @@ const OurTeamComponent = () => {
                 businesses, banks, and communities.
               </p>
             </div>
-
+ 
             {/* Mission */}
             <div className="bg-white p-6 rounded-xl shadow-sm">
               <Image
@@ -276,7 +126,7 @@ const OurTeamComponent = () => {
                 businesses, communities, and individuals worldwide.
               </p>
             </div>
-
+ 
             {/* Values */}
             <div className="bg-transparent py-6 rounded-xl shadow-sm ">
               <h3 className="text-4xl font-bold mb-4">Our Values</h3>
@@ -310,12 +160,9 @@ const OurTeamComponent = () => {
       <ExecutiveTeamSection />
 
       {/* Team Leads */}
-      <section className="py-12 px-4">
-        <div className="container mx-auto">
-          <TeamLeadsSection />
-        </div>
-      </section>
+      <TeamLeadsSection />
 
+      {/* ... existing join our team section ... */}
       <section className=" overflow-hidden  text-white hidden md:flex w-full  justify-center items-center">
         <div className="w-[99%] py-8 md:py-12 md:px-[100px] relative bg-[#10142C] rounded-[25px]">
           <div className="max-w-3xl py-16 md:py-20 relative z-10">
@@ -331,7 +178,7 @@ const OurTeamComponent = () => {
               simpler for everyone.
             </p>
           </div>
-
+ 
           <div className="absolute top-0 right-0 h-full w-1/2">
             <Image
               src="/team-join.png"
@@ -342,41 +189,50 @@ const OurTeamComponent = () => {
           </div>
         </div>
       </section>
+ 
 
       {/* Current Openings */}
       <section className="py-12 px-4 mt-[20px]">
         <div className="container mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold mb-8">
-            There are no current openings
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {jobOpenings.map((job, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl shadow-sm">
-                <h3 className="text-xl font-semibold mb-2">{job.title}</h3>
-                <div className="flex items-center space-x-4 mb-4">
-                  <div className="flex items-center text-sm text-gray-600">
-                    <Clock className="h-4 w-4 mr-1" />
-                    {job.type}
+          {jobOpenings.length > 0 ? (
+            <>
+              <h2 className="text-2xl md:text-3xl font-bold mb-8">
+                Current Openings
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {jobOpenings.map((job, index) => (
+                  <div key={index} className="bg-white p-6 rounded-xl shadow-sm">
+                    <h3 className="text-xl font-semibold mb-2">{job.title}</h3>
+                    <div className="flex items-center space-x-4 mb-4">
+                      <div className="flex items-center text-sm text-gray-600">
+                        <Clock className="h-4 w-4 mr-1" />
+                        {job.type}
+                      </div>
+                      <div className="flex items-center text-sm text-gray-600">
+                        <MapPin className="h-4 w-4 mr-1" />
+                        {job.location}
+                      </div>
+                    </div>
+                    <div className="flex justify-end">
+                      <Link
+                        href={job.applyUrl || "#"}
+                        className="inline-flex items-center font-medium text-[#000066] hover:underline"
+                      >
+                        Apply
+                        <span className="ml-2 inline-flex items-center justify-center w-6 h-6 bg-[#4894F4] text-white rounded-full">
+                          <ArrowRight className="w-4 h-4" />
+                        </span>
+                      </Link>
+                    </div>
                   </div>
-                  <div className="flex items-center text-sm text-gray-600">
-                    <MapPin className="h-4 w-4 mr-1" />
-                    {job.location}
-                  </div>
-                </div>
-                <div className="flex justify-end">
-                  <Link
-                    href="#"
-                    className="inline-flex items-center font-medium text-[#000066] hover:underline"
-                  >
-                    Apply
-                    <span className="ml-2 inline-flex items-center justify-center w-6 h-6 bg-[#4894F4] text-white rounded-full">
-                      <ArrowRight className="w-4 h-4" />
-                    </span>
-                  </Link>
-                </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </>
+          ) : (
+            <h2 className="text-2xl md:text-3xl font-bold mb-8">
+              There are no current openings
+            </h2>
+          )}
         </div>
       </section>
     </main>
