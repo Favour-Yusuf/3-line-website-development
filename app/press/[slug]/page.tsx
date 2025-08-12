@@ -30,11 +30,11 @@ async function getArticle(slug: string) {
   return await client.fetch(pressArticleBySlugQuery, { slug });
 }
 
-export default async function PressArticlePage({
-  params,
-}: {
+type Props = {
   params: { slug: string };
-}) {
+};
+
+export default async function PressArticlePage({ params }: Props) {
   const article = await getArticle(params.slug);
 
   if (!article) {
