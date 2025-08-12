@@ -50,7 +50,51 @@ const caseStudy = {
         title: 'Related Post',
         type: 'reference',
         to: [{ type: 'caseStudy' }],
-      }
+      },
+
+      {
+  name: 'clientLogo',
+  title: 'Client Logo',
+  type: 'image',
+  options: { hotspot: true }
+},
+{
+  name: 'lastUpdated',
+  title: 'Last Updated',
+  type: 'datetime'
+},
+{
+  name: 'quote',
+  title: 'Testimonial Quote',
+  type: 'object',
+  fields: [
+    { name: 'text', title: 'Quote Text', type: 'text' },
+    { name: 'author', title: 'Author Name', type: 'string' },
+    { name: 'position', title: 'Author Position', type: 'string' },
+    {
+      name: 'authorImage',
+      title: 'Author Image',
+      type: 'image',
+      options: { hotspot: true }
+    }
+  ]
+},
+{
+  name: 'results',
+  title: 'Results',
+  type: 'array',
+  of: [
+    {
+      type: 'object',
+      fields: [
+        { name: 'label', title: 'Label', type: 'string' },
+        { name: 'value', title: 'Value', type: 'string' },
+        { name: 'description', title: 'Description', type: 'string' }
+      ]
+    }
+  ]
+}
+
       
     ],
   }
