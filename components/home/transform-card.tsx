@@ -25,7 +25,7 @@ const TransformCard = () => {
 
       {/* CTA */}
       <Link
-        href="#"
+        href="/contact-us"
         className="mt-5 flex items-center justify-end gap-1 text-white font-medium text-xl"
       >
         <span>Get started</span>
