@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
-    domains: ['cdn.sanity.io'],
+    domains: ['cdn.sanity.io', "res.cloudinary.com"],
   },
   typescript: {
     ignoreBuildErrors: false, 

@@ -54,7 +54,7 @@ const HeroSection = () => {
               everyone.
             </p>
             <Link
-  href="#"
+  href="/contact-us"
   className="inline-flex items-center gap-3 justify-center bg-transparent text-white font-medium rounded-full transition-colors group"
 >
   {/* Text with zoom on hover */}

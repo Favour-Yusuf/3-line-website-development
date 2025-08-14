@@ -1,9 +1,8 @@
-"use client"
+"use client";
 
-import type React from "react"
-
-import { useState } from "react"
-import { Send } from "lucide-react"
+import type React from "react";
+import { useState } from "react";
+import { Send } from "lucide-react";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -11,28 +10,57 @@ const ContactForm = () => {
     email: "",
     company: "",
     message: "",
-  })
+  });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission logic here
-    console.log("Form submitted:", formData)
-    // Reset form
-    setFormData({ name: "", email: "", company: "", message: "" })
-    alert("Thank you for your message. We'll get back to you soon!")
-  }
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch(
+        "https://formsubmit.co/mfonobong.essienobong@3lineng.com",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: new URLSearchParams({
+            name: formData.name,
+            email: formData.email,
+            company: formData.company,
+            message: formData.message,
+            _captcha: "false",
+          }).toString(),
+        }
+      );
+
+      if (response.ok) {
+        alert("Thank you for your message. We'll get back to you soon!");
+        setFormData({ name: "", email: "", company: "", message: "" });
+      } else {
+        alert("Something went wrong. Please try again later.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("An error occurred. Please try again later.");
+    }
+  };
 
   return (
     <div className="bg-white p-6 rounded-xl shadow-sm">
       <h2 className="text-xl font-semibold mb-4">Send us a message</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+          <label
+            htmlFor="name"
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
             Full Name
           </label>
           <input
@@ -47,7 +75,10 @@ const ContactForm = () => {
         </div>
 
         <div className="mb-4">
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+          <label
+            htmlFor="email"
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
             Email Address
           </label>
           <input
@@ -62,7 +93,10 @@ const ContactForm = () => {
         </div>
 
         <div className="mb-4">
-          <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">
+          <label
+            htmlFor="company"
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
             Company (Optional)
           </label>
           <input
@@ -76,7 +110,10 @@ const ContactForm = () => {
         </div>
 
         <div className="mb-4">
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+          <label
+            htmlFor="message"
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
             Message
           </label>
           <textarea
@@ -99,7 +136,7 @@ const ContactForm = () => {
         </button>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default ContactForm
+export default ContactForm;

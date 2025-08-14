@@ -8,22 +8,22 @@ const PartnersSection = () => {
     { name: "Interswitch", logo: "/interswitch.png", width: 120 },
     { name: "Union Bank", logo: "/union_bank.png", width: 120 },
     { name: "Access Bank", logo: "/access_bank.png", width: 120 },
-    { name: "upUnified Bank", logo: "/upUnified.png", width: 120 },
+    { name: "upUnified Bank", logo: "https://res.cloudinary.com/dcuad6p9z/image/upload/v1755166807/upUnified_atxokl.png", width: 120 },
     { name: "TAJ Bank", logo: "/taj.png", width: 120 },
     { name: "UBA", logo: "/uba.png", width: 120 },
     { name: "Zenith", logo: "/zenith.png", width: 80 },
     { name: "Alerzo", logo: "/alerzo_main.png", width: 100 },
     { name: "NIBSS", logo: "/nibss.png", width: 120 },
     { name: "stanbic", logo: "/stanbic_ibtc.png", width: 120 },
-    { name: "wema_bank", logo: "/wema_bank.png", width: 120 },
+    { name: "wema_bank", logo: "https://res.cloudinary.com/dcuad6p9z/image/upload/v1755166385/wema_bank_2_scaiu3.png", width: 120 },
     { name: "opay", logo: "/opay.png", width: 120 },
     { name: "Fidelity", logo: "/fidelity.png", width: 120 },
     { name: "Providus Bank", logo: "/providus_bank.png", width: 120 },
-    { name: "standard_char", logo: "/standard_char.png", width: 120 },
+    { name: "standard_char", logo: "https://res.cloudinary.com/dcuad6p9z/image/upload/v1755166845/standard_chartered_bank_fc3zs4.png", width: 120 },
     { name: "Parralex", logo: "/parralex_logo.png", width: 120 },
     { name: "Sterling Bank", logo: "/sterling_bank.png", width: 120 },
     { name: "Optimus Bank", logo: "/optimusbank.png", width: 120 },
-    { name: "NowNow", logo: "/nownow.JPG", width: 120 },
+    { name: "NowNow", logo: "https://res.cloudinary.com/dcuad6p9z/image/upload/v1755166872/nownow_dwoguu.jpg", width: 120 },
     { name: "PalmPay", logo: "/palmpay.png", width: 120 },
    
   ]
@@ -99,21 +99,21 @@ const PartnersSection = () => {
             {/* Row 5 - 3 logos */}
             <div className="grid grid-cols-3 gap-4">
               <Logo src="/providus_bank.png" alt="Providus Bank" />
-              <Logo src="/wema.png" alt="Wema Bank" />
+              <Logo src="https://res.cloudinary.com/dcuad6p9z/image/upload/v1755166385/wema_bank_2_scaiu3.png" alt="Wema Bank" />
               <Logo src="/palmpay.png" alt="PalmPay" />
             </div>
 
             {/* Row 6 - 3 logos */}
             <div className="grid grid-cols-3 gap-4">
-              <Logo src="/nownow.JPG" alt="NowNow" />
-              <Logo src="/hydrogen.png" alt="Hydrogen" />
-              <Logo src="/up.png" alt="Unified Payments" />
+              <Logo src="https://res.cloudinary.com/dcuad6p9z/image/upload/v1755166872/nownow_dwoguu.jpg" alt="NowNow" />
+              <Logo src="https://res.cloudinary.com/dcuad6p9z/image/upload/v1755171107/Frame_26962_njsl9p.png" alt="Hydrogen" />
+              <Logo src="https://res.cloudinary.com/dcuad6p9z/image/upload/v1755166807/upUnified_atxokl.png" alt="Unified Payments" />
             </div>
 
             {/* Row 7 - 2 logos */}
             <div className="grid grid-cols-2 gap-4">
               <Logo
-                src="/standard_chartered.png"
+                src="https://res.cloudinary.com/dcuad6p9z/image/upload/v1755166845/standard_chartered_bank_fc3zs4.png"
                 alt="Standard Chartered"
               />
               <Logo src="/opay.png" alt="Opay" />

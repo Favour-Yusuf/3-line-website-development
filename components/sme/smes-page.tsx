@@ -88,7 +88,7 @@ export default function SmesPage() {
                   </p>
                   <div className="w-[95%]  absolute flex justify-end items-end">
                  <Link
-                    href="#"
+                    href="/contact-us"
                     className="inline-flex items-center justify-center  text-[#000066] font-bold py-2 px-4 rounded-full transition-colors "
                   >
                    Get Started
@@ -232,7 +232,7 @@ export default function SmesPage() {
                   </p>
                   <div className="w-[95%]  absolute flex justify-end items-end">
                  <Link
-                    href="#"
+                    href="/contact-us"
                     className="inline-flex items-center justify-center  text-[#000066] font-bold py-2 px-4 rounded-full transition-colors  mt-[20px]"
                   >
                    Get Started
