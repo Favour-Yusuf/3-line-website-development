@@ -65,14 +65,13 @@ export default function Home() {
         </div>
       </section>
 <TransformCard />
+<br />
       {/* Seamless Transactions with background */}
       <section className="relative">
         <div className="absolute inset-0 z-0 pointer-events-none">
           <Image src="/body_bg.png" alt="" fill className="object-cover opacity-40" />
         </div>
-        <br />
-        <br />
-        <br />
+        
         <div className="relative z-10">
             {
                isMobile ? <SeamlessTransactionsMobile /> : <SeamlessTransactions />
