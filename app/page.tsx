@@ -6,6 +6,7 @@ import PartnersSection from "@/components/home/partners-section"
 import SolutionsSection from "@/components/home/solutions-section"
 import CaseStudiesPreview from "@/components/home/case-studies-preview"
 import SeamlessTransactions from "@/components/home/seamless-transactions"
+import SeamlessTransactionsMobile from "@/components/home/SeamlessTransactionsMobile"
 import SecuritySection from "@/components/home/security-section"
 import ScrollTransitionComponents from "@/components/home/scroll_component"
 import { useMobile } from "@/hooks/useMobile"
@@ -73,10 +74,10 @@ export default function Home() {
         <br />
         <br />
         <div className="relative z-10">
-            {/* {
+            {
                isMobile ? <SeamlessTransactionsMobile /> : <SeamlessTransactions />
-            } */}
-          <SeamlessTransactions />
+            }
+          {/* <SeamlessTransactions /> */}
         </div>
 
 
