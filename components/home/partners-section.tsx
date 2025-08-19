@@ -64,17 +64,17 @@ const PartnersSection = () => {
 
   return (
     <div className="w-full py-8">
-      <div className="block md:hidden  px-4">
+      {/* <div className="block md:hidden  px-4">
         <div className="max-w-4xl mx-auto">
           <div className="py-6 px-4 rounded-lg space-y-4">
-            {/* Row 1 - 3 logos */}
+            
             <div className="grid grid-cols-3 gap-4">
               <Logo src="/interswitch.png" alt="Interswitch" />
               <Logo src="/union_bank.png" alt="Union Bank" />
               <Logo src="/access_bank.png" alt="Access" />
             </div>
 
-            {/* Row 2 - 4 logos */}
+            
             <div className="grid grid-cols-4 gap-4">
               <Logo src="/taj.png" alt="TAJ Bank" />
               <Logo src="/uba.png" alt="UBA" />
@@ -82,35 +82,35 @@ const PartnersSection = () => {
               <Logo src="/alerzo_main.png" alt="Alerzo" />
             </div>
 
-            {/* Row 3 - 3 logos */}
+           
             <div className="grid grid-cols-3 gap-4">
               <Logo src="/nibss.png" alt="NIBSS" />
               <Logo src="/fidelity.png" alt="Fidelity" />
               <Logo src="/stanbic.png" alt="Stanbic IBTC" />
             </div>
 
-            {/* Row 4 - 3 logos */}
+            
             <div className="grid grid-cols-3 gap-4">
               <Logo src="/sterling_bank.png" alt="Sterling" />
               <Logo src="/optimusbank.png" alt="Optimus Bank" />
               <Logo src="/parralex_logo.png" alt="Parallex" />
             </div>
 
-            {/* Row 5 - 3 logos */}
+            
             <div className="grid grid-cols-3 gap-4">
               <Logo src="/providus_bank.png" alt="Providus Bank" />
               <Logo src="https://res.cloudinary.com/dcuad6p9z/image/upload/v1755166385/wema_bank_2_scaiu3.png" alt="Wema Bank" />
               <Logo src="/palmpay.png" alt="PalmPay" />
             </div>
 
-            {/* Row 6 - 3 logos */}
+            
             <div className="grid grid-cols-3 gap-4">
               <Logo src="https://res.cloudinary.com/dcuad6p9z/image/upload/v1755166872/nownow_dwoguu.jpg" alt="NowNow" />
               <Logo src="https://res.cloudinary.com/dcuad6p9z/image/upload/v1755171107/Frame_26962_njsl9p.png" alt="Hydrogen" />
               <Logo src="https://res.cloudinary.com/dcuad6p9z/image/upload/v1755166807/upUnified_atxokl.png" alt="Unified Payments" />
             </div>
 
-            {/* Row 7 - 2 logos */}
+            
             <div className="grid grid-cols-2 gap-4">
               <Logo
                 src="https://res.cloudinary.com/dcuad6p9z/image/upload/v1755166845/standard_chartered_bank_fc3zs4.png"
@@ -120,10 +120,10 @@ const PartnersSection = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* ✅ Desktop Layout - Slider (unchanged) */}
-      <div className="hidden md:block overflow-hidden bg-white shadow-sm rounded-xl mx-4 py-8">
+      <div className=" overflow-hidden bg-white shadow-sm rounded-xl mx-4 py-8">
         <div ref={scrollRef} className="flex whitespace-nowrap overflow-hidden">
           {scrollingPartners.map((partner, index) => (
             <div
