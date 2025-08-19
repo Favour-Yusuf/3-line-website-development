@@ -1,15 +1,10 @@
-// pages/StackedCardsPage.tsx
-import StackedCardMobile from "./StackedCardsMobile";
+"use client"
+
+import { useRef } from "react"
+import { motion, useScroll, useTransform } from "framer-motion"
+import StackedCardMobile from "./StackedCardMobile"
 
 const cardData = [
-  // {
-  //   title: "Seamless Transactions, Every Time!",
-  //   description:
-  //     "At 3Line, we understand that customers want flexibility when it comes to payments...",
-  //   bgColor: "#00006B",
-  //   bgImage: "/groupImg.png",
-  //   foregroundImage: "/pos.png",
-  // },
   {
     title: "Card Payments",
     description:
@@ -36,8 +31,7 @@ const cardData = [
   },
   {
     title: "USSD",
-    description:
-      "Provides a simple and secure way to make payments.",
+    description: "Provides a simple and secure way to make payments.",
     bgColor: "#00002E",
     bgImage: "/groupImg.png",
     foregroundImage: "/button-phone.png",
@@ -50,27 +44,56 @@ const cardData = [
     bgImage: "/groupImg.png",
     foregroundImage: "/receipt.png",
   },
-  
-];
+]
 
-export default function SeamlessTransactions() {
-  const cardHeight = 250;
-const overlap = 8;
-return(
-<main className=" ml-8 relative h-[400px] md:h-[600px] w-[97%] flex items-center justify-center">
-  <div className="relative w-[95%] h-full">
-    {cardData.map((card, index) => (
-      <div
-        key={index}
-        className="absolute left-0 w-full transition-all duration-300"
-        style={{
-          top: `${index * overlap}px`,
-          zIndex: cardData.length - index,
-        }}
-      >
-        <StackedCardMobile {...card} />
+export default function SeamlessTransactionsMobile() {
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"], // same as desktop
+  })
+
+  // For each card, create animated values
+  const cardProgresses = cardData.map((_, index) =>
+    useTransform(
+      scrollYProgress,
+      [index / cardData.length, (index + 1) / cardData.length],
+      [0, 1]
+    )
+  )
+
+  const ys = cardProgresses.map((p) =>
+    useTransform(p, [0, 1], [0, -100]) // move upward
+  )
+  const scales = cardProgresses.map((p) =>
+    useTransform(p, [0, 1], [1, 0.95]) // shrink slightly
+  )
+  const opacities = cardProgresses.map((p) =>
+    useTransform(p, [0, 0.8, 1], [1, 1, 0]) // fade out
+  )
+
+  return (
+    <div ref={containerRef} className="relative min-h-[80vh] py-20">
+      <div className="sticky top-20 ml-4 h-[400px] w-[90%] flex items-center justify-center">
+        <div className="relative w-full h-full">
+          {cardData.map((card, index) => (
+            <motion.div
+              key={index}
+              className="absolute left-0 w-full flex justify-center"
+              style={{
+                top: `${index * 8}px`,
+                zIndex: cardData.length - index,
+                y: ys[index],
+                scale: scales[index],
+                opacity: opacities[index],
+              }}
+            >
+              <StackedCardMobile {...card} />
+            </motion.div>
+          ))}
+        </div>
       </div>
-    ))}
-  </div>
-</main>)
+    </div>
+  )
 }

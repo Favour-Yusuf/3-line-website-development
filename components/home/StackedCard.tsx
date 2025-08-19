@@ -74,7 +74,5 @@ export default function StackedCard({
         />
       </motion.div>
     </motion.div>
-
   )
 }
-

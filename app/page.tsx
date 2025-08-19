@@ -6,6 +6,7 @@ import PartnersSection from "@/components/home/partners-section"
 import SolutionsSection from "@/components/home/solutions-section"
 import CaseStudiesPreview from "@/components/home/case-studies-preview"
 import SeamlessTransactions from "@/components/home/seamless-transactions"
+import SeamlessTransactionsMobile from "@/components/home/SeamlessTransactionsMobile"
 import SecuritySection from "@/components/home/security-section"
 import ScrollTransitionComponents from "@/components/home/scroll_component"
 import { useMobile } from "@/hooks/useMobile"
@@ -15,7 +16,6 @@ import ScrollMobile from "@/components/home/scroll-mobile"
 import CaseBeforeSolution from "@/components/home/CaseBeforeSolution"
 import CaseAfterSolution from "@/components/home/CaseAfterSolution"
 import TransformCard from "@/components/home/transform-card"
-import SeamlessTransactionsMobile from "@/components/home/SeamlessTransactionsMobile"
 export default function Home() {
   const isMobile = useMobile()
   return (
@@ -77,7 +77,6 @@ export default function Home() {
                isMobile ? <SeamlessTransactionsMobile /> : <SeamlessTransactions />
             }
           {/* <SeamlessTransactions /> */}
-           {/* <SeamlessTransactionsMobile /> */}
         </div>
 
 
