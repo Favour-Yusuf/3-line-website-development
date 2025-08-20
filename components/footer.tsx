@@ -28,12 +28,12 @@ export default function Footer() {
                 <h3 className="font-bold text-[28px] mb-2">Products</h3>
                 <ul className="space-y-1 font-semibold text-[18px]">
                   <li>
-                    <Link href="#" className="hover:underline">
+                    <Link href="/solutions/smes" className="hover:underline">
                       SMEs
                     </Link>
                   </li>
                   <li>
-                    <Link href="#" className="hover:underline">
+                    <Link href="/solutions/enterprise" className="hover:underline">
                       Enterprise
                     </Link>
                   </li>
@@ -53,22 +53,22 @@ export default function Footer() {
                     </Link>
                   </li>
                   <li>
-                    <Link href="#" className="hover:underline">
+                    <Link href="/about-us" className="hover:underline">
                       About Us
                     </Link>
                   </li>
                   <li>
-                    <Link href="#" className="hover:underline">
+                    <Link href="/our-team" className="hover:underline">
                       Our Team
                     </Link>
                   </li>
                   <li>
-                    <Link href="#" className="hover:underline">
+                    <Link href="/careers" className="hover:underline">
                       Careers
                     </Link>
                   </li>
                   <li>
-                    <Link href="#" className="hover:underline">
+                    <Link href="/contact-us" className="hover:underline">
                       Contact Us
                     </Link>
                   </li>
@@ -78,22 +78,22 @@ export default function Footer() {
                 <h3 className="font-bold text-[28px] mb-2">Resources</h3>
                 <ul className="space-y-1 font-semibold text-[18px]">
                   <li>
-                    <Link href="#" className="hover:underline">
+                    <Link href="/blog" className="hover:underline">
                       Blog
                     </Link>
                   </li>
                   <li>
-                    <Link href="#" className="hover:underline">
+                    <Link href="/press" className="hover:underline">
                       Press
                     </Link>
                   </li>
                   <li>
-                    <Link href="#" className="hover:underline">
+                    <Link href="/case-study" className="hover:underline">
                       Case Studies
                     </Link>
                   </li>
                   <li>
-                    <Link href="#" className="hover:underline">
+                    <Link href="/faq" className="hover:underline">
                       FAQs
                     </Link>
                   </li>
@@ -180,8 +180,8 @@ export default function Footer() {
                 className="w-full px-2 py-1 text-xs border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#000066]"
               />
             </div>
-            <div className="flex justify-end">
-              <button className="flex items-center text-[#000066] text-xl font-bold">
+            <div className="flex justify-end hover:text-2xl transition-all duration-300">
+              <button className="flex items-center text-[#000066] text-xl font-bold ">
                 Subscribe
                 <Image src="/arrow_footer.png" alt="arrow footer " className="mt-[10px]" width={60} height={60} />
               
