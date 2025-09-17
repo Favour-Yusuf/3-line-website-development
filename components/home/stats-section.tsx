@@ -10,7 +10,7 @@ const StatsSection = () => {
             {/* Row 1 */}
             <div className="flex justify-between gap-4 relative">
               <div className="flex-1 text-center font-grotesk text-headline text-[#000066]">
-                <h3 className="text-2xl font-bold">₦7 Billion</h3>
+                <h3 className="text-2xl font-bold">₦7 Million</h3>
                 <p className="text-sm text-gray-600">processes Daily</p>
               </div>
 
@@ -56,7 +56,7 @@ const StatsSection = () => {
 <div className="hidden md:flex justify-between gap-8 bg-white px-4">
   {[
     {
-      title: "$7 Billion",
+      title: "₦7 Million",
       description: "processes Daily",
     },
     {

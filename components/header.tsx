@@ -313,7 +313,7 @@ const Header = () => {
                           Our Team
                         </Link>
                         <Link
-                          href=""
+                          href="/our-team"
                           onClick={handleLinkClick}
                           className="block p-4 hover:bg-[#F5F8FF] rounded-lg"
                         >
@@ -460,7 +460,7 @@ const Header = () => {
                           </div>
                         </Link>
 
-                        <Link href="" onClick={() => setIsMenuOpen(false)}>
+                        <Link href="#" onClick={() => setIsMenuOpen(false)}>
                           <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-4 mb-4">
                             <h4 className="text-[#0A1A4A] text-base font-semibold mb-2">Individual</h4>
                             <p className="text-[#4A5568] text-sm leading-relaxed">
@@ -491,7 +491,7 @@ const Header = () => {
                           Our Team
                         </Link>
                         <Link
-                          href="/careers"
+                          href="/our-team"
                           className="text-black text-base block"
                           onClick={() => setIsMenuOpen(false)}
                         >
