@@ -6,8 +6,12 @@ import { author } from './blog'
 import pressArticle from './pressArticle'
 import teamMember from './teamMember'
 import jobOpening from './jobOpening'
+import smesPage from './smesPage'
+import smeProduct from './smeProduct'
+import enterprisePage from './enterprisePage'
+import enterpriseProduct from './enterpriseProduct'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [caseStudy, post, category, author, pressArticle, teamMember, jobOpening],
+  types: [caseStudy, post, category, author, pressArticle, teamMember, jobOpening, smesPage, smeProduct, enterprisePage, enterpriseProduct],
 
 }
