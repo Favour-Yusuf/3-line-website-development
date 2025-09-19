@@ -1,15 +1,23 @@
 // app/(whatever)/enterprise/page.tsx  (or pages/enterprise.js) - server component
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
 import {client} from "@/sanity/lib/client"
 import { urlFor } from "@/sanity/lib/image"
 import { enterprisePageQuery } from "@/sanity/lib/queries"
+import { useEffect, useState } from "react"
 
 export const revalidate = 60 // optional ISR
 
-export default async function EnterprisePage() {
-  const data = await client.fetch(enterprisePageQuery)
-  const products = data?.products ?? []
+export default function SmesPage() {
+  const [products, setProducts] = useState<any[]>([])
+
+  useEffect(() => {
+    client.fetch(enterprisePageQuery).then(data => {
+      setProducts(data?.products ?? [])
+    })
+  }, [])
 
   return (
     <div className="min-h-screen flex flex-col md:pt-[50px]">

@@ -1,15 +1,24 @@
 // app/(whatever)/smes/page.tsx  (or pages/smes.js — adapt for your router)
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
 import { client } from "@/sanity/lib/client"        // your sanity client
 import { urlFor } from "@/sanity/lib/image"      // your image builder helper
 import { smesPageQuery } from "@/sanity/lib/queries"
+import { useEffect, useState } from "react"
+
 
 export const revalidate = 60 // optional ISR timing
 
-export default async function SmesPage() {
-  const data = await client.fetch(smesPageQuery)
-  const products = data?.products ?? []
+export default function SmesPage() {
+  const [products, setProducts] = useState<any[]>([])
+
+  useEffect(() => {
+    client.fetch(smesPageQuery).then(data => {
+      setProducts(data?.products ?? [])
+    })
+  }, [])
 
   return (
     <div className="min-h-screen flex flex-col md:pt-[50px]">
