@@ -29,7 +29,7 @@ const StatsSection = () => {
             {/* Row 2 */}
             <div className="flex justify-between gap-4 relative">
               <div className="flex-1 text-center font-grotesk text-headline text-[#000066]">
-                <h3 className="text-2xl font-bold">20K+</h3>
+                <h3 className="text-2xl font-bold">300K+</h3>
                 <p className="text-sm text-gray-600">active terminals empowered through our partners</p>
               </div>
 
