@@ -1,13 +1,14 @@
-"use client";
 
-import { useState } from "react";
+
+
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ChevronDown, Menu } from "lucide-react";
 import PartnersSection from "../home/partners-section";
 import StatsSection from "../home/stats-section";
 
-export default function AboutUsPage() {
+export const revalidate = 60
+export default async function AboutUsPage() {
   return (
     <div className="min-h-screen bg-[#EEF3FF] md:pt-[80px] pb-[30px]">
       <main className="pl-[25px]">

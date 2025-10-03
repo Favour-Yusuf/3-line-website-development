@@ -62,3 +62,37 @@ export const enterprisePageQuery = `*[_type == "enterprisePage"][0]{
     featuresSpanTwo
   }
 }`
+
+
+export const statsSectionQuery = `*[_type == "statsSection"][0]{
+  stats[] {
+    title,
+    description,
+    blueText
+  }
+}`;
+
+export const faqQuery = `*[_type == "faqSection"][0]{
+  sections[] {
+    section,
+    items[] {
+      question,
+      answer
+    }
+  }
+}`;
+
+
+export const paymentFeaturesQuery = `*[_type == "paymentFeatures"][0]{
+  title,
+  description,
+  features[] {
+    title,
+    desc
+  },
+  whoFor[] {
+    number,
+    desc
+  }
+}`;
+

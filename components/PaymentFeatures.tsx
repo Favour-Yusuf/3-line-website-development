@@ -1,15 +1,30 @@
-// components/PaymentFeatures.tsx
+interface Feature {
+  title: string
+  desc: string
+}
 
-export default function PaymentFeatures() {
+interface WhoFor {
+  number: string
+  desc: string
+}
+
+export default function PaymentFeatures({
+  title,
+  description,
+  features,
+  whoFor,
+}: {
+  title: string
+  description: string
+  features: Feature[]
+  whoFor: WhoFor[]
+}) {
   return (
     <section className="bg-[#f5f8ff] md:ml-8 py-16 px-4">
       <h2 className="text-2xl md:text-3xl font-semibold text-gray-900">
-        Customizable Payment APIs
+        {title}
       </h2>
-      <p className="mt-2 text-gray-600 max-w-xl">
-        Integrate fast, reliable, and secure payment processing into your
-        existing platforms with our API suite.
-      </p>
+      <p className="mt-2 text-gray-600 max-w-xl">{description}</p>
       <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 items-start">
         <div className="md:col-span-2">
           <div className="mt-8 space-y-4">
@@ -17,24 +32,7 @@ export default function PaymentFeatures() {
               Key Features
             </h3>
 
-            {[
-              {
-                title: "Flexible & Scalable",
-                desc: "Build solutions that grow with your business.",
-              },
-              {
-                title: "Real-Time Transaction Processing",
-                desc: "Deliver fast, reliable payments every time.",
-              },
-              {
-                title: "Seamless Integration",
-                desc: "Works effortlessly with your existing systems.",
-              },
-              {
-                title: "Developer-Friendly Documentation",
-                desc: "Get started quickly with easy-to-use guides.",
-              },
-            ].map((item, idx) => (
+            {features?.map((item, idx) => (
               <div
                 key={idx}
                 className="bg-white rounded-lg shadow-sm p-4 border border-gray-200"
@@ -52,20 +50,7 @@ export default function PaymentFeatures() {
             Who it’s for
           </h3>
 
-          {[
-            {
-              number: "1.",
-              desc: "Banks enhancing their digital banking infrastructure.",
-            },
-            {
-              number: "2.",
-              desc: "Fintechs building innovative payment solutions.",
-            },
-            {
-              number: "3.",
-              desc: "Enterprises looking for seamless payment integration.",
-            },
-          ].map((item, idx) => (
+          {whoFor?.map((item, idx) => (
             <div
               key={idx}
               className="bg-white rounded-md shadow-sm p-5 mb-4 border border-gray-200"
@@ -77,5 +62,5 @@ export default function PaymentFeatures() {
         </div>
       </div>
     </section>
-  );
+  )
 }

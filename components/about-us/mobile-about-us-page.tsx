@@ -10,7 +10,7 @@ import StatsSection from "../home/stats-section";
 import PartnersSection from "../home/partners-section";
 import SolutionsSlider from "./who-we-server";
 
-export default function MobileAboutUsPage() {
+export default async function MobileAboutUsPage() {
   const [email, setEmail] = useState("");
 
   return (
