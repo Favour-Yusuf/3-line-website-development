@@ -96,3 +96,10 @@ export const paymentFeaturesQuery = `*[_type == "paymentFeatures"][0]{
   }
 }`;
 
+export const contactInfoQuery = `
+  *[_type == "contactInfo"][0]{
+    email,
+    phone,
+    address
+  }
+`;

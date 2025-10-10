@@ -13,6 +13,7 @@ import enterpriseProduct from "./enterpriseProduct";
 import statsSection from "./statsSection";
 import faqSection from "./faqSection";
 import paymentFeatures from "./paymentFeatures";
+import contactInfo from "./contactInfo";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -30,5 +31,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     statsSection,
     faqSection,
     paymentFeatures,
+    contactInfo
+    
   ],
 };
