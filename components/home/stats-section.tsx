@@ -6,10 +6,13 @@ export const revalidate = 60 // ISR
 
 export default async function StatsSection() {
   const data = await client.fetch(statsSectionQuery)
+   console.log("📊 Stats data:", data)
   const stats = data?.stats ?? []
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#EEF3FF] py-16">
+   <section className="relative z-[50] w-full overflow-hidden bg-[#EEF3FF] py-16">
+
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="bg-white rounded-xl shadow-sm p-6 md:p-8">
           {/* Mobile Layout */}
