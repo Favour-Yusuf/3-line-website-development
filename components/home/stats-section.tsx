@@ -10,7 +10,8 @@ export default async function StatsSection() {
   const data = await client.fetch(statsSectionQuery)
    console.log("📊 Stats data:", data)
    console.log("PRODUCTION BUILD — STATS DATA:", JSON.stringify(data, null, 2));
-  
+  console.log("SANITY PROJECT ID:", process.env.NEXT_PUBLIC_SANITY_PROJECT_ID);
+
   const stats = data?.stats ?? []
 
   return (
