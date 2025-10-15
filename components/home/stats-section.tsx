@@ -1,12 +1,16 @@
 // components/stats-section.tsx
+export const dynamic = "force-dynamic";
+export const revalidate = 60
 import { client } from "@/sanity/lib/client"
 import { statsSectionQuery } from "@/sanity/lib/queries"
 
-export const revalidate = 60 // ISR
+ // ISR
 
 export default async function StatsSection() {
   const data = await client.fetch(statsSectionQuery)
    console.log("📊 Stats data:", data)
+   console.log("PRODUCTION BUILD — STATS DATA:", JSON.stringify(data, null, 2));
+  
   const stats = data?.stats ?? []
 
   return (
