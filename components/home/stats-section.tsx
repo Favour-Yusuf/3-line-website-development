@@ -7,12 +7,25 @@ import { statsSectionQuery } from "@/sanity/lib/queries"
  // ISR
 
 export default async function StatsSection() {
-  const data = await client.fetch(statsSectionQuery)
-   console.log("📊 Stats data:", data)
-   console.log("PRODUCTION BUILD — STATS DATA:", JSON.stringify(data, null, 2));
-  console.log("SANITY PROJECT ID:", process.env.NEXT_PUBLIC_SANITY_PROJECT_ID);
+  try {
+    console.log("🔄 Fetching stats data...");
+    console.log("SANITY PROJECT ID:", process.env.NEXT_PUBLIC_SANITY_PROJECT_ID);
+    
+    const data = await client.fetch(statsSectionQuery);
+    
+    console.log("📊 Stats data:", data);
+    console.log("Data type:", typeof data);
+    console.log("Has stats array?", !!data?.stats);
+    
+    if (!data) {
+      console.error("❌ No data returned from Sanity");
+      return null;
+    }
 
-  const stats = data?.stats ?? []
+    const stats = data?.stats ?? [];
+    
+    console.log("Processed stats:", stats);
+    console.log("Stats length:", stats.length);
 
   return (
    <section className="relative z-[50] w-full overflow-hidden bg-[#EEF3FF] py-16">
@@ -101,5 +114,19 @@ export default async function StatsSection() {
         </div>
       </div>
     </section>
-  )
+  ) } catch (error) {
+    console.error("❌ Error fetching stats section:", error);
+    return (
+      <section className="relative z-[50] w-full overflow-hidden bg-[#EEF3FF] py-16">
+        <div className="container mx-auto px-4">
+          <div className="bg-white rounded-xl shadow-sm p-6 md:p-8">
+            <p className="text-center text-red-500">
+              Error loading statistics
+            </p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
 }

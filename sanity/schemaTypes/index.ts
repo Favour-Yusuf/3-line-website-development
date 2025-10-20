@@ -14,6 +14,7 @@ import statsSection from "./statsSection";
 import faqSection from "./faqSection";
 import paymentFeatures from "./paymentFeatures";
 import contactInfo from "./contactInfo";
+import privacyPolicy from "./privacyPolicy";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -31,7 +32,8 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     statsSection,
     faqSection,
     paymentFeatures,
-    contactInfo
+    contactInfo,
+    privacyPolicy
     
   ],
 };

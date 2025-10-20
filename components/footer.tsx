@@ -147,10 +147,17 @@ export default function Footer() {
             <div>
               <p className="text-[18px] font-medium">© 2025 3line</p>
             </div>
-            <div className="flex ml-16  items-center">
+            
+            <div className="flex ml-16  items-center mr-7">
               <Image src="/coat.png" alt="Coat of Arms" width={20} height={15} className="mr-1" />
               <p className="text-[18px] font-medium">3line is regulated by the Central Bank of Nigeria</p>
             </div>
+
+            <Link href="/privacy-policy" className="ml-auto">
+            <div>
+              <p className="text-[18px] font-medium cursor-pointer">Privacy Policy</p>
+            </div>
+            </Link>
           </div>
         </div>
 
@@ -292,6 +299,12 @@ export default function Footer() {
           <div className="mb-2">
             <p className="text-xs">© 2025 3line</p>
           </div>
+          <Link href="/privacy-policy" className="mb-4">
+          
+          <div className="mb-2">
+            <p className="text-xs">Privacy Policy</p>
+          </div>
+          </Link>
 
           {/* Certification Logos */}
           <div className="flex space-x-3">
