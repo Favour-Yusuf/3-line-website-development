@@ -1,6 +1,6 @@
 // lib/queries.ts
 import { groq } from 'next-sanity'
-import { client } from './client'
+import { publicClient } from './publicClient';
 
 export const pressArticlesQuery = `
 *[_type == "pressArticle"] | order(publishedAt desc) {
@@ -114,5 +114,5 @@ export async function getPrivacyPolicy() {
     content,
     lastUpdated
   }`
-  return await client.fetch(query)
+  return await publicClient.fetch(query)
 }
